@@ -1,0 +1,33 @@
+.footer {
+   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px 40px;
+  color: #fff;
+  text-align: center;
+}
+
+.Ul-d {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.Styles-li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+/* .Styles-li a:hover {
+  color: #ffd700; /* gold hover effect */
+/* } */
+
+.styles-p {
+  margin-top: 15px;
+  font-size: 14px;
+  line-height: 1.5;
+}
