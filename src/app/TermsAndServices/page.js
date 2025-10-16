@@ -13,7 +13,7 @@ const TermsAndServices = () => {
           <div className="header-icon">
             <span className="legal-icon">⚖️</span>
           </div>
-          <h1 className="page-title">Terms & Conditions</h1>
+          <h1 className="page-title">Terms & services</h1>
           <p className="page-subtitle">
             Important legal information and terms of use for our FastVidl downloading service
           </p>

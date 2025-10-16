@@ -32,7 +32,7 @@ const Header = (props) => {
           <li><a href="/Disclaimer">Disclaimer</a></li>
           <li><a href="/PrivacyPolicy">Privacy  Policy</a></li>
           <li><a href="/Blogs">Blog</a></li>
-          <li><a href="/TermsAndServices">Terms & Conditions</a></li>
+          <li><a href="/TermsAndServices">Terms & services</a></li>
         </ul>
       </nav>
 
