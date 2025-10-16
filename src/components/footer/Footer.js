@@ -12,7 +12,7 @@ const Footer = () => {
           <li><a href="/Disclaimer">| Disclaimer |</a></li>
           <li><a href="/PrivacyPolicy">| Privacy  Policy |</a></li>
           <li><a href="/Blogs">| Blog |</a></li>
-          <li><a href="/TermsAndServices">| Terms & services |</a></li>
+          <li><a href="/TermsAndConditions">| Terms & Conditions |</a></li>
          </ul>
         <p className={styles["styles-p"]}> © {new Date().getFullYear()} - FastVidl - All Rights Reserved.
      </p>

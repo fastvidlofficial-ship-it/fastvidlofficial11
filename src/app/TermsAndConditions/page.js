@@ -1,9 +1,9 @@
 // "use client"
 import React from "react";
-import styles from "./TermsAndServices.module.css";
+import styles from "./TermsAndConditions.module.css";
 import "../Disclaimer/Disclaimer.css";
 
-const TermsAndServices = () => {
+const TermsAndConditions = () => {
   return (
     <div className={styles.container}>
 
@@ -13,7 +13,7 @@ const TermsAndServices = () => {
           <div className="header-icon">
             <span className="legal-icon">⚖️</span>
           </div>
-          <h1 className="page-title">Terms & services</h1>
+          <h1 className="page-title">Terms & Conditions</h1>
           <p className="page-subtitle">
             Important legal information and terms of use for our FastVidl downloading service
           </p>
@@ -212,4 +212,4 @@ const TermsAndServices = () => {
   );
 };
 
-export default TermsAndServices;
+export default TermsAndConditions;
