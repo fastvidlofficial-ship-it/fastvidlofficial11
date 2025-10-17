@@ -62,9 +62,9 @@ function HomePage() {
   const platforms = [
     {
       id: 'instagram',
-      name: 'instagram Reel Downloader',
+      name: 'Instagram Reel Downloader',
       icon: instagram,
-      description: 'Download instagram Reels, Stories, IGTV & Photos'
+      description: 'Download Instagram Reels, Stories, IGTV & Photos'
     },
 
   ];
@@ -77,7 +77,7 @@ function HomePage() {
         <div className="header">
           <h1>Blog</h1>
           {/* <img src={instagram} /> */}
-          <p>FastVidl Your Ultimate instagram Reel Downloader</p>
+          <p>FastVidl Your Ultimate Instagram Reel Downloader</p>
         </div>
 
         <div id="faq-section" className="faq-container">
@@ -255,7 +255,7 @@ function InstagramBlogPage() {
         <div className="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
           <div className="prose prose-lg max-w-none">
             <p className="text-base sm:text-lg leading-relaxed mb-6">
-              In today's digital age, instagram has become one of the most popular social media platforms for sharing reels, reels, and stories. Whether you're watching entertaining reels, educational content, or memorable moments from friends, you've likely wanted to save these reels for offline viewing. This comprehensive guide will walk you through everything you need to know about downloading instagram reels safely and easily.
+              In today's digital age, instagram has become one of the most popular social media platforms for sharing  reels, and stories. Whether you're watching entertaining reels, educational content, or memorable moments from friends, you've likely wanted to save these reels for offline viewing. This comprehensive guide will walk you through everything you need to know about downloading instagram reels safely and easily.
             </p>
 
             <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">What is an Instagram Reel Downloader?</h2>
@@ -440,7 +440,7 @@ function InstagramBlogPage() {
                   fontWeight: "600"
                 }}
               >
-                instagram
+                Instagram
               </a>{" "}
               page for updates.
             </p>
@@ -457,5 +457,5 @@ function InstagramBlogPage() {
 }
 
 
-export { HomePage, instagramBlogPage };
+export { HomePage, InstagramBlogPage };
 export default Blog;
