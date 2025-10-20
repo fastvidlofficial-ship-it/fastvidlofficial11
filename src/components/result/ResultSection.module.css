@@ -9,6 +9,19 @@
   text-align: center;
   box-shadow: var(--result-box-shadow);
 }
+.download-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 18px 90px;
+  /* margin-left: 30px; */
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.download-btn:hover {
+  background-color: #0056b3;
+}
 
 .thumb-div {
   border: var(--result-border);
