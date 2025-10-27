@@ -1,5 +1,6 @@
 "use client"
 import "./AboutUs.css";
+import Link from "next/link";
 
 const AboutUs = () => {
   const features = [
@@ -175,6 +176,21 @@ const AboutUs = () => {
               <p className="text-base sm:text-lg leading-relaxed mb-6">
                 FastVidl — Download Instagram Reels, Stories, Videos, and Photos instantly. Fast, free, and secure.
               </p>
+              <p style={{ color: "#333", fontSize: "15px" }}>
+      For any info, feel free to {" "}
+      <Link
+        href="/ContactUs" rel="nofollow"
+        className="terms-link"
+        style={{
+          color: "#1877f2",          // visible blue color
+          textDecoration: "none",
+          fontWeight: "600",
+          cursor: "pointer",
+        }}
+      >
+        Contact Us
+      </Link>.
+    </p>
             </div>
           </div>
 

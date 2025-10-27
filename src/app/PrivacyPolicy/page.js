@@ -1,6 +1,8 @@
 "use client"
 import React from "react";
 import "../Disclaimer/Disclaimer.css";
+import Link from "next/link";
+
 
 const PrivacyPolicy = () => {
   return (
@@ -103,7 +105,23 @@ const PrivacyPolicy = () => {
   <h3>8. Children's Privacy</h3>
   <p className="privacy-text">
     FastVidl is not intended for children under 13 years of age. We do not knowingly collect information from children. If you believe a child has provided us with personal data, please contact us immediately at fastvidlofficial@gmail.com, and we will remove such information.
+    
   </p>
+   <p>  Read our  {" "}  
+      <Link
+        href="/TermsAndConditions" rel="nofollow"
+        className="terms-link"
+        style={{
+          color: "#1877f2",          // visible blue color
+          textDecoration: "none",
+          fontWeight: "600",
+          cursor: "pointer",
+        }}
+      >
+        Terms and conditions
+      </Link> 
+       
+    </p>
 </div>
 
     </div>

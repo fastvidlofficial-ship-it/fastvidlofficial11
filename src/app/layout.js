@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
    metadataBase: new URL('https://fastvidl.com'),
-  title: "Fastvidl Instagram  Reel Downloader - Free HD",
+  title: "FastVidl Instagram  Reel Downloader - Free HD",
   description: "Download Reels from Instagram in HD quality for free. Save Reels, Stories, and clips instantly without registration. Fast, secure, and works on any device.",
   icons: {
     icon: "/assets/favicon.ico", 

@@ -73,12 +73,10 @@ function HomePage() {
     <>
 
 
-      <div className="container-blog">
-        <div className="header">
-          <h1>Blog</h1>
-          {/* <img src={instagram} /> */}
-          <p>FastVidl Your Ultimate Instagram Reel Downloader</p>
-        </div>
+    
+      
+          
+
 
         <div id="faq-section" className="faq-container">
           <h2 className="faq-title">Frequently  Asked Questions</h2>
@@ -219,7 +217,7 @@ function HomePage() {
             </div>
           ))}
         </div>
-      </div>
+      
     </>
   );
 }
@@ -427,12 +425,13 @@ function InstagramBlogPage() {
             <p className="text-base sm:text-lg leading-relaxed mb-6">
               Remember to always prioritize quality, safety, and ethical use when downloading instagram reels. Happy downloading!
             </p>
+            <p>For more information,please visit our:</p>
             <p>
-              Visit our{" "}
+              {" "}
               <a
                 href="https://www.instagram.com/fastvidl/"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow"
                 style={{
                   color: "#1877f2",
                   textDecoration: "none",
@@ -442,8 +441,85 @@ function InstagramBlogPage() {
               >
                 Instagram
               </a>{" "}
-              page for updates.
+              
             </p>
+              
+              <p>
+              {" "}
+              <a
+                href="https://www.facebook.com/profile.php?id=61581793203905"
+                target="_blank"
+                rel="nofollow"
+                style={{
+                  color: "#1877f2",
+                  textDecoration: "none",
+                  cursor: "pointer",
+                  fontWeight: "600"
+                }}
+              >
+                Facebook
+              </a>{" "}
+              
+            </p>
+
+           <p>
+              {" "}
+              <a
+                href="https://x.com/FastVidl"
+                target="_blank"
+                rel="nofollow"
+                style={{
+                  color: "#1877f2",
+                  textDecoration: "none",
+                  cursor: "pointer",
+                  fontWeight: "600"
+                }}
+              >
+              Twitter
+              </a>{" "}
+              
+            </p>
+
+                
+                <p>
+              {" "}
+              <a
+                href="https://www.pinterest.com/fastvidl/_pins/"
+                target="_blank"
+                rel="nofollow"
+                style={{
+                  color: "#1877f2",
+                  textDecoration: "none",
+                  cursor: "pointer",
+                  fontWeight: "600"
+                }}
+              >
+
+                Pinterest
+              </a>{" "}
+              
+            </p>
+
+           <p>
+              {" "}
+              <a
+                href="https://www.youtube.com/@FastVidlOfficial"
+                target="_blank"
+                rel="nofollow"
+                style={{
+                  color: "#1877f2",
+                  textDecoration: "none",
+                  cursor: "pointer",
+                  fontWeight: "600"
+                }}
+              >
+                YouTube
+              </a>{" "}
+              
+            </p>
+
+ 
+
 
 
           </div>

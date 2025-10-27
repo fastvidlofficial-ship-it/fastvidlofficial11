@@ -2,6 +2,7 @@
 import React from "react";
 import styles from "./TermsAndConditions.module.css";
 import "../Disclaimer/Disclaimer.css";
+import Link from "next/link";
 
 const TermsAndConditions = () => {
   return (
@@ -206,6 +207,7 @@ const TermsAndConditions = () => {
         <p>
           Thank you for using FastVidl. We are dedicated to providing a reliable, efficient, and user-friendly Instagram Reel downloading service.
         </p>
+        
       </section>
 
     </div>

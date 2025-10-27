@@ -137,11 +137,11 @@ const Disclaimer = () => {
       To the maximum extent permitted by law, FastVidl provides services on an
       "as-is" basis; we disclaim all warranties, express or implied. We are not
       liable for any damages arising from service use, and users assume all risks
-      associated with downloading Instagram content. For complete details, refer
-      to our{" "}
+      associated with downloading Instagram content. For complete details, refer to our Terms and  Conditions
+      {/* to our{" "}
       <Link href="/TermsAndServices" className="terms-link">
         Terms and Conditions
-      </Link>.
+      </Link>. */}
     </p>
 
           <h3>14. Indemnification</h3>
@@ -180,6 +180,20 @@ const Disclaimer = () => {
           <p className="disclaimer-text">
             IMPORTANT REMINDER: Always respect content creators' rights. When in doubt about whether you have permission to download or use specific Instagram content, seek appropriate authorization or refrain from downloading.
           </p>
+           <p>  Please read our {" "}
+      <Link
+        href="/PrivacyPolicy" rel="nofollow"
+        className="terms-link"
+        style={{
+          color: "#1877f2",          // visible blue color
+          textDecoration: "none",
+          fontWeight: "600",
+          cursor: "pointer",
+        }}
+      >
+        Privacy Policy
+      </Link>.
+    </p>
         </div>
 
       </div>

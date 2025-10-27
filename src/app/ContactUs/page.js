@@ -2,6 +2,7 @@
 import React, { useRef, useState } from "react";
 import "./ContactUs.css";
 import emailjs from "@emailjs/browser";
+import Link from "next/link";
 
 const Contact = () => {
   const form =useRef ();
@@ -72,8 +73,24 @@ const Contact = () => {
                 <div>
                   <h3>Email Us</h3>
                   <p>support@fastvidl.com</p>
+                
                 </div>
+                
               </div>
+               <p> Before going further,please visit our {" "}
+      <Link
+        href="/Disclaimer" rel="nofollow"
+        className="terms-link"
+        style={{
+          color: "#1877f2",          // visible blue color
+          textDecoration: "none",
+          fontWeight: "600",
+          cursor: "pointer",
+        }}
+      >
+        Disclaimer
+      </Link>.
+    </p>
             </div>
           </div>
         </div>
