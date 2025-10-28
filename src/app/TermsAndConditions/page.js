@@ -207,6 +207,21 @@ const TermsAndConditions = () => {
         <p>
           Thank you for using FastVidl. We are dedicated to providing a reliable, efficient, and user-friendly Instagram Reel downloading service.
         </p>
+
+         <p>  For more information, please visit our {" "}
+      <Link
+        href="/Blogs" rel="nofollow"
+        className="terms-link"
+        style={{
+          color: "#1877f2",          // visible blue color
+          textDecoration: "none",
+          fontWeight: "600",
+          cursor: "pointer",
+        }}
+      >
+        Blog
+      </Link>.
+    </p>
         
       </section>
 
