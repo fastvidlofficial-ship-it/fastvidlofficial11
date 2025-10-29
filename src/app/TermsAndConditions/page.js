@@ -1,3 +1,19 @@
+export const metadata = {
+  metadataBase: new URL('https://fastvidl.com'),
+  title: 'Terms & Conditions - FastVidl',
+  description:
+    'Terms and conditions for use of FastVidl. Read the rules, limitations and user responsibilities for our Instagram downloader.',
+  alternates: { canonical: 'https://fastvidl.com/TermsAndConditions' },
+  openGraph: {
+    title: 'Terms & Conditions - FastVidl',
+    description:
+      'Terms and conditions for use of FastVidl. Read the rules, limitations and user responsibilities for our Instagram downloader.',
+    url: 'https://fastvidl.com/TermsAndConditions',
+    images: ['/assets/weblogo.png'],
+  },
+  robots: { index: true, follow: true },
+};
+
 // "use client"
 import React from "react";
 import styles from "./TermsAndConditions.module.css";
