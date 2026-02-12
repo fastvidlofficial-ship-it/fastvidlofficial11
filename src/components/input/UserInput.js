@@ -11,23 +11,50 @@ const UserInput = (props) => {
   const [isLoader, setLoader] = useState(false);
   const [isServerOk, setServerOk] = useState(true);
   const [urlResult, setUrlResult] = useState({
-    type: [],
-    urls: [],
-    quality: [],
-    thumbnail: [],
+    type: null,
+    urls: null,
+    quality: null,
+    thumbnail: null,
   });
 
   const userInputHandler = async (apiResponse, type) => {
-    const { media } = apiResponse;
-    console.log(media[0].thumbnail);
-    // console.log("thumb",urlResult.thumb)
+    if (type === "error") {
+      setErrorMessage(apiResponse);
+      setServerOk(false);
+      setLoader(false);
+      return;
+    }
 
-    setUrlResult({
-      thumbnail: [media[0].thumbnail], // keep thumbnail in an array
-      urls: [media[0].url], // extract all media URLs
-      quality: [media[0].quality], // wrap title in an array
-      type: [media[0].type]
-    });
+    try {
+      setLoader(true);
+      setServerOk(true);
+      setErrorMessage("");
+
+      const { media } = apiResponse;
+      console.log("API Response:", apiResponse);
+      console.log("Media:", media);
+      
+      if (!media || !Array.isArray(media) || media.length === 0) {
+        throw new Error("No media found in response");
+      }
+
+      const firstMedia = media[0];
+      console.log("First Media:", firstMedia);
+      console.log("Thumbnail URL:", firstMedia.thumbnail);
+      
+      setUrlResult({
+        thumbnail: firstMedia.thumbnail || firstMedia.thumb || null,
+        urls: firstMedia.url || firstMedia.urls || null,
+        quality: firstMedia.quality || "HD",
+        type: firstMedia.type || "Video"
+      });
+    } catch (error) {
+      console.error("Error processing video:", error);
+      setErrorMessage(error.message || "Failed to process video");
+      setServerOk(false);
+    } finally {
+      setLoader(false);
+    }
 
 
 
@@ -44,7 +71,7 @@ const UserInput = (props) => {
     <div className={style["input-div"]}>
       <InputSection userUrls={userInputHandler} />
       {isLoader && <Loader />}
-      {urlResult.urls.length > 0 && isServerOk && (
+      {urlResult.urls && isServerOk && (
         <ResultSection result={urlResult} />
       )}
       {!isServerOk && <Error error={errorMessage} />}

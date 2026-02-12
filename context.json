@@ -1,0 +1,445 @@
+{
+  "projectInfo": {
+    "name": "FastVidl",
+    "fullName": "FastVidl Instagram Reel Downloader",
+    "version": "0.1.0",
+    "description": "A free Instagram Reel downloader web application that allows users to download Instagram Reels, Stories, and videos in HD quality without watermarks",
+    "domain": "https://fastvidl.com",
+    "type": "Web Application - Video Downloader",
+    "status": "Production"
+  },
+  
+  "techStack": {
+    "framework": "Next.js 15.5.4",
+    "runtime": "React 19.1.0",
+    "language": "JavaScript (JSX)",
+    "styling": "CSS Modules",
+    "buildTool": "Turbopack",
+    "deployment": "Vercel",
+    "packageManager": "npm",
+    "nodeVersion": "Compatible with Next.js 15.5.4",
+    "externalServices": [
+      {
+        "name": "RapidAPI Instagram Downloader",
+        "purpose": "Fetches Instagram video metadata and download URLs",
+        "endpoint": "instagram-downloader-download-instagram-stories-videos4.p.rapidapi.com"
+      },
+      {
+        "name": "EmailJS",
+        "version": "4.4.1",
+        "purpose": "Contact form email functionality"
+      },
+      {
+        "name": "Google AdSense",
+        "clientId": "ca-pub-6813251858740530",
+        "purpose": "Monetization"
+      }
+    ]
+  },
+
+  "architecture": {
+    "pattern": "Next.js App Router",
+    "rendering": "Client-Side Rendering (CSR) with 'use client' directives",
+    "structure": "Component-based architecture",
+    "routing": "File-based routing using Next.js App Router",
+    "apiRoutes": [
+      {
+        "path": "/api/download",
+        "method": "GET",
+        "purpose": "Proxy server to stream video downloads and avoid CORS issues",
+        "parameters": {
+          "url": "Encoded video URL from Instagram"
+        }
+      }
+    ]
+  },
+
+  "coreFeatures": {
+    "mainFeature": "Instagram Reel/Video Download",
+    "capabilities": [
+      "Download Instagram Reels in HD quality",
+      "Download Instagram Stories",
+      "Download Instagram videos without watermark",
+      "No registration required",
+      "Free and unlimited downloads",
+      "Works on all devices (mobile, tablet, desktop)",
+      "Direct browser-based download"
+    ],
+    "workflow": [
+      "User pastes Instagram URL in input field",
+      "System validates URL format (must start with http:// or https://)",
+      "API request sent to RapidAPI Instagram downloader service",
+      "Response contains video metadata (URL, thumbnail, quality, type)",
+      "Display video preview with thumbnail",
+      "User clicks download button",
+      "Video streams through Next.js proxy API to avoid CORS",
+      "Video downloads to user's device as 'video.mp4'"
+    ]
+  },
+
+  "projectStructure": {
+    "directories": {
+      "src/app/": "Next.js App Router pages and layouts",
+      "src/app/api/": "API routes for server-side functionality",
+      "src/components/": "Reusable React components",
+      "public/": "Static assets (images, icons, SEO files)",
+      "public/assets/": "Brand assets and icons"
+    },
+    "keyFiles": {
+      "src/app/layout.js": "Root layout with metadata, fonts, header, and footer",
+      "src/app/page.js": "Home page with main downloader interface",
+      "src/app/api/download/route.js": "Video download proxy API",
+      "src/components/input/InputSection.js": "URL input form with validation",
+      "src/components/input/UserInput.js": "Main input container managing state",
+      "src/components/result/ResultSection.js": "Video result display and download UI",
+      "src/components/loader/Loader.js": "Loading indicator",
+      "src/components/error/Error.js": "Error message display",
+      "src/components/header/Header.js": "Site navigation header",
+      "src/components/footer/Footer.js": "Site footer",
+      "src/components/theme/ThemeContext.js": "Theme provider (dark/light mode)",
+      "src/components/index/IndexMessage.js": "Hero section with main heading"
+    }
+  },
+
+  "pages": {
+    "routes": [
+      {
+        "path": "/",
+        "name": "Home",
+        "description": "Main landing page with Instagram downloader interface",
+        "components": ["Header", "IndexMessage", "UserInput", "Blog", "Footer"]
+      },
+      {
+        "path": "/AboutUs",
+        "name": "About Us",
+        "description": "Information about the service and team"
+      },
+      {
+        "path": "/ContactUs",
+        "name": "Contact Us",
+        "description": "Contact form for user inquiries",
+        "features": ["EmailJS integration"]
+      },
+      {
+        "path": "/Blogs",
+        "name": "Blog",
+        "description": "Blog posts and articles",
+        "subPages": ["/Blogs/instagram"]
+      },
+      {
+        "path": "/faqs",
+        "name": "FAQs",
+        "description": "Frequently asked questions with accordion UI"
+      },
+      {
+        "path": "/Disclaimer",
+        "name": "Disclaimer",
+        "description": "Legal disclaimer and terms of use"
+      },
+      {
+        "path": "/PrivacyPolicy",
+        "name": "Privacy Policy",
+        "description": "Privacy policy and data handling information"
+      },
+      {
+        "path": "/TermsAndConditions",
+        "name": "Terms & Conditions",
+        "description": "Terms and conditions for service usage"
+      }
+    ]
+  },
+
+  "components": {
+    "layout": [
+      {
+        "name": "Header",
+        "path": "src/components/header/Header.js",
+        "purpose": "Main navigation with logo and menu links",
+        "features": ["Logo display", "Navigation menu", "Responsive design"]
+      },
+      {
+        "name": "Footer",
+        "path": "src/components/footer/Footer.js",
+        "purpose": "Site footer with links and social media"
+      }
+    ],
+    "core": [
+      {
+        "name": "IndexMessage",
+        "path": "src/components/index/IndexMessage.js",
+        "purpose": "Hero section with main heading and description"
+      },
+      {
+        "name": "UserInput",
+        "path": "src/components/input/UserInput.js",
+        "purpose": "Container component managing input state and API responses",
+        "state": {
+          "errorMessage": "Error message text",
+          "isLoader": "Loading state boolean",
+          "isServerOk": "Server response status",
+          "urlResult": {
+            "type": "Video type array",
+            "urls": "Video URL array",
+            "quality": "Video quality array",
+            "thumbnail": "Thumbnail URL array"
+          }
+        }
+      },
+      {
+        "name": "InputSection",
+        "path": "src/components/input/InputSection.js",
+        "purpose": "URL input form with validation and API call",
+        "apiIntegration": {
+          "service": "RapidAPI Instagram Downloader",
+          "apiKey": "d8296ed6eemsh38f55946548b666p18771ejsnf5eb5162f388",
+          "host": "instagram-downloader-download-instagram-stories-videos4.p.rapidapi.com",
+          "endpoint": "/convert?url={encodedUrl}"
+        },
+        "validation": "URL must start with http:// or https://"
+      },
+      {
+        "name": "ResultSection",
+        "path": "src/components/result/ResultSection.js",
+        "purpose": "Display video thumbnail and download button",
+        "features": [
+          "Video thumbnail preview",
+          "HD quality download button",
+          "Download state management",
+          "Uses proxy API to avoid CORS"
+        ]
+      },
+      {
+        "name": "Loader",
+        "path": "src/components/loader/Loader.js",
+        "purpose": "Loading spinner during API calls and downloads"
+      },
+      {
+        "name": "Error",
+        "path": "src/components/error/Error.js",
+        "purpose": "Display error messages to users"
+      }
+    ],
+    "theme": [
+      {
+        "name": "ThemeContext",
+        "path": "src/components/theme/ThemeContext.js",
+        "purpose": "React Context for dark/light theme management",
+        "features": [
+          "Local storage persistence",
+          "Theme toggle functionality",
+          "data-theme attribute on document element"
+        ]
+      },
+      {
+        "name": "ThemeButton",
+        "path": "src/components/theme/ThemeButton.js",
+        "purpose": "UI button to toggle theme",
+        "status": "Currently commented out in Header"
+      }
+    ]
+  },
+
+  "styling": {
+    "approach": "CSS Modules",
+    "convention": "Component-specific stylesheets (.module.css)",
+    "themes": {
+      "implementation": "data-theme attribute with CSS variables",
+      "modes": ["light", "dark"],
+      "storage": "localStorage"
+    },
+    "globalStyles": "src/app/globals.css"
+  },
+
+  "seo": {
+    "metadata": {
+      "title": "FastVidl Instagram Reel Downloader - Free HD",
+      "description": "Download Reels from Instagram in HD quality for free. Save Reels, Stories, and clips instantly without registration. Fast, secure, and works on any device.",
+      "canonical": "https://fastvidl.com"
+    },
+    "files": {
+      "sitemap": "public/sitemap.xml",
+      "robots": "public/robots.txt",
+      "favicon": "public/assets/favicon.ico",
+      "appleTouchIcon": "public/assets/apple-touch-icon.png",
+      "androidIcons": [
+        "public/assets/android-chrome-192x192.png",
+        "public/assets/android-chrome-512x512.png"
+      ]
+    }
+  },
+
+  "assets": {
+    "images": {
+      "logo": "public/assets/weblogo.png",
+      "favicons": [
+        "favicon.ico",
+        "favicon-16x16.png",
+        "favicon-32x32.png",
+        "apple-touch-icon.png"
+      ],
+      "icons": {
+        "urlLight": "icons8-url-48-light.png",
+        "urlDark": "icons8-url-48-dark.png",
+        "moon": "icons8-moon-48.png",
+        "sun": "icons8-sun-48.png",
+        "github": "icons8-github-logo-48.png"
+      },
+      "social": [
+        "fb.svg",
+        "insta.svg",
+        "twitter.svg",
+        "yt.svg"
+      ]
+    }
+  },
+
+  "scripts": {
+    "dev": "next dev --turbopack (Development server with Turbopack)",
+    "build": "next build --turbopack (Production build with Turbopack)",
+    "start": "next start (Start production server)",
+    "lint": "eslint (Run linter)"
+  },
+
+  "dependencies": {
+    "production": {
+      "@emailjs/browser": "^4.4.1 (Email functionality for contact form)",
+      "next": "15.5.4 (React framework)",
+      "react": "19.1.0 (UI library)",
+      "react-dom": "19.1.0 (React DOM rendering)"
+    },
+    "development": {
+      "@eslint/eslintrc": "^3 (ESLint configuration)",
+      "eslint": "^9 (Code linting)",
+      "eslint-config-next": "15.5.4 (Next.js ESLint rules)"
+    }
+  },
+
+  "deployment": {
+    "platform": "Vercel",
+    "config": "public/vercel.json",
+    "domain": "fastvidl.com",
+    "environment": "Production"
+  },
+
+  "dataFlow": {
+    "downloadProcess": [
+      "1. User enters Instagram URL in InputSection component",
+      "2. URL validation checks for http:// or https:// prefix",
+      "3. InputSection makes GET request to RapidAPI with encoded URL",
+      "4. RapidAPI returns JSON with media array containing: {url, thumbnail, quality, type}",
+      "5. UserInput component receives response and updates urlResult state",
+      "6. ResultSection displays thumbnail and download button",
+      "7. User clicks download button",
+      "8. ResultSection calls /api/download?url={videoUrl}",
+      "9. Next.js API route fetches video and streams it back",
+      "10. Browser downloads file as 'video.mp4'"
+    ]
+  },
+
+  "apiSecurity": {
+    "cors": "Handled by Next.js proxy API route",
+    "apiKey": "Hardcoded in InputSection.js (should be moved to environment variables)",
+    "recommendation": "Move API key to .env.local file and access via process.env"
+  },
+
+  "fonts": {
+    "primary": "Geist (Google Font)",
+    "secondary": "Geist Mono (Google Font)",
+    "loading": "Optimized via next/font"
+  },
+
+  "features": {
+    "implemented": [
+      "Instagram URL validation",
+      "Video metadata fetching",
+      "Thumbnail preview",
+      "HD video download",
+      "Loading states",
+      "Error handling",
+      "Responsive design",
+      "Dark/light theme (context exists, UI commented out)",
+      "FAQ accordion",
+      "Contact form with EmailJS",
+      "Blog section",
+      "Legal pages (Privacy, Terms, Disclaimer)",
+      "SEO optimization"
+    ],
+    "commented": [
+      "Theme toggle button in header (ThemeButton component)",
+      "Some navigation features"
+    ]
+  },
+
+  "userExperience": {
+    "mainFlow": "Single-page download interface on homepage",
+    "steps": [
+      "Visit homepage",
+      "Paste Instagram URL",
+      "Click 'Search' button",
+      "View video preview",
+      "Click 'Download in HD Quality'",
+      "Video downloads automatically"
+    ],
+    "errorHandling": [
+      "Invalid URL format validation",
+      "API request failures",
+      "Network errors",
+      "Server unavailability"
+    ]
+  },
+
+  "businessModel": {
+    "revenue": "Google AdSense advertising",
+    "pricing": "Free service",
+    "restrictions": "No registration required, unlimited downloads"
+  },
+
+  "legalCompliance": {
+    "pages": [
+      "Privacy Policy",
+      "Terms and Conditions",
+      "Disclaimer"
+    ],
+    "considerations": "Users must have rights to download content, copyright respect emphasized in FAQs"
+  },
+
+  "futureEnhancements": {
+    "recommended": [
+      "Move API key to environment variables",
+      "Enable theme toggle button",
+      "Add more social media platform support",
+      "Implement user accounts (optional)",
+      "Add download history",
+      "Support for multiple quality options",
+      "Batch download functionality",
+      "Video format conversion",
+      "Progress bar for large downloads",
+      "Share functionality"
+    ]
+  },
+
+  "knownIssues": {
+    "security": "API key is exposed in client-side code",
+    "features": "Theme toggle UI is implemented but commented out",
+    "validation": "Limited URL validation (only checks for http/https prefix)"
+  },
+
+  "developmentNotes": {
+    "clientSideRendering": "Most components use 'use client' directive for interactivity",
+    "stateManagement": "React useState hooks, no external state management library",
+    "errorBoundaries": "Basic error handling with Error component",
+    "loadingStates": "Loader component used for async operations",
+    "codeComments": "Various commented-out features and alternative implementations present"
+  },
+
+  "testing": {
+    "status": "No test files present",
+    "recommendation": "Add unit tests for components and integration tests for download flow"
+  },
+
+  "documentation": {
+    "readme": "Basic Next.js template README",
+    "inline": "Minimal inline code comments",
+    "recommendation": "Expand documentation for API integration and component usage"
+  }
+}

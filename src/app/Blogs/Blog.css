@@ -66,16 +66,16 @@ body {
 }
 
 .card {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  /* background: #667eea; */
+  background: #ffffff;
   border-radius: 15px;
   padding: 40px 30px;
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
+  border: 1px solid #e2e8f0;
 }
 
 .card::before {
@@ -95,8 +95,9 @@ body {
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-color: #667eea;
 }
 
 .card-icon {
@@ -136,12 +137,12 @@ body {
 .card h2 {
   font-size: 1.8em;
   margin-bottom: 15px;
-  color:#f0f4ff;
+  color: #1a202c;
   font-weight: 600;
 }
 
 .card p {
-  color:#f0f4ff;
+  color: #4a5568;
   font-size: 1em;
   line-height: 1.5;
 }

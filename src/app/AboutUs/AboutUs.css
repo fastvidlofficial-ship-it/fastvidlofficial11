@@ -539,3 +539,225 @@
     display: none;
   }
 }
+
+/* Content Sections */
+.content-section {
+  margin-bottom: 2rem;
+}
+
+.prose {
+  color: #333;
+  line-height: 1.8;
+}
+
+.prose h2 {
+  color: #1a202c;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.prose h3 {
+  color: #2d3748;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+}
+
+.prose strong {
+  color: #1a202c;
+  font-weight: 600;
+}
+
+/* Lists */
+.drives-list,
+.platforms-list,
+.team-list,
+.contact-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+}
+
+.drives-list li,
+.platforms-list li,
+.team-list li,
+.contact-list li {
+  margin-bottom: 0.75rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.drives-list li::before,
+.platforms-list li::before,
+.team-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.platforms-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* FAQ Styles */
+.faqs-container {
+  margin-top: 1rem;
+}
+
+.faq-item {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border-left: 4px solid #667eea;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  background: #f1f5f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item h3 {
+  color: #1a202c;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.faq-item p {
+  color: #4a5568;
+  margin-bottom: 0;
+}
+
+/* Contact Links */
+.email-link,
+.contact-link {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.email-link:hover,
+.contact-link:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+.contact-list li {
+  line-height: 1.6;
+}
+
+/* Team Profile Card */
+.team-profile-card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.team-profile-card:hover {
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15);
+  transform: translateY(-2px);
+}
+
+.team-profile-image {
+  flex-shrink: 0;
+}
+
+.profile-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.team-profile-info {
+  flex: 1;
+}
+
+.team-profile-info h3 {
+  color: #1a202c;
+  margin-bottom: 0.5rem;
+}
+
+.team-profile-info p {
+  color: #4a5568;
+  margin-bottom: 1rem;
+}
+
+.linkedin-link {
+  display: inline-flex;
+  align-items: center;
+  color: #0077b5;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  background: #f0f4ff;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.linkedin-link:hover {
+  background: #0077b5;
+  color: white;
+  border-color: #0077b5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 119, 181, 0.3);
+}
+
+.linkedin-link svg {
+  transition: fill 0.3s ease;
+}
+
+.linkedin-link:hover svg {
+  fill: white;
+}
+
+/* Responsive adjustments for new content */
+@media (max-width: 768px) {
+  .faq-item {
+    padding: 1rem;
+  }
+  
+  .faq-item h3 {
+    font-size: 1rem;
+  }
+  
+  .prose h2 {
+    font-size: 1.5rem;
+  }
+  
+  .prose h3 {
+    font-size: 1.125rem;
+  }
+  
+  .team-profile-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  .profile-photo {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .team-profile-info {
+    width: 100%;
+  }
+}

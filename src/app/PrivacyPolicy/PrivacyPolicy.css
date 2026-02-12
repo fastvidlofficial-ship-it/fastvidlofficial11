@@ -293,3 +293,82 @@
     justify-content: center;
   }
 }
+
+/* Additional styles for tables and content */
+.privacy-section h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.privacy-section h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #495057;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.privacy-section table {
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.privacy-section table th {
+  background: #667eea;
+  color: white;
+  font-weight: 600;
+}
+
+.privacy-section table tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+.privacy-section table tr:hover {
+  background: #e9ecef;
+}
+
+.privacy-section ol {
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+}
+
+.privacy-section ol li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.privacy-section ul:not(.privacy-list) {
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+}
+
+.privacy-section ul:not(.privacy-list) li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .privacy-section table {
+    font-size: 0.9rem;
+  }
+  
+  .privacy-section table th,
+  .privacy-section table td {
+    padding: 0.5rem;
+  }
+  
+  .privacy-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .privacy-section h3 {
+    font-size: 1.2rem;
+  }
+}

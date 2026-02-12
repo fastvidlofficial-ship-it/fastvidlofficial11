@@ -1,20 +1,4 @@
-export const metadata = {
-  metadataBase: new URL('https://fastvidl.com'),
-  title: 'Terms & Conditions - FastVidl',
-  description:
-    'Terms and conditions for use of FastVidl. Read the rules, limitations and user responsibilities for our Instagram downloader.',
-  alternates: { canonical: 'https://fastvidl.com/TermsAndConditions' },
-  openGraph: {
-    title: 'Terms & Conditions - FastVidl',
-    description:
-      'Terms and conditions for use of FastVidl. Read the rules, limitations and user responsibilities for our Instagram downloader.',
-    url: 'https://fastvidl.com/TermsAndConditions',
-    images: ['/assets/weblogo.png'],
-  },
-  robots: { index: true, follow: true },
-};
-
-// "use client"
+"use client"
 import React from "react";
 import styles from "./TermsAndConditions.module.css";
 import "../Disclaimer/Disclaimer.css";
@@ -23,8 +7,6 @@ import Link from "next/link";
 const TermsAndConditions = () => {
   return (
     <div className={styles.container}>
-
-
       <div className="disclaimer-header">
         <div className="header-content">
           <div className="header-icon">
@@ -36,211 +18,294 @@ const TermsAndConditions = () => {
           </p>
         </div>
       </div>
+
       <section className={styles.section}>
-        <p>
+        <p style={{ fontStyle: "italic", color: "#666", marginBottom: "2rem" }}>
+          Last updated: 21 January 2026
         </p>
 
-        <h2>1. Definitions and Interpretation</h2>
         <p>
-          When used in these Terms and Conditions, the following terms have these specific meanings: "FastVidl," "we," or "us" refers to the Instagram Reel downloading service operated at fastvidl.com; "Service" means the video downloading functionality and related features provided through our website; "Content" refers to videos, images, and other media available for download through our Service; "Third-Party Platform" means Instagram, operated by Meta Platforms, Inc.; and "Device" means any equipment capable of accessing our Service, including computers, smartphones, tablets, and similar technology.
+          Please read these Terms carefully before using FastVidl.
         </p>
         <p>
-          These terms apply universally regardless of whether words appear in singular or plural form. Section headings are included for convenience and do not affect interpretation.
-        </p>
-
-        <h2>2. Agreement and Acceptance</h2>
-        <p>
-          By accessing, browsing, or using FastVidl, you enter into a legally binding agreement with us under these Terms and Conditions. This agreement governs your entire relationship with our Instagram Reel downloading Service.
-        </p>
-        <p>
-          You must be at least 18 years of age to use FastVidl. By using our Service, you confirm that you meet this minimum age requirement. We do not knowingly provide services to minors.
-        </p>
-        <p>
-          If you do not accept these Terms and Conditions in their entirety, you must immediately discontinue use of our Service. Continued use constitutes full acceptance of all terms herein.
-        </p>
-        <p>
-          Your use of FastVidl is also governed by our Privacy Policy, which details how we collect, use, and protect your information. We encourage you to review our Privacy Policy at fastvidl.com before using our Service.
+          By accessing or using fastvidl.com ("FastVidl", "we", "us", "our"), you agree to be bound by these Terms and Conditions. If you do not agree, please do not use our service.
         </p>
 
-        <h2>3. Service Description</h2>
+        <h2>Quick summary (not a substitute for the full terms)</h2>
+        <ul style={{ marginBottom: "1.5rem", paddingLeft: "2rem" }}>
+          <li style={{ marginBottom: "0.5rem" }}>FastVidl is a free tool for downloading public content from Instagram, Facebook, and Pinterest for personal use.</li>
+          <li style={{ marginBottom: "0.5rem" }}>No commercial use of downloaded content is allowed without permission from the rights holder.</li>
+          <li style={{ marginBottom: "0.5rem" }}>You are responsible for complying with copyright laws and platform rules in your country.</li>
+          <li style={{ marginBottom: "0.5rem" }}>We are not responsible for how you use any downloaded content.</li>
+          <li style={{ marginBottom: "0.5rem" }}>You use FastVidl entirely at your own risk.</li>
+        </ul>
+
+        <h2>1. Acceptance of terms</h2>
         <p>
-          FastVidl is a free online tool that enables users to download Instagram Reels, photos, and other publicly available media content from Instagram. Our Service acts as an intermediary, allowing users to save content directly from Instagram for personal use.
-        </p>
-        <p>
-          We do not host, store, or own any downloaded content. We are not affiliated with Instagram or Meta Platforms, Inc. We do not guarantee availability of specific content or offer support for Instagram’s platform features.
+          By visiting fastvidl.com or using any of our download features, you confirm that you have read, understood, and agree to these Terms and any updates we may publish. Continued use of the site after changes are posted means you accept the updated Terms.
         </p>
 
-        <h2>4. User Responsibilities and Acceptable Use</h2>
+        <h2>2. Who can use FastVidl</h2>
         <p>
-          You agree to use FastVidl only for lawful purposes and in compliance with all applicable local, national, and international laws, including copyright and intellectual property laws, Instagram’s terms of service, and the rights of content creators and copyright holders.
+          You may use FastVidl only if:
         </p>
+        <ul style={{ marginBottom: "1rem", paddingLeft: "2rem" }}>
+          <li style={{ marginBottom: "0.5rem" }}>You are at least 13 years old (or 16 if required by laws in your region, such as parts of the EU/EEA).</li>
+          <li style={{ marginBottom: "0.5rem" }}>You have the legal capacity to enter into a binding agreement.</li>
+          <li style={{ marginBottom: "0.5rem" }}>Your use of FastVidl complies with all applicable laws and the terms of service of Instagram, Facebook, and Pinterest.</li>
+        </ul>
         <p>
-          You may not use our Service to download copyrighted content without permission, violate any intellectual property rights, redistribute downloaded content for commercial use, access private or restricted Instagram accounts, attempt to bypass Instagram’s technical protections, distribute malware, interfere with our Service’s functionality, impersonate others, collect data without authorization, or use automated tools or bots without consent.
-        </p>
-        <p>
-          You acknowledge that you are solely responsible for ensuring that your downloads comply with applicable laws, that you have the right to download the content, and that FastVidl bears no responsibility for any misuse of our Service.
-        </p>
-
-        <h2>5. Intellectual Property Rights</h2>
-        <p>
-          All content downloaded through FastVidl remains the property of its original Instagram creators and copyright holders. FastVidl claims no ownership of any downloaded material.
-        </p>
-        <p>
-          The FastVidl website, including its design, code, text, graphics, logos, and features, is owned by us and protected by intellectual property laws. You may not copy, modify, or distribute our website content, use our branding without permission, create derivative works, or reverse engineer our technology.
+          If you do not meet these requirements, you must not use our service.
         </p>
 
-        <h2>6. Third-Party Platform and Links</h2>
+        <h2>3. What FastVidl does</h2>
         <p>
-          FastVidl is an independent service and is not endorsed by, affiliated with, or officially connected to Instagram or Meta Platforms, Inc.
+          <strong>FastVidl provides:</strong>
         </p>
+        <ul style={{ marginBottom: "1rem", paddingLeft: "2rem" }}>
+          <li style={{ marginBottom: "0.5rem" }}>
+            An online tool that lets you download publicly available content from:
+            <ul style={{ marginTop: "0.5rem", paddingLeft: "1.5rem" }}>
+              <li>Instagram (for example Reels, videos, photos, stories, and highlights)</li>
+              <li>Facebook (for example reels, public videos, public posts)</li>
+              <li>Pinterest (for example images, videos, and pins)</li>
+            </ul>
+          </li>
+        </ul>
         <p>
-          Our Service may include links to external websites or references. We do not control, endorse, or assume responsibility for content on external sites, third-party privacy practices, or accuracy of third-party information.
+          <strong>FastVidl does not:</strong>
         </p>
-        <p>
-          Your use of Instagram is governed by its own terms of service and privacy policy. You are responsible for understanding and complying with Instagram’s rules and community guidelines.
-        </p>
+        <ul style={{ marginBottom: "1rem", paddingLeft: "2rem" }}>
+          <li style={{ marginBottom: "0.5rem" }}>Host or permanently store the content you download.</li>
+          <li style={{ marginBottom: "0.5rem" }}>Provide access to private, restricted, or paywalled content.</li>
+          <li style={{ marginBottom: "0.5rem" }}>Grant you any license or ownership over downloaded content.</li>
+          <li style={{ marginBottom: "0.5rem" }}>Guarantee that the service will always be available, error‑free, or unchanged.</li>
+        </ul>
 
-        <h2>7. Service Availability and Modifications</h2>
+        <h2>4. Acceptable use – personal use only</h2>
         <p>
-          FastVidl is provided on an "as-is" and "as-available" basis without warranties of any kind. We make no guarantees regarding uninterrupted access, error-free performance, compatibility with all devices, or continued availability of Instagram Reel downloads.
+          <strong>You may:</strong>
         </p>
+        <ul style={{ marginBottom: "1rem", paddingLeft: "2rem" }}>
+          <li style={{ marginBottom: "0.5rem" }}>Download content for your own personal, offline viewing.</li>
+          <li style={{ marginBottom: "0.5rem" }}>Save content for personal inspiration, education, or reference.</li>
+          <li style={{ marginBottom: "0.5rem" }}>Archive public content that you created yourself.</li>
+        </ul>
         <p>
-          We reserve the right to modify, suspend, or discontinue any part of our Service at any time, including functionality related to Instagram Reels, system requirements, or download limits.
+          <strong>You may not:</strong>
         </p>
-        <p>
-          While we may provide notice of significant updates, we are not obligated to offer advance warnings for technical or operational changes.
-        </p>
+        <ul style={{ marginBottom: "1rem", paddingLeft: "2rem" }}>
+          <li style={{ marginBottom: "0.5rem" }}>Use downloaded content for commercial purposes (for example ads, products, or paid projects) without permission from the rights holder.</li>
+          <li style={{ marginBottom: "0.5rem" }}>Sell, license, or redistribute downloaded content to others.</li>
+          <li style={{ marginBottom: "0.5rem" }}>Remove copyright notices, trademarks, or watermarks where they appear.</li>
+          <li style={{ marginBottom: "0.5rem" }}>Claim that someone else's content is your own.</li>
+          <li style={{ marginBottom: "0.5rem" }}>Use downloaded content in ways that violate copyright or other rights.</li>
+        </ul>
 
-        <h2>8. Disclaimers and Warranties</h2>
+        <h2>5. Strictly prohibited activities</h2>
         <p>
-          To the fully extent permitted by law, we disclaim all warranties, including merchantability, fitness for a particular purpose, non-infringement, accuracy, and security. We do not warrant that our Instagram Reel downloader is free of errors, secure from threats, or always available.
+          You must not:
         </p>
-        <p>
-          We do not verify or guarantee the accuracy of Instagram URLs, quality of downloaded Reels, or continued accessibility of Instagram content.
-        </p>
-        <p>
-          Some jurisdictions do not permit specific disclaimers. In such cases, disclaimers apply to the maximum extent permitted by applicable law.
-        </p>
-
-        <h2>9. Limitation of Liability</h2>
-        <p>
-          Our total liability for any claims arising from your use of FastVidl shall not exceed the amount you paid us in the preceding twelve months, or $50 USD if no payment was made (whichever is greater).
-        </p>
-        <p>
-          We are not liable for indirect or consequential damages, loss of profits, data, or business opportunities, or damages resulting from Instagram policy changes, access restrictions, or third-party errors.
-        </p>
-        <p>
-          These limitations apply even if we have been advised of the possibility of such damages. Some jurisdictions may provide additional consumer protections which remain unaffected.
-        </p>
-
-        <h2>10. Indemnification</h2>
-        <p>
-          You agree to defend, indemnify, and hold harmless FastVidl, its affiliates, and partners from any claims, damages, or expenses arising from your use of the Instagram Reel downloader, your violation of these Terms, or infringement of third-party rights.
-        </p>
-
-        <h2>11. Termination</h2>
-        <p>
-          We may suspend or terminate your access to FastVidl at any time without notice if you breach these Terms, engage in prohibited activity, or if legal or technical reasons require us to do so.
-        </p>
-        <p>
-          Upon termination, your right to use the Service ends immediately. All relevant clauses, including Intellectual Property, Disclaimers, Limitation of Liability, and Indemnification, remain in effect.
-        </p>
-
-        <h2>12. Dispute Resolution</h2>
-        <p>
-          Before initiating any legal action, you agree to contact us at fastvidlofficial@gmail.com to attempt an informal resolution. We will make good-faith efforts to resolve any concerns.
-        </p>
-        <p>
-          These Terms are governed by the laws applicable to our jurisdiction, without regard to conflict of law principles.
-        </p>
-        <p>
-          You agree to submit to the exclusive jurisdiction of the courts in our operating location for any unresolved disputes.
-        </p>
-
-        <h2>13. Special Provisions for Specific Users</h2>
-        <p>
-          EU users benefit from mandatory consumer protection laws in their country of residence. Nothing in these Terms limits those rights.
-        </p>
-        <p>
-          U.S. users confirm they are not located in restricted or embargoed countries or on any government prohibited lists.
-        </p>
-        <p>
-          California residents may refer to our Privacy Policy for their specific rights under the CCPA.
-        </p>
-
-        <h2>14. General Provisions</h2>
-        <p>
-          These Terms and Conditions, along with our Privacy Policy, form the entire agreement between you and FastVidl regarding our Instagram Reel downloading Service.
-        </p>
-        <p>
-          If any provision is deemed invalid, it shall be modified to reflect intent within legal limits, and all other provisions shall remain in effect.
-        </p>
-        <p>
-          No waiver of any breach shall constitute a waiver of future breaches.
-        </p>
-        <p>
-          You may not transfer your rights without our written consent. We may assign our rights freely.
-        </p>
-        <p>
-          We are not liable for delays caused by factors beyond our control, such as technical failures, internet outages, or regulatory restrictions.
-        </p>
-        <p>
-          In case of translation discrepancies, the English version of these Terms shall prevail.
-        </p>
-
-        <h2>15. Changes to Terms and Conditions</h2>
-        <p>
-          We reserve the right to update, modify, or replace these Terms and Conditions at any time.
-        </p>
-        <p>
-          When material changes occur, we will update the “Last Updated” date and, when practical, provide reasonable notice through our website.
-        </p>
-        <p>
-          Continued use of FastVidl after updates signifies acceptance of the revised Terms. If you do not agree, you must stop using our Service.
-        </p>
-        <p>
-          You are responsible for reviewing these Terms regularly to stay informed.
-        </p>
-
-        <h2>16. Contact Information</h2>
-        <p>
-          For questions, concerns, or notices regarding these Terms and Conditions, please contact us at:
-        </p>
-        <p>
-          Email: fastvidlofficial@gmail.com
-        </p>
-        <p>
-          Website: fastvidl.com
-        </p>
-        <p>
-          We will make reasonable efforts to respond to all legitimate inquiries within a reasonable timeframe.
-        </p>
-
-        <h2>17. Acknowledgment</h2>
-        <p>
-          By using FastVidl, you acknowledge that you have read and understood these Terms and Conditions, agree to be bound by them, and will use our Instagram Reel downloader responsibly and lawfully.
-        </p>
-        <p>
-          Thank you for using FastVidl. We are dedicated to providing a reliable, efficient, and user-friendly Instagram Reel downloading service.
-        </p>
-
-         <p>  For more information, please visit our {" "}
-      <Link
-        href="/Blogs" rel="nofollow"
-        className="terms-link"
-        style={{
-          color: "#1877f2",          // visible blue color
-          textDecoration: "none",
-          fontWeight: "600",
-          cursor: "pointer",
-        }}
-      >
-        Blog
-      </Link>.
-    </p>
         
-      </section>
+        <h3>Bulk or automated use</h3>
+        <ul style={{ marginBottom: "1rem", paddingLeft: "2rem" }}>
+          <li style={{ marginBottom: "0.5rem" }}>Download large quantities of content in an automated or systematic way.</li>
+          <li style={{ marginBottom: "0.5rem" }}>Use bots, scripts, or any automated system to access or use FastVidl.</li>
+        </ul>
 
+        <h3>Commercial exploitation</h3>
+        <ul style={{ marginBottom: "1rem", paddingLeft: "2rem" }}>
+          <li style={{ marginBottom: "0.5rem" }}>Sell or license content obtained via FastVidl.</li>
+          <li style={{ marginBottom: "0.5rem" }}>Use downloaded content in marketing, advertising, or any paid campaign without permission.</li>
+          <li style={{ marginBottom: "0.5rem" }}>Include third‑party content in products or services for profit without authorization.</li>
+        </ul>
+
+        <h3>Copyright and rights violations</h3>
+        <ul style={{ marginBottom: "1rem", paddingLeft: "2rem" }}>
+          <li style={{ marginBottom: "0.5rem" }}>Download or share content that you are not legally allowed to use.</li>
+          <li style={{ marginBottom: "0.5rem" }}>Infringe copyright, trademarks, privacy, or any other rights.</li>
+          <li style={{ marginBottom: "0.5rem" }}>Violate the terms of Instagram, Facebook, Pinterest, or any other platform.</li>
+        </ul>
+
+        <h3>Abuse of the service</h3>
+        <ul style={{ marginBottom: "1rem", paddingLeft: "2rem" }}>
+          <li style={{ marginBottom: "0.5rem" }}>Attempt to bypass security or technical protections.</li>
+          <li style={{ marginBottom: "0.5rem" }}>Interfere with FastVidl's operation or performance.</li>
+          <li style={{ marginBottom: "0.5rem" }}>Upload or transmit malware, viruses, or harmful code.</li>
+          <li style={{ marginBottom: "0.5rem" }}>Impersonate any person or entity while using the service.</li>
+        </ul>
+
+        <h2>6. Copyright and intellectual property</h2>
+        <p>
+          All content you can download via FastVidl belongs to its original creators or rights holders. Downloading content:
+        </p>
+        <ul style={{ marginBottom: "1rem", paddingLeft: "2rem" }}>
+          <li style={{ marginBottom: "0.5rem" }}>Does not transfer ownership to you.</li>
+          <li style={{ marginBottom: "0.5rem" }}>Does not grant you any license beyond personal viewing, unless the content owner clearly allows it.</li>
+        </ul>
+        <p>
+          You are fully responsible for checking that your use of any content complies with applicable laws.
+        </p>
+
+        <h3>Copyright concerns / takedown</h3>
+        <p>
+          If you are a rights holder and believe FastVidl is being used to infringe your rights, please contact us at <a href="mailto:fastvidlofficial@gmail.com" className="terms-link">fastvidlofficial@gmail.com</a> with:
+        </p>
+        <ul style={{ marginBottom: "1rem", paddingLeft: "2rem" }}>
+          <li style={{ marginBottom: "0.5rem" }}>A description of the copyrighted work.</li>
+          <li style={{ marginBottom: "0.5rem" }}>The URL(s) or enough information to locate the material.</li>
+          <li style={{ marginBottom: "0.5rem" }}>Your contact details.</li>
+          <li style={{ marginBottom: "0.5rem" }}>A statement that you believe in good faith that your rights are being infringed.</li>
+          <li style={{ marginBottom: "0.5rem" }}>A statement that the information in your notice is accurate and that you are the rights holder or authorized to act on their behalf.</li>
+        </ul>
+        <p>
+          We will review and, where appropriate, remove or block access to the reported material.
+        </p>
+
+        <h2>7. Platform disclaimers</h2>
+        <p>
+          FastVidl is an independent service. It is not affiliated with, endorsed by, or connected to Instagram, Facebook, Pinterest, Meta Platforms, Inc., or any other social media platform.
+        </p>
+        <p>
+          When using FastVidl, you must also follow:
+        </p>
+        <ul style={{ marginBottom: "1rem", paddingLeft: "2rem" }}>
+          <li style={{ marginBottom: "0.5rem" }}><a href="https://help.instagram.com/581066165581870" target="_blank" rel="noopener noreferrer" className="terms-link">Instagram's Terms of Use</a></li>
+          <li style={{ marginBottom: "0.5rem" }}><a href="https://www.facebook.com/terms.php" target="_blank" rel="noopener noreferrer" className="terms-link">Facebook's Terms of Service</a></li>
+          <li style={{ marginBottom: "0.5rem" }}><a href="https://policy.pinterest.com/en/terms-of-service" target="_blank" rel="noopener noreferrer" className="terms-link">Pinterest's Terms of Service</a></li>
+        </ul>
+        <p>
+          Any action these platforms may take against your accounts (including suspension or removal) is outside our control and responsibility.
+        </p>
+
+        <h2>8. Disclaimers and limitation of liability</h2>
+        <p>
+          FastVidl is provided on an "AS IS" and "AS AVAILABLE" basis.
+        </p>
+        <p>
+          <strong>We do not guarantee:</strong>
+        </p>
+        <ul style={{ marginBottom: "1rem", paddingLeft: "2rem" }}>
+          <li style={{ marginBottom: "0.5rem" }}>That the site or service will always be available or uninterrupted.</li>
+          <li style={{ marginBottom: "0.5rem" }}>That FastVidl will be error‑free or compatible with every device or browser.</li>
+          <li style={{ marginBottom: "0.5rem" }}>That content downloaded through FastVidl will always be available in the same quality or format.</li>
+        </ul>
+        <p>
+          To the maximum extent permitted by law, FastVidl and its team are not liable for:
+        </p>
+        <ul style={{ marginBottom: "1rem", paddingLeft: "2rem" }}>
+          <li style={{ marginBottom: "0.5rem" }}>How you use downloaded content.</li>
+          <li style={{ marginBottom: "0.5rem" }}>Any copyright or legal violations committed by users.</li>
+          <li style={{ marginBottom: "0.5rem" }}>Any loss of data, damage to devices, or security issues arising from your use of the service.</li>
+          <li style={{ marginBottom: "0.5rem" }}>Any direct, indirect, incidental, special, or consequential damages.</li>
+        </ul>
+        <p>
+          If a court finds that we are liable for any claim related to your use of FastVidl, our total liability will be limited to the greater of USD 100 or the total amount you have paid us, if any (FastVidl is currently free). The following disclaimers apply to all use of FastVidl and its tools.
+        </p>
+        <p style={{ fontWeight: "600", color: "#dc3545" }}>
+          You use FastVidl entirely at your own risk.
+        </p>
+
+        <h2>9. Your responsibilities and indemnification</h2>
+        <p>
+          <strong>You agree to:</strong>
+        </p>
+        <ul style={{ marginBottom: "1rem", paddingLeft: "2rem" }}>
+          <li style={{ marginBottom: "0.5rem" }}>Use FastVidl only in accordance with these Terms and applicable laws.</li>
+          <li style={{ marginBottom: "0.5rem" }}>Obtain any necessary permissions from rights holders before re‑using content beyond personal viewing.</li>
+          <li style={{ marginBottom: "0.5rem" }}>Accept full responsibility for any content you download, share, or use.</li>
+        </ul>
+        <p>
+          You agree to indemnify and hold harmless FastVidl and its team from any claims, damages, losses, liabilities, costs, and expenses (including reasonable legal fees) arising from:
+        </p>
+        <ul style={{ marginBottom: "1rem", paddingLeft: "2rem" }}>
+          <li style={{ marginBottom: "0.5rem" }}>Your misuse of the service.</li>
+          <li style={{ marginBottom: "0.5rem" }}>Your violation of these Terms.</li>
+          <li style={{ marginBottom: "0.5rem" }}>Your infringement of any third‑party rights.</li>
+        </ul>
+
+        <h2>10. Service changes and termination</h2>
+        <p>
+          <strong>We may, at any time:</strong>
+        </p>
+        <ul style={{ marginBottom: "1rem", paddingLeft: "2rem" }}>
+          <li style={{ marginBottom: "0.5rem" }}>Modify, suspend, or discontinue any part of FastVidl.</li>
+          <li style={{ marginBottom: "0.5rem" }}>Update these Terms (with the new date shown at the top).</li>
+          <li style={{ marginBottom: "0.5rem" }}>Restrict or block access to the service for any user who violates these Terms or abuses the service.</li>
+        </ul>
+        <p>
+          You may stop using FastVidl at any time. As the service is free, there are no refunds.
+        </p>
+
+        <h2>11. Privacy</h2>
+        <p>
+          Your use of FastVidl is also governed by our Privacy Policy, which explains what information we collect (if any), how we use it, and your rights.
+        </p>
+        <p>
+          Please read our Privacy Policy at: <Link href="/PrivacyPolicy" className="terms-link">https://fastvidl.com/PrivacyPolicy</Link>
+        </p>
+
+        <h2>12. Governing law and disputes</h2>
+        <p>
+          These Terms are governed by the laws of <strong>Pakistan</strong>, without regard to conflict of law principles. If you have concerns, please contact us first at <a href="mailto:fastvidlofficial@gmail.com" className="terms-link">fastvidlofficial@gmail.com</a> so we can try to resolve the issue informally.
+        </p>
+        <p>
+          If a dispute cannot be resolved informally, it must be brought before the courts located in <strong>Rawalpindi, Pakistan</strong>, within one (1) year from when the claim arose, unless a longer period is required by law.
+        </p>
+
+        <h2>13. General provisions</h2>
+        <ul style={{ marginBottom: "1rem", paddingLeft: "2rem" }}>
+          <li style={{ marginBottom: "0.5rem" }}>
+            <strong>Entire agreement:</strong> These Terms, together with our Privacy Policy and any other notices on our site, form the entire agreement between you and FastVidl regarding your use of the service.
+          </li>
+          <li style={{ marginBottom: "0.5rem" }}>
+            <strong>Severability:</strong> If any part of these Terms is found invalid or unenforceable, the remaining parts will continue in full force and effect.
+          </li>
+          <li style={{ marginBottom: "0.5rem" }}>
+            <strong>No waiver:</strong> If we do not enforce a particular right or provision, it does not mean we waive that right.
+          </li>
+          <li style={{ marginBottom: "0.5rem" }}>
+            <strong>Assignment:</strong> You may not transfer your rights or obligations under these Terms to anyone else. We may assign our rights and obligations to another entity as part of a business transfer or similar event.
+          </li>
+        </ul>
+
+        <h2>Important reminders</h2>
+        <p>
+          By using FastVidl, you confirm that:
+        </p>
+        <ul style={{ marginBottom: "1rem", paddingLeft: "2rem" }}>
+          <li style={{ marginBottom: "0.5rem" }}>You understand the service is for personal use only.</li>
+          <li style={{ marginBottom: "0.5rem" }}>You will respect copyright and creators' rights.</li>
+          <li style={{ marginBottom: "0.5rem" }}>You are responsible for how you use any downloaded content.</li>
+          <li style={{ marginBottom: "0.5rem" }}>You accept the risks of using this service.</li>
+        </ul>
+        <p style={{ fontWeight: "600", color: "#dc3545" }}>
+          If you do not agree with these Terms, please do not use FastVidl.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+          If you have questions about these Terms, you can contact us at: <a href="mailto:fastvidlofficial@gmail.com" className="terms-link">fastvidlofficial@gmail.com</a>
+        </p>
+
+        <p style={{ marginTop: "2rem" }}>
+          For more information, please visit our{" "}
+          <Link
+            href="/Blogs"
+            rel="nofollow"
+            className="terms-link"
+            style={{
+              color: "#1877f2",
+              textDecoration: "none",
+              fontWeight: "600",
+              cursor: "pointer",
+            }}
+          >
+            Blog
+          </Link>
+          .
+        </p>
+      </section>
     </div>
   );
 };

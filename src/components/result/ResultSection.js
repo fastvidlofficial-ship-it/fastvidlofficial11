@@ -5,11 +5,15 @@ import style from "./ResultSection.module.css";
 const ResultSection = (props) => {
   const [isDownloading, setIsDownloading] = useState(false);
   const [downloadUrl, setDownloadUrl] = useState(null);
+  const [imageError, setImageError] = useState(false);
 
-  const type = props.result.type.slice(0, 60) + " ....";
+  // Extract values (now stored as direct values, not arrays)
+  const type = props.result.type 
+    ? (props.result.type.length > 60 ? props.result.type.slice(0, 60) + " ...." : props.result.type)
+    : "Video";
   const thumbnail = props.result.thumbnail;
   const urls = props.result.urls;
-  const quality = props.result.quality;
+  const quality = props.result.quality || "HD";
 
   const handleDownload = () => {
     setIsDownloading(true);
@@ -35,10 +39,25 @@ const proxyUrl = `/api/download?url=${encodeURIComponent(urls)}`;
         />
       ) : (
         <>
-          <div className={style["thumb-div"]}>
-            <img src={thumbnail} alt="thumb" />
-          </div>
-          <h3>{type}</h3>
+          {thumbnail && (
+            <div className={style["thumb-div"]}>
+              {!imageError ? (
+                <img
+                  src={thumbnail}
+                  alt="Video thumbnail"
+                  className={style["thumbnail-image"]}
+                  onError={() => setImageError(true)}
+                  onLoad={() => setImageError(false)}
+                />
+              ) : (
+                <div className={style["thumbnail-placeholder"]}>
+                  <span className={style["placeholder-icon"]}>📹</span>
+                  <span className={style["placeholder-text"]}>Thumbnail</span>
+                </div>
+              )}
+            </div>
+          )}
+          {type && <h3>{type}</h3>}
           <div className={style["download-section"]}>
             <table>
               <thead>

@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import './Blog.css';
 // import Facebook from "../../../public/assets/fb.svg";
 import instagram from "../../../public/assets/insta.svg";
+import facebook from "../../../public/assets/fb.svg";
+import pinterest from "../../../public/assets/pinterest.svg";
 // import Twitter from "../../../public/assets/twitter.svg";
 // import youtube from "../../../public/assets/yt.svg";
 import { useRouter } from 'next/navigation';
@@ -61,12 +63,23 @@ function HomePage() {
   const navigate = useRouter();
   const platforms = [
     {
-      id: 'instagram',
-      name: 'Instagram Reel Downloader',
+      id: 'instagram-reel-downloader-free',
+      name: 'Instagram Reel Downloader Free',
       icon: instagram,
       description: 'Download Instagram Reels, Stories, IGTV & Photos'
     },
-
+    {
+      id: 'free-facebook-video-downloader',
+      name: 'Free Facebook Video Downloader',
+      icon: facebook,
+      description: 'Download Facebook Videos, Reels & Public Posts'
+    },
+    {
+      id: 'pinterest-video-downloader-free',
+      name: 'Pinterest Video Downloader Free',
+      icon: pinterest,
+      description: 'Download Pinterest Videos, Images & Pins'
+    },
   ];
 
   return (
@@ -74,12 +87,6 @@ function HomePage() {
 
 
       <div className="container-blog">
-        <div className="header">
-          <h1>Blog</h1>
-          {/* <img src={instagram} /> */}
-          <p>FastVidl Your Ultimate Instagram Reel Downloader</p>
-        </div>
-
         <div id="faq-section" className="faq-container">
           <h2 className="faq-title">Frequently  Asked Questions</h2>
 
