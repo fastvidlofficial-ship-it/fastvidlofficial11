@@ -102,7 +102,7 @@ const AboutUs = () => {
               {/* Welcome Section */}
               <section className="content-section">
                 <p className="text-base sm:text-lg leading-relaxed mb-6">
-                  Welcome to <strong>fastvidl.com</strong> – We're a small team of developers and social media fans who got tired of clunky downloaders full of ads and restrictions. In 2025, we launched fastvidl.com as a straightforward, free way to save public content from Instagram, Facebook, and Pinterest for personal use—like keeping a reel that inspires you or an image for your project board. We understand how frustrating it is to lose access to inspiring posts, educational content, or memorable moments. That's why we created a simple solution that works seamlessly across all your favorite social platforms.
+                  Welcome to <strong>fastvidl.com</strong> – We're a small team of developers and social media fans who got tired of clunky downloaders full of ads and restrictions. In 2026, we launched fastvidl.com as a straightforward, free way to save public content from Instagram, Facebook, and Pinterest for personal use—like keeping a reel that inspires you or an image for your project board. We understand how frustrating it is to lose access to inspiring posts, educational content, or memorable moments. That's why we created a simple solution that works seamlessly across all your favorite social platforms.
                 </p>
               </section>
 

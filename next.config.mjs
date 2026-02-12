@@ -1,10 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
- 
-  eslint: {
-    // ⚠ Warning: This will completely skip ESLint during builds
-    ignoreDuringBuilds: true,
-  },
   async redirects() {
     return [
       {
