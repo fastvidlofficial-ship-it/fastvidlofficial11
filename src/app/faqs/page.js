@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import './FAQS.css';
+import FAQSchema from '@/components/FAQSchema';
 
 const FAQS = () => {
     // alert("test");
@@ -49,6 +50,7 @@ const FAQS = () => {
 
   return (
     <section className="faqs-section">
+      <FAQSchema faqList={faqData} />
       <div className="faqs-container">
         <h2 className="faqs-title">Frequently Asked Questions</h2>
         <p className="faqs-subtitle">Find answers to common questions about our video downloader</p>

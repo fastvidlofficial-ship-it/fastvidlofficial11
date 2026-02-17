@@ -28,15 +28,8 @@ export default function InstagramReelDownloaderService() {
               WebkitBackgroundClip: "text",
               backgroundClip: "text"
             }}>wnload</span>er 
-            <span style={{
-              color: "#20cf63",
-              fontWeight: 800,
-              fontSize: "1.4rem",
-              marginLeft: "0.4rem",
-              verticalAlign: "middle",
-              textTransform: "uppercase",
-              letterSpacing: "1px"
-            }}>Free</span>
+
+            <span style={{ color: "black" }}> Free</span>
           </h1>
           <p style={{ 
             fontSize: "1.14rem", 
@@ -48,9 +41,7 @@ export default function InstagramReelDownloaderService() {
             textTransform: "capitalize",
             textAlign: "center"
           }}>
-            Experience fast and secure downloads with our free Instagram Reel Downloader. 
-            Save Instagram Reels online in HD quality without watermark, quick and easy. 
-            The most reliable tool to download Instagram Reels instantly on any device.
+           
           </p>
         </div>
         <UserInput />

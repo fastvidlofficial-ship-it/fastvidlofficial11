@@ -83,7 +83,7 @@ const Header = (props) => {
           <li><a href="/ContactUs">Contact Us</a></li>
           {/* <li><a href="/Disclaimer">Disclaimer</a></li> */}
           <li><a href="/PrivacyPolicy">Privacy  Policy</a></li>
-          <li><a href="/Blogs">Blog</a></li>
+          {/* <li><a href="/Blogs">Blog</a></li> */}
           <li><a href="/TermsAndConditions">Terms & Conditions</a></li>
         </ul>
       </nav>

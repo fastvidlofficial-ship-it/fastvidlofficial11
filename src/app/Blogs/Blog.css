@@ -598,6 +598,23 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Table of Contents links – smooth scroll to section */
+.toc-link {
+  color: #667eea;
+  text-decoration: none;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+.toc-link:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+/* Scroll margin so section headings aren’t hidden under sticky header */
+.home-blog-article-h2[id],
+.blog-content h2[id] {
+  scroll-margin-top: 100px;
+}
+
 /* Selection Color */
 ::selection {
   background: #667eea;
@@ -689,6 +706,37 @@ html {
   color: #555;
 }
 
+/* Static FAQ list (same style as Pinterest/Facebook blog – h3 question + p answer, no expand/collapse) */
+.faq-container .faq-section .faq-item {
+  padding: 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: visible;
+}
+
+.faq-container .faq-section .faq-question {
+  display: block;
+  cursor: default;
+  padding: 18px 20px;
+  margin: 0;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.faq-container .faq-section .faq-question:hover {
+  background-color: transparent;
+}
+
+.faq-container .faq-section .faq-answer {
+  padding: 0 20px 18px 20px;
+  max-height: none;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+}
+
 @media (max-width: 768px) {
   .faq-container {
     padding: 15px;
@@ -704,7 +752,151 @@ html {
     font-size: 15px;
   }
 
+  .faq-container .faq-section .faq-question {
+    padding: 15px 18px;
+  }
+
+  .faq-container .faq-section .faq-answer {
+    padding: 0 18px 15px 18px;
+    font-size: 14px;
+  }
+
   .faq-answer p {
     font-size: 14px;
+  }
+}
+
+/* ===========================
+   Container Blog (same as home page – aligned content)
+   ========================== */
+.container-blog {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 2rem;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .container-blog {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* ===========================
+   Home Blog Article (Instagram Reel)
+   ========================== */
+.home-blog-article {
+  max-width: 900px;
+  margin: 0 auto 48px;
+  padding: 0 20px 40px;
+  color: #444;
+  font-size: 1.05em;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.home-blog-article-title {
+  font-size: 2rem;
+  color: #1a202c;
+  margin-top: 2.5rem;
+  margin-bottom: 12px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.home-blog-article-meta {
+  color: #666;
+  font-size: 0.95em;
+  margin-bottom: 28px;
+}
+
+.home-blog-article-h2 {
+  font-size: 1.5em;
+  color: #667eea;
+  margin-top: 32px;
+  margin-bottom: 14px;
+  font-weight: 600;
+  position: relative;
+  padding-left: 16px;
+}
+
+.home-blog-article-h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 70%;
+  background: #764ba2;
+  border-radius: 2px;
+}
+
+.home-blog-article-p {
+  margin-bottom: 16px;
+  line-height: 1.75;
+}
+
+.home-blog-article-link {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.home-blog-article-link:hover {
+  text-decoration: underline;
+}
+
+.home-blog-article-table-wrap {
+  overflow-x: auto;
+  margin: 20px 0;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.home-blog-article-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+}
+
+.home-blog-article-table th,
+.home-blog-article-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.home-blog-article-table th {
+  background: #f0f4ff;
+  color: #667eea;
+  font-weight: 600;
+}
+
+.home-blog-article-table tr:last-child td {
+  border-bottom: none;
+}
+
+.home-blog-article-faq .home-blog-article-p {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .home-blog-article-title {
+    font-size: 1.5rem;
+  }
+
+  .home-blog-article-h2 {
+    font-size: 1.25em;
+  }
+
+  .home-blog-article-table th,
+  .home-blog-article-table td {
+    padding: 10px 12px;
+    font-size: 0.9em;
   }
 }

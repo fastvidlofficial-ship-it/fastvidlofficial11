@@ -1,7 +1,7 @@
 'use client'
 import styles from "../../page.module.css";
 import UserInput from "@/components/input/UserInput";
-import Blog from "../../Blogs/page";
+import PinterestBlogContent from "../../Blogs/pinterest-video-downloader-free/PinterestBlogContent";
 
 export default function PinterestReelDownloaderService() {
   return (
@@ -30,23 +30,10 @@ export default function PinterestReelDownloaderService() {
             }}>wnload</span>er
             <span style={{ color: "black" }}> Free</span>
           </h1>
-          <p style={{
-            fontSize: "1.14rem",
-            color: "var(--p-font-color)",
-            maxWidth: "60%",
-            margin: "1rem auto",
-            lineHeight: "35px",
-            fontWeight: "600",
-            textTransform: "capitalize",
-            textAlign: "center"
-          }}>
-            Experience Fast And Secure Downloads With Our Free Pinterest Video Downloader.
-            Save Pinterest Videos Online In HD Quality Without Watermark, Quick And Easy. The
-            Most Reliable Tool To Download Pinterest Videos Instantly On Any Device.
-          </p>
+        
         </div>
         <UserInput />
-        <Blog />
+        <PinterestBlogContent />
       </main>
     </div>
   );

@@ -1,7 +1,7 @@
 'use client'
 import styles from "../../page.module.css";
 import UserInput from "@/components/input/UserInput";
-import Blog from "../../Blogs/page";
+import FacebookBlogContent from "../../Blogs/free-facebook-video-downloader/FacebookBlogContent";
 
 export default function FacebookReelDownloaderService() {
   return (
@@ -40,13 +40,11 @@ export default function FacebookReelDownloaderService() {
             textTransform: "capitalize",
             textAlign: "center"
           }}>
-           Experience Fast And Secure Downloads With Our Free Facebook Video Downloader.
-Save Facebook Videos Online In HD Quality Without Watermark, Quick And Easy. The
-Most Reliable Tool To Download Facebook Videos Instantly On Any Device.
+           
           </p>
         </div>
         <UserInput />
-        <Blog />
+        <FacebookBlogContent />
       </main>
     </div>
   );

@@ -12,10 +12,7 @@ const IndexMessage = () => {
           Do<span className={style["head-three"]}>wnload</span>er 
           <span className={style["head-four"]}> Free</span>
         </h1>
-      <p>
-        Experience fast and secure downloads with our Free Instagram Reel Downloader.
-        Save Instagram Reels online in HD quality without watermark, quick and easy.
-        The most reliable tool to download Instagram Reels instantly on any device.      </p>
+      
 
 
     </div>
