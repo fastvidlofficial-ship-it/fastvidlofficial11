@@ -1,0 +1,110 @@
+.cookie-page {
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cookie-main {
+  padding: 2rem 0;
+  background: #f0f2f5;
+  min-height: 50vh;
+}
+
+.cookie-section {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .cookie-main {
+    padding: 1rem 0;
+  }
+}
+
+.cookie-section .cardsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  perspective: 1000px;
+}
+
+.cookie-section .card3d {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.75rem 2rem;
+  box-sizing: border-box;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.07),
+    0 10px 24px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(0, 0, 0, 0.06);
+  transform-style: preserve-3d;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.cookie-section .card3d:hover {
+  transform: translateY(-4px) translateZ(8px);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.1),
+    0 24px 48px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+
+.cookie-section .card3d h2:first-child {
+  margin-top: 0;
+}
+
+.cookie-section .card3d h3 {
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  color: #495057;
+}
+
+.cookie-text {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: #444;
+  margin-bottom: 1.25rem;
+}
+
+.cookie-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.cookie-section table th,
+.cookie-section table td {
+  padding: 0.75rem;
+  border: 1px solid #dee2e6;
+  text-align: left;
+}
+
+.cookie-section table th {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.cookie-section ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.cookie-section ul li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.cookie-section a {
+  color: #1877f2;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.cookie-section a:hover {
+  text-decoration: underline;
+}

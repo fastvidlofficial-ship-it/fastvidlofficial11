@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const TermsAndConditions = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.termsPage}>
       <div className="disclaimer-header">
         <div className="header-content">
           <div className="header-icon">
@@ -19,7 +19,12 @@ const TermsAndConditions = () => {
         </div>
       </div>
 
-      <section className={styles.section}>
+      <div className={styles.termsMain}>
+        <div className="global-container">
+          <section className={styles.section}>
+          <div className="global-container__content">
+            <div className={styles.cardsGrid}>
+              <div className={styles.card3d}>
         <p style={{ fontStyle: "italic", color: "#666", marginBottom: "2rem" }}>
           Last updated: 21 January 2026
         </p>
@@ -30,7 +35,9 @@ const TermsAndConditions = () => {
         <p>
           By accessing or using fastvidl.com ("FastVidl", "we", "us", "our"), you agree to be bound by these Terms and Conditions. If you do not agree, please do not use our service.
         </p>
+              </div>
 
+              <div className={styles.card3d}>
         <h2>Quick summary (not a substitute for the full terms)</h2>
         <ul style={{ marginBottom: "1.5rem", paddingLeft: "2rem" }}>
           <li style={{ marginBottom: "0.5rem" }}>FastVidl is a free tool for downloading public content from Instagram, Facebook, and Pinterest for personal use.</li>
@@ -39,12 +46,16 @@ const TermsAndConditions = () => {
           <li style={{ marginBottom: "0.5rem" }}>We are not responsible for how you use any downloaded content.</li>
           <li style={{ marginBottom: "0.5rem" }}>You use FastVidl entirely at your own risk.</li>
         </ul>
+              </div>
 
+              <div className={styles.card3d}>
         <h2>1. Acceptance of terms</h2>
         <p>
           By visiting fastvidl.com or using any of our download features, you confirm that you have read, understood, and agree to these Terms and any updates we may publish. Continued use of the site after changes are posted means you accept the updated Terms.
         </p>
+              </div>
 
+              <div className={styles.card3d}>
         <h2>2. Who can use FastVidl</h2>
         <p>
           You may use FastVidl only if:
@@ -57,7 +68,9 @@ const TermsAndConditions = () => {
         <p>
           If you do not meet these requirements, you must not use our service.
         </p>
+              </div>
 
+              <div className={styles.card3d}>
         <h2>3. What FastVidl does</h2>
         <p>
           <strong>FastVidl provides:</strong>
@@ -81,7 +94,9 @@ const TermsAndConditions = () => {
           <li style={{ marginBottom: "0.5rem" }}>Grant you any license or ownership over downloaded content.</li>
           <li style={{ marginBottom: "0.5rem" }}>Guarantee that the service will always be available, error‑free, or unchanged.</li>
         </ul>
+              </div>
 
+              <div className={styles.card3d}>
         <h2>4. Acceptable use – personal use only</h2>
         <p>
           <strong>You may:</strong>
@@ -101,7 +116,9 @@ const TermsAndConditions = () => {
           <li style={{ marginBottom: "0.5rem" }}>Claim that someone else's content is your own.</li>
           <li style={{ marginBottom: "0.5rem" }}>Use downloaded content in ways that violate copyright or other rights.</li>
         </ul>
+              </div>
 
+              <div className={styles.card3d}>
         <h2>5. Strictly prohibited activities</h2>
         <p>
           You must not:
@@ -134,7 +151,9 @@ const TermsAndConditions = () => {
           <li style={{ marginBottom: "0.5rem" }}>Upload or transmit malware, viruses, or harmful code.</li>
           <li style={{ marginBottom: "0.5rem" }}>Impersonate any person or entity while using the service.</li>
         </ul>
+              </div>
 
+              <div className={styles.card3d}>
         <h2>6. Copyright and intellectual property</h2>
         <p>
           All content you can download via FastVidl belongs to its original creators or rights holders. Downloading content:
@@ -161,7 +180,9 @@ const TermsAndConditions = () => {
         <p>
           We will review and, where appropriate, remove or block access to the reported material.
         </p>
+              </div>
 
+              <div className={styles.card3d}>
         <h2>7. Platform disclaimers</h2>
         <p>
           FastVidl is an independent service. It is not affiliated with, endorsed by, or connected to Instagram, Facebook, Pinterest, Meta Platforms, Inc., or any other social media platform.
@@ -177,36 +198,10 @@ const TermsAndConditions = () => {
         <p>
           Any action these platforms may take against your accounts (including suspension or removal) is outside our control and responsibility.
         </p>
+              </div>
 
-        <h2>8. Disclaimers and limitation of liability</h2>
-        <p>
-          FastVidl is provided on an "AS IS" and "AS AVAILABLE" basis.
-        </p>
-        <p>
-          <strong>We do not guarantee:</strong>
-        </p>
-        <ul style={{ marginBottom: "1rem", paddingLeft: "2rem" }}>
-          <li style={{ marginBottom: "0.5rem" }}>That the site or service will always be available or uninterrupted.</li>
-          <li style={{ marginBottom: "0.5rem" }}>That FastVidl will be error‑free or compatible with every device or browser.</li>
-          <li style={{ marginBottom: "0.5rem" }}>That content downloaded through FastVidl will always be available in the same quality or format.</li>
-        </ul>
-        <p>
-          To the maximum extent permitted by law, FastVidl and its team are not liable for:
-        </p>
-        <ul style={{ marginBottom: "1rem", paddingLeft: "2rem" }}>
-          <li style={{ marginBottom: "0.5rem" }}>How you use downloaded content.</li>
-          <li style={{ marginBottom: "0.5rem" }}>Any copyright or legal violations committed by users.</li>
-          <li style={{ marginBottom: "0.5rem" }}>Any loss of data, damage to devices, or security issues arising from your use of the service.</li>
-          <li style={{ marginBottom: "0.5rem" }}>Any direct, indirect, incidental, special, or consequential damages.</li>
-        </ul>
-        <p>
-          If a court finds that we are liable for any claim related to your use of FastVidl, our total liability will be limited to the greater of USD 100 or the total amount you have paid us, if any (FastVidl is currently free). The following disclaimers apply to all use of FastVidl and its tools.
-        </p>
-        <p style={{ fontWeight: "600", color: "#dc3545" }}>
-          You use FastVidl entirely at your own risk.
-        </p>
-
-        <h2>9. Your responsibilities and indemnification</h2>
+              <div className={styles.card3d}>
+        <h2>8. Your responsibilities and indemnification</h2>
         <p>
           <strong>You agree to:</strong>
         </p>
@@ -223,8 +218,10 @@ const TermsAndConditions = () => {
           <li style={{ marginBottom: "0.5rem" }}>Your violation of these Terms.</li>
           <li style={{ marginBottom: "0.5rem" }}>Your infringement of any third‑party rights.</li>
         </ul>
+              </div>
 
-        <h2>10. Service changes and termination</h2>
+              <div className={styles.card3d}>
+        <h2>9. Service changes and termination</h2>
         <p>
           <strong>We may, at any time:</strong>
         </p>
@@ -236,24 +233,30 @@ const TermsAndConditions = () => {
         <p>
           You may stop using FastVidl at any time. As the service is free, there are no refunds.
         </p>
+              </div>
 
-        <h2>11. Privacy</h2>
+              <div className={styles.card3d}>
+        <h2>10. Privacy</h2>
         <p>
           Your use of FastVidl is also governed by our Privacy Policy, which explains what information we collect (if any), how we use it, and your rights.
         </p>
         <p>
           Please read our Privacy Policy at: <Link href="/PrivacyPolicy" className="terms-link">https://fastvidl.com/PrivacyPolicy</Link>
         </p>
+              </div>
 
-        <h2>12. Governing law and disputes</h2>
+              <div className={styles.card3d}>
+        <h2>11. Governing law and disputes</h2>
         <p>
           These Terms are governed by the laws of <strong>Pakistan</strong>, without regard to conflict of law principles. If you have concerns, please contact us first at <a href="mailto:fastvidlofficial@gmail.com" className="terms-link">fastvidlofficial@gmail.com</a> so we can try to resolve the issue informally.
         </p>
         <p>
           If a dispute cannot be resolved informally, it must be brought before the courts located in <strong>Rawalpindi, Pakistan</strong>, within one (1) year from when the claim arose, unless a longer period is required by law.
         </p>
+              </div>
 
-        <h2>13. General provisions</h2>
+              <div className={styles.card3d}>
+        <h2>12. General provisions</h2>
         <ul style={{ marginBottom: "1rem", paddingLeft: "2rem" }}>
           <li style={{ marginBottom: "0.5rem" }}>
             <strong>Entire agreement:</strong> These Terms, together with our Privacy Policy and any other notices on our site, form the entire agreement between you and FastVidl regarding your use of the service.
@@ -268,7 +271,9 @@ const TermsAndConditions = () => {
             <strong>Assignment:</strong> You may not transfer your rights or obligations under these Terms to anyone else. We may assign our rights and obligations to another entity as part of a business transfer or similar event.
           </li>
         </ul>
+              </div>
 
+              <div className={styles.card3d}>
         <h2>Important reminders</h2>
         <p>
           By using FastVidl, you confirm that:
@@ -282,7 +287,9 @@ const TermsAndConditions = () => {
         <p style={{ fontWeight: "600", color: "#dc3545" }}>
           If you do not agree with these Terms, please do not use FastVidl.
         </p>
+              </div>
 
+              <div className={styles.card3d}>
         <h2>Contact</h2>
         <p>
           If you have questions about these Terms, you can contact us at: <a href="mailto:fastvidlofficial@gmail.com" className="terms-link">fastvidlofficial@gmail.com</a>
@@ -305,7 +312,12 @@ const TermsAndConditions = () => {
           </Link>
           .
         </p>
-      </section>
+              </div>
+            </div>
+          </div>
+          </section>
+        </div>
+      </div>
     </div>
   );
 };

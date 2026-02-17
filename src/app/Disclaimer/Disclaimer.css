@@ -72,8 +72,83 @@
 
 /* Main Content */
 .disclaimer-main {
-  /* padding: 4rem 0; */
   display: none;
+}
+
+/* Disclaimer page legal layout – same as Privacy/Terms/Cookie (grey + 3D cards) */
+.disclaimer-main-legal {
+  display: block !important;
+  padding: 2rem 0;
+  background: #f0f2f5;
+  min-height: 50vh;
+}
+
+.disclaimer-legal-content {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.disclaimer-legal-content .cardsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  perspective: 1000px;
+}
+
+.disclaimer-legal-content .card3d {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.75rem 2rem;
+  box-sizing: border-box;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.07),
+    0 10px 24px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(0, 0, 0, 0.06);
+  transform-style: preserve-3d;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.disclaimer-legal-content .card3d:hover {
+  transform: translateY(-4px) translateZ(8px);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.1),
+    0 24px 48px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+
+.disclaimer-legal-content .card3d h2:first-child {
+  margin-top: 0;
+}
+
+.disclaimer-list-simple {
+  list-style: disc;
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.disclaimer-list-simple li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.disclaimer-legal-content .card3d a,
+.disclaimer-legal-content .terms-link {
+  color: #1877f2;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.disclaimer-legal-content .card3d a:hover,
+.disclaimer-legal-content .terms-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .disclaimer-main-legal {
+    padding: 1rem 0;
+  }
 }
 
 .container {

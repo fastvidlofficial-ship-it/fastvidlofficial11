@@ -23,7 +23,8 @@ const Contact = () => {
     firstName: '',
     lastName: '',
     email: '',
-    phone: ''
+    phone: '',
+    message: ''
   });
 
   const handleInputChange = (e) => {
@@ -154,6 +155,19 @@ const Contact = () => {
                   onChange={handleInputChange}
                   className="form-input"
                   placeholder="Enter your phone number"
+                />
+              </div>
+
+              <div className="form-group">
+                <label className="form-label">Message *</label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  className="form-input form-textarea"
+                  placeholder="How can we help you?"
+                  rows={5}
+                  required
                 />
               </div>
 

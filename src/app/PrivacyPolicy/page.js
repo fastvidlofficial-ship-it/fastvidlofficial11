@@ -1,5 +1,6 @@
 "use client"
 import React from "react";
+import "./PrivacyPolicy.css";
 import "../Disclaimer/Disclaimer.css";
 import Link from "next/link";
 
@@ -19,9 +20,11 @@ const PrivacyPolicy = () => {
       </div>
 
       <div className="privacy-main">
-        <div className="container">
+        <div className="global-container">
           <div className="privacy-section">
-            <div className="section-content">
+            <div className="section-content global-container__content">
+              <div className="cardsGrid">
+                <div className="card3d">
               <p className="privacy-text" style={{ fontStyle: "italic", color: "#666", marginBottom: "2rem" }}>
                 Last updated: 21 January 2026
               </p>
@@ -29,12 +32,16 @@ const PrivacyPolicy = () => {
               <p className="privacy-text">
                 Welcome to fastvidl.com ("we," "our," or "us"). Your privacy matters to us. This Privacy Policy explains in clear, straightforward language how we handle information when you use our content downloader service for Instagram, Facebook, and Pinterest at fastvidl.com (the "Website" or "Service").
               </p>
+                </div>
 
+                <div className="card3d">
               <h2>Our Commitment to You</h2>
               <p className="privacy-text">
                 We believe in transparency. This policy tells you exactly what information we collect, why we collect it, and what choices you have. We've written this in plain English because privacy policies shouldn't require a law degree to understand.
               </p>
+                </div>
 
+                <div className="card3d">
               <h2>What Information We Collect</h2>
               
               <h3>Information You Provide to Us</h3>
@@ -56,7 +63,9 @@ const PrivacyPolicy = () => {
                 <li><strong>Location Data:</strong> Your approximate geographic location (country or region level only, based on IP address)</li>
                 <li><strong>Cookies:</strong> Small text files stored on your device to improve functionality and user experience</li>
               </ul>
+                </div>
 
+                <div className="card3d">
               <h2>What We DO NOT Collect</h2>
               <p className="privacy-text">
                 We want to be crystal clear about what we don't do:
@@ -71,7 +80,9 @@ const PrivacyPolicy = () => {
                 <li>We do NOT collect payment information (our service is free)</li>
                 <li>We do NOT monitor what content you download</li>
               </ul>
+                </div>
 
+                <div className="card3d">
               <h2>How We Use Your Information</h2>
               <p className="privacy-text">
                 We use collected information only for legitimate purposes:
@@ -84,7 +95,9 @@ const PrivacyPolicy = () => {
                 <li><strong>Analytics:</strong> Understanding visitor behavior to improve user experience</li>
                 <li><strong>Advertising:</strong> Displaying relevant ads through third-party advertising networks (explained in detail below)</li>
               </ul>
+                </div>
 
+                <div className="card3d">
               <h2>Cookies and Tracking Technologies</h2>
               <p className="privacy-text">
                 We use cookies to make our Website work properly and provide you with a better experience.
@@ -118,7 +131,9 @@ const PrivacyPolicy = () => {
               <p className="privacy-text">
                 We display advertisements to keep our service free. Learn more in the advertising section below.
               </p>
+                </div>
 
+                <div className="card3d">
               <h2>Third-Party Advertising - Google AdSense</h2>
               
               <h3>How Advertising Works on Our Site</h3>
@@ -185,7 +200,9 @@ const PrivacyPolicy = () => {
                 <li><a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className="terms-link">How Google Uses Information</a></li>
                 <li><a href="https://support.google.com/adsense/answer/48182" target="_blank" rel="noopener noreferrer" className="terms-link">Google Advertising Overview</a></li>
               </ul>
+                </div>
 
+                <div className="card3d">
               <h2>Data Retention - How Long We Keep Information</h2>
               <p className="privacy-text">
                 We believe in keeping data only as long as necessary:
@@ -228,7 +245,9 @@ const PrivacyPolicy = () => {
                   </tbody>
                 </table>
               </div>
+                </div>
 
+                <div className="card3d">
               <h2>Data Sharing and Disclosure</h2>
               <p className="privacy-text">
                 We aim to follow major privacy principles (such as GDPR and CCPA) where applicable, and will update this policy as laws evolve.
@@ -257,7 +276,9 @@ const PrivacyPolicy = () => {
                 <li>Protection of our rights, property, or safety</li>
                 <li>Protection of our users' rights and safety</li>
               </ul>
+                </div>
 
+                <div className="card3d">
               <h2>International Data Transfers</h2>
               <p className="privacy-text">
                 FastVidl operates globally and serves users worldwide. Your information may be transferred to and processed in countries other than your country of residence, including:
@@ -275,7 +296,9 @@ const PrivacyPolicy = () => {
                 <li>Adequate protection measures as required by law</li>
                 <li>Compliance with GDPR, CCPA, and other privacy regulations</li>
               </ul>
+                </div>
 
+                <div className="card3d">
               <h2>Your Privacy Rights</h2>
               <p className="privacy-text">
                 Your rights depend on where you live, but we respect privacy rights for all users.
@@ -315,7 +338,9 @@ const PrivacyPolicy = () => {
                 <li><strong>Contact Form:</strong> <Link href="/ContactUs" className="terms-link">https://fastvidl.com/ContactUs</Link></li>
                 <li><strong>Response Time:</strong> We typically respond within 24-48 hours (maximum 30 days for formal requests)</li>
               </ul>
+                </div>
 
+                <div className="card3d">
               <h2>Children's Privacy</h2>
               <p className="privacy-text">
                 FastVidl is not intended for children.
@@ -325,7 +350,9 @@ const PrivacyPolicy = () => {
                 <li><strong>No Knowing Collection:</strong> We do not knowingly collect information from children</li>
                 <li><strong>Parental Action:</strong> If you believe a child has provided us information, contact us immediately and we will delete it</li>
               </ul>
+                </div>
 
+                <div className="card3d">
               <h2>Data Security Measures</h2>
               <p className="privacy-text">
                 We take security seriously and implement multiple layers of protection:
@@ -341,7 +368,9 @@ const PrivacyPolicy = () => {
               <p className="privacy-text">
                 <strong>Important Disclaimer:</strong> No internet transmission method is 100% secure. While we strive to protect your information using industry-standard measures, we cannot guarantee absolute security.
               </p>
+                </div>
 
+                <div className="card3d">
               <h2>Do Not Track (DNT) Signals</h2>
               <p className="privacy-text">
                 Some web browsers have a "Do Not Track" feature that signals websites you don't want to be tracked.
@@ -352,7 +381,9 @@ const PrivacyPolicy = () => {
               <p className="privacy-text">
                 <strong>Your Alternative Options:</strong> Use the opt-out tools mentioned in the advertising section above to control tracking.
               </p>
+                </div>
 
+                <div className="card3d">
               <h2>Third-Party Links and Services</h2>
               <p className="privacy-text">
                 <strong>External Links:</strong> Our Website may contain links to Instagram, Facebook, Pinterest, and other third-party websites.
@@ -366,7 +397,9 @@ const PrivacyPolicy = () => {
               <p className="privacy-text">
                 <strong>Important Note:</strong> FastVidl is an independent service and is not affiliated with, endorsed by, or officially connected to Instagram, Facebook, Pinterest, or Meta Platforms, Inc.
               </p>
+                </div>
 
+                <div className="card3d">
               <h2>Changes to This Privacy Policy</h2>
               <p className="privacy-text">
                 We may update this Privacy Policy to reflect:
@@ -388,7 +421,9 @@ const PrivacyPolicy = () => {
               <p className="privacy-text">
                 <strong>Recommendation:</strong> Review this Privacy Policy periodically to stay informed.
               </p>
+                </div>
 
+                <div className="card3d">
               <h2>Cookie Management Guide</h2>
               
               <h3>Quick Reference Table</h3>
@@ -435,12 +470,16 @@ const PrivacyPolicy = () => {
               <p className="privacy-text">
                 <strong>Note:</strong> Blocking all cookies may affect website functionality and your user experience.
               </p>
+                </div>
 
+                <div className="card3d">
               <h2>Compliance and Legal Framework</h2>
               <p className="privacy-text">
                 FastVidl aims to follow major privacy laws such as GDPR, CCPA/CPRA, COPPA, and the ePrivacy Directive, and will update this policy and our practices as requirements evolve.
               </p>
+                </div>
 
+                <div className="card3d">
               <h2>Contact Us</h2>
               <p className="privacy-text">
                 We're here to help with any privacy questions or concerns.
@@ -458,7 +497,9 @@ const PrivacyPolicy = () => {
                 <li>What information you're requesting</li>
                 <li>Any relevant details to help us process your request</li>
               </ul>
+                </div>
 
+                <div className="card3d">
               <h2>Additional Resources</h2>
               <p className="privacy-text">
                 <strong>Our Other Policy:</strong>
@@ -496,6 +537,8 @@ const PrivacyPolicy = () => {
                 </Link>
                 .
               </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

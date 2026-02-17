@@ -37,8 +37,8 @@ export default function FacebookVideoDownloaderPage() {
   return (
     <>
       <SEO
-        title="Free Facebook Video Downloader – Save FB Videos Online in HD"
-        description="Use our free Facebook video downloader to save public FB videos online in HD. No app, no login—just paste the link and download to your phone or PC."
+        title="Free Facebook Video Downloader 2026: Download FB Videos in HD Without Watermark | FastVidl"
+        description="Download Facebook videos for free with FastVidl – no watermark, no login, no app needed. Save FB videos in HD 1080p on iPhone, Android & desktop in 5-10 seconds. 100% secure browser-based tool for public videos only."
         keywords="free facebook video downloader, download facebook videos, save fb videos, facebook video downloader online, download facebook reels, facebook video saver"
       />
 

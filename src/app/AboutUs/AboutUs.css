@@ -13,14 +13,60 @@
   
 }
 
-.container {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 20PX;
-  /* padding: 0 20px; */
+.about-content {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Hero Section */
+/* Main content area – same as Privacy & Terms (grey bg) */
+.about-main {
+  padding: 2rem 0;
+  background: #f0f2f5;
+  min-height: 50vh;
+}
+
+@media (max-width: 768px) {
+  .about-main {
+    padding: 1rem 0;
+  }
+}
+
+/* 3D cards – same as Privacy & Terms */
+.about-main .cardsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  perspective: 1000px;
+}
+
+.about-main .card3d {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.75rem 2rem;
+  box-sizing: border-box;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.07),
+    0 10px 24px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(0, 0, 0, 0.06);
+  transform-style: preserve-3d;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.about-main .card3d:hover {
+  transform: translateY(-4px) translateZ(8px);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.1),
+    0 24px 48px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+
+.about-main .card3d h2:first-child {
+  margin-top: 0;
+}
+
+/* Hero Section (kept for reference; banner now uses Disclaimer.css) */
 .hero-section {
   /* position: relative; */
   /* min-height: 100vh; */
@@ -481,10 +527,6 @@
 }
 
 @media (max-width: 768px) {
-  .container {
-    padding: 0 15px;
-  }
-  
   .hero-title {
     font-size: 2.5rem;
   }

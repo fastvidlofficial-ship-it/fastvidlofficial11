@@ -1,25 +1,26 @@
 "use client"
 import "./AboutUs.css";
+import "../Disclaimer/Disclaimer.css";
 import Link from "next/link";
 import Image from "next/image";
 
 const AboutUs = () => {
   const drivesUs = [
     {
-      title: "Privacy above all",
-      description: "No logins, no tracking—just paste a link and download. We don't store your data or files."
+      title: "Privacy first",
+      description: "No tracking, no data storage—HTTPS secure."
     },
     {
-      title: "Respect for creators",
-      description: "Only public content, personal use only. Check our Privacy Policy and Terms for details."
+      title: "Creator respect",
+      description: "Public content for personal use only. We follow platform APIs and DMCA guidelines. Check Privacy Policy and Terms."
     },
     {
-      title: "Reliability first",
-      description: "We update regularly to match platform changes, testing on real devices from Android phones to desktops."
+      title: "Reliability",
+      description: "Frequent updates to beat platform changes; tested on Android, iPhone, desktops."
     },
     {
-      title: "Your input matters",
-      description: "Feedback from users like you shapes fixes and features. Email us at fastvidlofficial@gmail.com"
+      title: "Your input",
+      description: "Feedback shapes us. Email fastvidlofficial@gmail.com"
     }
   ];
 
@@ -77,45 +78,38 @@ const AboutUs = () => {
 
   return (
     <div className="about-page">
-      {/* Hero Section */}
-      <div className="hero-section">
-        <div className="hero-overlay"></div>
-        <div className="hero-content">
-          <div className="hero-icon">
-            <span className="download-icon">⬇️</span>
+      {/* Banner – same as Privacy & Terms */}
+      <div className="disclaimer-header">
+        <div className="header-content">
+          <div className="header-icon">
+            <span className="legal-icon">⚖️</span>
           </div>
-          <h1 className="hero-title">
-            About <span className="hero-highlight">FastVidl</span>
-          </h1>
-          <p className="hero-subtitle">
+          <h1 className="page-title">About Us</h1>
+          <p className="page-subtitle">
             Fast. Free. Secure. Download Instagram, Facebook, and Pinterest content instantly.
           </p>
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="features-section">
-        <div className="container">
-          <div className="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-            <div className="prose prose-lg max-w-none">
-              
-              {/* Welcome Section */}
-              <section className="content-section">
+      {/* Main Content – grey area + 3D cards */}
+      <div className="about-main">
+        <div className="global-container">
+          <div className="about-content global-container__content">
+            <div className="cardsGrid">
+              <div className="card3d">
                 <p className="text-base sm:text-lg leading-relaxed mb-6">
                   Welcome to <strong>fastvidl.com</strong> – We're a small team of developers and social media fans who got tired of clunky downloaders full of ads and restrictions. In 2026, we launched fastvidl.com as a straightforward, free way to save public content from Instagram, Facebook, and Pinterest for personal use—like keeping a reel that inspires you or an image for your project board. We understand how frustrating it is to lose access to inspiring posts, educational content, or memorable moments. That's why we created a simple solution that works seamlessly across all your favorite social platforms.
                 </p>
-              </section>
+              </div>
 
-              {/* Our Story */}
-              <section className="content-section">
+              <div className="card3d">
                 <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">Our Story</h2>
                 <p className="text-base sm:text-lg leading-relaxed mb-6">
                   It started when one of us needed to archive family videos from Facebook but hated the hassle. We built something simple that works on any device, no apps needed. Today, thousands use it daily because we keep it fast, private, and always free. We're based in <strong>Rawalpindi, Pakistan</strong>, but our users span the globe.
                 </p>
-              </section>
+              </div>
 
-              {/* What Drives Us */}
-              <section className="content-section">
+              <div className="card3d">
                 <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">What Drives Us</h2>
                 <ul className="drives-list">
                   {drivesUs.map((item, index) => (
@@ -125,24 +119,19 @@ const AboutUs = () => {
                     </li>
                   ))}
                 </ul>
-              </section>
+              </div>
 
-              {/* Always Free */}
-              <section className="content-section">
-                <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">Always Free</h2>
+              <div className="card3d">
+                <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">Always Free, No Limits</h2>
                 <p className="text-base sm:text-lg leading-relaxed mb-6">
-                  Quality tools shouldn't cost money. FastVidl has been, and will remain, completely free for everyone, everywhere.
+                  100% free forever—no tiers, no caps, no watermarks. Preserve original quality.
                 </p>
-              </section>
+              </div>
 
-              {/* What Makes FastVidl Special */}
-              <section className="content-section">
+              <div className="card3d">
                 <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">What Makes FastVidl Special?</h2>
                 <p className="text-base sm:text-lg leading-relaxed mb-4">
-                  FastVidl supports public Instagram, Facebook, and Pinterest content, preserving original quality (up to 4K) with no watermarks.
-                </p>
-                <p className="text-base sm:text-lg leading-relaxed mb-4">
-                  <strong>FastVidl supports:</strong>
+                  One tool for three platforms for downloads:
                 </p>
                 <ul className="platforms-list mb-4">
                   <li>
@@ -155,21 +144,16 @@ const AboutUs = () => {
                     <strong>Pinterest:</strong> {supportedPlatforms.pinterest.join(", ")}
                   </li>
                 </ul>
-                <p className="text-base sm:text-lg leading-relaxed mb-6">
-                  One tool, three platforms, unlimited possibilities.
-                </p>
-              </section>
+              </div>
 
-              {/* Why Trust FastVidl */}
-              <section className="content-section">
+              <div className="card3d">
                 <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">Why Trust FastVidl?</h2>
                 <p className="text-base sm:text-lg leading-relaxed mb-6">
                   We've handled thousands of downloads without a hitch, preserving original quality (up to 4K) across reels, stories, photos, and pins. No watermarks, no upsells—just the content you want, securely fetched straight from the source.
                 </p>
-              </section>
+              </div>
 
-              {/* The Team */}
-              <section className="content-section">
+              <div className="card3d">
                 <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">The Team</h2>
                 <ul className="team-list">
                   {teamMembers.map((member, index) => (
@@ -218,10 +202,9 @@ const AboutUs = () => {
                     </a>
                   </div>
                 </div>
-              </section>
+              </div>
 
-              {/* Frequently Asked Questions */}
-              <section className="content-section">
+              <div className="card3d">
                 <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">Frequently Asked Questions</h2>
                 <div className="faqs-container">
                   {faqs.map((faq, index) => (
@@ -231,10 +214,9 @@ const AboutUs = () => {
                     </div>
                   ))}
                 </div>
-              </section>
+              </div>
 
-              {/* Contact Us */}
-              <section className="content-section">
+              <div className="card3d">
                 <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">Contact Us</h2>
                 <p className="text-base sm:text-lg leading-relaxed mb-4">
                   We're here to help and love hearing from our users!
@@ -269,18 +251,16 @@ const AboutUs = () => {
                     <strong>Response Time:</strong> We typically respond within 24-48 hours
                   </li>
                 </ul>
-              </section>
+              </div>
 
-              {/* Follow Us */}
-              <section className="content-section">
+              <div className="card3d">
                 <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">Follow Us</h2>
                 <p className="text-base sm:text-lg leading-relaxed mb-6">
                   Stay updated with the latest features, tips, and announcements.
                 </p>
-              </section>
+              </div>
 
-              {/* Thank You */}
-              <section className="content-section">
+              <div className="card3d">
                 <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">Thank You</h2>
                 <p className="text-base sm:text-lg leading-relaxed mb-6">
                   Thank you for choosing FastVidl as your trusted content downloader. We're honored to serve thousands of users worldwide and remain committed to providing the best, fastest, and most secure downloading experience.
@@ -291,26 +271,24 @@ const AboutUs = () => {
                 <p className="text-base sm:text-lg leading-relaxed mb-6 font-semibold">
                   Fast. Free. Secure.
                 </p>
-              </section>
-
-              {/* Contact Link */}
-              <p style={{ color: "#333", fontSize: "15px", marginTop: "2rem" }}>
-                For any info, feel free to{" "}
-                <Link
-                  href="/ContactUs"
-                  rel="nofollow"
-                  className="terms-link"
-                  style={{
-                    color: "#1877f2",
-                    textDecoration: "none",
-                    fontWeight: "600",
-                    cursor: "pointer",
-                  }}
-                >
-                  Contact Us
-                </Link>
-                .
-              </p>
+                <p style={{ color: "#333", fontSize: "15px", marginTop: "2rem" }}>
+                  For any info, feel free to{" "}
+                  <Link
+                    href="/ContactUs"
+                    rel="nofollow"
+                    className="terms-link"
+                    style={{
+                      color: "#1877f2",
+                      textDecoration: "none",
+                      fontWeight: "600",
+                      cursor: "pointer",
+                    }}
+                  >
+                    Contact Us
+                  </Link>
+                  .
+                </p>
+              </div>
             </div>
           </div>
         </div>
