@@ -253,12 +253,7 @@ const AboutUs = () => {
                 </ul>
               </div>
 
-              <div className="card3d">
-                <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">Follow Us</h2>
-                <p className="text-base sm:text-lg leading-relaxed mb-6">
-                  Stay updated with the latest features, tips, and announcements.
-                </p>
-              </div>
+             
 
               <div className="card3d">
                 <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">Thank You</h2>
