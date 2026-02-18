@@ -2,94 +2,98 @@ export default function sitemap() {
   const baseUrl = 'https://fastvidl.com';
 
   return [
-    // PRIMARY: Home Page (Highest Priority for AI Crawlers)
+    // Home
     {
       url: baseUrl,
-      lastModified: '2026-02-12T12:00:00+05:00',
+      lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1.0,
     },
-    
-    // KEYWORD 1: instagram-reel-downloader-free (service page)
+    // Main downloader pages
     {
       url: `${baseUrl}/instagram-reel-downloader-free`,
-      lastModified: '2026-02-12T12:00:00+05:00',
+      lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/free-facebook-video-downloader`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/pinterest-video-downloader-free`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    // Blog hub and blog articles (pages still exist)
+    {
+      url: `${baseUrl}/Blogs`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/Blogs/instagram-reel-downloader-free`,
-      lastModified: '2026-02-12T12:00:00+05:00',
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    
-    // KEYWORD 2: free-facebook-video-downloader (service page)
-    {
-      url: `${baseUrl}/free-facebook-video-downloader`,
-      lastModified: '2026-02-12T12:00:00+05:00',
-      changeFrequency: 'weekly',
-      priority: 0.9,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
     },
     {
       url: `${baseUrl}/Blogs/free-facebook-video-downloader`,
-      lastModified: '2026-02-12T12:00:00+05:00',
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    
-    // KEYWORD 3: pinterest-video-downloader-free (service page)
-    {
-      url: `${baseUrl}/pinterest-video-downloader-free`,
-      lastModified: '2026-02-12T12:00:00+05:00',
-      changeFrequency: 'weekly',
-      priority: 0.9,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
     },
     {
       url: `${baseUrl}/Blogs/pinterest-video-downloader-free`,
-      lastModified: '2026-02-12T12:00:00+05:00',
-      changeFrequency: 'weekly',
-      priority: 0.8,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
     },
-    
-    // Blog Hub/Index Page
+    // Company & info
     {
-      url: `${baseUrl}/Blogs`,
-      lastModified: '2026-02-12T12:00:00+05:00',
-      changeFrequency: 'weekly',
-      priority: 0.8,
+      url: `${baseUrl}/AboutUs`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
     },
-    
-    // Company Information Pages
     {
-      url: `${baseUrl}/about-us`,
-      lastModified: '2026-01-15T10:00:00+05:00',
+      url: `${baseUrl}/ContactUs`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/faqs`,
+      lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.5,
     },
+    // Legal
     {
-      url: `${baseUrl}/contact-us`,
-      lastModified: '2026-01-15T10:00:00+05:00',
-      changeFrequency: 'monthly',
+      url: `${baseUrl}/Disclaimer`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
       priority: 0.5,
     },
-    
-    // Legal & Compliance Pages
     {
-      url: `${baseUrl}/privacy-policy`,
-      lastModified: '2026-01-21T21:00:00+05:00',
+      url: `${baseUrl}/PrivacyPolicy`,
+      lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/terms-and-conditions`,
-      lastModified: '2026-01-21T21:00:00+05:00',
+      url: `${baseUrl}/TermsAndConditions`,
+      lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/cookie-policy`,
-      lastModified: '2026-01-21T21:00:00+05:00',
+      url: `${baseUrl}/CookiePolicy`,
+      lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.5,
     },

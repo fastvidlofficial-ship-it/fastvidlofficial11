@@ -22,11 +22,11 @@ const CookiePolicy = () => {
       <div className="cookie-main">
         <div className="global-container">
           <div className="cookie-section">
-            <div className="section-content global-container__content">
+            <div className="section-content global-container__contents">
               <div className="cardsGrid">
                 <div className="card3d">
                   <p className="cookie-text" style={{ fontStyle: "italic", color: "#666", marginBottom: "1.5rem" }}>
-                    Last Updated: February 16, 2026
+                    Last Updated: 19th February 2026
                   </p>
                   <p className="cookie-text">
                     Welcome to fastvidl.com. We use cookies and similar technologies to make our Instagram/Facebook/Pinterest downloader work smoothly, analyze usage anonymously, and display relevant ads (to keep service free). This policy covers everything transparently.

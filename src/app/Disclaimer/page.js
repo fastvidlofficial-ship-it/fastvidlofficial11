@@ -21,11 +21,11 @@ const Disclaimer = () => {
       <div className="disclaimer-main disclaimer-main-legal">
         <div className="global-container">
           <div className="disclaimer-legal-content">
-            <div className="section-content global-container__content">
+            <div className="section-content global-container__contents">
               <div className="cardsGrid">
                 <div className="card3d">
                   <p className="disclaimer-text" style={{ fontStyle: "italic", color: "#666", marginBottom: "1.5rem" }}>
-                    Last Updated: February 16, 2026
+                    Last Updated: 19th February 2026
                   </p>
                   <p className="disclaimer-text">
                     FastVidl.com is a free tool for downloading public Instagram, Facebook, and Pinterest content. We provide NO GUARANTEES – use entirely at your own risk. Here's what you need to know:

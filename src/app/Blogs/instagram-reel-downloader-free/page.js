@@ -66,7 +66,7 @@ export default function InstagramReelDownloaderFreePage() {
 
         <div className="blog-header">
           <p style={{ fontStyle: "italic", color: "#666", marginBottom: "1rem" }}>
-            Last updated: 21 January 2026
+            Last updated: 19th February, 2026
           </p>
           <h1>Instagram Reel Downloader Free – HD No Watermark | FastVidl</h1>
         </div>

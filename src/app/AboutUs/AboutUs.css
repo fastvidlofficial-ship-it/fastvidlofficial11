@@ -632,13 +632,12 @@
   position: relative;
 }
 
-.drives-list li::before,
-.platforms-list li::before,
-.team-list li::before {
+/* Single black bullet for drives-list, team-list, and platforms-list */
+.platforms-list li::before {
   content: "•";
   position: absolute;
   left: 0;
-  color: #667eea;
+  color: black;
   font-weight: bold;
 }
 

@@ -2,7 +2,7 @@
 import styles from "../page.module.css";
 import heroStyles from "../DownloaderHero.module.css";
 import UserInput from "@/components/input/UserInput";
-import PinterestBlogContent from "../Blogs/pinterest-video-downloader-free/PinterestBlogContent";
+import Blog from "../Blogs/page";
 
 export default function PinterestReelDownloaderService() {
   return (
@@ -27,7 +27,7 @@ export default function PinterestReelDownloaderService() {
           </h2>
         </div>
         <UserInput />
-        <PinterestBlogContent />
+        <Blog />
       </main>
     </div>
   );

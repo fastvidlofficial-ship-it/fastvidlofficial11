@@ -122,7 +122,7 @@ function HomePage() {
         {/* Instagram Reel Downloader article - above FAQs */}
         <section className="home-blog-article">
           <h1 className="home-blog-article-title">Instagram Reel Downloader Free: Download Reels Without Watermark (2026)</h1>
-          <p className="home-blog-article-meta">By FastVidl Team | February 16, 2026 | 12 min read</p>
+          <p className="home-blog-article-meta">By FastVidl Team | 19th February 2026 | 12 min read</p>
 
           <h2 className="home-blog-article-h2">Table of Contents</h2>
           <ul style={listStyle}>

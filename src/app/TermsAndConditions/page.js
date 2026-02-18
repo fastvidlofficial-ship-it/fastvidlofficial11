@@ -22,11 +22,11 @@ const TermsAndConditions = () => {
       <div className={styles.termsMain}>
         <div className="global-container">
           <section className={styles.section}>
-          <div className="global-container__content">
+          <div className="global-container__contents">
             <div className={styles.cardsGrid}>
               <div className={styles.card3d}>
         <p style={{ fontStyle: "italic", color: "#666", marginBottom: "2rem" }}>
-          Last updated: 21 January 2026
+          Last updated: 19th February 2026
         </p>
 
         <p>
@@ -295,23 +295,7 @@ const TermsAndConditions = () => {
           If you have questions about these Terms, you can contact us at: <a href="mailto:fastvidlofficial@gmail.com" className="terms-link">fastvidlofficial@gmail.com</a>
         </p>
 
-        <p style={{ marginTop: "2rem" }}>
-          For more information, please visit our{" "}
-          <Link
-            href="/Blogs"
-            rel="nofollow"
-            className="terms-link"
-            style={{
-              color: "#1877f2",
-              textDecoration: "none",
-              fontWeight: "600",
-              cursor: "pointer",
-            }}
-          >
-            Blog
-          </Link>
-          .
-        </p>
+       
               </div>
             </div>
           </div>

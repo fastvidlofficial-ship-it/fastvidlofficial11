@@ -2,7 +2,7 @@
 import styles from "../page.module.css";
 import heroStyles from "../DownloaderHero.module.css";
 import UserInput from "@/components/input/UserInput";
-import FacebookBlogContent from "../Blogs/free-facebook-video-downloader/FacebookBlogContent";
+import Blog from "../Blogs/page";
 
 export default function FacebookReelDownloaderService() {
   return (
@@ -38,7 +38,7 @@ export default function FacebookReelDownloaderService() {
           </p>
         </div>
         <UserInput />
-        <FacebookBlogContent />
+        <Blog />
       </main>
     </div>
   );

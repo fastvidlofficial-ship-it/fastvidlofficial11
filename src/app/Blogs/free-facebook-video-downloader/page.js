@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import "../Blog.css";
-import FacebookBlogContent from "./FacebookBlogContent";
+import Blog from "../page";
 
 function SEO({ title, description, keywords }) {
   useEffect(() => {
@@ -44,7 +44,7 @@ export default function FacebookVideoDownloaderPage() {
           ← Back to Blog
         </button>
 
-        <FacebookBlogContent />
+        <Blog />
       </div>
     </>
   );

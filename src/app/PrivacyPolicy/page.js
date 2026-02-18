@@ -26,7 +26,7 @@ const PrivacyPolicy = () => {
               <div className="cardsGrid">
                 <div className="card3d">
               <p className="privacy-text" style={{ fontStyle: "italic", color: "#666", marginBottom: "2rem" }}>
-                Last updated: 21 January 2026
+                Last updated: 19th February 2026
               </p>
 
               <p className="privacy-text">
