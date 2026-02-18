@@ -1,0 +1,50 @@
+/* Shared hero heading for Pinterest, Instagram, Facebook downloader pages */
+.heroWrap {
+  text-align: center;
+  padding: 2rem 1rem;
+  width: 70%;
+  margin: 2rem auto;
+  box-sizing: border-box;
+}
+
+.heroTitle {
+  font-size: 3.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: black;
+  cursor: pointer;
+  line-height: 1.2;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+@media (max-width: 768px) {
+  .heroWrap {
+    width: 90%;
+    padding: 1.5rem 0.75rem;
+    margin: 1.5rem auto;
+  }
+
+  .heroTitle {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .heroWrap {
+    width: 100%;
+    padding: 1rem 0.5rem;
+    margin: 1rem auto;
+  }
+
+  .heroTitle {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .heroTitle {
+    font-size: 1.35rem;
+  }
+}

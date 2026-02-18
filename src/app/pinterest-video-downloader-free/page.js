@@ -1,5 +1,6 @@
 'use client'
 import styles from "../page.module.css";
+import heroStyles from "../DownloaderHero.module.css";
 import UserInput from "@/components/input/UserInput";
 import PinterestBlogContent from "../Blogs/pinterest-video-downloader-free/PinterestBlogContent";
 
@@ -7,14 +8,8 @@ export default function PinterestReelDownloaderService() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <div style={{ textAlign: "center", padding: "2rem 1rem", width: "70%", margin: "2rem auto" }}>
-          <h2 style={{
-            fontSize: "3.6rem",
-            fontWeight: "700",
-            marginBottom: "1rem",
-            color: "black",
-            cursor: "pointer"
-          }}>
+        <div className={heroStyles.heroWrap}>
+          <h2 className={heroStyles.heroTitle}>
             <span style={{ color: "black" }}>Pinterest </span>
             <span style={{
               WebkitTextFillColor: "transparent",
@@ -30,7 +25,6 @@ export default function PinterestReelDownloaderService() {
             }}>wnload</span>er
             <span style={{ color: "black" }}> Free</span>
           </h2>
-        
         </div>
         <UserInput />
         <PinterestBlogContent />
