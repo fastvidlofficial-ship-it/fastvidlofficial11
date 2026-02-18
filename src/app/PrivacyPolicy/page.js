@@ -1,8 +1,8 @@
 "use client"
 import React from "react";
+import Link from "next/link";
 import "./PrivacyPolicy.css";
 import "../Disclaimer/Disclaimer.css";
-import Link from "next/link";
 
 const PrivacyPolicy = () => {
   return (
@@ -331,13 +331,6 @@ const PrivacyPolicy = () => {
                 <li><strong>Right to Deletion:</strong> Request deletion of your information</li>
                 <li><strong>Right to Correction:</strong> Request correction of inaccurate information</li>
               </ul>
-
-              <h3>How to Exercise Your Rights</h3>
-              <ul className="privacy-list">
-                <li><strong>Email us:</strong> <a href="mailto:fastvidlofficial@gmail.com" className="terms-link">fastvidlofficial@gmail.com</a></li>
-                <li><strong>Contact Form:</strong> <Link href="/ContactUs" className="terms-link">https://fastvidl.com/ContactUs</Link></li>
-                <li><strong>Response Time:</strong> We typically respond within 24-48 hours (maximum 30 days for formal requests)</li>
-              </ul>
                 </div>
 
                 <div className="card3d">
@@ -485,8 +478,12 @@ const PrivacyPolicy = () => {
                 We're here to help with any privacy questions or concerns.
               </p>
               <ul className="privacy-list">
-                <li><strong>Email:</strong> <a href="mailto:fastvidlofficial@gmail.com" className="terms-link">fastvidlofficial@gmail.com</a></li>
-                <li><strong>Contact Form:</strong> <Link href="/ContactUs" className="terms-link">https://fastvidl.com/ContactUs</Link></li>
+                <li><strong>Email:</strong>{" "}
+                  <a href="mailto:fastvidlofficial@gmail.com" className="terms-link privacy-clickable-link" style={{ position: "relative", zIndex: 10, pointerEvents: "auto", cursor: "pointer" }}>fastvidlofficial@gmail.com</a>
+                </li>
+                <li><strong>Contact Form:</strong>{" "}
+                  <Link href="/ContactUs" className="terms-link privacy-clickable-link" style={{ position: "relative", zIndex: 10, pointerEvents: "auto", cursor: "pointer" }}>https://fastvidl.com/ContactUs</Link>
+                </li>
                 <li><strong>Response Time:</strong> Typically 24-48 hours</li>
               </ul>
               <p className="privacy-text">
@@ -505,15 +502,15 @@ const PrivacyPolicy = () => {
                 <strong>Our Other Policy:</strong>
               </p>
               <ul className="privacy-list">
-                <li><Link href="/TermsAndConditions" className="terms-link">Terms and Conditions</Link></li>
+                <li><Link href="/TermsAndConditions" className="terms-link privacy-clickable-link" style={{ position: "relative", zIndex: 10, pointerEvents: "auto", cursor: "pointer" }}>Terms and Conditions</Link></li>
               </ul>
               <p className="privacy-text">
                 <strong>External Resources:</strong>
               </p>
               <ul className="privacy-list">
-                <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="terms-link">Google Privacy Policy</a></li>
-                <li><a href="https://www.youronlinechoices.com" target="_blank" rel="noopener noreferrer" className="terms-link">Your Online Choices (EU)</a></li>
-                <li><a href="https://www.aboutads.info/choices" target="_blank" rel="noopener noreferrer" className="terms-link">About Ads Info (US)</a></li>
+                <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="terms-link privacy-clickable-link" style={{ position: "relative", zIndex: 10, pointerEvents: "auto", cursor: "pointer" }}>Google Privacy Policy</a></li>
+                <li><a href="https://www.youronlinechoices.com" target="_blank" rel="noopener noreferrer" className="terms-link privacy-clickable-link" style={{ position: "relative", zIndex: 10, pointerEvents: "auto", cursor: "pointer" }}>Your Online Choices (EU)</a></li>
+                <li><a href="https://www.aboutads.info/choices" target="_blank" rel="noopener noreferrer" className="terms-link privacy-clickable-link" style={{ position: "relative", zIndex: 10, pointerEvents: "auto", cursor: "pointer" }}>About Ads Info (US)</a></li>
               </ul>
 
               <p className="privacy-text" style={{ marginTop: "2rem", fontSize: "1.1rem", fontWeight: "600" }}>
@@ -524,13 +521,15 @@ const PrivacyPolicy = () => {
                 Read our{" "}
                 <Link
                   href="/TermsAndConditions"
-                  rel="nofollow"
-                  className="terms-link"
+                  className="terms-link privacy-clickable-link"
                   style={{
                     color: "#1877f2",
-                    textDecoration: "none",
+                    textDecoration: "underline",
                     fontWeight: "600",
                     cursor: "pointer",
+                    position: "relative",
+                    zIndex: 10,
+                    pointerEvents: "auto",
                   }}
                 >
                   Terms and conditions

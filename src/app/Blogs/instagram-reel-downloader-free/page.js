@@ -2,6 +2,22 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import '../Blog.css';
+import FAQSchema from '@/components/FAQSchema';
+
+const INSTAGRAM_BLOG_FAQ_LIST = [
+  { question: "Can I download Instagram reels without an app?", answer: "Yes! FastVidl is 100% browser-based. Simply paste the link and download instantly on any device, no installation required." },
+  { question: "Does FastVidl add watermarks?", answer: "No! You get the reel in its original form as processed from Instagram. No extra logos or watermarks from FastVidl." },
+  { question: "Is downloading Instagram reels legal?", answer: "Downloading your own reels or using content privately for personal use is generally safe. However, redistributing others' reels without permission can violate copyright and Instagram's rules. Always ask creators before public or commercial use." },
+  { question: "Do I need an Instagram account or login?", answer: "No! FastVidl only requires the public reel link. No passwords, logins, or account access needed." },
+  { question: "Will the reel creator know I downloaded their content?", answer: "No! Downloading doesn't notify creators. However, if you repost or share it, the original watermark will show who created it." },
+  { question: "Can I download private or restricted Instagram reels?", answer: "No! FastVidl only works with public reels that are visible to everyone. Private content is protected by Instagram's privacy settings and cannot be accessed." },
+  { question: "How long are Instagram reels?", answer: "Up to 3 minutes for most accounts. FastVidl handles all lengths, from short 15-second clips to full 3-minute videos." },
+  { question: "Is downloading safe and private?", answer: "Yes! FastVidl uses HTTPS encryption, processes public links only, and doesn't store your downloads or personal data." },
+  { question: "Will the downloaded video keep its original quality?", answer: "FastVidl preserves the same quality that Instagram provides, typically up to 1080p for HD reels. If the original was low-resolution, the download cannot be upgraded beyond that." },
+  { question: "Can I download entire channels or profiles at once?", answer: "No! FastVidl downloads individual reels. Bulk or automated downloads violate Instagram's Terms of Service and are not supported." },
+  { question: "How many reels can I download per day?", answer: "There's no strict daily limit, but excessive downloads may trigger Instagram's rate limiting. Download responsibly for personal use." },
+  { question: "What if the reel is deleted from Instagram after I download it?", answer: "You'll still have the downloaded file on your device. The video remains saved regardless of what happens on Instagram." },
+];
 
 function SEO({ title, description, keywords }) {
   useEffect(() => {
@@ -36,6 +52,7 @@ export default function InstagramReelDownloaderFreePage() {
 
   return (
     <>
+      <FAQSchema faqList={INSTAGRAM_BLOG_FAQ_LIST} />
       <SEO
         title="Instagram Reel Downloader Free 2026: Download Reels Without Watermark | FastVidl"
         description="Download Instagram Reels for free with FastVidl – no watermark, no login, no app installation. Save IG Reels in HD 1080p on iPhone, Android & desktop in seconds. 100% secure, browser-based tool for public reels only."
@@ -140,62 +157,16 @@ export default function InstagramReelDownloaderFreePage() {
               Meta's policy hub groups all content and community standards across Facebook, Instagram, and other Meta technologies, explaining what content is allowed and how policy violations are handled.
             </p>
 
-            <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">Frequently Asked Questions</h2>
-            
-            <div className="faq-item" style={{ marginBottom: "1.5rem" }}>
-              <h3 className="text-xl font-semibold mb-2">Can I download reels without an app?</h3>
-              <p className="text-base leading-relaxed">
-                Yes—FastVidl is 100% browser‑based. Paste the link and download instantly on any device.
-              </p>
-            </div>
-
-            <div className="faq-item" style={{ marginBottom: "1.5rem" }}>
-              <h3 className="text-xl font-semibold mb-2">Does FastVidl add watermarks?</h3>
-              <p className="text-base leading-relaxed">
-                No extra watermarks from us; you get the reel in its original form as processed from Instagram.
-              </p>
-            </div>
-
-            <div className="faq-item" style={{ marginBottom: "1.5rem" }}>
-              <h3 className="text-xl font-semibold mb-2">How long are Instagram reels?</h3>
-              <p className="text-base leading-relaxed">
-                Up to 3 minutes for many accounts, with tests for longer formats. FastVidl handles all lengths.
-              </p>
-            </div>
-
-            <div className="faq-item" style={{ marginBottom: "1.5rem" }}>
-              <h3 className="text-xl font-semibold mb-2">Is downloading safe and private?</h3>
-              <p className="text-base leading-relaxed">
-                FastVidl uses HTTPS, processes public links only, and doesn't store data. No malware or tracking.
-              </p>
-            </div>
-
-            <div className="faq-item" style={{ marginBottom: "1.5rem" }}>
-              <h3 className="text-xl font-semibold mb-2">How to download my own reel?</h3>
-              <p className="text-base leading-relaxed">
-                Use Instagram's "Save" or copy the link to FastVidl for an MP4 copy.
-              </p>
-            </div>
-
-            <div className="faq-item" style={{ marginBottom: "1.5rem" }}>
-              <h3 className="text-xl font-semibold mb-2">Does it work on iPhone/Android?</h3>
-              <p className="text-base leading-relaxed">
-                Perfectly—optimized for mobile browsers.
-              </p>
-            </div>
-
-            <div className="faq-item" style={{ marginBottom: "1.5rem" }}>
-              <h3 className="text-xl font-semibold mb-2">Can I save reels with music?</h3>
-              <p className="text-base leading-relaxed">
-                Yes, original audio is included.
-              </p>
-            </div>
-
-            <div className="faq-item" style={{ marginBottom: "1.5rem" }}>
-              <h3 className="text-xl font-semibold mb-2">What's the best downloader?</h3>
-              <p className="text-base leading-relaxed">
-                Pick based on needs: FastVidl excels in speed and simplicity for public reels.
-              </p>
+            <h2 id="frequently-asked-questions" className="text-2xl sm:text-3xl font-bold mt-8 mb-4" style={{ color: "#667eea", marginTop: "2.5rem" }}>Frequently Asked Questions</h2>
+            <div className="blog-content">
+              <div className="faq-section">
+                {INSTAGRAM_BLOG_FAQ_LIST.map((faq, index) => (
+                  <div key={index} className="faq-item" style={{ marginBottom: "1.5rem" }}>
+                    <h3 className="faq-question">{faq.question}</h3>
+                    <p className="faq-answer">{faq.answer}</p>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <p className="text-base sm:text-lg leading-relaxed mb-6" style={{ marginTop: "2rem" }}>

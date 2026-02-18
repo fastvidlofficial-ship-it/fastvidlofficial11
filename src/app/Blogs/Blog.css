@@ -787,6 +787,13 @@ html {
   }
 }
 
+@media (max-width: 480px) {
+  .container-blog {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
 /* ===========================
    Home Blog Article (Instagram Reel)
    ========================== */

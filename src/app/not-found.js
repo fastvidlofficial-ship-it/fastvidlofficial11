@@ -46,17 +46,17 @@ export default function NotFound() {
             <h4 className={styles.quickLinksTitle}>Quick Links:</h4>
             <ul className={styles.linksList}>
               <li>
-                <Link href="/services/instagram-reel-downloader">
+                <Link href="/instagram-reel-downloader-free">
                   Instagram Reel Downloader
                 </Link>
               </li>
               <li>
-                <Link href="/services/facebook-reel-downloader">
+                <Link href="/free-facebook-video-downloader">
                   Facebook Reel Downloader
                 </Link>
               </li>
               <li>
-                <Link href="/services/pinterest-reel-downloader">
+                <Link href="/pinterest-video-downloader-free">
                   Pinterest Reel Downloader
                 </Link>
               </li>

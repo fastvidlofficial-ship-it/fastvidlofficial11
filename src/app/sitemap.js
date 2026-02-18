@@ -10,7 +10,7 @@ export default function sitemap() {
       priority: 1.0,
     },
     
-    // KEYWORD 1: Instagram Reel Downloader Free
+    // KEYWORD 1: instagram-reel-downloader-free (service page)
     {
       url: `${baseUrl}/instagram-reel-downloader-free`,
       lastModified: '2026-02-12T12:00:00+05:00',
@@ -18,27 +18,27 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/blog/instagram-reel-downloader-free`,
-      lastModified: '2026-01-21T21:00:00+05:00',
-      changeFrequency: 'monthly',
-      priority: 0.7,
+      url: `${baseUrl}/Blogs/instagram-reel-downloader-free`,
+      lastModified: '2026-02-12T12:00:00+05:00',
+      changeFrequency: 'weekly',
+      priority: 0.8,
     },
     
-    // KEYWORD 2: Facebook Video Downloader Free
+    // KEYWORD 2: free-facebook-video-downloader (service page)
     {
-      url: `${baseUrl}/facebook-video-downloader-free`,
+      url: `${baseUrl}/free-facebook-video-downloader`,
       lastModified: '2026-02-12T12:00:00+05:00',
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/blog/free-facebook-video-downloader`,
-      lastModified: '2026-01-21T21:00:00+05:00',
-      changeFrequency: 'monthly',
-      priority: 0.7,
+      url: `${baseUrl}/Blogs/free-facebook-video-downloader`,
+      lastModified: '2026-02-12T12:00:00+05:00',
+      changeFrequency: 'weekly',
+      priority: 0.8,
     },
     
-    // KEYWORD 3: Pinterest Video Downloader Free
+    // KEYWORD 3: pinterest-video-downloader-free (service page)
     {
       url: `${baseUrl}/pinterest-video-downloader-free`,
       lastModified: '2026-02-12T12:00:00+05:00',
@@ -46,15 +46,15 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/blog/pinterest-video-downloader-free`,
-      lastModified: '2026-01-21T21:00:00+05:00',
-      changeFrequency: 'monthly',
-      priority: 0.7,
+      url: `${baseUrl}/Blogs/pinterest-video-downloader-free`,
+      lastModified: '2026-02-12T12:00:00+05:00',
+      changeFrequency: 'weekly',
+      priority: 0.8,
     },
     
     // Blog Hub/Index Page
     {
-      url: `${baseUrl}/blog/`,
+      url: `${baseUrl}/Blogs`,
       lastModified: '2026-02-12T12:00:00+05:00',
       changeFrequency: 'weekly',
       priority: 0.8,

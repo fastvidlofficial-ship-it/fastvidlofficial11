@@ -1,14 +1,14 @@
 'use client'
-import styles from "../../page.module.css";
+import styles from "../page.module.css";
 import UserInput from "@/components/input/UserInput";
-import PinterestBlogContent from "../../Blogs/pinterest-video-downloader-free/PinterestBlogContent";
+import PinterestBlogContent from "../Blogs/pinterest-video-downloader-free/PinterestBlogContent";
 
 export default function PinterestReelDownloaderService() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
         <div style={{ textAlign: "center", padding: "2rem 1rem", width: "70%", margin: "2rem auto" }}>
-          <h1 style={{
+          <h2 style={{
             fontSize: "3.6rem",
             fontWeight: "700",
             marginBottom: "1rem",
@@ -29,7 +29,7 @@ export default function PinterestReelDownloaderService() {
               backgroundClip: "text"
             }}>wnload</span>er
             <span style={{ color: "black" }}> Free</span>
-          </h1>
+          </h2>
         
         </div>
         <UserInput />

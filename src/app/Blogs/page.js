@@ -136,8 +136,8 @@ function HomePage() {
             <li style={liStyle}><a href="#legal-ethical-guidelines" className="toc-link">Legal & Ethical Guidelines</a></li>
             <li style={liStyle}><a href="#benefits-for-creators-marketers" className="toc-link">Benefits for Creators & Marketers</a></li>
             <li style={liStyle}><a href="#common-issues-solutions" className="toc-link">Common Issues & Solutions</a></li>
-            <li style={liStyle}><a href="#frequently-asked-questions" className="toc-link">Frequently Asked Questions</a></li>
             <li style={liStyle}><a href="#conclusion" className="toc-link">Conclusion</a></li>
+            <li style={liStyle}><a href="#frequently-asked-questions" className="toc-link">Frequently Asked Questions</a></li>
           </ul>
 
           <h2 id="key-takeaways" className="home-blog-article-h2">Key Takeaways</h2>
@@ -311,22 +311,6 @@ function HomePage() {
           <p className="home-blog-article-p"><strong>"Downloaded video won't play"</strong><br />Solution: Ensure your device supports MP4 format. Try using a different video player like VLC. The file may still be downloading – wait for the complete file.</p>
           <p className="home-blog-article-p"><strong>"Link not recognized"</strong><br />Solution: Make sure you've copied the complete URL. Instagram reel URLs should look like: https://www.instagram.com/reel/ABC123DEF/</p>
 
-          <h2 id="frequently-asked-questions" className="home-blog-article-h2">Frequently Asked Questions</h2>
-          <div className="home-blog-article-faq">
-            <p className="home-blog-article-p"><strong>Can I download Instagram reels without an app?</strong><br />Yes! FastVidl is 100% browser-based. Simply paste the link and download instantly on any device, no installation required.</p>
-            <p className="home-blog-article-p"><strong>Does FastVidl add watermarks?</strong><br />No! You get the reel in its original form as processed from Instagram. No extra logos or watermarks from FastVidl.</p>
-            <p className="home-blog-article-p"><strong>Is downloading Instagram reels legal?</strong><br />Downloading your own reels or using content privately for personal use is generally safe. However, redistributing others' reels without permission can violate copyright and Instagram's rules. Always ask creators before public or commercial use.</p>
-            <p className="home-blog-article-p"><strong>Do I need an Instagram account or login?</strong><br />No! FastVidl only requires the public reel link. No passwords, logins, or account access needed.</p>
-            <p className="home-blog-article-p"><strong>Will the reel creator know I downloaded their content?</strong><br />No! Downloading doesn't notify creators. However, if you repost or share it, the original watermark will show who created it.</p>
-            <p className="home-blog-article-p"><strong>Can I download private or restricted Instagram reels?</strong><br />No! FastVidl only works with public reels that are visible to everyone. Private content is protected by Instagram's privacy settings and cannot be accessed.</p>
-            <p className="home-blog-article-p"><strong>How long are Instagram reels?</strong><br />Up to 3 minutes for most accounts. FastVidl handles all lengths, from short 15-second clips to full 3-minute videos.</p>
-            <p className="home-blog-article-p"><strong>Is downloading safe and private?</strong><br />Yes! FastVidl uses HTTPS encryption, processes public links only, and doesn't store your downloads or personal data.</p>
-            <p className="home-blog-article-p"><strong>Will the downloaded video keep its original quality?</strong><br />FastVidl preserves the same quality that Instagram provides, typically up to 1080p for HD reels. If the original was low-resolution, the download cannot be upgraded beyond that.</p>
-            <p className="home-blog-article-p"><strong>Can I download entire channels or profiles at once?</strong><br />No! FastVidl downloads individual reels. Bulk or automated downloads violate Instagram's Terms of Service and are not supported.</p>
-            <p className="home-blog-article-p"><strong>How many reels can I download per day?</strong><br />There's no strict daily limit, but excessive downloads may trigger Instagram's rate limiting. Download responsibly for personal use.</p>
-            <p className="home-blog-article-p"><strong>What if the reel is deleted from Instagram after I download it?</strong><br />You'll still have the downloaded file on your device. The video remains saved regardless of what happens on Instagram.</p>
-          </div>
-
           <h2 id="conclusion" className="home-blog-article-h2">Conclusion</h2>
           <p className="home-blog-article-p">
             FastVidl offers the simplest, fastest way to download Instagram reels for free. With no watermarks, no login requirements, and support for HD quality up to 1080p, it's the ideal tool for creators, marketers, and casual users alike.
@@ -341,46 +325,19 @@ function HomePage() {
             FastVidl isn't just for Instagram Reels, Videos, Photos, Stories, IGTV, Highlights, Carousel Posts.
             <br />Try our: <Link href="/Blogs/free-facebook-video-downloader" className="home-blog-article-link">Free Facebook Video Downloader</Link> – Download Reels, Videos, Watch Videos, Public Posts.
           </p>
-        </section>
 
-        <div id="faq-section" className="faq-container">
-          <h2 className="faq-title">Frequently Asked Questions</h2>
-          <div className="faq-section">
-            <div className="faq-item" style={{ marginBottom: "1.5rem" }}>
-              <h3 className="faq-question">Do I need to create an account?</h3>
-              <p className="faq-answer">No. FastVidl.com works immediately without any registration or login.</p>
-            </div>
-            <div className="faq-item" style={{ marginBottom: "1.5rem" }}>
-              <h3 className="faq-question">How many Reels can I download per day?</h3>
-              <p className="faq-answer">There are no artificial limits. Download as many publicly available reels as you need.</p>
-            </div>
-            <div className="faq-item" style={{ marginBottom: "1.5rem" }}>
-              <h3 className="faq-question">Is this service legal?</h3>
-              <p className="faq-answer">Downloading publicly accessible content for personal use is generally permitted. However, copyright laws vary by country, and you're responsible for ensuring your use complies with local regulations and platform terms of service.</p>
-            </div>
-            <div className="faq-item" style={{ marginBottom: "1.5rem" }}>
-              <h3 className="faq-question">Will the reel creator know I downloaded their content?</h3>
-              <p className="faq-answer">No. Downloading through our service leaves no trace on the original post and doesn't notify the creator.</p>
-            </div>
-            <div className="faq-item" style={{ marginBottom: "1.5rem" }}>
-              <h3 className="faq-question">Can I download entire channels or profiles at once?</h3>
-              <p className="faq-answer">Our tool works on individual posts, not bulk downloads. You'll need to download reels one at a time.</p>
-            </div>
-            <div className="faq-item" style={{ marginBottom: "1.5rem" }}>
-              <h3 className="faq-question">What if the reel is deleted from the platform?</h3>
-              <p className="faq-answer">Once downloaded to your device, you keep the file even if the original post is removed. However, you cannot download reels that have already been deleted.</p>
-            </div>
-            <div className="faq-item" style={{ marginBottom: "1.5rem" }}>
-              <h3 className="faq-question">Do downloads work on slow internet connections?</h3>
-              <p className="faq-answer">Yes, but processing time increases with slower connections. For best results, use a stable internet connection.</p>
-            </div>
-            <div className="faq-item" style={{ marginBottom: "1.5rem" }}>
-              <h3 className="faq-question">Is there a file size limit?</h3>
-              <p className="faq-answer">We can process reels up to 4 hours in length. Individual file sizes vary based on quality and duration, but extremely large files (over 2GB) may experience slower processing.</p>
+          <h2 id="frequently-asked-questions" className="home-blog-article-h2">Frequently Asked Questions</h2>
+          <div className="blog-content">
+            <div className="faq-section">
+              {HOME_PAGE_FAQ_LIST.map((faq, index) => (
+                <div key={index} className="faq-item" style={{ marginBottom: "1.5rem" }}>
+                  <h3 className="faq-question">{faq.question}</h3>
+                  <p className="faq-answer">{faq.answer}</p>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-
+        </section>
 
         {/* <div className="cards-grid">
           {platforms.map(platform => (

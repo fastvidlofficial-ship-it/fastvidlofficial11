@@ -6,7 +6,7 @@
   margin: 2rem auto;
 }
 
-.index-div h1 {
+.index-div h2 {
   font-size: 3.6rem;
   color: var(--h1-font-color);
   cursor: pointer;
@@ -193,7 +193,7 @@
     padding: 0px 32px;
   }
 
-  .index-div h1 {
+  .index-div h2 {
     font-size: 3rem;
   }
 
@@ -229,10 +229,11 @@
 @media (max-width: 670px) {
   .index-div {
     margin-bottom: 4rem;
+    padding: 0.5rem 16px;
   }
 
-  .index-div h1 {
-    font-size: 2.5rem;
+  .index-div h2 {
+    font-size: 1.75rem;
   }
 
   .index-div p {
@@ -267,8 +268,12 @@
 }
 
 @media (max-width: 540px) {
-  .index-div h1 {
-    font-size: 2rem;
+  .index-div {
+    padding: 0.5rem 12px;
+  }
+
+  .index-div h2 {
+    font-size: 1.5rem;
   }
 
   .logo-div img {
@@ -299,11 +304,11 @@
 
 @media (max-width: 450px) {
   .index-div {
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
   }
 
-  .index-div h1 {
-    font-size: 2.6rem;
+  .index-div h2 {
+    font-size: 1.75rem;
   }
   .insta-logo {
     bottom: -18%;
@@ -315,8 +320,8 @@
     width: 40px;
     height: 40px;
   }
-  .index-div h1 {
-    font-size: 2rem;
+  .index-div h2 {
+    font-size: 1.25rem;
   }
 }
 

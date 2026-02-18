@@ -86,7 +86,7 @@
 }
 
 .privacy-section .card3d:hover {
-  transform: translateY(-4px) translateZ(8px);
+  /* transform: translateY(-4px) translateZ(8px); */
   box-shadow:
     0 12px 28px rgba(0, 0, 0, 0.1),
     0 24px 48px rgba(0, 0, 0, 0.08),
@@ -112,6 +112,7 @@
 
 .privacy-list li {
   position: relative;
+  isolation: isolate;
   padding: 1rem 0 1rem 2.5rem;
   font-size: 1.05rem;
   color: #444;
@@ -134,10 +135,32 @@
   justify-content: center;
   font-weight: bold;
   font-size: 0.8rem;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .privacy-list li:last-child {
   border-bottom: none;
+}
+
+/* Force all policy links to be clickable – above checkmarks and any card transform */
+.privacy-section a,
+.privacy-section .card3d a,
+.privacy-section a.terms-link,
+a.privacy-clickable-link {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  color: #1877f2 !important;
+  text-decoration: underline !important;
+  display: inline-block;
+  min-height: 1.4em;
+}
+.privacy-section a:hover,
+.privacy-section .card3d a:hover,
+a.privacy-clickable-link:hover {
+  color: #0051a2 !important;
 }
 
 .important-notice {
