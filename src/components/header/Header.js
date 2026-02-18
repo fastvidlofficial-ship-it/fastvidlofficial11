@@ -57,9 +57,9 @@ const Header = () => {
           <li><a href="/" onClick={closeMenu}>Home</a></li>
           <li><a href="/AboutUs" onClick={closeMenu}>About Us</a></li>
           <li><a href="/ContactUs" onClick={closeMenu}>Contact Us</a></li>
-          <li><a href="/instagram-reel-downloader-free" onClick={closeMenu}>Instagram Reel Downloader</a></li>
-          <li><a href="/free-facebook-video-downloader" onClick={closeMenu}>Facebook Reel Downloader</a></li>
-          <li><a href="/pinterest-video-downloader-free" onClick={closeMenu}>Pinterest Reel Downloader</a></li>
+          <li><a href="/instagram-reel-downloader-free" onClick={closeMenu}>Instagram Reel Downloader Free</a></li>
+          <li><a href="/free-facebook-video-downloader" onClick={closeMenu}>Free Facebook Video Downloader</a></li>
+          <li><a href="/pinterest-video-downloader-free" onClick={closeMenu}>Pinterest Video Downloader Free</a></li>
         </ul>
       </nav>
     </header>
