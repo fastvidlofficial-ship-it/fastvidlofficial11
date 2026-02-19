@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import '../Blog.css';
 import FAQSchema from '@/components/FAQSchema';
-
+import Image from 'next/image';
 const FACEBOOK_FAQ_LIST = [
   { question: "Is it legal to download Facebook videos?", answer: "Downloading your own videos for backup is generally acceptable, but saving and redistributing other users' videos without permission can break Facebook's policies and copyright law. Always check who owns the content and how you plan to use it before downloading." },
   { question: "Can I use a free Facebook video downloader without installing an app?", answer: "Yes! At fastvidl.com, you can easily download Facebook videos within 10 seconds. You just paste the video link into the site and click download – no installation required." },
@@ -111,7 +111,7 @@ export default function FacebookBlogContent() {
         <p className="home-blog-article-p">
           FastVidl is designed with these expectations in mind: a clean interface, fast processing, and no registration for downloading public videos.
         </p>
-
+<Image src="/images/fb1.jpeg" alt="FastVidl vs Competitors" width={1000} height={1000} style={{ width: "100%", height: "auto" }} />
         <h2 id="fastvidl-vs-competitors" className="home-blog-article-h2">FastVidl vs Competitors: Feature Comparison</h2>
         <div className="home-blog-article-table-wrap">
           <table className="home-blog-article-table">
@@ -133,6 +133,9 @@ export default function FacebookBlogContent() {
 
         <h2 id="how-to-download" className="home-blog-article-h2">How to Use a Free Facebook Video Downloader (Step-by-Step)</h2>
         <p className="home-blog-article-p">Explaining the process clearly helps new users and also fits how AI overviews extract quick instructions.</p>
+
+
+
         <p className="home-blog-article-p"><strong>Step 1: Copy the Facebook Video Link</strong></p>
         <ul style={listStyle}>
           <li style={liStyle}>On desktop: open the video, click the three dots (⋯) or the share icon, and copy the link</li>

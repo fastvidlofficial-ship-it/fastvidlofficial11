@@ -2,5 +2,7 @@
 User-agent: *
 Allow: /
 
-# Sitemap (Next.js may also serve dynamic sitemap from /sitemap.xml)
+# Sitemap
 Sitemap: https://fastvidl.com/sitemap.xml
+
+# For AI/LLM crawlers: site summary at /llms.txt

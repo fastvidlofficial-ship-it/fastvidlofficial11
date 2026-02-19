@@ -215,6 +215,9 @@ function HomePage() {
           </div>
 
           <h2 id="how-to-download-instagram-reels" className="home-blog-article-h2">How to Download Instagram Reels Using FastVidl</h2>
+          <Image src="/images/instagram1.jpeg" alt="How to Download Instagram Reels Using FastVidl" width={1000} height={1000} style={{ width: "100%", height: "auto" }} />
+          <br />
+          <Image src="/images/instagram2.jpeg" alt="How to Download Instagram Reels Using FastVidl" width={1000} height={1000} style={{ width: "100%", height: "auto" }} />
           <p className="home-blog-article-p"><strong>Step 1: Copy the Instagram Reel Link</strong></p>
           <ul style={listStyle}>
             <li style={liStyle}>Open Instagram and find the reel you want to download</li>

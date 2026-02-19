@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import '../Blog.css';
 import FAQSchema from '@/components/FAQSchema';
-
+import Image from 'next/image';
 const PINTEREST_FAQ_LIST = [
   { question: "Is it legal to download Pinterest videos?", answer: "Downloading your own videos or using content privately for research or education is generally safer, but redistributing other people's videos without permission can break copyright law and Pinterest's rules. If you plan to use a video publicly or commercially, you should ask the creator first." },
   { question: "Can I use a pinterest video downloader free without installing an app?", answer: "Yes! At fastvidl.com, you can easily download pinterest videos instantly. You simply paste the pin link into our website and click download—no installation required." },
@@ -133,6 +133,7 @@ export default function PinterestBlogContent() {
 
         <h2 id="how-to-download" className="home-blog-article-h2">How to Use a Pinterest Video Downloader Free (Step-by-Step)</h2>
         <p className="home-blog-article-p">Clear steps help new users, and they also make it easy for AI overviews to extract instructions.</p>
+        <Image src="/images/pinterest1.jpeg" alt="How to Use a Pinterest Video Downloader Free" width={1000} height={1000} style={{ width: "100%", height: "auto" }} />
         <p className="home-blog-article-p"><strong>Step 1: Copy the Pinterest Video Link</strong></p>
         <ul style={listStyle}>
           <li style={liStyle}>Open Pinterest and find the pin with the video you want</li>
