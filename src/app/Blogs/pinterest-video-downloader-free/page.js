@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import '../Blog.css';
-import Blog from '../page';
+import PinterestBlogContent from './PinterestBlogContent';
 
 function SEO({ title, description, keywords }) {
   useEffect(() => {
@@ -48,7 +48,7 @@ export default function PinterestVideoDownloaderFreePage() {
           ← Back to Blog
         </button>
 
-        <Blog />
+        <PinterestBlogContent />
       </div>
     </>
   );

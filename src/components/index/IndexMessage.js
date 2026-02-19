@@ -9,7 +9,7 @@ const IndexMessage = () => {
         <h2>
           <span className={style["head-one"]}>Instagram </span>
           <span className={style["head-two"]}>Reel </span>
-          Do<span className={style["head-three"]}>wnload</span>er 
+          <span className={style["head-three"]}>Downloader</span>
           <span className={style["head-four"]}> Free</span>
         </h2>
       

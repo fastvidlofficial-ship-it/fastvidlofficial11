@@ -2,14 +2,14 @@
 import styles from "../page.module.css";
 import heroStyles from "../DownloaderHero.module.css";
 import UserInput from "@/components/input/UserInput";
-import Blog from "../Blogs/page";
+import FacebookBlogContent from "../Blogs/free-facebook-video-downloader/FacebookBlogContent";
 
 export default function FacebookReelDownloaderService() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
         <div className={heroStyles.heroWrap}>
-          <h2 className={heroStyles.heroTitle}>
+          <h1 className={heroStyles.heroTitle}>
             <span style={{ color: "black" }}>Free </span>
             <span style={{ color: "black" }}>Facebook </span>
             <span style={{
@@ -18,13 +18,13 @@ export default function FacebookReelDownloaderService() {
               WebkitBackgroundClip: "text",
               backgroundClip: "text"
             }}>Video </span>
-            Do<span style={{
+            <span style={{
               WebkitTextFillColor: "transparent",
               background: "linear-gradient(to right, #25ff92, #24afff)",
               WebkitBackgroundClip: "text",
               backgroundClip: "text"
-            }}>wnload</span>er
-          </h2>
+            }}>Downloader</span>
+          </h1>
           <p style={{
             fontSize: "1.14rem",
             color: "var(--p-font-color)",
@@ -38,7 +38,7 @@ export default function FacebookReelDownloaderService() {
           </p>
         </div>
         <UserInput />
-        <Blog />
+        <FacebookBlogContent />
       </main>
     </div>
   );

@@ -1,0 +1,5 @@
+# FastVidl
+
+FastVidl is a high-speed Instagram Reel downloader supporting 4K resolution and watermark-free saves.
+
+The site also offers free video downloaders for Pinterest and Facebook. All tools are free to use in the browser with no app install required.

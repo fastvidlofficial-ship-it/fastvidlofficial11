@@ -16,7 +16,7 @@
   line-height: 1.2;
   overflow-wrap: break-word;
   word-wrap: break-word;
-  word-break: break-word;
+  word-break: normal;
 }
 
 @media (max-width: 768px) {
