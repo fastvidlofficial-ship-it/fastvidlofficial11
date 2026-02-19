@@ -1,11 +1,10 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import CookieConsent from "@/components/cookie-consent/CookieConsent";
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6813251858740530"
-     crossorigin="anonymous"></script>
-     
+import WebSiteSchema from "@/components/WebSiteSchema";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +34,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <Script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6813251858740530"
+          strategy="afterInteractive"
+        />
+        <WebSiteSchema />
         <Header/>
         {children}
         <Footer/>
