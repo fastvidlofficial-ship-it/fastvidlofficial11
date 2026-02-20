@@ -30,7 +30,7 @@ export default function PinterestBlogContent() {
     <div className="container-blog">
       <FAQSchema faqList={PINTEREST_FAQ_LIST} />
       <div className="home-blog-article blog-content">
-        <p className="home-blog-article-meta" style={{ fontStyle: "italic", color: "#666", marginBottom: "0.5rem" }}>Last updated: 19th February, 2026</p>
+        {/* <p className="home-blog-article-meta" style={{ fontStyle: "italic", color: "#666", marginBottom: "0.5rem" }}>Last updated: 19th February, 2026</p> */}
         <h1 className="home-blog-article-title">Pinterest Video Downloader Free: Download Videos Without Watermark (2026)</h1>
         <p className="home-blog-article-meta">By FastVidl Team | 19th February 2026 | 12 min read</p>
 
