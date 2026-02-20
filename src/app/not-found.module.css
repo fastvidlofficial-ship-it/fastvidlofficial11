@@ -8,7 +8,7 @@
 }
 
 .content {
-  background: white;
+  background: var(--card-bg, #ffffff);
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
   padding: 3rem;
@@ -57,20 +57,20 @@
 .errorTitle {
   font-size: 2rem;
   font-weight: 700;
-  color: #1a202c;
+  color: var(--heading-color, #1a202c);
   margin: 0 0 1rem 0;
 }
 
 .errorMessage {
   font-size: 1.1rem;
-  color: #4a5568;
+  color: var(--text-secondary, #4a5568);
   margin: 0 0 0.5rem 0;
   line-height: 1.6;
 }
 
 .errorSubMessage {
   font-size: 1rem;
-  color: #718096;
+  color: var(--text-muted, #718096);
   margin: 0 0 2rem 0;
   line-height: 1.6;
 }
@@ -104,24 +104,24 @@
 .secondaryButton {
   display: inline-block;
   padding: 0.875rem 2rem;
-  background: white;
-  color: #667eea;
+  background: var(--card-bg, #ffffff);
+  color: var(--link-color, #667eea);
   text-decoration: none;
   border-radius: 50px;
   font-weight: 600;
   font-size: 1rem;
   transition: all 0.3s ease;
-  border: 2px solid #667eea;
+  border: 2px solid var(--link-color, #667eea);
 }
 
 .secondaryButton:hover {
-  background: #f0f4ff;
+  background: var(--highlight-bg, #f0f4ff);
   transform: translateY(-2px);
 }
 
 .quickLinks {
   text-align: left;
-  background: #f8f9fa;
+  background: var(--subtle-bg, #f8f9fa);
   border-radius: 12px;
   padding: 1.5rem;
   margin-top: 2rem;
@@ -130,7 +130,7 @@
 .quickLinksTitle {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #1a202c;
+  color: var(--heading-color, #1a202c);
   margin: 0 0 1rem 0;
 }
 
@@ -148,7 +148,7 @@
 }
 
 .linksList li a {
-  color: #667eea;
+  color: var(--link-color, #667eea);
   text-decoration: none;
   font-size: 0.95rem;
   transition: all 0.2s ease;
@@ -157,7 +157,7 @@
 }
 
 .linksList li a:hover {
-  color: #764ba2;
+  color: var(--link-hover-color, #764ba2);
   padding-left: 0.5rem;
 }
 

@@ -10,7 +10,7 @@ export default function InstagramReelDownloaderService() {
       <main className={styles.main}>
         <div className={heroStyles.heroWrap}>
           <h1 className={heroStyles.heroTitle}>
-            <span style={{ color: "black" }}>Instagram </span>
+            <span style={{ color: "var(--heading-color, #1a202c)" }}>Instagram </span>
             <span style={{
               WebkitTextFillColor: "transparent",
               background: "linear-gradient(to right, #ff512f, #dd2476)",
@@ -23,7 +23,7 @@ export default function InstagramReelDownloaderService() {
               WebkitBackgroundClip: "text",
               backgroundClip: "text"
             }}>Downloader</span>
-            <span style={{ color: "black" }}> Free</span>
+            <span style={{ color: "var(--heading-color, #1a202c)" }}> Free</span>
           </h1>
           <p style={{
             fontSize: "1.14rem",

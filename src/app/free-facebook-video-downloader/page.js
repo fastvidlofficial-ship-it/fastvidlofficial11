@@ -10,8 +10,8 @@ export default function FacebookReelDownloaderService() {
       <main className={styles.main}>
         <div className={heroStyles.heroWrap}>
           <h1 className={heroStyles.heroTitle}>
-            <span style={{ color: "black" }}>Free </span>
-            <span style={{ color: "black" }}>Facebook </span>
+            <span style={{ color: "var(--heading-color, #1a202c)" }}>Free </span>
+            <span style={{ color: "var(--heading-color, #1a202c)" }}>Facebook </span>
             <span style={{
               WebkitTextFillColor: "transparent",
               background: "linear-gradient(to right, #ff512f, #dd2476)",

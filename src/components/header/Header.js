@@ -3,6 +3,7 @@ import styles from "./Header.module.css";
 import React, { useState, useRef, useEffect } from "react";
 import logo from "../../../public/assets/weblogo.png";
 import Image from "next/image";
+import ThemeButton from "../theme/ThemeButton";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,6 +41,9 @@ const Header = () => {
             <h2>FastVidl</h2>
           </div>
         </a>
+      </div>
+      <div className={styles["header-actions"]}>
+        <ThemeButton />
       </div>
       <button
         type="button"

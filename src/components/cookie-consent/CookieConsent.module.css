@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   z-index: 9999;
-  background: #fff;
+  background: var(--cookie-banner-bg, #fff);
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.12);
   border-top: 1px solid rgba(0, 0, 0, 0.08);
   padding: 1rem 1.5rem;
@@ -36,13 +36,13 @@
   margin: 0;
   font-size: 0.95rem;
   line-height: 1.5;
-  color: #333;
+  color: var(--cookie-banner-text, #333);
   flex: 1;
   min-width: 200px;
 }
 
 .link {
-  color: #667eea;
+  color: var(--link-color, #667eea);
   font-weight: 600;
   text-decoration: none;
 }
@@ -79,13 +79,13 @@
 }
 
 .reject {
-  background: #f0f2f5;
-  color: #333;
+  background: var(--cookie-reject-bg, #f0f2f5);
+  color: var(--cookie-reject-color, #333);
   border: 2px solid #dee2e6;
 }
 
 .reject:hover {
-  background: #e9ecef;
+  background: var(--cookie-reject-hover-bg, #e9ecef);
   transform: translateY(-1px);
 }
 

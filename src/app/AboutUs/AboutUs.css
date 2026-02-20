@@ -8,7 +8,7 @@
 .about-page {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: var(--text-body, #333);
   overflow-x: hidden;
   
 }
@@ -23,7 +23,7 @@
 /* Main content area – same as Privacy & Terms (grey bg) */
 .about-main {
   padding: 2rem 0;
-  background: #f0f2f5;
+  background: var(--section-bg, #f0f2f5);
   min-height: 50vh;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .about-main .card3d {
-  background: #ffffff;
+  background: var(--card-bg, #ffffff);
   border-radius: 16px;
   padding: 1.75rem 2rem;
   box-sizing: border-box;
@@ -203,7 +203,7 @@
 } */
 
 .section-title.white {
-  color: black;
+  color: var(--heading-color, #1a202c);
   /* background-color: #dbeafe; */
 }
 
@@ -266,7 +266,7 @@
 } */
 
 .feature-card {
-  background: white;
+  background: var(--card-bg, #ffffff);
   border-radius: 2rem;
   padding: 2rem;
   height: 100%;
@@ -308,19 +308,19 @@
 
 .feature-info h3 {
   font-weight: 600;
-  color: #1a202c;
+  color: var(--heading-color, #1a202c);
   margin-bottom: 0.25rem;
 }
 
 .feature-info p {
-  color: #4a5568;
+  color: var(--text-secondary, #4a5568);
   font-size: 0.9rem;
 }
 
 /* Features Section */
 .features-section {
   padding: 2rem 0;
-  background: white;
+  background: var(--card-bg, #ffffff);
 }
 
 .features-header {
@@ -363,12 +363,12 @@
 .feature-card-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1a202c;
+  color: var(--heading-color, #1a202c);
   margin-bottom: 1rem;
 }
 
 .feature-card-description {
-  color: #4a5568;
+  color: var(--text-secondary, #4a5568);
   line-height: 1.6;
 }
 
@@ -435,7 +435,7 @@
 
 .vision-text {
   font-size: 1.25rem;
-  color: #4a5568;
+  color: var(--text-secondary, #4a5568);
   margin-bottom: 2rem;
   line-height: 1.7;
 }
@@ -486,7 +486,7 @@
 }
 
 .vision-card {
-  background: white;
+  background: var(--card-bg, #ffffff);
   padding: 1.5rem;
   border-radius: 1rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -500,12 +500,12 @@
 
 .vision-card h3 {
   font-weight: 700;
-  color: #1a202c;
+  color: var(--heading-color, #1a202c);
   margin-bottom: 0.5rem;
 }
 
 .vision-card p {
-  color: #4a5568;
+  color: var(--text-secondary, #4a5568);
   font-size: 0.9rem;
 }
 
@@ -588,18 +588,18 @@
 }
 
 .prose {
-  color: #333;
+  color: var(--text-body, #333);
   line-height: 1.8;
 }
 
 .prose h2 {
-  color: #1a202c;
+  color: var(--heading-color, #1a202c);
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
 
 .prose h3 {
-  color: #2d3748;
+  color: var(--text-primary, #1a202c);
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
 }
@@ -609,7 +609,7 @@
 }
 
 .prose strong {
-  color: #1a202c;
+  color: var(--heading-color, #1a202c);
   font-weight: 600;
 }
 
@@ -637,7 +637,7 @@
   content: "•";
   position: absolute;
   left: 0;
-  color: black;
+  color: var(--heading-color, #1a202c);
   font-weight: bold;
 }
 
@@ -651,7 +651,7 @@
 }
 
 .faq-item {
-  background: #f8fafc;
+  background: var(--subtle-bg, #f8f9fa);
   padding: 1.5rem;
   border-radius: 0.75rem;
   border-left: 4px solid #667eea;
@@ -660,25 +660,25 @@
 }
 
 .faq-item:hover {
-  background: #f1f5f9;
+  background: var(--highlight-bg, #f0f4ff);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .faq-item h3 {
-  color: #1a202c;
+  color: var(--heading-color, #1a202c);
   font-size: 1.125rem;
   margin-bottom: 0.5rem;
 }
 
 .faq-item p {
-  color: #4a5568;
+  color: var(--text-secondary, #4a5568);
   margin-bottom: 0;
 }
 
 /* Contact Links */
 .email-link,
 .contact-link {
-  color: #667eea;
+  color: var(--link-color, #667eea);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -686,7 +686,7 @@
 
 .email-link:hover,
 .contact-link:hover {
-  color: #764ba2;
+  color: var(--link-hover-color, #764ba2);
   text-decoration: underline;
 }
 
@@ -731,12 +731,12 @@
 }
 
 .team-profile-info h3 {
-  color: #1a202c;
+  color: var(--heading-color, #1a202c);
   margin-bottom: 0.5rem;
 }
 
 .team-profile-info p {
-  color: #4a5568;
+  color: var(--text-secondary, #4a5568);
   margin-bottom: 1rem;
 }
 
@@ -747,7 +747,7 @@
   text-decoration: none;
   font-weight: 600;
   padding: 0.75rem 1.5rem;
-  background: #f0f4ff;
+  background: var(--highlight-bg, #f0f4ff);
   border-radius: 0.5rem;
   transition: all 0.3s ease;
   border: 2px solid transparent;

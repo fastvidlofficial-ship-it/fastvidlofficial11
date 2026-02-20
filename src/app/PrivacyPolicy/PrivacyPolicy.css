@@ -21,7 +21,7 @@
 
 .privacy-main {
   padding: 2rem 0;
-  background: #f0f2f5;
+  background: var(--section-bg, #f0f2f5);
   min-height: 50vh;
 }
 
@@ -67,7 +67,7 @@
 .section-title {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #2c3e50;
+  color: var(--heading-color, #2c3e50);
   margin: 0;
 }
 
@@ -85,7 +85,7 @@
 }
 
 .privacy-section .card3d {
-  background: #ffffff;
+  background: var(--card-bg, #ffffff);
   border-radius: 16px;
   padding: 1.75rem 2rem;
   box-sizing: border-box;
@@ -112,7 +112,7 @@
 .privacy-text {
   font-size: 1.1rem;
   line-height: 1.85;
-  color: #555;
+  color: var(--text-secondary, #555);
   margin-bottom: 1.75rem;
 }
 
@@ -127,7 +127,7 @@
   isolation: isolate;
   padding: 1rem 0 1rem 2.5rem;
   font-size: 1.05rem;
-  color: #444;
+  color: var(--text-secondary, #444);
   line-height: 1.75;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
@@ -139,7 +139,7 @@
   top: 0.8rem;
   width: 1.5rem;
   height: 1.5rem;
-  background: black;
+  background: var(--heading-color, black);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -164,7 +164,7 @@ a.privacy-clickable-link {
   z-index: 10;
   pointer-events: auto !important;
   cursor: pointer !important;
-  color: #1877f2 !important;
+  color: var(--link-color, #1877f2) !important;
   text-decoration: underline !important;
   display: inline-block;
   min-height: 1.4em;
@@ -172,7 +172,7 @@ a.privacy-clickable-link {
 .privacy-section a:hover,
 .privacy-section .card3d a:hover,
 a.privacy-clickable-link:hover {
-  color: #0051a2 !important;
+  color: var(--link-hover-color, #0051a2) !important;
 }
 
 .important-notice {
@@ -193,13 +193,13 @@ a.privacy-clickable-link:hover {
 
 .notice-content h3 {
   font-size: 1.3rem;
-  color: #2c3e50;
+  color: var(--heading-color, #2c3e50);
   margin: 0 0 0.5rem 0;
 }
 
 .notice-content p {
   margin: 0;
-  color: #555;
+  color: var(--text-secondary, #555);
   font-size: 1rem;
 }
 
@@ -219,13 +219,13 @@ a.privacy-clickable-link:hover {
 
 .footer-card h3 {
   font-size: 1.8rem;
-  color: #2c3e50;
+  color: var(--heading-color, #2c3e50);
   margin-bottom: 1rem;
 }
 
 .footer-card p {
   font-size: 1.1rem;
-  color: #666;
+  color: var(--text-muted, #666);
   margin-bottom: 2rem;
 }
 
@@ -262,12 +262,12 @@ a.privacy-clickable-link:hover {
 
 .footer-btn.secondary {
   background: transparent;
-  color: #667eea;
-  border-color: #667eea;
+  color: var(--brand-primary, #667eea);
+  border-color: var(--brand-primary, #667eea);
 }
 
 .footer-btn.secondary:hover {
-  background: #667eea;
+  background: var(--brand-primary, #667eea);
   color: white;
   transform: translateY(-2px);
 }
@@ -283,7 +283,7 @@ a.privacy-clickable-link:hover {
 
 .last-updated {
   font-size: 0.9rem;
-  color: #999;
+  color: var(--text-muted, #999);
   font-style: italic;
   margin-top: 1rem;
 }
@@ -379,7 +379,7 @@ a.privacy-clickable-link:hover {
 .privacy-section h2 {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #2c3e50;
+  color: var(--heading-color, #2c3e50);
   margin-top: 3rem;
   margin-bottom: 1.25rem;
   padding-bottom: 0.5rem;
@@ -393,7 +393,7 @@ a.privacy-clickable-link:hover {
 .privacy-section h3 {
   font-size: 1.4rem;
   font-weight: 600;
-  color: #495057;
+  color: var(--text-secondary, #495057);
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
@@ -410,17 +410,17 @@ a.privacy-clickable-link:hover {
 }
 
 .privacy-section table th {
-  background: #667eea;
+  background: var(--brand-primary, #667eea);
   color: white;
   font-weight: 600;
 }
 
 .privacy-section table tr:nth-child(even) {
-  background: #f8f9fa;
+  background: var(--table-stripe-bg, #f8f9fa);
 }
 
 .privacy-section table tr:hover {
-  background: #e9ecef;
+  background: var(--table-hover-bg, #e9ecef);
 }
 
 .privacy-section ol {

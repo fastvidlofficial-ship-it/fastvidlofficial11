@@ -8,7 +8,7 @@
 
 .termsMain {
   padding: 2rem 0;
-  background: #f0f2f5;
+  background: var(--section-bg, #f0f2f5);
   min-height: 50vh;
 }
 
@@ -22,14 +22,14 @@
   text-align: center;
   font-size: 28px;
   font-weight: bold;
-  color:black;
+  color: var(--heading-color, #1a202c);
   margin-bottom: 10px;
 }
 
 .update {
   text-align: center;
   font-size: 14px;
-  color: #666;
+  color: var(--text-muted, #666);
   margin-bottom: 30px;
 }
 
@@ -48,7 +48,7 @@
 }
 
 .card3d {
-  background: #ffffff;
+  background: var(--card-bg, #ffffff);
   border-radius: 16px;
   padding: 1.75rem 2rem;
   box-sizing: border-box;
@@ -79,13 +79,13 @@
 .section h2 {
   font-size: 20px;
   margin-bottom: 10px;
-  color: black;
+  color: var(--heading-color, #1a202c);
 }
 
 .section p,
 .section ul {
   font-size: 15px;
-  color: #444;
+  color: var(--text-secondary, #4a5568);
   padding: 0;
 }
 
@@ -97,7 +97,7 @@
 .section h2 {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #2c3e50;
+  color: var(--heading-color, #1a202c);
   margin-top: 2.5rem;
   margin-bottom: 1rem;
   padding-bottom: 0.5rem;
@@ -107,7 +107,7 @@
 .section h3 {
   font-size: 1.4rem;
   font-weight: 600;
-  color: #495057;
+  color: var(--text-secondary, #4a5568);
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
 }
@@ -119,14 +119,14 @@
 }
 
 .section a {
-  color: #1877f2;
+  color: var(--link-color, #667eea);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .section a:hover {
-  color: #0051a2;
+  color: var(--link-hover-color, #764ba2);
   text-decoration: underline;
 }
 

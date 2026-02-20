@@ -6,7 +6,7 @@
 
 .cookie-main {
   padding: 2rem 0;
-  background: #f0f2f5;
+  background: var(--section-bg, #f0f2f5);
   min-height: 50vh;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .cookie-section .card3d {
-  background: #ffffff;
+  background: var(--card-bg, #ffffff);
   border-radius: 16px;
   padding: 1.75rem 2rem;
   box-sizing: border-box;
@@ -59,13 +59,13 @@
   margin-top: 1.25rem;
   margin-bottom: 0.75rem;
   font-size: 1.25rem;
-  color: #495057;
+  color: var(--text-secondary, #495057);
 }
 
 .cookie-text {
   font-size: 1.05rem;
   line-height: 1.85;
-  color: #444;
+  color: var(--text-secondary, #444);
   margin-bottom: 1.25rem;
 }
 
@@ -84,9 +84,9 @@
 }
 
 .cookie-section table th {
-  background: #f8f9fa;
+  background: var(--table-header-bg, #f8f9fa);
   font-weight: 600;
-  color: #2c3e50;
+  color: var(--heading-color, #2c3e50);
 }
 
 .cookie-section ul {
@@ -100,7 +100,7 @@
 }
 
 .cookie-section a {
-  color: #1877f2;
+  color: var(--link-color, #1877f2);
   text-decoration: none;
   font-weight: 500;
 }

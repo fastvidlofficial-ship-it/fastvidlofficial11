@@ -6,7 +6,7 @@
 
 .contact-page {
   font-family: 'Segoe UI', sans-serif;
-  background: white;
+  background: var(--card-bg, white);
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -16,7 +16,7 @@
 .contact-container {
   max-width: 1200px;
   margin: 0 auto;
-  background: white;
+  background: var(--card-bg, white);
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
@@ -60,7 +60,7 @@
 }
 
 .phone-screen {
-  background: #f8f9fa;
+  background: var(--subtle-bg, #f8f9fa);
   border-radius: 15px;
   padding: 2rem;
   width: 180px;
@@ -94,7 +94,7 @@
 .progress-bar {
   width: 100%;
   height: 6px;
-  background: #e9ecef;
+  background: var(--border-subtle, #e9ecef);
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 0.5rem;
@@ -109,7 +109,7 @@
 
 .progress-text {
   font-size: 0.8rem;
-  color: #6c757d;
+  color: var(--text-muted, #6c757d);
   font-weight: 600;
 }
 
@@ -152,7 +152,7 @@
 .form-title {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #1a202c;
+  color: var(--heading-color, #1a202c);
   margin-bottom: 0.5rem;
   background: linear-gradient(45deg, #667eea, #764ba2);
   -webkit-background-clip: text;
@@ -160,7 +160,7 @@
 }
 
 .form-subtitle {
-  color: #4a5568;
+  color: var(--text-secondary, #4a5568);
   margin-bottom: 2rem;
   font-size: 1.1rem;
 }
@@ -184,7 +184,7 @@
 
 .form-label {
   font-weight: 600;
-  color: #2d3748;
+  color: var(--text-primary, #2d3748);
   margin-bottom: 0.5rem;
 }
 
@@ -198,7 +198,7 @@
 
 .form-input:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: var(--brand-primary, #667eea);
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
@@ -244,4 +244,3 @@
     font-size: 2rem;
   }
 }
- 

@@ -8,57 +8,150 @@
 }
 
 [data-theme="dark"] {
-  --background-color: rgb(15, 15, 15);
-  --header-logo-color: white;
-  --h1-font-color: white;
-  --p-font-color: rgb(201, 201, 201);
+  --background-color: #0f0f0f;
+  --header-logo-color: #e8e8e8;
+  --h1-font-color: #e8e8e8;
+  --p-font-color: #b0b0b0;
+
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0a0;
+  --text-muted: #888;
+  --text-body: #c9c9c9;
+  --heading-color: #e8e8e8;
+
+  --card-bg: #1a1a2e;
+  --section-bg: #141422;
+  --subtle-bg: #1e1e30;
+  --highlight-bg: #1e1e35;
+
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(255, 255, 255, 0.06);
+
+  --link-color: #7b93f5;
+  --link-hover-color: #a78bfa;
+  --brand-primary: #7b93f5;
+  --brand-secondary: #a78bfa;
+
+  --nav-link-color: #d0d0d0;
+  --nav-link-hover-color: #f87171;
+  --nav-link-hover-bg: rgba(248, 113, 113, 0.08);
+  --nav-border-color: rgba(255, 255, 255, 0.06);
+
+  --table-header-bg: #1e1e35;
+  --table-header-color: #7b93f5;
+  --table-stripe-bg: #1a1a2e;
+  --table-hover-bg: #24243a;
+
+  --faq-bg: #1a1a2e;
+  --faq-hover-bg: #1e1e35;
+  --faq-question-color: #e0e0e0;
+  --faq-answer-color: #a0a0a0;
+  --faq-icon-color: #7b93f5;
+
+  --badge-bg: #7b93f5;
+  --badge-color: #fff;
+  --btn-primary-bg: linear-gradient(135deg, #667eea, #764ba2);
+  --btn-primary-color: #fff;
 
   --input-background: #20212c;
-  --input-text-color: rgb(223, 223, 223);
+  --input-text-color: #dfdfdf;
   --input-box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.38);
-  --input-placeholder-text-color: rgb(187, 187, 187);
+  --input-placeholder-text-color: #bbbbbb;
   --input-button-background-color: #f30049ce;
   --input-button-hover-background-color: #a50037;
 
   --result-background-color: #00000085;
   --result-border: 1.5px solid #1e1f2471;
   --result-box-shadow: 1px 1px 10px 10px #0000002c;
-  --result-title-font-color: rgb(192, 192, 192);
-  --result-table-font-color: rgb(201, 201, 201);
+  --result-title-font-color: #c0c0c0;
+  --result-table-font-color: #c9c9c9;
   --result-table-bg-color: #191a27;
 
   --loader-bg-color: #272935;
   --loader-border: 1.2px solid #5e6076;
-  --loader-box-shadow: 1px 1px 20px 10px #00000000;
+  --loader-box-shadow: 1px 1px 20px 10px transparent;
   --loader-progress-bg-color: #dd0155c9;
   --loader-progress-box-shadow: 1px 1px 20px 10px rgba(0, 0, 0, 0.295);
   --loader-animated-color: #fff;
 
   --error-bg-color: #262733;
-  --error-border: 1.2px solid #0000001a;
-  --error-font-color: rgb(233, 40, 66);
+  --error-border: 1.2px solid rgba(255, 255, 255, 0.06);
+  --error-font-color: #e93848;
 
-  --footer-text-color: rgb(223, 223, 223);
+  --footer-text-color: #dfdfdf;
+
+  --cookie-banner-bg: #1a1a2e;
+  --cookie-banner-text: #c9c9c9;
+  --cookie-reject-bg: #2a2a3e;
+  --cookie-reject-color: #c9c9c9;
+  --cookie-reject-hover-bg: #343450;
+
+  --notice-bg: #2a2a1e;
+  --notice-border: #665522;
+  --notice-color: #e0c060;
+
+  --download-btn-bg: #c50052d7;
+  --download-btn-hover-bg: #a10144;
 }
 
 [data-theme="light"] {
-  --background-color: rgb(255, 255, 255);
+  --background-color: #ffffff;
   --h1-font-color: #1e1e1e;
   --p-font-color: #5c5c5c;
   --header-logo-color: #2c2c2c;
 
-  --input-background: rgb(255, 255, 255);
-  --input-text-color: rgb(34, 34, 34);
+  --text-primary: #1a202c;
+  --text-secondary: #4a5568;
+  --text-muted: #666;
+  --text-body: #333;
+  --heading-color: #1a202c;
+
+  --card-bg: #ffffff;
+  --section-bg: #f0f2f5;
+  --subtle-bg: #f8f9fa;
+  --highlight-bg: #f0f4ff;
+
+  --border-color: rgba(0, 0, 0, 0.06);
+  --border-subtle: #e9ecef;
+
+  --link-color: #667eea;
+  --link-hover-color: #764ba2;
+  --brand-primary: #667eea;
+  --brand-secondary: #764ba2;
+
+  --nav-link-color: #1a1a1a;
+  --nav-link-hover-color: #f44336;
+  --nav-link-hover-bg: rgba(244, 67, 54, 0.05);
+  --nav-border-color: rgba(0, 0, 0, 0.06);
+
+  --table-header-bg: #f0f4ff;
+  --table-header-color: #667eea;
+  --table-stripe-bg: #f8f9fa;
+  --table-hover-bg: #e9ecef;
+
+  --faq-bg: #ffffff;
+  --faq-hover-bg: #f0f4ff;
+  --faq-question-color: #2d3748;
+  --faq-answer-color: #4a5568;
+  --faq-icon-color: #667eea;
+
+  --badge-bg: #667eea;
+  --badge-color: #fff;
+  --btn-primary-bg: linear-gradient(135deg, #667eea, #764ba2);
+  --btn-primary-color: #fff;
+
+  --input-background: #ffffff;
+  --input-text-color: #222222;
   --input-box-shadow: 0px 0px 20px 1px rgb(138 138 138 / 38%);
-  --input-placeholder-text-color: rgb(121, 121, 121);
+  --input-placeholder-text-color: #797979;
   --input-button-background-color: #1477e9e7;
   --input-button-hover-background-color: rgba(15, 105, 207, 0.906);
 
-  --result-background-color: #rgb(255, 255, 255);
+  --result-background-color: #ffffff;
   --result-border: 2px solid #82839142;
   --result-box-shadow: 0px 0px 8px 4px #22222227;
-  --result-title-font-color: rgb(34, 34, 34);
-  --result-table-font-color: rgb(34, 34, 34);
+  --result-title-font-color: #222222;
+  --result-table-font-color: #222222;
   --result-table-bg-color: #e6e6e68c;
 
   --loader-bg-color: #ffffff;
@@ -69,10 +162,23 @@
   --loader-animated-color: #0755ff;
 
   --error-bg-color: #ffffff;
-  --error-border: 1.2px solid #0000001a;
-  --error-font-color: rgb(255, 80, 80);
+  --error-border: 1.2px solid rgba(0, 0, 0, 0.1);
+  --error-font-color: #ff5050;
 
-  --footer-text-color: rgb(70, 70, 70);
+  --footer-text-color: #464646;
+
+  --cookie-banner-bg: #fff;
+  --cookie-banner-text: #333;
+  --cookie-reject-bg: #f0f2f5;
+  --cookie-reject-color: #333;
+  --cookie-reject-hover-bg: #e9ecef;
+
+  --notice-bg: #fff3cd;
+  --notice-border: #ffc107;
+  --notice-color: #856404;
+
+  --download-btn-bg: #c50052d7;
+  --download-btn-hover-bg: #a10144;
 }
 
 body {
@@ -100,7 +206,7 @@ body::-webkit-scrollbar-track {
 
 a {
   text-decoration: none;
-  color: white;
+  color: inherit;
 }
 
 code {

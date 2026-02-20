@@ -1,35 +1,33 @@
-"use client"
+"use client";
 import { createContext, useContext, useEffect, useState } from "react";
 
-const ThemeContext = createContext({ theme: "", themeControler: () => {} });
+const ThemeContext = createContext({ theme: "light", themeControler: () => {} });
 
-export const useTheme = () => {
-  return useContext(ThemeContext);
-};
+export const useTheme = () => useContext(ThemeContext);
 
-const ThemeProvider = (props) => {
-  const localThemeMode =
-    localStorage.getItem("theme") === "dark"
-      ? true
-      : localStorage.getItem("theme") === "light"
-        ? false
-        : true;
-  const [isDrakMode, setIsDarkMode] = useState(localThemeMode);
-
-  const themeControler = () => {
-    setIsDarkMode((pre) => !pre);
-  };
-
-  const theme = isDrakMode ? "dark" : "light";
+const ThemeProvider = ({ children }) => {
+  const [theme, setTheme] = useState("light");
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    const stored = localStorage.getItem("theme");
+    const initial = stored === "dark" ? "dark" : "light";
+    setTheme(initial);
+    document.documentElement.setAttribute("data-theme", initial);
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
-  }, [theme]);
+  }, [theme, mounted]);
+
+  const themeControler = () => setTheme((prev) => (prev === "dark" ? "light" : "dark"));
 
   return (
     <ThemeContext.Provider value={{ theme, themeControler }}>
-      {props.children}
+      {children}
     </ThemeContext.Provider>
   );
 };
