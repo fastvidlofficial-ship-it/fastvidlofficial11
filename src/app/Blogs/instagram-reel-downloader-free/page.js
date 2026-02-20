@@ -55,7 +55,9 @@ export default function InstagramReelDownloaderFreePage() {
       <FAQSchema faqList={INSTAGRAM_BLOG_FAQ_LIST} />
       <SEO
         title="Instagram Reel Downloader Free 2026: Download Reels Without Watermark | FastVidl"
-        description="Download Instagram Reels for free with FastVidl – no watermark, no login, no app installation. Save IG Reels in HD 1080p on iPhone, Android & desktop in seconds. 100% secure, browser-based tool for public reels only."
+        description="Download Instagram Reels for free with FastVidl – no watermark, no login, no app installation.
+Save IG Reels in HD 1080p on iPhone, Android & desktop in seconds. 100% secure, browser-based tool for
+public reels only."
         keywords="instagram reel downloader free, download instagram reels, save instagram reels, instagram downloader online, IGTV downloader, instagram story downloader"
       />
 

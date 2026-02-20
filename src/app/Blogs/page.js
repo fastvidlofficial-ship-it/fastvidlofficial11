@@ -326,7 +326,7 @@ function HomePage() {
           </p>
           <p className="home-blog-article-p">
             FastVidl isn't just for Instagram Reels, Videos, Photos, Stories, IGTV, Highlights, Carousel Posts.
-            <br />Try our: <Link href="/Blogs/free-facebook-video-downloader" className="home-blog-article-link">Free Facebook Video Downloader</Link> – Download Reels, Videos, Watch Videos, Public Posts.
+            <br />Try our: <Link href="/free-facebook-video-downloader" className="home-blog-article-link">Free Facebook Video Downloader</Link> – Download Reels, Videos, Watch Videos, Public Posts.
           </p>
 
           <h2 id="frequently-asked-questions" className="home-blog-article-h2">Frequently Asked Questions</h2>

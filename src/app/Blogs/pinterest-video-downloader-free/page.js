@@ -39,7 +39,9 @@ export default function PinterestVideoDownloaderFreePage() {
     <>
       <SEO
         title="Pinterest Video Downloader Free 2026: Save Pins Without Watermark | FastVidl"
-        description="Download Pinterest videos free with FastVidl – no watermark, no login required, no software to install. Save pins in HD 1080p on any device instantly. Secure, browser-based Pinterest video saver for public content only."
+        description=" Download Pinterest videos free with FastVidl – no watermark, no login required, no software
+to install. Save pins in HD 1080p on any device instantly. Secure, browser-based Pinterest video saver for public
+content only."
         keywords="pinterest video downloader free, download pinterest videos, save pinterest videos, pinterest video downloader online, download pinterest pins, pinterest video saver"
       />
 
