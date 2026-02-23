@@ -15,7 +15,7 @@ const FAQS = () => {
     },
     {
       question: "Which platforms are supported?",
-      answer: "Our downloader supports multiple platforms including YouTube, Vimeo, Facebook, Instagram, Twitter, TikTok, and many other popular video sharing websites."
+      answer: "FastVidl supports Instagram (Reels, Stories, IGTV), Facebook (videos and reels), and Pinterest (videos and pins). Paste a public link from any of these platforms to download."
     },
     {
       question: "Is there a file size limit?",
@@ -27,19 +27,19 @@ const FAQS = () => {
     },
     {
       question: "Is this service free to use?",
-      answer: "Yes, our video downloader is completely free to use with no hidden charges. You can download unlimited videos without any subscription or registration required."
+      answer: "Yes, FastVidl is completely free to use with no hidden charges. You can download unlimited videos without any subscription or registration required."
     },
     {
       question: "Do I need to install any software?",
-      answer: "No installation required! Our video downloader works directly in your web browser. Just visit the website, paste your link, and download."
+      answer: "No installation required! FastVidl works directly in your web browser. Just visit the website, paste your link, and download."
     },
     {
       question: "Can I download videos on mobile devices?",
-      answer: "Absolutely! Our downloader is fully responsive and works on smartphones, tablets, and desktop computers. Simply use your mobile browser to access the service."
+      answer: "Absolutely! FastVidl is fully responsive and works on smartphones, tablets, and desktop computers. Simply use your mobile browser to access the service."
     },
     {
       question: "Are the downloaded videos safe and legal?",
-      answer: "Our tool is safe to use and doesn't contain malware. However, please ensure you have the right to download content and respect copyright laws. Only download videos you have permission to use."
+      answer: "FastVidl is safe to use and doesn't contain malware. However, please ensure you have the right to download content and respect copyright laws. Only download videos you have permission to use."
     }
   ];
 
@@ -53,7 +53,7 @@ const FAQS = () => {
       <FAQSchema faqList={faqData} />
       <div className="faqs-container">
         <h2 className="faqs-title">Frequently Asked Questions</h2>
-        <p className="faqs-subtitle">Find answers to common questions about our video downloader</p>
+        <p className="faqs-subtitle">Find answers to common questions about FastVidl</p>
         
         <div className="faqs-list">
           {faqData.map((faq, index) => (
