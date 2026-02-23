@@ -95,6 +95,47 @@
   text-align: center;
 }
 
+.ios-actions {
+  margin-top: 0.7rem;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ios-share-btn {
+  border: none;
+  background: var(--brand-primary, #667eea);
+  color: #fff;
+  border-radius: 6px;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.ios-share-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.ios-open-link {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--link-color, #667eea);
+  border: 1px solid var(--brand-primary, #667eea);
+  border-radius: 6px;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.ios-open-link:hover {
+  color: #fff;
+  background: var(--brand-primary, #667eea);
+}
+
 .download-section a {
   padding: 0.5rem 1rem;
   background-color: var(--download-btn-bg, #c50052d7);

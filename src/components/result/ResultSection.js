@@ -5,6 +5,8 @@ import style from "./ResultSection.module.css";
 const ResultSection = (props) => {
   const [isDownloading, setIsDownloading] = useState(false);
   const [downloadHint, setDownloadHint] = useState("");
+  const [iosProxyUrl, setIosProxyUrl] = useState("");
+  const [isSharingIOS, setIsSharingIOS] = useState(false);
   const [imageError, setImageError] = useState(false);
 
   // Extract values (now stored as direct values, not arrays)
@@ -15,8 +17,33 @@ const ResultSection = (props) => {
   const urls = props.result.urls;
   const quality = props.result.quality || "HD";
 
+  const shareToIOSPhotos = async () => {
+    if (!iosProxyUrl || isSharingIOS) return;
+    try {
+      setIsSharingIOS(true);
+      const response = await fetch(iosProxyUrl);
+      if (!response.ok) throw new Error("Unable to prepare file");
+      const blob = await response.blob();
+      const file = new File([blob], "fastvidl-video.mp4", {
+        type: blob.type || "video/mp4",
+      });
+
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        await navigator.share({
+          title: "FastVidl Video",
+          files: [file],
+        });
+      } else {
+        window.open(iosProxyUrl, "_blank", "noopener,noreferrer");
+      }
+    } catch {
+      window.open(iosProxyUrl, "_blank", "noopener,noreferrer");
+    } finally {
+      setIsSharingIOS(false);
+    }
+  };
+
   const handleDownload = () => {
-    setIsDownloading(true);
     // Use API proxy to force attachment headers.
     const proxyUrl = `/api/download?url=${encodeURIComponent(urls)}`;
     const ua = navigator.userAgent || "";
@@ -24,11 +51,13 @@ const ResultSection = (props) => {
     const isAndroid = /Android/i.test(ua);
 
     if (isIOS) {
-      // iOS Safari ignores download attribute for many file types.
-      // Opening the file lets user tap Share > Save Video.
-      window.location.href = proxyUrl;
-      setDownloadHint("On iPhone/iPad: tap Share and choose Save Video to add it to Photos.");
+      // iOS Safari cannot auto-save directly to Photos from web.
+      setIosProxyUrl(proxyUrl);
+      setDownloadHint("On iPhone/iPad: tap Open Share Sheet, then choose Save Video to add it to Photos.");
+      setIsDownloading(false);
     } else {
+      setIosProxyUrl("");
+      setIsDownloading(true);
       const link = document.createElement("a");
       link.href = proxyUrl;
       link.setAttribute("download", "fastvidl-video.mp4");
@@ -93,6 +122,26 @@ const ResultSection = (props) => {
               </tbody>
             </table>
             {downloadHint ? <p className={style["download-hint"]}>{downloadHint}</p> : null}
+            {iosProxyUrl ? (
+              <div className={style["ios-actions"]}>
+                <button
+                  type="button"
+                  className={style["ios-share-btn"]}
+                  onClick={shareToIOSPhotos}
+                  disabled={isSharingIOS}
+                >
+                  {isSharingIOS ? "Preparing..." : "Open Share Sheet"}
+                </button>
+                <a
+                  href={iosProxyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={style["ios-open-link"]}
+                >
+                  Open Video
+                </a>
+              </div>
+            ) : null}
           </div>
         </>
       )}
