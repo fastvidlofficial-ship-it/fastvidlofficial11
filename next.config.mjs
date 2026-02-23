@@ -13,6 +13,12 @@ const nextConfig = {
         destination: 'https://fastvidl.com/:path*',
         permanent: true,
       },
+      // Remove /Blogs from URL: redirect to home or corresponding downloader page
+      { source: '/Blogs/instagram-reel-downloader-free', destination: '/instagram-reel-downloader-free', permanent: true },
+      { source: '/Blogs/instagram', destination: '/', permanent: true },
+      { source: '/Blogs/free-facebook-video-downloader', destination: '/free-facebook-video-downloader', permanent: true },
+      { source: '/Blogs/pinterest-video-downloader-free', destination: '/pinterest-video-downloader-free', permanent: true },
+      { source: '/Blogs', destination: '/', permanent: true },
     ]
   },
 }

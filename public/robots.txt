@@ -1,8 +1,170 @@
-# https://www.robotstxt.org/robotstxt.html
+# ============================================================
+# robots.txt for https://fastvidl.com
+# Last updated: 2026-02-23
+# Goal: Maximum visibility on search engines, AI overviews,
+# and AI platforms — while blocking bad bots.
+# ============================================================
+# ------------------------------------------------------------
+# SECTION 1 — PRIMARY SEARCH ENGINES
+# ------------------------------------------------------------
+# Google (all crawlers inherit from Googlebot)
+User-agent: Googlebot
+Allow: /
+# Google Images
+User-agent: Googlebot-Image
+Allow: /
+# Google Video
+User-agent: Googlebot-Video
+Allow: /
+# Google News
+User-agent: Googlebot-News
+Allow: /
+# Bing / Microsoft
+User-agent: Bingbot
+Allow: /
+# Yahoo (powered by Bing)
+User-agent: Slurp
+Allow: /
+# DuckDuckGo (powered by Bing + own crawler)
+User-agent: DuckDuckBot
+Allow: /
+# Yandex (Russia — large global user base)
+User-agent: YandexBot
+Allow: /
+User-agent: YandexImages
+Allow: /
+# Baidu (China)
+User-agent: Baiduspider
+Allow: /
+# Naver (South Korea)
+User-agent: Yeti
+Allow: /
+# Seznam (Czech)
+User-agent: SeznamBot
+Allow: /
+# Ecosia (uses Bing, but has own crawler too)
+User-agent: Ecosiabot
+Allow: /
+# Mojeek (independent index)
+User-agent: MojeekBot
+Allow: /
+# Brave Search (independent index)
+User-agent: BraveBot
+Allow: /
+# Apple (Spotlight, Safari Suggestions)
+User-agent: Applebot
+Allow: /
+# Exabot (French search engine)
+User-agent: Exabot
+Allow: /
+# Archive.org (Wayback Machine — boosts trust & history)
+User-agent: ia_archiver
+Allow: /
+# ------------------------------------------------------------
+# SECTION 2 — AI OVERVIEW & AI PLATFORM BOTS
+# ------------------------------------------------------------
+# OpenAI — ChatGPT Browse, GPT plugins, ChatGPT search
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+# Google AI — Gemini, AI Overviews (SGE), Bard
+User-agent: Google-Extended
+Allow: /
+# Anthropic — Claude AI
+User-agent: anthropic-ai
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+# Common Crawl (used by many AI models for training data)
+User-agent: CCBot
+Allow: /
+# Meta AI (Llama models)
+User-agent: FacebookBot
+Allow: /
+User-agent: Meta-ExternalAgent
+Allow: /
+User-agent: Meta-ExternalFetcher
+Allow: /
+# Perplexity AI (AI search engine)
+User-agent: PerplexityBot
+Allow: /
+# You.com AI search
+User-agent: YouBot
+Allow: /
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+# Amazon Alexa / Alexa Web Crawler
+User-agent: Amazonbot
+Allow: /
+# Diffbot (used by AI knowledge graph systems)
+User-agent: Diffbot
+Allow: /
+# Apple Intelligence (Applebot-Extended for AI training)
+User-agent: Applebot-Extended
+Allow: /
+# Timpibot (used by Timpi — decentralized search)
+User-agent: Timpibot
+Allow: /
+# Webz.io / Webhose (feeds AI and news platforms)
+User-agent: Webzio-Extended
+Allow: /
+# DataForSEO (used by AI analytics platforms)
+User-agent: DataForSeoBot
+Allow: /
+# ------------------------------------------------------------
+# SECTION 3 — GLOBAL CATCH-ALL (all other crawlers)
+# ------------------------------------------------------------
 User-agent: *
 Allow: /
-
-# Sitemap
+Crawl-delay: 5
+# ------------------------------------------------------------
+# SECTION 4 — BLOCK AGGRESSIVE SEO SCRAPERS
+# (These waste bandwidth and don't contribute to rankings)
+# ------------------------------------------------------------
+User-agent: AhrefsBot
+Disallow: /
+User-agent: SemrushBot
+Disallow: /
+User-agent: MJ12bot
+Disallow: /
+User-agent: DotBot
+Disallow: /
+User-agent: BLEXBot
+Disallow: /
+User-agent: PetalBot
+Disallow: /
+User-agent: Zoominfobot
+Disallow: /
+User-agent: serpstatbot
+Disallow: /
+User-agent: SEOkicks
+Disallow: /
+User-agent: seoscannerbot
+Disallow: /
+User-agent: Bytespider
+Disallow: /
+User-agent: PiplBot
+Disallow: /
+User-agent: Scrapy
+Disallow: /
+User-agent: HTTrack
+Disallow: /
+User-agent: EmailCollector
+Disallow: /
+User-agent: EmailSiphon
+Disallow: /
+User-agent: WebBandit
+Disallow: /
+User-agent: EmailWolf
+Disallow: /
+# ------------------------------------------------------------
+# SECTION 5 — SITEMAPS
+# ------------------------------------------------------------
 Sitemap: https://fastvidl.com/sitemap.xml
-
-# For AI/LLM crawlers: site summary at /llms.txt
+Sitemap: https://fastvidl.com/sitemap_index.xml

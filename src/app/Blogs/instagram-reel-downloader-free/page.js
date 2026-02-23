@@ -62,8 +62,8 @@ public reels only."
       />
 
       <div className="blog-page">
-        <button className="back-btn" onClick={() => router.push('/Blogs')}>
-          ← Back to Blog
+        <button className="back-btn" onClick={() => router.push('/')}>
+          ← Back to Home
         </button>
 
         <div className="blog-header">
@@ -172,7 +172,7 @@ public reels only."
             </div>
 
             <p className="text-base sm:text-lg leading-relaxed mb-6" style={{ marginTop: "2rem" }}>
-              If you also need to save Facebook videos, check our <a href="/Blogs/free-facebook-video-downloader" style={{ color: "#1877f2", textDecoration: "none", fontWeight: "600" }}>Facebook Video Downloader Free</a> guide.
+              If you also need to save Facebook videos, check our <a href="/free-facebook-video-downloader" style={{ color: "#1877f2", textDecoration: "none", fontWeight: "600" }}>Facebook Video Downloader Free</a> guide.
             </p>
 
             <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">Get started today</h2>

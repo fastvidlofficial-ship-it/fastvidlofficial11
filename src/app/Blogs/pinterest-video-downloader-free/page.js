@@ -46,8 +46,8 @@ content only."
       />
 
       <div className="blog-page">
-        <button className="back-btn" onClick={() => router.push('/Blogs')}>
-          ← Back to Blog
+        <button className="back-btn" onClick={() => router.push('/')}>
+          ← Back to Home
         </button>
 
         <PinterestBlogContent />

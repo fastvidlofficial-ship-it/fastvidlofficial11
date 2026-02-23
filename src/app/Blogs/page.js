@@ -347,7 +347,7 @@ function HomePage() {
             <div
               key={platform.id}
               className="card"
-              onClick={() => navigate.push(`/Blogs/${platform.id}`)}
+              onClick={() => navigate.push(`/${platform.id}`)}
 
             >
               <div className="card-icon"> <Image src={platform.icon} alt="insta" width="100 " height="100" /></div>
