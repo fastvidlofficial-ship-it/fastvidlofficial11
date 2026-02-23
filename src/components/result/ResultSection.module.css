@@ -88,6 +88,13 @@
   font-size: 1.1rem;
 }
 
+.download-hint {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary, #4a5568);
+  text-align: center;
+}
+
 .download-section a {
   padding: 0.5rem 1rem;
   background-color: var(--download-btn-bg, #c50052d7);

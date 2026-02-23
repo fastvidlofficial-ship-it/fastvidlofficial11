@@ -4,7 +4,7 @@ import style from "./ResultSection.module.css";
 
 const ResultSection = (props) => {
   const [isDownloading, setIsDownloading] = useState(false);
-  const [downloadUrl, setDownloadUrl] = useState(null);
+  const [downloadHint, setDownloadHint] = useState("");
   const [imageError, setImageError] = useState(false);
 
   // Extract values (now stored as direct values, not arrays)
@@ -17,26 +17,38 @@ const ResultSection = (props) => {
 
   const handleDownload = () => {
     setIsDownloading(true);
-    setDownloadUrl(urls);
-      // Call our Next.js API proxy instead of direct Instagram URL
-const proxyUrl = `/api/download?url=${encodeURIComponent(urls)}`;
-  const link = document.createElement("a");
-  link.href = proxyUrl;
-  link.setAttribute("download", "video.mp4");
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+    // Use API proxy to force attachment headers.
+    const proxyUrl = `/api/download?url=${encodeURIComponent(urls)}`;
+    const ua = navigator.userAgent || "";
+    const isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    const isAndroid = /Android/i.test(ua);
 
-  setTimeout(() => setIsDownloading(false), 2000);
+    if (isIOS) {
+      // iOS Safari ignores download attribute for many file types.
+      // Opening the file lets user tap Share > Save Video.
+      window.location.href = proxyUrl;
+      setDownloadHint("On iPhone/iPad: tap Share and choose Save Video to add it to Photos.");
+    } else {
+      const link = document.createElement("a");
+      link.href = proxyUrl;
+      link.setAttribute("download", "fastvidl-video.mp4");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      if (isAndroid) {
+        setDownloadHint("Saved to Downloads. If not visible in Gallery yet, wait a few seconds for media scan.");
+      } else {
+        setDownloadHint("");
+      }
+    }
+
+    setTimeout(() => setIsDownloading(false), 1800);
   };
 
   return (
     <div className={style["result-div"]}>
       {isDownloading ? (
-        <Loader
-          startDownload={downloadUrl}
-          onFinish={() => setIsDownloading(false)}
-        />
+        <Loader />
       ) : (
         <>
           {thumbnail && (
@@ -80,6 +92,7 @@ const proxyUrl = `/api/download?url=${encodeURIComponent(urls)}`;
                 </tr>
               </tbody>
             </table>
+            {downloadHint ? <p className={style["download-hint"]}>{downloadHint}</p> : null}
           </div>
         </>
       )}

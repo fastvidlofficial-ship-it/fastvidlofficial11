@@ -8,14 +8,24 @@ export async function GET(request) {
     return NextResponse.json({ error: "Missing URL" }, { status: 400 });
   }
 
-  // Fetch the video from the external source
-  const response = await fetch(videoUrl);
+  try {
+    const response = await fetch(videoUrl);
+    if (!response.ok || !response.body) {
+      return NextResponse.json({ error: "Unable to fetch media" }, { status: 502 });
+    }
 
-  // Stream the file back to the browser
-  const headers = new Headers(response.headers);
-  headers.set("Content-Disposition", "attachment; filename=video.mp4");
+    const headers = new Headers(response.headers);
+    headers.set("Content-Type", response.headers.get("content-type") || "video/mp4");
+    headers.set("Content-Disposition", 'attachment; filename="fastvidl-video.mp4"');
+    headers.set("Cache-Control", "no-store");
+    headers.delete("Content-Security-Policy");
+    headers.delete("X-Frame-Options");
 
-  return new NextResponse(response.body, {
-    headers,
-  });
+    return new NextResponse(response.body, {
+      headers,
+      status: 200,
+    });
+  } catch {
+    return NextResponse.json({ error: "Download proxy failed" }, { status: 500 });
+  }
 }
