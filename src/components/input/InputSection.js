@@ -1,16 +1,40 @@
-
 import style from "./InputSection.module.css";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import urlLightIcon from "../../../public/assets/icons8-url-48-light.png";
 import urlDarkIcon from "../../../public/assets/icons8-url-48-dark.png";
 import { useTheme } from "../theme/ThemeContext";
 import Image from "next/image";
 
+const ClipboardIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <rect x="9" y="2" width="13" height="16" rx="2" ry="2" />
+    <path d="M5 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h1" />
+  </svg>
+);
+
 const InputSection = (props) => {
   const [userInput, setUserInput] = useState("");
   const [isInputValid, setInputValid] = useState(true);
   const [loading, setLoading] = useState(false);
+  const inputRef = useRef(null);
   const { theme } = useTheme();
+
+  const hasText = (userInput || "").trim().length > 0;
+
+  const handlePasteOrClear = async () => {
+    if (hasText) {
+      setUserInput("");
+      setInputValid(true);
+      return;
+    }
+
+    // Use native paste behavior: focus the input so users can long-press and tap Paste.
+    if (inputRef.current) {
+      inputRef.current.focus();
+      const valueLength = inputRef.current.value.length;
+      inputRef.current.setSelectionRange(valueLength, valueLength);
+    }
+  };
 
   const userInputHandler = (e) => {
     setInputValid(true);
@@ -62,25 +86,45 @@ const InputSection = (props) => {
   const urlIcon = theme === "dark" ? urlDarkIcon : urlLightIcon;
 
   return (
-    <form onSubmit={submitHandler}>
-      <Image className={style["url-icon"]} src={urlIcon} alt="url icon" />
-      <input
-        className={
-          isInputValid
-            ? style["input"]
-            : style["input"] + " " + style["invalid"]
-        }
-        type="text"
-        name="search"
-        placeholder="Paste Link Here"
-        onChange={userInputHandler}
-        value={userInput || ""}
-        required
-        aria-required="true"
-      />
-      <button className={style["btn"]} type="submit" disabled={loading}>
-        {loading ? "Loading..." : "Search "}
-      </button>
+    <form onSubmit={submitHandler} className={style.form}>
+      <div className={style.inputRow}>
+        <Image className={style["url-icon"]} src={urlIcon} alt="url icon" />
+        <input
+          ref={inputRef}
+          className={
+            isInputValid
+              ? style["input"]
+              : style["input"] + " " + style["invalid"]
+          }
+          type="text"
+          name="search"
+          placeholder="Paste Link Here"
+          onChange={userInputHandler}
+          value={userInput || ""}
+          required
+          aria-required="true"
+        />
+        <button
+          type="button"
+          className={style.pasteClearBtn}
+          onClick={handlePasteOrClear}
+          aria-label={hasText ? "Clear input" : "Paste from clipboard"}
+        >
+          {hasText ? (
+            "Clear"
+          ) : (
+            <>
+              <ClipboardIcon />
+              <span>Paste</span>
+            </>
+          )}
+        </button>
+      </div>
+      <div className={style.submitWrapper}>
+        <button className={style["btn"]} type="submit" disabled={loading}>
+          {loading ? "Loading..." : "Download"}
+        </button>
+      </div>
     </form>
   );
 };

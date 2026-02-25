@@ -1,7 +1,18 @@
+.form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.inputRow {
+  position: relative;
+  flex: 1;
+}
+
 .input {
   width: 100%;
   height: 60px;
-  padding: 1rem 6.5rem 1rem 3.2rem;
+  padding: 1rem 7rem 1rem 3.2rem;
   border-radius: 6px;
   border: 1.2px solid #0000001a;
   background-color: var(--input-background);
@@ -24,16 +35,16 @@
 
 .btn {
   font-size: 1rem;
-  position: absolute;
   height: 50px;
   font-weight: 700;
   padding: 0 1.25rem;
   border: 0;
   border-radius: 6px;
-  background-color: var(--input-button-background-color, #667eea);
+  background-color: var(
+    --download-btn-bg,
+    var(--input-button-background-color, #667eea)
+  );
   color: white;
-  right: 5px;
-  top: 5px;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -42,13 +53,47 @@
 }
 
 .btn:hover:not(:disabled) {
-  background-color: var(--input-button-hover-background-color, #764ba2);
+  background-color: var(
+    --download-btn-hover-bg,
+    var(--input-button-hover-background-color, #764ba2)
+  );
   transform: translateY(-1px);
 }
 
 .btn:disabled {
   opacity: 0.8;
   cursor: not-allowed;
+}
+
+.pasteClearBtn {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  height: 50px;
+  padding: 0 0.75rem;
+  border-radius: 6px;
+  border: 1.2px solid #b725f7;
+  background-color: var(--input-background, #f5f5f5);
+  color: var(--input-text-color, #333);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.pasteClearBtn:hover {
+  background-color: var(--input-button-hover-background-color, #764ba2);
+  color: white;
+  border-color: var(--input-button-hover-background-color, #764ba2);
+  transform: translateY(-1px);
+}
+
+.submitWrapper {
+  flex: 0 0 auto;
 }
 
 .url-icon {
@@ -60,19 +105,51 @@
 }
 
 @media (max-width: 530px) {
+  .form {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 12px;
+  }
+  .inputRow {
+    flex: 1;
+  }
+  .submitWrapper {
+    margin-top: 0;
+    width: 100%;
+  }
+  .btn {
+    position: static;
+    width: 100%;
+    height: 52px;
+  }
   .input:focus {
     outline: none;
   }
 }
 
+@media (max-width: 480px) {
+  .input {
+    padding: 0.8rem 4.5rem 0.8rem 3.2rem;
+  }
+  .pasteClearBtn {
+    right: 6px;
+    padding: 0 0.5rem;
+    font-size: 0.85rem;
+    height: 48px;
+    top: 6px;
+  }
+  .pasteClearBtn span {
+    display: none;
+  }
+}
+
 @media (max-width: 425px) {
   .input {
-    padding: 0.8rem 100px 0.8rem 3.2rem;
+    padding: 0.8rem 3.2rem 0.8rem 3.2rem;
   }
-  .btn {
-    padding: 0 1rem;
-    right: 5px;
-    top: 4px;
-    height: 52px;
+  .pasteClearBtn {
+    right: 6px;
+    width: 40px;
+    padding: 0;
   }
 }
