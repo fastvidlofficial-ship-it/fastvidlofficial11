@@ -782,6 +782,14 @@ html {
   border-radius: 2px;
 }
 
+.home-blog-article-h3 {
+  font-size: 1.2em;
+  color: var(--heading-color, #1a202c);
+  margin-top: 24px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
 .home-blog-article-p {
   margin-bottom: 16px;
   line-height: 1.75;
