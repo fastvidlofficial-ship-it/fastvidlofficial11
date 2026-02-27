@@ -1,9 +1,10 @@
 "use client"
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import '../Blog.css';
 import FAQSchema from '@/components/FAQSchema';
-import Image from 'next/image';
+import AuthorOrganizationSchema from '@/components/AuthorOrganizationSchema';
 const RAJA_LINKEDIN = "https://www.linkedin.com/in/raja-jahangir";
 const AUROXA_TECH_URL = "https://auroxatech.com";
 
