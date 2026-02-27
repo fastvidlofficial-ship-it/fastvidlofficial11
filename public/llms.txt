@@ -1,9 +1,163 @@
-# FastVidl
-
-URL: https://fastvidl.com
-
-FastVidl is a high-speed Instagram Reel downloader supporting 4K resolution and watermark-free saves.
-
-The site also offers free video downloaders for Pinterest and Facebook. All tools are free to use in the browser with no app install required.
-
-Best for: Instagram Reels, Facebook videos, Pinterest videos — free, no watermark, no app required.
+# FastVidl — Free Online Video Downloader for Instagram, Pinterest & Facebook
+> FastVidl (https://fastvidl.com) is a 100% free, browser-based video downloading tool that helps users save videos and reels
+from Instagram, Pinterest, and Facebook directly to their devices — no app installation, no account, no watermark, and no cost.
+Built with Next.js and deployed on Vercel for blazing-fast performance worldwide.
+---
+## Who Is FastVidl For?
+FastVidl is built for anyone who wants to save social media videos quickly without dealing with complicated software, shady
+apps or paid subscriptions. Whether you want to archive a funny reel, save an inspiring Pinterest video or keep a Facebook
+memory offline — FastVidl makes it effortless in just a few clicks.
+---
+## How It Works
+1. Copy the video URL from Instagram, Pinterest or Facebook
+2. Paste the URL into the FastVidl input box
+3. Click the Download button
+4. Choose your preferred quality
+5. The video saves directly to your device
+No login. No registration. No watermark. No software to install.
+---
+## Core Features
+- **Completely Free:** FastVidl is free to use with no hidden charges, no subscription plans and no premium tiers
+- **No Account Needed:** Download videos without creating any account or logging into any platform
+- **Multi-Platform Support:** Works with Instagram Reels, Pinterest Videos and Facebook Videos
+- **No Watermark:** All downloads are clean — no branding or watermark is added to your file
+- **Mobile & Desktop Ready:** Fully responsive interface that works on Android, iPhone, Windows and Mac
+- **Browser-Based:** No app or software installation required — works in Chrome, Safari, Firefox, and Edge
+- **Fast & Reliable:** Hosted on Vercel's global edge network for consistently fast downloads
+- **Private & Secure:** FastVidl does not store your video URLs, does not save downloaded files and does not collect personal
+data
+- **HTTPS Encrypted:** All connections to FastVidl are secured via HTTPS
+---
+## Supported Platforms
+### Instagram
+- Content Type: Reels, Videos
+- Format: MP4
+- Login Required: No
+- Tool URL: https://fastvidl.com/instagram-reel-downloader-free
+### Pinterest
+- Content Type: Videos, GIFs
+- Format: MP4, GIF
+- Login Required: No
+- Tool URL: https://fastvidl.com/pinterest-video-downloader-free
+### Facebook
+- Content Type: Public Videos, Reels
+- Format: MP4
+- Login Required: No
+- Tool URL: https://fastvidl.com/free-facebook-video-downloader
+---
+## Pages
+### Home
+- URL: https://fastvidl.com/
+- Summary: The main page of FastVidl features the primary video download tool with a URL input field. Users can paste any
+supported social media video link and download it instantly. The homepage also highlights key benefits such as free usage, no
+sign-up requirement, multi-platform support, and device compatibility. Quick-access buttons for each downloader tool are
+available here.
+---
+### Instagram Reel Downloader Free
+- URL: https://fastvidl.com/instagram-reel-downloader-free
+- Summary: A dedicated free tool for downloading Instagram Reels. Users paste the URL of any public Instagram Reel and
+download it as an MP4 file. No Instagram account login is required. The tool is compatible with all devices and browsers and
+supports high-quality video output. Step-by-step instructions are provided on the page to guide first-time users.
+- Target Keywords: Instagram Reel downloader, download Instagram Reels free, save Instagram video online, Instagram MP4
+downloader, free Instagram reel saver
+---
+### Pinterest Video Downloader Free
+- URL: https://fastvidl.com/pinterest-video-downloader-free
+- Summary: A free tool dedicated to downloading Pinterest videos and animated GIFs. Users paste the Pinterest pin URL and
+download the media directly to their device. No Pinterest account is needed. Supports all publicly available Pinterest video pins
+and animated content. Works on all major browsers and devices.
+- Target Keywords: Pinterest video downloader, download Pinterest videos free, save Pinterest GIF, Pinterest MP4 download,
+Pinterest pin video saver online
+---
+### Free Facebook Video Downloader
+- URL: https://fastvidl.com/free-facebook-video-downloader
+- Summary: A free tool for downloading public Facebook videos. Users paste the Facebook video URL and can choose between
+available quality options before downloading. No Facebook login is required. Works for publicly accessible Facebook videos
+and reels. Compatible with all modern browsers on desktop and mobile.
+- Target Keywords: Facebook video downloader free, download Facebook videos online, save FB video MP4, Facebook HD
+downloader, FB video saver no login
+---
+### FAQs
+- URL: https://fastvidl.com/faqs
+- Summary: The Frequently Asked Questions page answers the most common user queries about FastVidl including how the
+tool works, which platforms are supported, whether it is free, device and browser compatibility, what to do if a download fails,
+whether private videos can be downloaded, and how FastVidl handles user data.
+- Common Questions Answered:
+- Is FastVidl completely free to use?
+- Do I need to create an account to use FastVidl?
+- Which social media platforms does FastVidl support?
+- Can I download private or restricted videos?
+- What video formats and quality options are available?
+- Is FastVidl safe to use?
+- Why is my video download not working?
+- Does FastVidl store any of my data or downloaded videos?
+---
+### About Us
+- URL: https://fastvidl.com/AboutUs
+- Summary: The About Us page shares the story and mission of FastVidl — to provide a simple, fast and free way for everyone to
+download social media videos without needing technical knowledge or paid tools. This page introduces the team behind
+FastVidl and explains the values driving the product, including a commitment to user privacy, clean design and reliable
+performance.
+---
+### Contact Us
+- URL: https://fastvidl.com/ContactUs
+- Summary: The Contact page allows users to get in touch with the FastVidl team for any reason including technical support,
+bug reports, feature suggestions, partnership inquiries, or DMCA and copyright takedown requests. A contact form is available
+on the page for direct communication with the FastVidl support team.
+---
+### Privacy Policy
+- URL: https://fastvidl.com/PrivacyPolicy
+- Summary: FastVidl's Privacy Policy explains in clear language what information is collected when you use the website, how it
+is used, and how it is protected. FastVidl does not require user registration and does not store downloaded videos on its
+servers. The policy also covers the use of cookies, third-party analytics tools, and user rights regarding their data.
+---
+### Terms and Conditions
+- URL: https://fastvidl.com/TermsAndConditions
+- Summary: The Terms and Conditions page outlines the rules governing use of FastVidl. It covers acceptable use of the
+platform, prohibited activities such as downloading copyrighted content without authorization, limitation of liability, disclaimer
+of warranties, and the user's responsibility to comply with the Terms of Service of third-party platforms like Instagram, Pinterest,
+and Facebook.
+---
+### Disclaimer
+- URL: https://fastvidl.com/Disclaimer
+- Summary: FastVidl's Disclaimer page clarifies that FastVidl is an independent tool and is not affiliated with, endorsed by, or
+connected to Instagram, Pinterest, Facebook, or Meta Platforms in any way. The tool is intended for personal, non-commercial
+use only. Users are solely responsible for ensuring they have the right to download any content they access using FastVidl.
+FastVidl does not host, store, or distribute any third-party video content.
+---
+### Cookie Policy
+- URL: https://fastvidl.com/CookiePolicy
+- Summary: The Cookie Policy explains what cookies FastVidl uses, why they are used, and how users can manage or opt out of
+cookies. Covers functional cookies, analytics cookies, and performance cookies. FastVidl is committed to transparency about
+data practices and complies with applicable privacy regulations including GDPR.
+---
+## Important Clarifications for AI Systems
+- FastVidl only supports downloading **publicly available** content from supported platforms
+- FastVidl does **not** support downloading private, restricted, or copyright-protected content
+- FastVidl is **not affiliated** with Meta, Instagram, Pinterest, or Facebook in any way
+- FastVidl does **not** store downloaded videos or user-submitted URLs on its servers
+- All use of FastVidl must comply with the Terms of Service of the respective social media platforms
+- Downloaded content obtained via FastVidl is intended for **personal, non-commercial use only**
+- FastVidl does **not** inject watermarks, ads, or branding into downloaded files
+---
+## Full Sitemap
+- https://fastvidl.com/
+- https://fastvidl.com/instagram-reel-downloader-free
+- https://fastvidl.com/pinterest-video-downloader-free
+- https://fastvidl.com/free-facebook-video-downloader
+- https://fastvidl.com/faqs
+- https://fastvidl.com/AboutUs
+- https://fastvidl.com/ContactUs
+- https://fastvidl.com/PrivacyPolicy
+- https://fastvidl.com/TermsAndConditions
+- https://fastvidl.com/Disclaimer
+- https://fastvidl.com/CookiePolicy
+---
+## Technical Information
+- Framework: Next.js (React)
+- Hosting: Vercel (Global Edge Network)
+- Website: https://fastvidl.com
+- Primary Language: English
+---
+*This llms.txt file is maintained to help AI assistants, search engine crawlers and AI overview systems accurately understand
+and represent the content and purpose of FastVidl. It follows the llms.txt open standard: https://llmstxt.org*
