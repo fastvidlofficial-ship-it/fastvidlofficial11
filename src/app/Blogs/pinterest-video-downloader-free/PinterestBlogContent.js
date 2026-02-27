@@ -36,8 +36,18 @@ export default function PinterestBlogContent() {
   return (
     <div className="container-blog">
       <FAQSchema faqList={PINTEREST_FAQ_LIST} />
+      <AuthorOrganizationSchema
+        authorName="Raja Jahangir"
+        authorUrl="https://www.linkedin.com/in/raja-jahangir"
+        organizationName="Auroxa Tech"
+        organizationUrl="https://auroxatech.com"
+        articleUrl="https://fastvidl.com/pinterest-video-downloader-free"
+        headline="Pinterest Video Downloader Free: Download Videos Without Watermark (2026)"
+        datePublished="2026-02-27"
+        dateModified="2026-02-27"
+      />
       <div className="home-blog-article blog-content">
-        <h1 className="home-blog-article-title">Pinterest Video Downloader Free: Download Videos Without Watermark (2026)</h1>
+        <h2 className="home-blog-article-title">Pinterest Video Downloader Free: Download Videos Without Watermark (2026)</h2>
         <p className="home-blog-article-meta" style={{ fontStyle: "italic", color: "#666", marginBottom: "0.5rem" }}>
           Expertly Verified Resource
         </p>

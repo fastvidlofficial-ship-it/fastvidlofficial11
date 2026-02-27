@@ -44,7 +44,7 @@ export default function FacebookBlogContent() {
         dateModified="2026-02-27"
       />
       <div className="home-blog-article blog-content">
-        <h1 className="home-blog-article-title">Free Facebook Video Downloader: Download FB Videos in HD (2026)</h1>
+        <h2 className="home-blog-article-title">Free Facebook Video Downloader: Download FB Videos in HD (2026)</h2>
         <p className="home-blog-article-meta" style={{ fontStyle: "italic", color: "#666", marginBottom: "0.5rem" }}>Expertly Verified Resource</p>
         <p className="home-blog-article-meta" style={{ fontStyle: "italic", color: "#666", marginBottom: "1rem" }}>
           Written by <a href={RAJA_LINKEDIN} target="_blank" rel="noopener noreferrer" className="home-blog-article-link">Raja Jahangir</a> (SEO &amp; Growth Specialist). Powered by <a href={AUROXA_TECH_URL} target="_blank" rel="noopener noreferrer" className="home-blog-article-link">Auroxa Tech</a>. Last Updated: 27 February 2026
