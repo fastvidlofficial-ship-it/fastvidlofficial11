@@ -1,132 +1,323 @@
-# ============================================================
-# robots.txt for https://fastvidl.com
-# Last updated: 2026-02-23
-# Goal: Maximum visibility on search engines, AI overviews,
-# and AI platforms — while blocking bad bots.
-# ============================================================
-# ------------------------------------------------------------
-# SECTION 1 — PRIMARY SEARCH ENGINES
-# ------------------------------------------------------------
-# Google (all crawlers inherit from Googlebot)
+# ===========================================================
+# robots.txt — FastVidl (https://fastvidl.com)
+# Free Online Video Downloader for Instagram, Pinterest & Facebook
+# Built with Next.js | Hosted on Vercel
+# Last Updated: 27 Feb 2026
+# ===========================================================
+# -----------------------------------------------------------
+# SECTION 1: ALL CRAWLERS — General Rules
+# -----------------------------------------------------------
+User-agent: *
+# Allow all primary pages
+Allow: /
+Allow: /instagram-reel-downloader-free
+Allow: /pinterest-video-downloader-free
+Allow: /free-facebook-video-downloader
+Allow: /faqs
+Allow: /AboutUs
+Allow: /ContactUs
+Allow: /PrivacyPolicy
+Allow: /TermsAndConditions
+Allow: /Disclaimer
+Allow: /CookiePolicy
+# Allow static assets (CSS, JS, Images, Fonts)
+Allow: /next/static/
+Allow: /images/
+Allow: /icons/
+Allow: /fonts/
+Allow: /logo.png
+Allow: /favicon.ico
+Allow: /screenshot.png
+Allow: /og-image.png
+# Allow SEO & AI discovery files
+Allow: /llms.txt
+Allow: /sitemap.xml
+Allow: /robots.txt
+# Disallow Next.js internals and build files
+Disallow: /next/
+Disallow: /api/
+Disallow: /.next/
+Disallow: /node_modules/
+# Disallow duplicate or low-value URL patterns
+Disallow: /*?*
+Disallow: /*&*
+Disallow: /*/amp/
+Disallow: /amp/
+Disallow: /*.json$
+Disallow: /*.xml$
+# Disallow admin, config and sensitive paths
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /config/
+Disallow: /.env
+Disallow: /.env.local
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /logs/
+Disallow: /debug/
+Disallow: /test/
+Disallow: /dev/
+# Crawl delay for general bots (in seconds)
+Crawl-delay: 5
+# -----------------------------------------------------------
+# SECTION 2: GOOGLE SEARCH — Googlebot
+# -----------------------------------------------------------
 User-agent: Googlebot
 Allow: /
-# Google Images
+Allow: /instagram-reel-downloader-free
+Allow: /pinterest-video-downloader-free
+Allow: /free-facebook-video-downloader
+Allow: /faqs
+Allow: /AboutUs
+Allow: /ContactUs
+Allow: /PrivacyPolicy
+Allow: /TermsAndConditions
+Allow: /Disclaimer
+Allow: /CookiePolicy
+Allow: /next/static/
+Allow: /images/
+Allow: /llms.txt
+Allow: /sitemap.xml
+Disallow: /api/
+Disallow: /next/
+Disallow: /admin/
+Disallow: /*?*
+# No crawl delay for Googlebot (Google manages this internally)
+# -----------------------------------------------------------
+# SECTION 3: GOOGLE IMAGE CRAWLER
+# -----------------------------------------------------------
 User-agent: Googlebot-Image
-Allow: /
-# Google Video
-User-agent: Googlebot-Video
-Allow: /
-# Google News
-User-agent: Googlebot-News
-Allow: /
-# Bing / Microsoft
+Allow: /images/
+Allow: /icons/
+Allow: /logo.png
+Allow: /og-image.png
+Allow: /screenshot.png
+Allow: /favicon.ico
+Disallow: /api/
+Disallow: /next/
+# -----------------------------------------------------------
+# SECTION 4: BING SEARCH — Bingbot
+# -----------------------------------------------------------
 User-agent: Bingbot
 Allow: /
-# Yahoo (powered by Bing)
+Allow: /instagram-reel-downloader-free
+Allow: /pinterest-video-downloader-free
+Allow: /free-facebook-video-downloader
+Allow: /faqs
+Allow: /AboutUs
+Allow: /ContactUs
+Allow: /PrivacyPolicy
+Allow: /TermsAndConditions
+Allow: /Disclaimer
+Allow: /CookiePolicy
+Allow: /next/static/
+Allow: /images/
+Allow: /llms.txt
+Allow: /sitemap.xml
+Disallow: /api/
+Disallow: /next/
+Disallow: /admin/
+Disallow: /*?*
+Crawl-delay: 5
+# -----------------------------------------------------------
+# SECTION 5: YAHOO SEARCH — Slurp
+# -----------------------------------------------------------
 User-agent: Slurp
 Allow: /
-# DuckDuckGo (powered by Bing + own crawler)
+Allow: /instagram-reel-downloader-free
+Allow: /pinterest-video-downloader-free
+Allow: /free-facebook-video-downloader
+Allow: /faqs
+Allow: /AboutUs
+Allow: /ContactUs
+Disallow: /api/
+Disallow: /next/
+Disallow: /admin/
+Crawl-delay: 10
+# -----------------------------------------------------------
+# SECTION 6: DUCKDUCKGO
+# -----------------------------------------------------------
 User-agent: DuckDuckBot
 Allow: /
-# Yandex (Russia — large global user base)
-User-agent: YandexBot
-Allow: /
-User-agent: YandexImages
-Allow: /
-# Baidu (China)
-User-agent: Baiduspider
-Allow: /
-# Naver (South Korea)
-User-agent: Yeti
-Allow: /
-# Seznam (Czech)
-User-agent: SeznamBot
-Allow: /
-# Ecosia (uses Bing, but has own crawler too)
-User-agent: Ecosiabot
-Allow: /
-# Mojeek (independent index)
-User-agent: MojeekBot
-Allow: /
-# Brave Search (independent index)
-User-agent: BraveBot
-Allow: /
-# Apple (Spotlight, Safari Suggestions)
-User-agent: Applebot
-Allow: /
-# Exabot (French search engine)
-User-agent: Exabot
-Allow: /
-# Archive.org (Wayback Machine — boosts trust & history)
-User-agent: ia_archiver
-Allow: /
-# ------------------------------------------------------------
-# SECTION 2 — AI OVERVIEW & AI PLATFORM BOTS
-# ------------------------------------------------------------
-# OpenAI — ChatGPT Browse, GPT plugins, ChatGPT search
+Allow: /instagram-reel-downloader-free
+Allow: /pinterest-video-downloader-free
+Allow: /free-facebook-video-downloader
+Allow: /faqs
+Allow: /AboutUs
+Allow: /ContactUs
+Allow: /llms.txt
+Allow: /sitemap.xml
+Disallow: /api/
+Disallow: /next/
+Disallow: /admin/
+Crawl-delay: 5
+# -----------------------------------------------------------
+# SECTION 7: AI CRAWLERS — OpenAI / ChatGPT
+# -----------------------------------------------------------
 User-agent: GPTBot
 Allow: /
-User-agent: ChatGPT-User
-Allow: /
+Allow: /instagram-reel-downloader-free
+Allow: /pinterest-video-downloader-free
+Allow: /free-facebook-video-downloader
+Allow: /faqs
+Allow: /AboutUs
+Allow: /ContactUs
+Allow: /PrivacyPolicy
+Allow: /TermsAndConditions
+Allow: /Disclaimer
+Allow: /CookiePolicy
+Allow: /llms.txt
+Disallow: /api/
+Disallow: /next/
+Disallow: /admin/
+Crawl-delay: 10
+# -----------------------------------------------------------
+# SECTION 8: AI CRAWLERS — OpenAI Search (SearchGPT)
+# -----------------------------------------------------------
 User-agent: OAI-SearchBot
 Allow: /
-# Google AI — Gemini, AI Overviews (SGE), Bard
+Allow: /instagram-reel-downloader-free
+Allow: /pinterest-video-downloader-free
+Allow: /free-facebook-video-downloader
+Allow: /faqs
+Allow: /AboutUs
+Allow: /ContactUs
+Allow: /llms.txt
+Allow: /sitemap.xml
+Disallow: /api/
+Disallow: /next/
+Disallow: /admin/
+Crawl-delay: 10
+# -----------------------------------------------------------
+# SECTION 9: AI CRAWLERS — Google Gemini / Bard
+# -----------------------------------------------------------
 User-agent: Google-Extended
 Allow: /
-# Anthropic — Claude AI
-User-agent: anthropic-ai
-Allow: /
-User-agent: Claude-Web
-Allow: /
+Allow: /instagram-reel-downloader-free
+Allow: /pinterest-video-downloader-free
+Allow: /free-facebook-video-downloader
+Allow: /faqs
+Allow: /AboutUs
+Allow: /ContactUs
+Allow: /PrivacyPolicy
+Allow: /TermsAndConditions
+Allow: /Disclaimer
+Allow: /CookiePolicy
+Allow: /llms.txt
+Disallow: /api/
+Disallow: /next/
+Disallow: /admin/
+Crawl-delay: 10
+# -----------------------------------------------------------
+# SECTION 10: AI CRAWLERS — Anthropic Claude
+# -----------------------------------------------------------
 User-agent: ClaudeBot
 Allow: /
-# Common Crawl (used by many AI models for training data)
-User-agent: CCBot
-Allow: /
-# Meta AI (Llama models)
-User-agent: FacebookBot
-Allow: /
-User-agent: Meta-ExternalAgent
-Allow: /
-User-agent: Meta-ExternalFetcher
-Allow: /
-# Perplexity AI (AI search engine)
+Allow: /instagram-reel-downloader-free
+Allow: /pinterest-video-downloader-free
+Allow: /free-facebook-video-downloader
+Allow: /faqs
+Allow: /AboutUs
+Allow: /ContactUs
+Allow: /PrivacyPolicy
+Allow: /TermsAndConditions
+Allow: /Disclaimer
+Allow: /CookiePolicy
+Allow: /llms.txt
+Disallow: /api/
+Disallow: /next/
+Disallow: /admin/
+Crawl-delay: 10
+# -----------------------------------------------------------
+# SECTION 11: AI CRAWLERS — Perplexity AI
+# -----------------------------------------------------------
 User-agent: PerplexityBot
 Allow: /
-# You.com AI search
-User-agent: YouBot
+Allow: /instagram-reel-downloader-free
+Allow: /pinterest-video-downloader-free
+Allow: /free-facebook-video-downloader
+Allow: /faqs
+Allow: /AboutUs
+Allow: /ContactUs
+Allow: /llms.txt
+Disallow: /api/
+Disallow: /next/
+Disallow: /admin/
+Crawl-delay: 10
+# -----------------------------------------------------------
+# SECTION 12: AI CRAWLERS — Meta AI (Facebook/Instagram)
+# -----------------------------------------------------------
+User-agent: FacebookBot
 Allow: /
-# Cohere AI
-User-agent: cohere-ai
+Allow: /instagram-reel-downloader-free
+Allow: /free-facebook-video-downloader
+Allow: /faqs
+Allow: /AboutUs
+Allow: /ContactUs
+Disallow: /api/
+Disallow: /next/
+Disallow: /admin/
+Crawl-delay: 10
+# -----------------------------------------------------------
+# SECTION 13: AI CRAWLERS — Apple Applebot
+# -----------------------------------------------------------
+User-agent: Applebot
 Allow: /
-# Amazon Alexa / Alexa Web Crawler
-User-agent: Amazonbot
+Allow: /instagram-reel-downloader-free
+Allow: /pinterest-video-downloader-free
+Allow: /free-facebook-video-downloader
+Allow: /faqs
+Allow: /AboutUs
+Allow: /llms.txt
+Disallow: /api/
+Disallow: /next/
+Disallow: /admin/
+Crawl-delay: 10
+# -----------------------------------------------------------
+# SECTION 14: AI CRAWLERS — Common Crawl (AI Training Data)
+# -----------------------------------------------------------
+User-agent: CCBot
 Allow: /
-# Diffbot (used by AI knowledge graph systems)
-User-agent: Diffbot
+Allow: /llms.txt
+Disallow: /api/
+Disallow: /next/
+Disallow: /admin/
+Disallow: /PrivacyPolicy
+Disallow: /TermsAndConditions
+Disallow: /Disclaimer
+Disallow: /CookiePolicy
+Disallow: /ContactUs
+Crawl-delay: 30
+# -----------------------------------------------------------
+# SECTION 15: SOCIAL MEDIA CRAWLERS
+# -----------------------------------------------------------
+# Pinterest Crawler
+User-agent: Pinterest
 Allow: /
-# Apple Intelligence (Applebot-Extended for AI training)
-User-agent: Applebot-Extended
+Allow: /pinterest-video-downloader-free
+Allow: /images/
+Allow: /logo.png
+Allow: /og-image.png
+Disallow: /api/
+Disallow: /next/
+# Twitter/X Card Crawler
+User-agent: Twitterbot
 Allow: /
-# Timpibot (used by Timpi — decentralized search)
-User-agent: Timpibot
+Allow: /images/
+Allow: /og-image.png
+Allow: /logo.png
+Disallow: /api/
+Disallow: /next/
+# LinkedIn Crawler
+User-agent: LinkedInBot
 Allow: /
-# Webz.io / Webhose (feeds AI and news platforms)
-User-agent: Webzio-Extended
-Allow: /
-# DataForSEO (used by AI analytics platforms)
-User-agent: DataForSeoBot
-Allow: /
-# ------------------------------------------------------------
-# SECTION 3 — GLOBAL CATCH-ALL (all other crawlers)
-# ------------------------------------------------------------
-User-agent: *
-Allow: /
-Crawl-delay: 5
-# ------------------------------------------------------------
-# SECTION 4 — BLOCK AGGRESSIVE SEO SCRAPERS
-# (These waste bandwidth and don't contribute to rankings)
-# ------------------------------------------------------------
+Allow: /images/
+Allow: /og-image.png
+Disallow: /api/
+Disallow: /next/
+# -----------------------------------------------------------
+# SECTION 16: BLOCK MALICIOUS & SPAM BOTS
+# -----------------------------------------------------------
 User-agent: AhrefsBot
 Disallow: /
 User-agent: SemrushBot
@@ -137,34 +328,28 @@ User-agent: DotBot
 Disallow: /
 User-agent: BLEXBot
 Disallow: /
+User-agent: SeznamBot
+Disallow: /
+User-agent: Exabot
+Disallow: /
+User-agent: 360Spider
+Disallow: /
+User-agent: SiteExplorer
+Disallow: /
+User-agent: ScrapyBot
+Disallow: /
 User-agent: PetalBot
 Disallow: /
-User-agent: Zoominfobot
+User-agent: DataForSeoBot
 Disallow: /
-User-agent: serpstatbot
+User-agent: ZoominfoBot
 Disallow: /
-User-agent: SEOkicks
-Disallow: /
-User-agent: seoscannerbot
-Disallow: /
-User-agent: Bytespider
-Disallow: /
-User-agent: PiplBot
-Disallow: /
-User-agent: Scrapy
-Disallow: /
-User-agent: HTTrack
-Disallow: /
-User-agent: EmailCollector
-Disallow: /
-User-agent: EmailSiphon
-Disallow: /
-User-agent: WebBandit
-Disallow: /
-User-agent: EmailWolf
-Disallow: /
-# ------------------------------------------------------------
-# SECTION 5 — SITEMAPS
-# ------------------------------------------------------------
+# -----------------------------------------------------------
+# SITEMAP REFERENCES
+# -----------------------------------------------------------
 Sitemap: https://fastvidl.com/sitemap.xml
-Sitemap: https://fastvidl.com/sitemap_index.xml
+Sitemap: https://fastvidl.com/sitemap-images.xml
+# -----------------------------------------------------------
+# AI DISCOVERY FILE
+# -----------------------------------------------------------
+# LLMs.txt: https://fastvidl.com/llms.txt
