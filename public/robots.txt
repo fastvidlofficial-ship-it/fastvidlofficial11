@@ -39,8 +39,6 @@ Disallow: /api/
 Disallow: /.next/
 Disallow: /node_modules/
 # Disallow duplicate or low-value URL patterns
-Disallow: /*?*
-Disallow: /*&*
 Disallow: /*/amp/
 Disallow: /amp/
 Disallow: /*.json$
@@ -81,7 +79,6 @@ Allow: /sitemap.xml
 Disallow: /api/
 Disallow: /next/
 Disallow: /admin/
-Disallow: /*?*
 # No crawl delay for Googlebot (Google manages this internally)
 # -----------------------------------------------------------
 # SECTION 3: GOOGLE IMAGE CRAWLER
@@ -117,7 +114,6 @@ Allow: /sitemap.xml
 Disallow: /api/
 Disallow: /next/
 Disallow: /admin/
-Disallow: /*?*
 Crawl-delay: 5
 # -----------------------------------------------------------
 # SECTION 5: YAHOO SEARCH — Slurp
@@ -348,7 +344,6 @@ Disallow: /
 # SITEMAP REFERENCES
 # -----------------------------------------------------------
 Sitemap: https://fastvidl.com/sitemap.xml
-Sitemap: https://fastvidl.com/sitemap-images.xml
 # -----------------------------------------------------------
 # AI DISCOVERY FILE
 # -----------------------------------------------------------

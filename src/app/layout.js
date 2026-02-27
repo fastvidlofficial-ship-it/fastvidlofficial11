@@ -18,17 +18,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-   metadataBase: new URL('https://fastvidl.com'),
-  title: "FastVidl Instagram  Reel Downloader - Free HD",
-  description: "Download Reels from Instagram in HD quality for free. Save Reels, Stories, and clips instantly without registration. Fast, secure, and works on any device.",
+  metadataBase: new URL('https://fastvidl.com'),
+  title: "FastVidl – Free Video Downloader for Instagram, Pinterest & Facebook | HD No Watermark",
+  description: "Download Instagram Reels, Pinterest videos, and Facebook videos for free. No watermark, no login, no app. Save in HD on iPhone, Android & desktop. Fast, secure, browser-based.",
   icons: {
-    icon: "/assets/favicon.ico", 
+    icon: "/assets/favicon.ico",
     shortcut: "/assets/favicon.ico",
-    // apple: "/assets/apple-touch-icon.png",
   },
   alternates: {
     canonical: 'https://fastvidl.com',
   },
+  openGraph: {
+    title: "FastVidl – Free Video Downloader for Instagram, Pinterest & Facebook | HD No Watermark",
+    description: "Download Instagram Reels, Pinterest videos, and Facebook videos for free. No watermark, no login, no app. HD quality, all devices.",
+    url: "https://fastvidl.com",
+    siteName: "FastVidl",
+    images: ["/assets/weblogo.png"],
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FastVidl – Free Video Downloader for Instagram, Pinterest & Facebook",
+    description: "Download Instagram Reels, Pinterest videos, and Facebook videos for free. No watermark, no login, no app.",
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }) {

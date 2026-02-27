@@ -28,6 +28,31 @@ export default function sitemap() {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
+    // Blog index and blog articles
+    {
+      url: `${baseUrl}/Blogs`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/Blogs/instagram-reel-downloader-free`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/Blogs/pinterest-video-downloader-free`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/Blogs/free-facebook-video-downloader`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
     // Company & info
     {
       url: `${baseUrl}/AboutUs`,
