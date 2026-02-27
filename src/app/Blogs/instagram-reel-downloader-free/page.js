@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import "../Blog.css";
 import FAQSchema from "@/components/FAQSchema";
+import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
 import InstagramReelDownloaderBlogContent, { INSTAGRAM_BLOG_FAQ_LIST } from "./InstagramReelDownloaderBlogContent";
 
 function SEO({ title, description, keywords }) {
@@ -40,6 +41,16 @@ export default function InstagramReelDownloaderFreePage() {
   return (
     <>
       <FAQSchema faqList={INSTAGRAM_BLOG_FAQ_LIST} />
+      <AuthorOrganizationSchema
+        authorName="Raja Jahangir"
+        authorUrl="https://www.linkedin.com/in/raja-jahangir"
+        organizationName="Auroxa Tech"
+        organizationUrl="https://auroxatech.com"
+        articleUrl="https://fastvidl.com/Blogs/instagram-reel-downloader-free"
+        headline="Instagram Reel Downloader Free: Download Reels Without Watermark (2026)"
+        datePublished="2026-02-27"
+        dateModified="2026-02-27"
+      />
       <SEO
         title="Instagram Reel Downloader Free 2026: Download Reels Without Watermark | FastVidl"
         description="Download Instagram Reels for free with FastVidl – no watermark, no login, no app installation. Save IG Reels in HD 1080p on iPhone, Android & desktop in seconds. 100% secure, browser-based tool for public reels only."

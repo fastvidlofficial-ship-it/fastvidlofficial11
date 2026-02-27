@@ -5,8 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 const INSTAGRAM_TERMS_URL = "https://www.instagram.com/about/legal/terms/";
 const INSTAGRAM_COMMUNITY_GUIDELINES_URL = "https://help.instagram.com/581066165581870";
-const TABISH_LINKEDIN = "https://www.linkedin.com/in/tabish-irfan-5b930a226";
 const RAJA_LINKEDIN = "https://www.linkedin.com/in/raja-jahangir"; // Update with correct URL if different
+const AUROXA_TECH_URL = "https://auroxatech.com";
 
 const listStyle = { marginBottom: "1rem", paddingLeft: "1.5rem" };
 const liStyle = { marginBottom: "0.4rem" };
@@ -44,7 +44,7 @@ export default function InstagramReelDownloaderBlogContent({ variant = "standalo
         Expertly Verified Resource
       </p>
       <p className={metaClass} style={isHome ? {} : { fontStyle: "italic", color: "#666", marginBottom: "1rem" }}>
-        Written by Raja Jahangir (SEO & Growth Specialist) and technically audited by Tabish Irfan (Lead Full Stack Developer). Last Updated: 27 February 2026
+        Written by <a href={RAJA_LINKEDIN} target="_blank" rel="noopener noreferrer" className={linkClass}>Raja Jahangir</a> (SEO &amp; Growth Specialist). Powered by <a href={AUROXA_TECH_URL} target="_blank" rel="noopener noreferrer" className={linkClass}>Auroxa Tech</a>. Last Updated: 27 February 2026
       </p>
 
       <h2 className={h2Class}>Quick Summary</h2>
@@ -315,15 +315,14 @@ export default function InstagramReelDownloaderBlogContent({ variant = "standalo
 
       <h2 id="meet-the-team" className={h2Class}>Meet the Team Behind FastVidl</h2>
       <p className={pClass}>
-        FastVidl was built last year by a dedicated two-person team focused on creating the next generation of video downloading tools. By combining technical precision with search expertise, they ensure the platform remains fast, secure and 100% free for all users.
-      </p>
-      <p className={pClass}>
-        <strong>Tabish Irfan: Lead Full Stack Developer</strong>—With 5 years of experience in software development, Tabish handles the core technology that allows FastVidl to process HD videos in just 5-10 seconds without requiring any software installation.{" "}
-        <a href={TABISH_LINKEDIN} target="_blank" rel="noopener noreferrer" className={linkClass}>Connect on LinkedIn</a>
+        FastVidl was built last year by a dedicated team focused on creating the next generation of video downloading tools. By combining technical precision with search expertise, we ensure the platform remains fast, secure and 100% free for all users.
       </p>
       <p className={pClass}>
         <strong>Raja Jahangir: SEO &amp; Growth Expert</strong>—Bringing 3 years of SEO experience, Raja ensures that FastVidl remains user-centric, privacy-focused and easily accessible to the thousands of users searching for reliable video solutions every month.{" "}
         <a href={RAJA_LINKEDIN} target="_blank" rel="noopener noreferrer" className={linkClass}>Connect on LinkedIn</a>
+      </p>
+      <p className={pClass}>
+        Powered by <a href={AUROXA_TECH_URL} target="_blank" rel="noopener noreferrer" className={linkClass}>Auroxa Tech</a>.
       </p>
 
       <h2 id="conclusion" className={h2Class}>Conclusion</h2>
