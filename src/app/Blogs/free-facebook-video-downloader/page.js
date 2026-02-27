@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import "../Blog.css";
+import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
 import FacebookBlogContent from "./FacebookBlogContent";
 
 function SEO({ title, description, keywords }) {
@@ -33,6 +34,16 @@ export default function FacebookVideoDownloaderPage() {
 
   return (
     <>
+      <AuthorOrganizationSchema
+        authorName="Raja Jahangir"
+        authorUrl="https://www.linkedin.com/in/raja-jahangir"
+        organizationName="Auroxa Tech"
+        organizationUrl="https://auroxatech.com"
+        articleUrl="https://fastvidl.com/Blogs/free-facebook-video-downloader"
+        headline="Free Facebook Video Downloader: Download FB Videos in HD (2026)"
+        datePublished="2026-02-27"
+        dateModified="2026-02-27"
+      />
       <SEO
         title="Free Facebook Video Downloader 2026: Download FB Videos in HD Without Watermark | FastVidl"
         description="Download Facebook videos for free with FastVidl – no watermark, no login, no app needed. Save FB videos in HD 1080p on iPhone, Android & desktop in 5-10 seconds. 100% secure browser-based tool for public videos only."
