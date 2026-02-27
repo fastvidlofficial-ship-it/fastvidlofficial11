@@ -2,11 +2,22 @@
 import styles from "../page.module.css";
 import heroStyles from "../DownloaderHero.module.css";
 import UserInput from "@/components/input/UserInput";
+import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
 import PinterestBlogContent from "../Blogs/pinterest-video-downloader-free/PinterestBlogContent";
 
 export default function PinterestReelDownloaderService() {
   return (
     <div className={styles.page}>
+      <AuthorOrganizationSchema
+        authorName="Raja Jahangir"
+        authorUrl="https://www.linkedin.com/in/raja-jahangir"
+        organizationName="Auroxa Tech"
+        organizationUrl="https://auroxatech.com"
+        articleUrl="https://fastvidl.com/pinterest-video-downloader-free"
+        headline="Pinterest Video Downloader Free: Download Videos Without Watermark (2026)"
+        datePublished="2026-02-27"
+        dateModified="2026-02-27"
+      />
       <main className={styles.main}>
         <div className={heroStyles.heroWrap}>
           <h1 className={heroStyles.heroTitle}>
