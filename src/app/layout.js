@@ -1,5 +1,4 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
@@ -47,11 +46,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="light">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Script
+      <head>
+        <script
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6813251858740530"
-          strategy="afterInteractive"
+          async
+          suppressHydrationWarning
         />
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <WebSiteSchema />
         <ThemeProvider>
           <Header/>
