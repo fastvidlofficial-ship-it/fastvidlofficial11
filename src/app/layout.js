@@ -5,7 +5,6 @@ import Footer from "@/components/footer/Footer";
 import CookieConsent from "@/components/cookie-consent/CookieConsent";
 import WebSiteSchema from "@/components/WebSiteSchema";
 import ThemeProvider from "@/components/theme/ThemeContext";
-import AdSenseLoader from "@/components/ads/AdSenseLoader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,8 +46,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="light">
+      <head>
+        <script
+          async
+          crossOrigin="anonymous"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6813251858740530"
+        />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <AdSenseLoader />
         <WebSiteSchema />
         <ThemeProvider>
           <Header/>
