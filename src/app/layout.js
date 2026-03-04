@@ -61,6 +61,11 @@ export default function RootLayout({ children }) {
           <Footer/>
           <CookieConsent />
         </ThemeProvider>
+        <script
+          async
+          crossOrigin="anonymous"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6813251858740530"
+        />
       </body>
     </html>
   );
