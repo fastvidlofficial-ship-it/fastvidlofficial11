@@ -18,8 +18,8 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   metadataBase: new URL('https://fastvidl.com'),
-  title: "FastVidl – Free Video Downloader for Instagram, Pinterest & Facebook | HD No Watermark",
-  description: "Download Instagram Reels, Pinterest videos, and Facebook videos for free. No watermark, no login, no app. Save in HD on iPhone, Android & desktop. Fast, secure, browser-based.",
+  title: "Instagram Reel Downloader Free | FastVidl",
+  description: "Download Instagram reels for free with FastVidl. No watermark, no login, no app. Save reels in HD on iPhone, Android, and desktop in seconds.",
   icons: {
     icon: "/assets/favicon.ico",
     shortcut: "/assets/favicon.ico",
@@ -28,8 +28,8 @@ export const metadata = {
     canonical: 'https://fastvidl.com',
   },
   openGraph: {
-    title: "FastVidl – Free Video Downloader for Instagram, Pinterest & Facebook | HD No Watermark",
-    description: "Download Instagram Reels, Pinterest videos, and Facebook videos for free. No watermark, no login, no app. HD quality, all devices.",
+    title: "Instagram Reel Downloader Free | FastVidl",
+    description: "Download Instagram reels for free with FastVidl. No watermark, no login, no app. Save reels in HD on iPhone, Android, and desktop in seconds.",
     url: "https://fastvidl.com",
     siteName: "FastVidl",
     images: ["/assets/weblogo.png"],
@@ -37,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FastVidl – Free Video Downloader for Instagram, Pinterest & Facebook",
-    description: "Download Instagram Reels, Pinterest videos, and Facebook videos for free. No watermark, no login, no app.",
+    title: "Instagram Reel Downloader Free | FastVidl",
+    description: "Download Instagram reels for free with FastVidl. No watermark, no login, no app. Save reels in HD in seconds.",
   },
   robots: { index: true, follow: true },
 };
