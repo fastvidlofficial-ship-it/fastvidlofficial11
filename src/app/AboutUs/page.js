@@ -24,18 +24,30 @@ const AboutUs = () => {
     }
   ];
 
-  const teamMembers = [
+  const team = [
     {
-      role: "Developers",
-      description: "who code daily to keep speeds blazing."
+      name: "Tabish Irfan",
+      role: "CEO & Founder Auroxa Tech",
+      image: "/assets/tabish.jpeg",
+      linkedin: "https://www.linkedin.com/in/tabish-irfan-5b930a226"
     },
     {
-      role: "Designers",
-      description: "ensure it feels intuitive, even on mobile."
+      name: "Hammas Ali",
+      role: "CTO & Co-founder Auroxa Tech",
+      image: "/images/hammass.jpeg",
+      linkedin: "https://www.linkedin.com/in/hammas-ali-mirza/"
     },
     {
-      role: "Support folks",
-      description: "ready to help within 24 hours."
+      name: "Raja Jahangeer",
+      role: "SEO & Growth Specialist",
+      image: "/images/jahangir1.jpeg",
+      linkedin: "https://www.linkedin.com/in/raja-jahangir"
+    },
+    {
+      name: "Abdal Khalid",
+      role: "Social Media Expert",
+      image: "/images/abdal1.jpeg",
+      linkedin: "https://www.linkedin.com/in/abdal-khalid"
     }
   ];
 
@@ -153,54 +165,41 @@ const AboutUs = () => {
                 </p>
               </div>
 
-              <div className="card3d">
-                <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">The Team</h2>
-                <ul className="team-list">
-                  {teamMembers.map((member, index) => (
-                    <li key={index} className="mb-3">
-                      <strong className="text-lg">● {member.role}</strong> {member.description}
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-base sm:text-lg leading-relaxed mb-6 mt-4">
-                  We're not a big corp; we're people who use this tool ourselves and want to make saving moments easier.
+              <div className="card3d team-section">
+                <h2 className="team-heading">Meet the Team</h2>
+                <p className="team-subheading">
+                  We're not a big corp — just a passionate crew building tools we actually use.
                 </p>
 
-                {/* Team Member Profile */}
-                <div className="team-profile-card">
-                  <div className="team-profile-image">
-                    <Image
-                      src="/assets/tabish.jpeg"
-                      alt="Tabish Irfan"
-                      width={200}
-                      height={200}
-                      className="profile-photo"
-                    />
-                  </div>
-                  <div className="team-profile-info">
-                    <h3 className="text-2xl font-bold mb-2">Tabish Irfan</h3>
-                    <p className="text-base mb-4" style={{ color: "#666" }}>
-                      Founder & Developer
-                    </p>
-                    <a
-                      href="https://www.linkedin.com/in/tabish-irfan-5b930a226"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="linkedin-link"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        style={{ marginRight: "8px", verticalAlign: "middle" }}
-                      >
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                      </svg>
-                      Connect on LinkedIn
-                    </a>
-                  </div>
+                <div className="team-grid">
+                  {team.map((member, index) => (
+                    <div key={index} className="team-card">
+                      <div className="team-card-img-wrapper">
+                        <Image
+                          src={member.image}
+                          alt={member.name}
+                          width={160}
+                          height={160}
+                          className="team-card-img"
+                        />
+                      </div>
+                      <h3 className="team-card-name">{member.name}</h3>
+                      <p className="team-card-role">{member.role}</p>
+                      {member.linkedin && (
+                        <a
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="team-card-linkedin"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                          </svg>
+                          LinkedIn
+                        </a>
+                      )}
+                    </div>
+                  ))}
                 </div>
               </div>
 
