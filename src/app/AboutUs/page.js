@@ -38,7 +38,7 @@ const AboutUs = () => {
       linkedin: "https://www.linkedin.com/in/hammas-ali-mirza/"
     },
     {
-      name: "Raja Jahangeer",
+      name: "Raja Jahangir",
       role: "SEO & Growth Specialist",
       image: "/images/jahangir1.jpeg",
       linkedin: "https://www.linkedin.com/in/raja-jahangir"
