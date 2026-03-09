@@ -1,8 +1,8 @@
 # ===========================================================
 # robots.txt — FastVidl (https://fastvidl.com)
-# Free Online Video Downloader for Instagram, Pinterest & Facebook
+# Instagram Reel Downloader Free, Pinterest Video Downloader Free and Free Facebook Video Downloader
 # Built with Next.js | Hosted on Vercel
-# Last Updated: 27 Feb 2026
+# Last Updated: 09 Mar 2026
 # ===========================================================
 # -----------------------------------------------------------
 # SECTION 1: ALL CRAWLERS — General Rules
@@ -34,6 +34,7 @@ Allow: /llms.txt
 Allow: /sitemap.xml
 Allow: /robots.txt
 # Disallow Next.js internals and build files
+# FIX #2: Allow: /next/static/ must appear before Disallow: /next/ (order matters for broad bots)
 Disallow: /next/
 Disallow: /api/
 Disallow: /.next/
@@ -41,8 +42,8 @@ Disallow: /node_modules/
 # Disallow duplicate or low-value URL patterns
 Disallow: /*/amp/
 Disallow: /amp/
-Disallow: /*.json$
-Disallow: /*.xml$
+# FIX #1: Removed "Disallow: /*.xml$" — was conflicting with "Allow: /sitemap.xml"
+# FIX #1: Removed "Disallow: /*.json$" — can conflict with Next.js static JSON assets
 # Disallow admin, config and sensitive paths
 Disallow: /admin/
 Disallow: /dashboard/
@@ -312,12 +313,36 @@ Allow: /og-image.png
 Disallow: /api/
 Disallow: /next/
 # -----------------------------------------------------------
-# SECTION 16: BLOCK MALICIOUS & SPAM BOTS
+# SECTION 16: SEO AUDIT TOOLS
+# FIX #3: Allowed AhrefsBot & SemrushBot for your own site auditing
 # -----------------------------------------------------------
 User-agent: AhrefsBot
-Disallow: /
+Allow: /
+Allow: /instagram-reel-downloader-free
+Allow: /pinterest-video-downloader-free
+Allow: /free-facebook-video-downloader
+Allow: /faqs
+Allow: /AboutUs
+Allow: /ContactUs
+Disallow: /api/
+Disallow: /next/
+Disallow: /admin/
+Crawl-delay: 10
 User-agent: SemrushBot
-Disallow: /
+Allow: /
+Allow: /instagram-reel-downloader-free
+Allow: /pinterest-video-downloader-free
+Allow: /free-facebook-video-downloader
+Allow: /faqs
+Allow: /AboutUs
+Allow: /ContactUs
+Disallow: /api/
+Disallow: /next/
+Disallow: /admin/
+Crawl-delay: 10
+# -----------------------------------------------------------
+# SECTION 17: BLOCK MALICIOUS & SPAM BOTS
+# -----------------------------------------------------------
 User-agent: MJ12bot
 Disallow: /
 User-agent: DotBot
