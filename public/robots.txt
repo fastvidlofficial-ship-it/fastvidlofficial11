@@ -1,9 +1,10 @@
 # ===========================================================
 # robots.txt — FastVidl (https://fastvidl.com)
-# Instagram Reel Downloader Free, Pinterest Video Downloader Free and Free Facebook Video Downloader
+# Tools: Instagram Reel, Photo, & Story Downloader, Pinterest & Facebook Downloader
 # Built with Next.js | Hosted on Vercel
-# Last Updated: 09 Mar 2026
+# Last Updated: 02 Apr 2026
 # ===========================================================
+
 # -----------------------------------------------------------
 # SECTION 1: ALL CRAWLERS — General Rules
 # -----------------------------------------------------------
@@ -22,6 +23,7 @@ Allow: /PrivacyPolicy
 Allow: /TermsAndConditions
 Allow: /Disclaimer
 Allow: /CookiePolicy
+
 # Allow static assets (CSS, JS, Images, Fonts)
 Allow: /next/static/
 Allow: /images/
@@ -29,23 +31,22 @@ Allow: /icons/
 Allow: /fonts/
 Allow: /logo.png
 Allow: /favicon.ico
-Allow: /screenshot.png
-Allow: /og-image.png
+
 # Allow SEO & AI discovery files
 Allow: /llms.txt
 Allow: /sitemap.xml
 Allow: /robots.txt
+
 # Disallow Next.js internals and build files
-# FIX #2: Allow: /next/static/ must appear before Disallow: /next/ (order matters for broad bots)
 Disallow: /next/
 Disallow: /api/
 Disallow: /.next/
 Disallow: /node_modules/
+
 # Disallow duplicate or low-value URL patterns
 Disallow: /*/amp/
 Disallow: /amp/
-# FIX #1: Removed "Disallow: /*.xml$" — was conflicting with "Allow: /sitemap.xml"
-# FIX #1: Removed "Disallow: /*.json$" — can conflict with Next.js static JSON assets
+
 # Disallow admin, config and sensitive paths
 Disallow: /admin/
 Disallow: /dashboard/
@@ -58,90 +59,15 @@ Disallow: /logs/
 Disallow: /debug/
 Disallow: /test/
 Disallow: /dev/
+
 # Crawl delay for general bots (in seconds)
 Crawl-delay: 5
+
 # -----------------------------------------------------------
-# SECTION 2: GOOGLE SEARCH — Googlebot
+# SECTION 2: SEARCH ENGINES (Google, Bing, DuckDuckGo)
 # -----------------------------------------------------------
 User-agent: Googlebot
-Allow: /
-Allow: /instagram-reel-downloader-free
-Allow: /instagram-photo-downloader
-Allow: /instagram-story-downloader
-Allow: /pinterest-video-downloader-free
-Allow: /free-facebook-video-downloader
-Allow: /faqs
-Allow: /AboutUs
-Allow: /ContactUs
-Allow: /PrivacyPolicy
-Allow: /TermsAndConditions
-Allow: /Disclaimer
-Allow: /CookiePolicy
-Allow: /next/static/
-Allow: /images/
-Allow: /llms.txt
-Allow: /sitemap.xml
-Disallow: /api/
-Disallow: /next/
-Disallow: /admin/
-# No crawl delay for Googlebot (Google manages this internally)
-# -----------------------------------------------------------
-# SECTION 3: GOOGLE IMAGE CRAWLER
-# -----------------------------------------------------------
-User-agent: Googlebot-Image
-Allow: /images/
-Allow: /icons/
-Allow: /logo.png
-Allow: /og-image.png
-Allow: /screenshot.png
-Allow: /favicon.ico
-Disallow: /api/
-Disallow: /next/
-# -----------------------------------------------------------
-# SECTION 4: BING SEARCH — Bingbot
-# -----------------------------------------------------------
 User-agent: Bingbot
-Allow: /
-Allow: /instagram-reel-downloader-free
-Allow: /instagram-photo-downloader
-Allow: /instagram-story-downloader
-Allow: /pinterest-video-downloader-free
-Allow: /free-facebook-video-downloader
-Allow: /faqs
-Allow: /AboutUs
-Allow: /ContactUs
-Allow: /PrivacyPolicy
-Allow: /TermsAndConditions
-Allow: /Disclaimer
-Allow: /CookiePolicy
-Allow: /next/static/
-Allow: /images/
-Allow: /llms.txt
-Allow: /sitemap.xml
-Disallow: /api/
-Disallow: /next/
-Disallow: /admin/
-Crawl-delay: 5
-# -----------------------------------------------------------
-# SECTION 5: YAHOO SEARCH — Slurp
-# -----------------------------------------------------------
-User-agent: Slurp
-Allow: /
-Allow: /instagram-reel-downloader-free
-Allow: /instagram-photo-downloader
-Allow: /instagram-story-downloader
-Allow: /pinterest-video-downloader-free
-Allow: /free-facebook-video-downloader
-Allow: /faqs
-Allow: /AboutUs
-Allow: /ContactUs
-Disallow: /api/
-Disallow: /next/
-Disallow: /admin/
-Crawl-delay: 10
-# -----------------------------------------------------------
-# SECTION 6: DUCKDUCKGO
-# -----------------------------------------------------------
 User-agent: DuckDuckBot
 Allow: /
 Allow: /instagram-reel-downloader-free
@@ -152,134 +78,22 @@ Allow: /free-facebook-video-downloader
 Allow: /faqs
 Allow: /AboutUs
 Allow: /ContactUs
+Allow: /PrivacyPolicy
+Allow: /TermsAndConditions
 Allow: /llms.txt
 Allow: /sitemap.xml
 Disallow: /api/
 Disallow: /next/
 Disallow: /admin/
-Crawl-delay: 5
+
 # -----------------------------------------------------------
-# SECTION 7: AI CRAWLERS — OpenAI / ChatGPT
+# SECTION 3: AI CRAWLERS (OpenAI, Gemini, Claude, Perplexity, Apple)
 # -----------------------------------------------------------
 User-agent: GPTBot
-Allow: /
-Allow: /instagram-reel-downloader-free
-Allow: /instagram-photo-downloader
-Allow: /instagram-story-downloader
-Allow: /pinterest-video-downloader-free
-Allow: /free-facebook-video-downloader
-Allow: /faqs
-Allow: /AboutUs
-Allow: /ContactUs
-Allow: /PrivacyPolicy
-Allow: /TermsAndConditions
-Allow: /Disclaimer
-Allow: /CookiePolicy
-Allow: /llms.txt
-Disallow: /api/
-Disallow: /next/
-Disallow: /admin/
-Crawl-delay: 10
-# -----------------------------------------------------------
-# SECTION 8: AI CRAWLERS — OpenAI Search (SearchGPT)
-# -----------------------------------------------------------
 User-agent: OAI-SearchBot
-Allow: /
-Allow: /instagram-reel-downloader-free
-Allow: /instagram-photo-downloader
-Allow: /instagram-story-downloader
-Allow: /pinterest-video-downloader-free
-Allow: /free-facebook-video-downloader
-Allow: /faqs
-Allow: /AboutUs
-Allow: /ContactUs
-Allow: /llms.txt
-Allow: /sitemap.xml
-Disallow: /api/
-Disallow: /next/
-Disallow: /admin/
-Crawl-delay: 10
-# -----------------------------------------------------------
-# SECTION 9: AI CRAWLERS — Google Gemini / Bard
-# -----------------------------------------------------------
 User-agent: Google-Extended
-Allow: /
-Allow: /instagram-reel-downloader-free
-Allow: /instagram-photo-downloader
-Allow: /instagram-story-downloader
-Allow: /pinterest-video-downloader-free
-Allow: /free-facebook-video-downloader
-Allow: /faqs
-Allow: /AboutUs
-Allow: /ContactUs
-Allow: /PrivacyPolicy
-Allow: /TermsAndConditions
-Allow: /Disclaimer
-Allow: /CookiePolicy
-Allow: /llms.txt
-Disallow: /api/
-Disallow: /next/
-Disallow: /admin/
-Crawl-delay: 10
-# -----------------------------------------------------------
-# SECTION 10: AI CRAWLERS — Anthropic Claude
-# -----------------------------------------------------------
 User-agent: ClaudeBot
-Allow: /
-Allow: /instagram-reel-downloader-free
-Allow: /instagram-photo-downloader
-Allow: /instagram-story-downloader
-Allow: /pinterest-video-downloader-free
-Allow: /free-facebook-video-downloader
-Allow: /faqs
-Allow: /AboutUs
-Allow: /ContactUs
-Allow: /PrivacyPolicy
-Allow: /TermsAndConditions
-Allow: /Disclaimer
-Allow: /CookiePolicy
-Allow: /llms.txt
-Disallow: /api/
-Disallow: /next/
-Disallow: /admin/
-Crawl-delay: 10
-# -----------------------------------------------------------
-# SECTION 11: AI CRAWLERS — Perplexity AI
-# -----------------------------------------------------------
 User-agent: PerplexityBot
-Allow: /
-Allow: /instagram-reel-downloader-free
-Allow: /instagram-photo-downloader
-Allow: /instagram-story-downloader
-Allow: /pinterest-video-downloader-free
-Allow: /free-facebook-video-downloader
-Allow: /faqs
-Allow: /AboutUs
-Allow: /ContactUs
-Allow: /llms.txt
-Disallow: /api/
-Disallow: /next/
-Disallow: /admin/
-Crawl-delay: 10
-# -----------------------------------------------------------
-# SECTION 12: AI CRAWLERS — Meta AI (Facebook/Instagram)
-# -----------------------------------------------------------
-User-agent: FacebookBot
-Allow: /
-Allow: /instagram-reel-downloader-free
-Allow: /instagram-photo-downloader
-Allow: /instagram-story-downloader
-Allow: /free-facebook-video-downloader
-Allow: /faqs
-Allow: /AboutUs
-Allow: /ContactUs
-Disallow: /api/
-Disallow: /next/
-Disallow: /admin/
-Crawl-delay: 10
-# -----------------------------------------------------------
-# SECTION 13: AI CRAWLERS — Apple Applebot
-# -----------------------------------------------------------
 User-agent: Applebot
 Allow: /
 Allow: /instagram-reel-downloader-free
@@ -288,116 +102,49 @@ Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader
 Allow: /faqs
-Allow: /AboutUs
 Allow: /llms.txt
+Allow: /sitemap.xml
 Disallow: /api/
 Disallow: /next/
 Disallow: /admin/
-Crawl-delay: 10
+Crawl-delay: 5
+
 # -----------------------------------------------------------
-# SECTION 14: AI CRAWLERS — Common Crawl (AI Training Data)
+# SECTION 4: SOCIAL MEDIA & SEO AUDIT
 # -----------------------------------------------------------
-User-agent: CCBot
-Allow: /
-Allow: /llms.txt
-Disallow: /api/
-Disallow: /next/
-Disallow: /admin/
-Disallow: /PrivacyPolicy
-Disallow: /TermsAndConditions
-Disallow: /Disclaimer
-Disallow: /CookiePolicy
-Disallow: /ContactUs
-Crawl-delay: 30
-# -----------------------------------------------------------
-# SECTION 15: SOCIAL MEDIA CRAWLERS
-# -----------------------------------------------------------
-# Pinterest Crawler
+User-agent: FacebookBot
 User-agent: Pinterest
-Allow: /
-Allow: /pinterest-video-downloader-free
-Allow: /images/
-Allow: /logo.png
-Allow: /og-image.png
-Disallow: /api/
-Disallow: /next/
-# Twitter/X Card Crawler
 User-agent: Twitterbot
-Allow: /
-Allow: /images/
-Allow: /og-image.png
-Allow: /logo.png
-Disallow: /api/
-Disallow: /next/
-# LinkedIn Crawler
 User-agent: LinkedInBot
-Allow: /
-Allow: /images/
-Allow: /og-image.png
-Disallow: /api/
-Disallow: /next/
-# -----------------------------------------------------------
-# SECTION 16: SEO AUDIT TOOLS
-# FIX #3: Allowed AhrefsBot & SemrushBot for your own site auditing
-# -----------------------------------------------------------
 User-agent: AhrefsBot
-Allow: /
-Allow: /instagram-reel-downloader-free
-Allow: /instagram-photo-downloader
-Allow: /instagram-story-downloader
-Allow: /pinterest-video-downloader-free
-Allow: /free-facebook-video-downloader
-Allow: /faqs
-Allow: /AboutUs
-Allow: /ContactUs
-Disallow: /api/
-Disallow: /next/
-Disallow: /admin/
-Crawl-delay: 10
 User-agent: SemrushBot
 Allow: /
-Allow: /instagram-reel-downloader-free
 Allow: /instagram-photo-downloader
 Allow: /instagram-story-downloader
-Allow: /pinterest-video-downloader-free
-Allow: /free-facebook-video-downloader
-Allow: /faqs
-Allow: /AboutUs
-Allow: /ContactUs
+Allow: /instagram-reel-downloader-free
+Allow: /images/
+Allow: /og-image.png
 Disallow: /api/
 Disallow: /next/
-Disallow: /admin/
-Crawl-delay: 10
+
 # -----------------------------------------------------------
-# SECTION 17: BLOCK MALICIOUS & SPAM BOTS
+# SECTION 5: BLOCK MALICIOUS & SPAM BOTS
 # -----------------------------------------------------------
 User-agent: MJ12bot
-Disallow: /
 User-agent: DotBot
-Disallow: /
 User-agent: BLEXBot
-Disallow: /
 User-agent: SeznamBot
-Disallow: /
 User-agent: Exabot
-Disallow: /
 User-agent: 360Spider
-Disallow: /
 User-agent: SiteExplorer
-Disallow: /
 User-agent: ScrapyBot
-Disallow: /
 User-agent: PetalBot
-Disallow: /
 User-agent: DataForSeoBot
-Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
+
 # -----------------------------------------------------------
-# SITEMAP REFERENCES
+# SITEMAP & AI DISCOVERY REFERENCES
 # -----------------------------------------------------------
 Sitemap: https://fastvidl.com/sitemap.xml
-# -----------------------------------------------------------
-# AI DISCOVERY FILE
-# -----------------------------------------------------------
 # LLMs.txt: https://fastvidl.com/llms.txt
