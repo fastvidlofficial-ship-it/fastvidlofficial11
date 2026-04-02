@@ -47,19 +47,6 @@ export default function FacebookReelDownloaderService() {
               Downloader
             </span>
           </h1>
-          <p
-            style={{
-              fontSize: "1.14rem",
-              color: "var(--p-font-color)",
-              maxWidth: "min(90%, 640px)",
-              margin: "1rem auto",
-              lineHeight: "1.5",
-              fontWeight: "600",
-              textAlign: "center",
-            }}
-          >
-            Download FB videos in HD — free, no login. Scroll for the full guide.
-          </p>
         </div>
         <UserInput />
         <FacebookBlogContent />

@@ -87,8 +87,18 @@
   opacity: 1;
 }
 
+.affiliationDisclaimer {
+  margin: 16px auto 0;
+  max-width: 42rem;
+  padding: 0 12px;
+  font-size: 11px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.72);
+  opacity: 0.95;
+}
+
 .styles-p {
-  margin-top: 18px;
+  margin-top: 10px;
   margin-bottom: 0;
   font-size: 13px;
   line-height: 1.5;

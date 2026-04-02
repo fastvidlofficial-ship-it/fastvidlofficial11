@@ -441,7 +441,7 @@ export default function InstagramStoryBlogContent({ variant = "standalone", faqL
       <div className="blog-content">
         <div className="faq-section">
           {faqList.map((faq, index) => (
-            <div key={index} className="faq-item" style={{ marginBottom: "1.5rem" }}>
+            <div key={index} className="faq-item">
               <h3 className="faq-question">{faq.question}</h3>
               <p className="faq-answer">{faq.answer}</p>
             </div>
@@ -479,10 +479,6 @@ export default function InstagramStoryBlogContent({ variant = "standalone", faqL
         Explore more free tools:{" "}
         <Link href="/instagram-reel-downloader-free" className={linkClass}>
           Instagram Reel Downloader Free
-        </Link>
-        ,{" "}
-        <Link href="/instagram-highlights-downloader" className={linkClass}>
-          Instagram Highlights Downloader
         </Link>
         ,{" "}
         <Link href="/pinterest-video-downloader-free" className={linkClass}>

@@ -47,19 +47,6 @@ export default function InstagramStoryDownloaderService() {
               Downloader
             </span>
           </h1>
-          <p
-            style={{
-              fontSize: "1.14rem",
-              color: "var(--p-font-color)",
-              maxWidth: "min(90%, 640px)",
-              margin: "1rem auto",
-              lineHeight: "1.5",
-              fontWeight: "600",
-              textAlign: "center",
-            }}
-          >
-            Save Stories &amp; Highlights in HD — free, anonymous, no login. Scroll below for the full expert guide.
-          </p>
         </div>
         <UserInput />
         <div className="container-blog">

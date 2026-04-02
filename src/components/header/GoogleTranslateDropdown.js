@@ -35,10 +35,47 @@ const INCLUDED_CODES = LANGUAGES.filter((l) => l.code !== "en")
   .map((l) => l.code)
   .join(",");
 
-function getCurrent() {
+const COOKIE_MAX_AGE = 60 * 60 * 24 * 365; // 1 year
+
+function getCurrentFromCookie() {
   if (typeof document === "undefined") return "en";
   const match = document.cookie.match(/googtrans=\/en\/([^;/]+)/);
   return match ? match[1] : "en";
+}
+
+/** Clear all googtrans cookies Google may set (path + host + parent domain). */
+function clearGoogtransCookies() {
+  const past = "Thu, 01 Jan 1970 00:00:00 GMT";
+  const host = typeof window !== "undefined" ? window.location.hostname : "";
+  document.cookie = `googtrans=; path=/; expires=${past}`;
+  document.cookie = `googtrans=; path=/; max-age=0`;
+  if (host) {
+    document.cookie = `googtrans=; path=/; domain=${host}; expires=${past}`;
+    document.cookie = `googtrans=; path=/; domain=.${host}; expires=${past}`;
+  }
+}
+
+/**
+ * Apply target language using Google's googtrans cookie and reload.
+ * Relying on .goog-te-combo is unreliable (widget often not ready or hidden).
+ * @see https://translate.google.com/manager/website/ — cookie format /source/target
+ */
+function applyLanguageAndReload(targetCode) {
+  if (targetCode === "en") {
+    clearGoogtransCookies();
+    window.location.reload();
+    return;
+  }
+
+  const pair = `/en/${targetCode}`;
+  document.cookie = `googtrans=${pair}; path=/; max-age=${COOKIE_MAX_AGE}; SameSite=Lax`;
+
+  const host = window.location.hostname;
+  if (host && host !== "localhost" && !host.startsWith("127.")) {
+    document.cookie = `googtrans=${pair}; path=/; domain=.${host}; max-age=${COOKIE_MAX_AGE}; SameSite=Lax`;
+  }
+
+  window.location.reload();
 }
 
 export default function GoogleTranslateDropdown() {
@@ -47,7 +84,7 @@ export default function GoogleTranslateDropdown() {
   const wrapRef = useRef(null);
 
   useEffect(() => {
-    setCurrent(getCurrent());
+    setCurrent(getCurrentFromCookie());
   }, []);
 
   useEffect(() => {
@@ -97,20 +134,15 @@ export default function GoogleTranslateDropdown() {
 
   const selectLang = (code) => {
     setOpen(false);
-    setCurrent(code);
 
-    if (code === "en") {
-      document.cookie = "googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-      document.cookie = "googtrans=; path=/; domain=." + window.location.hostname + "; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-      window.location.reload();
+    const fromCookie = getCurrentFromCookie();
+    if (code === fromCookie) {
+      setCurrent(code);
       return;
     }
 
-    const combo = document.querySelector(".goog-te-combo");
-    if (combo) {
-      combo.value = code;
-      combo.dispatchEvent(new Event("change"));
-    }
+    setCurrent(code);
+    applyLanguageAndReload(code);
   };
 
   const currentLang = LANGUAGES.find((l) => l.code === current) || LANGUAGES[0];
@@ -156,7 +188,7 @@ export default function GoogleTranslateDropdown() {
         </ul>
       )}
 
-      <div id={MOUNT_ID} className={styles.hiddenWidget} />
+      <div id={MOUNT_ID} className={styles.hiddenWidget} aria-hidden="true" />
     </div>
   );
 }

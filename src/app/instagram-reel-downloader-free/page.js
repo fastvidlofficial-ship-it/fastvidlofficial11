@@ -50,19 +50,6 @@ export default function InstagramReelDownloaderService() {
             </span>
             <span style={{ color: "var(--heading-color, #1a202c)" }}> Free</span>
           </h1>
-          <p
-            style={{
-              fontSize: "1.14rem",
-              color: "var(--p-font-color)",
-              maxWidth: "min(90%, 640px)",
-              margin: "1rem auto",
-              lineHeight: "1.5",
-              fontWeight: "600",
-              textAlign: "center",
-            }}
-          >
-            Download Reels in HD — no watermark, no login. Scroll below for the full guide.
-          </p>
         </div>
         <UserInput />
         <div className="container-blog">

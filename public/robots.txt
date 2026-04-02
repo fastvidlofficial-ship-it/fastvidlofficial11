@@ -12,7 +12,6 @@ User-agent: *
 Allow: /
 Allow: /instagram-reel-downloader-free
 Allow: /instagram-photo-downloader
-Allow: /instagram-highlights-downloader
 Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader
@@ -68,7 +67,6 @@ User-agent: Googlebot
 Allow: /
 Allow: /instagram-reel-downloader-free
 Allow: /instagram-photo-downloader
-Allow: /instagram-highlights-downloader
 Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader
@@ -106,7 +104,6 @@ User-agent: Bingbot
 Allow: /
 Allow: /instagram-reel-downloader-free
 Allow: /instagram-photo-downloader
-Allow: /instagram-highlights-downloader
 Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader
@@ -132,7 +129,6 @@ User-agent: Slurp
 Allow: /
 Allow: /instagram-reel-downloader-free
 Allow: /instagram-photo-downloader
-Allow: /instagram-highlights-downloader
 Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader
@@ -150,7 +146,6 @@ User-agent: DuckDuckBot
 Allow: /
 Allow: /instagram-reel-downloader-free
 Allow: /instagram-photo-downloader
-Allow: /instagram-highlights-downloader
 Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader
@@ -170,7 +165,6 @@ User-agent: GPTBot
 Allow: /
 Allow: /instagram-reel-downloader-free
 Allow: /instagram-photo-downloader
-Allow: /instagram-highlights-downloader
 Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader
@@ -193,7 +187,6 @@ User-agent: OAI-SearchBot
 Allow: /
 Allow: /instagram-reel-downloader-free
 Allow: /instagram-photo-downloader
-Allow: /instagram-highlights-downloader
 Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader
@@ -213,7 +206,6 @@ User-agent: Google-Extended
 Allow: /
 Allow: /instagram-reel-downloader-free
 Allow: /instagram-photo-downloader
-Allow: /instagram-highlights-downloader
 Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader
@@ -236,7 +228,6 @@ User-agent: ClaudeBot
 Allow: /
 Allow: /instagram-reel-downloader-free
 Allow: /instagram-photo-downloader
-Allow: /instagram-highlights-downloader
 Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader
@@ -259,7 +250,6 @@ User-agent: PerplexityBot
 Allow: /
 Allow: /instagram-reel-downloader-free
 Allow: /instagram-photo-downloader
-Allow: /instagram-highlights-downloader
 Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader
@@ -278,7 +268,6 @@ User-agent: FacebookBot
 Allow: /
 Allow: /instagram-reel-downloader-free
 Allow: /instagram-photo-downloader
-Allow: /instagram-highlights-downloader
 Allow: /instagram-story-downloader
 Allow: /free-facebook-video-downloader
 Allow: /faqs
@@ -295,7 +284,6 @@ User-agent: Applebot
 Allow: /
 Allow: /instagram-reel-downloader-free
 Allow: /instagram-photo-downloader
-Allow: /instagram-highlights-downloader
 Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader
@@ -356,7 +344,6 @@ User-agent: AhrefsBot
 Allow: /
 Allow: /instagram-reel-downloader-free
 Allow: /instagram-photo-downloader
-Allow: /instagram-highlights-downloader
 Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader
@@ -371,7 +358,6 @@ User-agent: SemrushBot
 Allow: /
 Allow: /instagram-reel-downloader-free
 Allow: /instagram-photo-downloader
-Allow: /instagram-highlights-downloader
 Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader

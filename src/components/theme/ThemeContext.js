@@ -1,18 +1,22 @@
 "use client";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useState } from "react";
 
-const ThemeContext = createContext({ theme: "light", themeControler: () => {} });
+const ThemeContext = createContext({
+  theme: "light",
+  setTheme: () => {},
+  themeControler: () => {},
+});
 
 export const useTheme = () => useContext(ThemeContext);
 
 const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setThemeState] = useState("light");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem("theme");
     const initial = stored === "dark" ? "dark" : "light";
-    setTheme(initial);
+    setThemeState(initial);
     document.documentElement.setAttribute("data-theme", initial);
     setMounted(true);
   }, []);
@@ -23,10 +27,16 @@ const ThemeProvider = ({ children }) => {
     localStorage.setItem("theme", theme);
   }, [theme, mounted]);
 
-  const themeControler = () => setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  const setTheme = useCallback((next) => {
+    if (next === "light" || next === "dark") setThemeState(next);
+  }, []);
+
+  const themeControler = useCallback(() => {
+    setThemeState((prev) => (prev === "dark" ? "light" : "dark"));
+  }, []);
 
   return (
-    <ThemeContext.Provider value={{ theme, themeControler }}>
+    <ThemeContext.Provider value={{ theme, setTheme, themeControler }}>
       {children}
     </ThemeContext.Provider>
   );

@@ -10,7 +10,7 @@ import GoogleTranslateDropdown from "./GoogleTranslateDropdown";
 const INSTAGRAM_LINKS = [
   { href: "/instagram-photo-downloader", label: "Instagram Photo Downloader" },
   { href: "/instagram-story-downloader", label: "Instagram Story Downloader" },
-  { href: "/instagram-highlights-downloader", label: "Instagram Highlights Downloader" },
+  { href: "/instagram-reel-downloader-free", label: "Instagram Reel Downloader Free" },
 ];
 
 const Header = () => {
@@ -87,16 +87,6 @@ const Header = () => {
               Home
             </Link>
           </li>
-          <li>
-            <Link href="/AboutUs" onClick={closeMenu}>
-              About Us
-            </Link>
-          </li>
-          <li>
-            <Link href="/ContactUs" onClick={closeMenu}>
-              Contact Us
-            </Link>
-          </li>
           <li
             ref={igWrapRef}
             className={`${styles.navDropdown} ${igOpen ? styles.navDropdownOpen : ""}`}
@@ -146,11 +136,6 @@ const Header = () => {
                 </li>
               ))}
             </ul>
-          </li>
-          <li>
-            <Link href="/instagram-reel-downloader-free" onClick={closeMenu}>
-              Instagram Reel Downloader Free
-            </Link>
           </li>
           <li>
             <Link href="/free-facebook-video-downloader" onClick={closeMenu}>

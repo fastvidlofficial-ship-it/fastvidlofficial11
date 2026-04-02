@@ -74,6 +74,9 @@ const Footer = () => {
         <li><a href="/CookiePolicy">| Cookie Policy |</a></li>
         <li><a href="/TermsAndConditions">| Terms & Conditions |</a></li>
       </ul>
+      <p className={styles.affiliationDisclaimer}>
+        We are not affiliated with Instagram, Meta and Pinterest.
+      </p>
       <p className={styles["styles-p"]}>
         © {new Date().getFullYear()} FastVidl. All Rights Reserved.
       </p>

@@ -533,7 +533,7 @@ export default function InstagramReelDownloaderBlogContent({ variant = "standalo
       <div className="blog-content">
         <div className="faq-section">
           {faqList.map((faq, index) => (
-            <div key={index} className="faq-item" style={{ marginBottom: "1.5rem" }}>
+            <div key={index} className="faq-item">
               <h3 className="faq-question">{faq.question}</h3>
               <p className="faq-answer">{faq.answer}</p>
             </div>

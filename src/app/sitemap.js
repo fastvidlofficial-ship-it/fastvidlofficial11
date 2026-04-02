@@ -23,12 +23,6 @@ export default function sitemap() {
       priority: 0.85,
     },
     {
-      url: `${baseUrl}/instagram-highlights-downloader`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.85,
-    },
-    {
       url: `${baseUrl}/instagram-story-downloader`,
       lastModified: new Date(),
       changeFrequency: 'weekly',

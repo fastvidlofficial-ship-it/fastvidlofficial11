@@ -871,3 +871,74 @@ html {
     font-size: 0.9em;
   }
 }
+
+/* Downloader article FAQs: desktop spacing unchanged; mobile compact for more Q&A per screen */
+.blog-content .faq-section .faq-item {
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .blog-content .faq-section {
+    margin-top: 0 !important;
+  }
+
+  #frequently-asked-questions,
+  #faq-stories,
+  #faq-photo {
+    margin-bottom: 6px !important;
+    margin-top: 0.75rem !important;
+    font-size: 1.05rem !important;
+    line-height: 1.25;
+  }
+
+  .blog-content .faq-section .faq-item {
+    padding: 8px 10px !important;
+    margin-bottom: 5px !important;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 6px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+  }
+
+  .blog-content .faq-section .faq-question {
+    font-size: 0.88rem !important;
+    margin: 0 0 4px 0 !important;
+    padding: 0 !important;
+    line-height: 1.28;
+    font-weight: 600;
+  }
+
+  .blog-content .faq-section .faq-answer {
+    font-size: 0.8rem !important;
+    line-height: 1.35 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #frequently-asked-questions,
+  #faq-stories,
+  #faq-photo {
+    font-size: 1rem !important;
+    margin-top: 0.5rem !important;
+    margin-bottom: 4px !important;
+  }
+
+  .blog-content .faq-section .faq-item {
+    padding: 6px 8px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .blog-content .faq-section .faq-question {
+    font-size: 0.84rem !important;
+    margin-bottom: 3px !important;
+    line-height: 1.25;
+  }
+
+  .blog-content .faq-section .faq-answer {
+    font-size: 0.78rem !important;
+    line-height: 1.32 !important;
+  }
+}
