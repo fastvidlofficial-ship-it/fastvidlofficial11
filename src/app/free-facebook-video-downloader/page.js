@@ -5,7 +5,7 @@ import heroStyles from "../DownloaderHero.module.css";
 import UserInput from "@/components/input/UserInput";
 import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
 import FAQSchema from "@/components/FAQSchema";
-import FacebookBlogContent, { FACEBOOK_FAQ_LIST } from "../Blogs/free-facebook-video-downloader/FacebookBlogContent";
+import FacebookBlogContent, { FACEBOOK_FAQ_LIST } from "@/content/free-facebook-video-downloader/FacebookBlogContent";
 
 export default function FacebookReelDownloaderService() {
   return (

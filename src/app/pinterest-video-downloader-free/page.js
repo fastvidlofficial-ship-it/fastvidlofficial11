@@ -5,7 +5,7 @@ import heroStyles from "../DownloaderHero.module.css";
 import UserInput from "@/components/input/UserInput";
 import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
 import FAQSchema from "@/components/FAQSchema";
-import PinterestBlogContent, { PINTEREST_FAQ_LIST } from "../Blogs/pinterest-video-downloader-free/PinterestBlogContent";
+import PinterestBlogContent, { PINTEREST_FAQ_LIST } from "@/content/pinterest-video-downloader-free/PinterestBlogContent";
 
 export default function PinterestReelDownloaderService() {
   return (

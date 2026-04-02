@@ -121,12 +121,6 @@
         "features": ["EmailJS integration"]
       },
       {
-        "path": "/Blogs",
-        "name": "Blog",
-        "description": "Blog posts and articles",
-        "subPages": ["/Blogs/instagram"]
-      },
-      {
         "path": "/faqs",
         "name": "FAQs",
         "description": "Frequently asked questions with accordion UI"

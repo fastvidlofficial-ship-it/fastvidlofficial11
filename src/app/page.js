@@ -2,7 +2,7 @@
 import styles from "./page.module.css";
 import IndexMessage from "@/components/index/IndexMessage";
 import UserInput from "@/components/input/UserInput";
-import Blog from "./Blogs/page";
+import HomePageBlogSection from "@/content/HomePageBlogSection";
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
       <main className={styles.main}>
         <IndexMessage />
         <UserInput />
-        <Blog />
+        <HomePageBlogSection />
       </main>
     </div>
   );

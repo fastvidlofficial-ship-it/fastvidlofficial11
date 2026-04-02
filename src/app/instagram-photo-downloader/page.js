@@ -3,10 +3,10 @@
 import styles from "../page.module.css";
 import heroStyles from "../DownloaderHero.module.css";
 import UserInput from "@/components/input/UserInput";
-import "../Blogs/Blog.css";
+import "@/content/Blog.css";
 import FAQSchema from "@/components/FAQSchema";
 import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
-import InstagramPhotoBlogContent, { PHOTO_BLOG_FAQ_LIST } from "../Blogs/instagram-photo-downloader/InstagramPhotoBlogContent";
+import InstagramPhotoBlogContent, { PHOTO_BLOG_FAQ_LIST } from "@/content/instagram-photo-downloader/InstagramPhotoBlogContent";
 
 export default function InstagramPhotoDownloaderService() {
   return (
