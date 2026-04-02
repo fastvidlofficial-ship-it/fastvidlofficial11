@@ -3,11 +3,12 @@
 import styles from "../page.module.css";
 import heroStyles from "../DownloaderHero.module.css";
 import UserInput from "@/components/input/UserInput";
-import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
+import "../Blogs/Blog.css";
 import FAQSchema from "@/components/FAQSchema";
-import FacebookBlogContent, { FACEBOOK_FAQ_LIST } from "../Blogs/free-facebook-video-downloader/FacebookBlogContent";
+import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
+import InstagramHighlightsBlogContent, { HIGHLIGHTS_BLOG_FAQ_LIST } from "../Blogs/instagram-highlights-downloader/InstagramHighlightsBlogContent";
 
-export default function FacebookReelDownloaderService() {
+export default function InstagramHighlightsDownloaderService() {
   return (
     <div className={styles.page}>
       <AuthorOrganizationSchema
@@ -15,17 +16,16 @@ export default function FacebookReelDownloaderService() {
         authorUrl="https://www.linkedin.com/in/raja-jahangir"
         organizationName="Auroxa Tech"
         organizationUrl="https://auroxatech.com"
-        articleUrl="https://fastvidl.com/free-facebook-video-downloader"
-        headline="Free Facebook Video Downloader: Download FB Videos in HD (2026)"
+        articleUrl="https://fastvidl.com/instagram-highlights-downloader"
+        headline="Instagram Highlights Downloader: Save Stories in HD & Safe"
         datePublished="2026-03-26"
         dateModified="2026-04-02"
       />
-      <FAQSchema faqList={FACEBOOK_FAQ_LIST} />
+      <FAQSchema faqList={HIGHLIGHTS_BLOG_FAQ_LIST} />
       <main className={styles.main}>
         <div className={heroStyles.heroWrap}>
           <h1 className={heroStyles.heroTitle}>
-            <span style={{ color: "var(--heading-color, #1a202c)" }}>Free </span>
-            <span style={{ color: "var(--heading-color, #1a202c)" }}>Facebook </span>
+            <span style={{ color: "var(--heading-color, #1a202c)" }}>Instagram </span>
             <span
               style={{
                 WebkitTextFillColor: "transparent",
@@ -34,7 +34,7 @@ export default function FacebookReelDownloaderService() {
                 backgroundClip: "text",
               }}
             >
-              Video{" "}
+              Highlights{" "}
             </span>
             <span
               style={{
@@ -58,11 +58,15 @@ export default function FacebookReelDownloaderService() {
               textAlign: "center",
             }}
           >
-            Download FB videos in HD — free, no login. Scroll for the full guide.
+            Save Instagram highlights in HD — free, no login, Safari &amp; Chrome. Scroll below for the full expert guide.
           </p>
         </div>
         <UserInput />
-        <FacebookBlogContent />
+        <div className="container-blog">
+          <section className="home-blog-article">
+            <InstagramHighlightsBlogContent variant="home" faqList={HIGHLIGHTS_BLOG_FAQ_LIST} />
+          </section>
+        </div>
       </main>
     </div>
   );

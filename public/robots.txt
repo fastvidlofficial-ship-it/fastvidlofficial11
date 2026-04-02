@@ -11,6 +11,9 @@ User-agent: *
 # Allow all primary pages
 Allow: /
 Allow: /instagram-reel-downloader-free
+Allow: /instagram-photo-downloader
+Allow: /instagram-highlights-downloader
+Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader
 Allow: /faqs
@@ -64,6 +67,9 @@ Crawl-delay: 5
 User-agent: Googlebot
 Allow: /
 Allow: /instagram-reel-downloader-free
+Allow: /instagram-photo-downloader
+Allow: /instagram-highlights-downloader
+Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader
 Allow: /faqs
@@ -99,6 +105,9 @@ Disallow: /next/
 User-agent: Bingbot
 Allow: /
 Allow: /instagram-reel-downloader-free
+Allow: /instagram-photo-downloader
+Allow: /instagram-highlights-downloader
+Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader
 Allow: /faqs
@@ -122,6 +131,9 @@ Crawl-delay: 5
 User-agent: Slurp
 Allow: /
 Allow: /instagram-reel-downloader-free
+Allow: /instagram-photo-downloader
+Allow: /instagram-highlights-downloader
+Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader
 Allow: /faqs
@@ -137,6 +149,9 @@ Crawl-delay: 10
 User-agent: DuckDuckBot
 Allow: /
 Allow: /instagram-reel-downloader-free
+Allow: /instagram-photo-downloader
+Allow: /instagram-highlights-downloader
+Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader
 Allow: /faqs
@@ -154,6 +169,9 @@ Crawl-delay: 5
 User-agent: GPTBot
 Allow: /
 Allow: /instagram-reel-downloader-free
+Allow: /instagram-photo-downloader
+Allow: /instagram-highlights-downloader
+Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader
 Allow: /faqs
@@ -174,6 +192,9 @@ Crawl-delay: 10
 User-agent: OAI-SearchBot
 Allow: /
 Allow: /instagram-reel-downloader-free
+Allow: /instagram-photo-downloader
+Allow: /instagram-highlights-downloader
+Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader
 Allow: /faqs
@@ -191,6 +212,9 @@ Crawl-delay: 10
 User-agent: Google-Extended
 Allow: /
 Allow: /instagram-reel-downloader-free
+Allow: /instagram-photo-downloader
+Allow: /instagram-highlights-downloader
+Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader
 Allow: /faqs
@@ -211,6 +235,9 @@ Crawl-delay: 10
 User-agent: ClaudeBot
 Allow: /
 Allow: /instagram-reel-downloader-free
+Allow: /instagram-photo-downloader
+Allow: /instagram-highlights-downloader
+Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader
 Allow: /faqs
@@ -231,6 +258,9 @@ Crawl-delay: 10
 User-agent: PerplexityBot
 Allow: /
 Allow: /instagram-reel-downloader-free
+Allow: /instagram-photo-downloader
+Allow: /instagram-highlights-downloader
+Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader
 Allow: /faqs
@@ -247,6 +277,9 @@ Crawl-delay: 10
 User-agent: FacebookBot
 Allow: /
 Allow: /instagram-reel-downloader-free
+Allow: /instagram-photo-downloader
+Allow: /instagram-highlights-downloader
+Allow: /instagram-story-downloader
 Allow: /free-facebook-video-downloader
 Allow: /faqs
 Allow: /AboutUs
@@ -261,6 +294,9 @@ Crawl-delay: 10
 User-agent: Applebot
 Allow: /
 Allow: /instagram-reel-downloader-free
+Allow: /instagram-photo-downloader
+Allow: /instagram-highlights-downloader
+Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader
 Allow: /faqs
@@ -319,6 +355,9 @@ Disallow: /next/
 User-agent: AhrefsBot
 Allow: /
 Allow: /instagram-reel-downloader-free
+Allow: /instagram-photo-downloader
+Allow: /instagram-highlights-downloader
+Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader
 Allow: /faqs
@@ -331,6 +370,9 @@ Crawl-delay: 10
 User-agent: SemrushBot
 Allow: /
 Allow: /instagram-reel-downloader-free
+Allow: /instagram-photo-downloader
+Allow: /instagram-highlights-downloader
+Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader
 Allow: /faqs

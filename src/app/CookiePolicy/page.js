@@ -76,6 +76,13 @@ const CookiePolicy = () => {
                           <td>Opt-out</td>
                         </tr>
                         <tr>
+                          <td>Functional</td>
+                          <td>Optional page translation</td>
+                          <td>googtrans (Google Translate)</td>
+                          <td>Session / persistent</td>
+                          <td>Clear cookies / choose original language</td>
+                        </tr>
+                        <tr>
                           <td>Social Media</td>
                           <td>Share/embed functionality</td>
                           <td>fbp (Facebook), ig (Instagram), Pinterest pins</td>
@@ -123,6 +130,14 @@ const CookiePolicy = () => {
                     <li>You may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">Google Ads Settings</a>.</li>
                     <li>Alternatively, you can opt out of a third-party vendor's use of cookies for personalized advertising by visiting <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer">www.aboutads.info</a>.</li>
                   </ul>
+                </div>
+
+                <div className="card3d">
+                  <h2>Page translation (Google Translate)</h2>
+                  <p className="cookie-text">
+                    The language selector in the header uses Google&apos;s Website Translator. Google may set cookies to remember your selected language. These are controlled by Google; see{" "}
+                    <a href="https://policies.google.com/technologies/cookies" target="_blank" rel="noopener noreferrer">Google&apos;s cookie policy</a>.
+                  </p>
                 </div>
 
                 <div className="card3d">
@@ -187,7 +202,7 @@ const CookiePolicy = () => {
                 <div className="card3d">
                   <h2>Third-Party & Social Media Specifics</h2>
                   <p className="cookie-text">
-                    <strong>Google Services:</strong> Analytics/AdSense – full disclosure in Privacy Policy.
+                    <strong>Google Services:</strong> Analytics, AdSense, and optional Translate – full disclosure in Privacy Policy.
                   </p>
                   <p className="cookie-text">
                     <strong>Social Platforms:</strong> Facebook Pixel (fbp), Instagram tracking, Pinterest share cookies used for embeds/sharing only.

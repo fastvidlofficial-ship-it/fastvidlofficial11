@@ -557,6 +557,23 @@ html {
   text-decoration: underline;
 }
 
+/* Table of contents: ordered list only (numbers) — no bullet dots */
+.home-blog-article .home-blog-article-toc {
+  list-style-type: decimal;
+  list-style-position: outside;
+  padding-left: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.home-blog-article .home-blog-article-toc li {
+  margin-bottom: 0.4rem;
+  padding-left: 0.35rem;
+}
+
+.home-blog-article .home-blog-article-toc .toc-link {
+  display: inline;
+}
+
 .home-blog-article-h2[id],
 .blog-content h2[id] {
   scroll-margin-top: 100px;

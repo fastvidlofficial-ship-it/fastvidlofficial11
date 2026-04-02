@@ -17,6 +17,24 @@ export default function sitemap() {
       priority: 0.95,
     },
     {
+      url: `${baseUrl}/instagram-photo-downloader`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/instagram-highlights-downloader`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/instagram-story-downloader`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/pinterest-video-downloader-free`,
       lastModified: new Date(),
       changeFrequency: 'weekly',

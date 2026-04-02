@@ -3,7 +3,8 @@ import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import '../Blog.css';
 import AuthorOrganizationSchema from '@/components/AuthorOrganizationSchema';
-import PinterestBlogContent from './PinterestBlogContent';
+import FAQSchema from '@/components/FAQSchema';
+import PinterestBlogContent, { PINTEREST_FAQ_LIST } from './PinterestBlogContent';
 
 function SEO({ title, description, keywords }) {
   useEffect(() => {
@@ -45,9 +46,10 @@ export default function PinterestVideoDownloaderFreePage() {
         organizationUrl="https://auroxatech.com"
         articleUrl="https://fastvidl.com/Blogs/pinterest-video-downloader-free"
         headline="Pinterest Video Downloader Free: Download Videos Without Watermark (2026)"
-        datePublished="2026-02-27"
-        dateModified="2026-02-27"
+        datePublished="2026-03-26"
+        dateModified="2026-04-02"
       />
+      <FAQSchema faqList={PINTEREST_FAQ_LIST} />
       <SEO
         title="Pinterest Video Downloader Free 2026: Save Pins Without Watermark | FastVidl"
         description=" Download Pinterest videos free with FastVidl – no watermark, no login required, no software

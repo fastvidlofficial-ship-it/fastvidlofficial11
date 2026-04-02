@@ -18,6 +18,9 @@ const nextConfig = {
       { source: '/Blogs/instagram', destination: '/', permanent: true },
       { source: '/Blogs/free-facebook-video-downloader', destination: '/free-facebook-video-downloader', permanent: true },
       { source: '/Blogs/pinterest-video-downloader-free', destination: '/pinterest-video-downloader-free', permanent: true },
+      { source: '/Blogs/instagram-highlights-downloader', destination: '/instagram-highlights-downloader', permanent: true },
+      { source: '/Blogs/instagram-story-downloader', destination: '/instagram-story-downloader', permanent: true },
+      { source: '/Blogs/instagram-photo-downloader', destination: '/instagram-photo-downloader', permanent: true },
       { source: '/Blogs', destination: '/', permanent: true },
     ]
   },

@@ -58,20 +58,8 @@ function SEO({ title, description, keywords }) {
   return null;
 }
 
-// Main site FAQ list (expandable section below article – JSON-LD for rich results)
-const HOME_FAQ_LIST = [
-  { question: "Do I need to create an account?", answer: "No. FastVidl.com works immediately without any registration or login." },
-  { question: "How many Reels can I download per day?", answer: "There are no artificial limits. Download as many publicly available reels as you need." },
-  { question: "Is this service legal?", answer: "Downloading publicly accessible content for personal use is generally permitted. However, copyright laws vary by country, and you're responsible for ensuring your use complies with local regulations and platform terms of service." },
-  { question: "Will the reel creator know I downloaded their content?", answer: "No. Downloading through our service leaves no trace on the original post and doesn't notify the creator." },
-  { question: "Can I download entire channels or profiles at once?", answer: "Our tool works on individual posts, not bulk downloads. You'll need to download reels one at a time." },
-  { question: "What if the reel is deleted from the platform?", answer: "Once downloaded to your device, you keep the file even if the original post is removed. However, you cannot download reels that have already been deleted." },
-  { question: "Do downloads work on slow internet connections?", answer: "Yes, but processing time increases with slower connections. For best results, use a stable internet connection." },
-  { question: "Is there a file size limit?", answer: "We can process reels up to 4 hours in length. Individual file sizes vary based on quality and duration, but extremely large files (over 2GB) may experience slower processing." },
-];
-
-// Combined FAQ list for home page (Instagram article + main FAQs – one FAQPage per page)
-const HOME_PAGE_FAQ_LIST = [...INSTAGRAM_BLOG_FAQ_LIST, ...HOME_FAQ_LIST];
+// Single FAQ list for home page (article FAQs; avoids duplicate FAQPage entries)
+const HOME_PAGE_FAQ_LIST = INSTAGRAM_BLOG_FAQ_LIST;
 
 // Homepage Component
 function HomePage() {
