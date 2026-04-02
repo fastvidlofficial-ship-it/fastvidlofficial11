@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   metadataBase: new URL('https://fastvidl.com'),
-  title: "Instagram Reel Downloader Free | FastVidl",
+  title: "Instagram Reel Downloader Free",
   description: "Download Instagram reels for free with FastVidl. No watermark, no login, no app. Save reels in HD on iPhone, Android, and desktop in seconds.",
   icons: {
     icon: "/assets/favicon.ico",
@@ -29,7 +29,7 @@ export const metadata = {
     canonical: 'https://fastvidl.com',
   },
   openGraph: {
-    title: "Instagram Reel Downloader Free | FastVidl",
+    title: "Instagram Reel Downloader Free",
     description: "Download Instagram reels for free with FastVidl. No watermark, no login, no app. Save reels in HD on iPhone, Android, and desktop in seconds.",
     url: "https://fastvidl.com",
     siteName: "FastVidl",
@@ -38,7 +38,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Instagram Reel Downloader Free | FastVidl",
+    title: "Instagram Reel Downloader Free",
     description: "Download Instagram reels for free with FastVidl. No watermark, no login, no app. Save reels in HD in seconds.",
   },
   robots: { index: true, follow: true },
