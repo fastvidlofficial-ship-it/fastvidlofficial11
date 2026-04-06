@@ -1,7 +1,39 @@
+/** Old locale-prefixed URLs (e.g. /en/AboutUs) → same path without prefix */
+const LOCALE_PREFIXES = [
+  "en",
+  "vi",
+  "ar",
+  "cs",
+  "de",
+  "es",
+  "fr",
+  "hi",
+  "id",
+  "it",
+  "ja",
+  "ko",
+  "pl",
+  "pt",
+  "ro",
+  "ru",
+  "th",
+  "tr",
+  "uk",
+  "ur",
+  "zh-hans",
+  "zh-hant",
+];
+
+const localeToRootRedirects = LOCALE_PREFIXES.flatMap((loc) => [
+  { source: `/${loc}`, destination: "/", permanent: true },
+  { source: `/${loc}/:path*`, destination: "/:path*", permanent: true },
+]);
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async redirects() {
     return [
+      ...localeToRootRedirects,
       {
         source: '/:path*',
         has: [
@@ -27,8 +59,6 @@ const nextConfig = {
     ]
   },
 }
-
-// module.exports = nextConfig
 
 export default nextConfig;
 

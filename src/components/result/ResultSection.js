@@ -1,8 +1,13 @@
+"use client";
+
 import { useState } from "react";
 import Loader from "../loader/Loader";
 import style from "./ResultSection.module.css";
+import { useLocaleCatalog } from "@/contexts/LocaleContext";
 
 const ResultSection = (props) => {
+  const { t, locale } = useLocaleCatalog();
+
   const formatCount = (value) => {
     if (value === undefined || value === null || Number.isNaN(Number(value))) {
       return null;
@@ -26,23 +31,26 @@ const ResultSection = (props) => {
     }
     if (Number.isNaN(date.getTime())) return null;
     const diffMs = Date.now() - date.getTime();
-    if (diffMs < 0) return "just now";
+    if (diffMs < 0) return t("result.justNow");
     const minute = 60 * 1000;
     const hour = 60 * minute;
     const day = 24 * hour;
     if (diffMs < hour) {
       const mins = Math.max(1, Math.floor(diffMs / minute));
-      return `${mins} min${mins > 1 ? "s" : ""} ago`;
+      const unit = mins > 1 ? t("result.minsAgo") : t("result.minAgo");
+      return `${mins} ${unit}`;
     }
     if (diffMs < day) {
       const hrs = Math.floor(diffMs / hour);
-      return `${hrs} hr${hrs > 1 ? "s" : ""} ago`;
+      const unit = hrs > 1 ? t("result.hrsAgo") : t("result.hrAgo");
+      return `${hrs} ${unit}`;
     }
     if (diffMs < 30 * day) {
       const days = Math.floor(diffMs / day);
-      return `${days} day${days > 1 ? "s" : ""} ago`;
+      const unit = days > 1 ? t("result.daysAgo") : t("result.dayAgo");
+      return `${days} ${unit}`;
     }
-    return date.toLocaleDateString();
+    return date.toLocaleDateString(locale === "ar" ? "ar" : "en");
   };
 
   const [isDownloading, setIsDownloading] = useState(false);
@@ -54,7 +62,7 @@ const ResultSection = (props) => {
   // Extract values (now stored as direct values, not arrays)
   const type = props.result.type 
     ? (props.result.type.length > 60 ? props.result.type.slice(0, 60) + " ...." : props.result.type)
-    : "Video";
+    : t("result.videoType");
   const thumbnail = props.result.thumbnail;
   const thumbnailSrc =
     typeof thumbnail === "string" && /^https?:\/\//i.test(thumbnail)
@@ -76,7 +84,7 @@ const ResultSection = (props) => {
     try {
       setIsSharingIOS(true);
       const response = await fetch(iosProxyUrl);
-      if (!response.ok) throw new Error("Unable to prepare file");
+      if (!response.ok) throw new Error(t("result.sharePrepError"));
       const blob = await response.blob();
       const file = new File([blob], "fastvidl-video.mp4", {
         type: blob.type || "video/mp4",
@@ -84,7 +92,7 @@ const ResultSection = (props) => {
 
       if (navigator.canShare && navigator.canShare({ files: [file] })) {
         await navigator.share({
-          title: "FastVidl Video",
+          title: t("result.shareTitle"),
           files: [file],
         });
       } else {
@@ -107,7 +115,7 @@ const ResultSection = (props) => {
     if (isIOS) {
       // iOS Safari cannot auto-save directly to Photos from web.
       setIosProxyUrl(proxyUrl);
-      setDownloadHint("On iPhone/iPad: tap Open Share Sheet, then choose Save Video to add it to Photos.");
+      setDownloadHint(t("result.hintIos"));
       setIsDownloading(false);
     } else {
       setIosProxyUrl("");
@@ -119,7 +127,7 @@ const ResultSection = (props) => {
       link.click();
       document.body.removeChild(link);
       if (isAndroid) {
-        setDownloadHint("Saved to Downloads. If not visible in Gallery yet, wait a few seconds for media scan.");
+        setDownloadHint(t("result.hintAndroid"));
       } else {
         setDownloadHint("");
       }
@@ -139,7 +147,7 @@ const ResultSection = (props) => {
               {!imageError ? (
                 <img
                   src={thumbnailSrc}
-                  alt="Video thumbnail"
+                  alt={t("result.thumbAlt")}
                   className={style["thumbnail-image"]}
                   onError={() => setImageError(true)}
                   onLoad={() => setImageError(false)}
@@ -147,7 +155,7 @@ const ResultSection = (props) => {
               ) : (
                 <div className={style["thumbnail-placeholder"]}>
                   <span className={style["placeholder-icon"]}>📹</span>
-                  <span className={style["placeholder-text"]}>Thumbnail</span>
+                  <span className={style["placeholder-text"]}>{t("result.thumbPlaceholder")}</span>
                 </div>
               )}
             </div>
@@ -163,7 +171,7 @@ const ResultSection = (props) => {
               onClick={handleDownload}
               className={style["download-btn"]}
             >
-              Download in HD Quality
+              {t("result.downloadHd")}
             </button>
             {downloadHint ? <p className={style["download-hint"]}>{downloadHint}</p> : null}
             {iosProxyUrl ? (
@@ -174,7 +182,7 @@ const ResultSection = (props) => {
                   onClick={shareToIOSPhotos}
                   disabled={isSharingIOS}
                 >
-                  {isSharingIOS ? "Preparing..." : "Open Share Sheet"}
+                  {isSharingIOS ? t("result.preparing") : t("result.openShareSheet")}
                 </button>
                 <a
                   href={iosProxyUrl}
@@ -182,7 +190,7 @@ const ResultSection = (props) => {
                   rel="noopener noreferrer"
                   className={style["ios-open-link"]}
                 >
-                  Open Video
+                  {t("result.openVideo")}
                 </a>
               </div>
             ) : null}
@@ -195,12 +203,12 @@ const ResultSection = (props) => {
                 ) : null}
                 {likeCount ? (
                   <p className={style["meta-item"]}>
-                    <span aria-hidden="true">♡</span> {likeCount} likes
+                    <span aria-hidden="true">♡</span> {likeCount} {t("result.likes")}
                   </p>
                 ) : null}
                 {commentCount ? (
                   <p className={style["meta-item"]}>
-                    <span aria-hidden="true">💬</span> {commentCount} comments
+                    <span aria-hidden="true">💬</span> {commentCount} {t("result.comments")}
                   </p>
                 ) : null}
               </div>

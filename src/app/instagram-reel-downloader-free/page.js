@@ -9,8 +9,19 @@ import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
 import InstagramReelDownloaderBlogContent, {
   INSTAGRAM_BLOG_FAQ_LIST,
 } from "@/content/instagram-reel-downloader-free/InstagramReelDownloaderBlogContent";
+import ToolPageArticle from "@/components/tool-page/ToolPageArticle";
+import ToolHeroH1 from "@/components/tool-page/ToolHeroH1";
+import { useToolDocumentTitle } from "@/components/tool-page/useToolDocumentTitle";
+import { useLocaleCatalog } from "@/contexts/LocaleContext";
 
 export default function InstagramReelDownloaderService() {
+  const { locale, catalog, t } = useLocaleCatalog();
+  const ar = catalog.toolReel;
+  useToolDocumentTitle("reel");
+
+  const faqList =
+    locale === "ar" && ar?.faq ? ar.faq : INSTAGRAM_BLOG_FAQ_LIST;
+
   return (
     <div className={styles.page}>
       <AuthorOrganizationSchema
@@ -19,42 +30,31 @@ export default function InstagramReelDownloaderService() {
         organizationName="Auroxa Tech"
         organizationUrl="https://auroxatech.com"
         articleUrl="https://fastvidl.com/instagram-reel-downloader-free"
-        headline="Instagram Reel Downloader Free: Download Reels Without Watermark (2026)"
+        headline={
+          locale === "ar"
+            ? t("tools.reel.schemaHeadline")
+            : "Instagram Reel Downloader Free: Download Reels Without Watermark (2026)"
+        }
         datePublished="2026-02-27"
         dateModified="2026-04-02"
       />
-      <FAQSchema faqList={INSTAGRAM_BLOG_FAQ_LIST} />
+      <FAQSchema faqList={faqList} />
       <main className={styles.main}>
         <div className={heroStyles.heroWrap}>
-          <h1 className={heroStyles.heroTitle}>
-            <span style={{ color: "var(--heading-color, #1a202c)" }}>Instagram </span>
-            <span
-              style={{
-                WebkitTextFillColor: "transparent",
-                background: "linear-gradient(to right, #ff512f, #dd2476)",
-                WebkitBackgroundClip: "text",
-                backgroundClip: "text",
-              }}
-            >
-              Reel{" "}
-            </span>
-            <span
-              style={{
-                WebkitTextFillColor: "transparent",
-                background: "linear-gradient(to right, #25ff92, #24afff)",
-                WebkitBackgroundClip: "text",
-                backgroundClip: "text",
-              }}
-            >
-              Downloader
-            </span>
-            <span style={{ color: "var(--heading-color, #1a202c)" }}> Free</span>
-          </h1>
+          <ToolHeroH1 variant="reel" titleClassName={heroStyles.heroTitle} />
         </div>
         <UserInput />
         <div className="container-blog">
           <section className="home-blog-article">
-            <InstagramReelDownloaderBlogContent variant="home" faqList={INSTAGRAM_BLOG_FAQ_LIST} />
+            <ToolPageArticle
+              arKey="toolReel"
+              renderEnglish={() => (
+                <InstagramReelDownloaderBlogContent
+                  variant="home"
+                  faqList={INSTAGRAM_BLOG_FAQ_LIST}
+                />
+              )}
+            />
           </section>
         </div>
       </main>

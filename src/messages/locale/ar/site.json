@@ -1,0 +1,133 @@
+{
+  "header": {
+    "toggleMenu": "تبديل القائمة",
+    "logoAlt": "الشعار",
+    "home": "الرئيسية",
+    "instagramDownloader": "تنزيل إنستغرام",
+    "igPhoto": "تنزيل صور إنستغرام",
+    "igStory": "تنزيل قصص إنستغرام",
+    "igReel": "تنزيل ريلز إنستغرام مجانًا",
+    "facebook": "تنزيل فيديوهات فيسبوك مجانًا",
+    "pinterest": "تنزيل فيديوهات بنترست مجانًا",
+    "language": "اللغة",
+    "langEnglish": "الإنجليزية",
+    "langArabic": "العربية"
+  },
+  "footer": {
+    "followUs": "تابعنا",
+    "instagramAria": "تابع FastVidl على إنستغرام",
+    "facebookAria": "تابع FastVidl على فيسبوك",
+    "pinterestAria": "تابع FastVidl على بنترست",
+    "xAria": "تابع FastVidl على X",
+    "aboutUs": "من نحن",
+    "contactUs": "اتصل بنا",
+    "faqs": "الأسئلة الشائعة",
+    "disclaimer": "إخلاء المسؤولية",
+    "privacyPolicy": "سياسة الخصوصية",
+    "cookiePolicy": "سياسة ملفات تعريف الارتباط",
+    "terms": "الشروط والأحكام",
+    "affiliation": "لسنا تابعين لإنستغرام أو ميتا أو بنترست.",
+    "copyright": "FastVidl. جميع الحقوق محفوظة."
+  },
+  "cookieConsent": {
+    "ariaLabel": "الموافقة على ملفات تعريف الارتباط",
+    "text": "نستخدم ملفات تعريف الارتباط لتشغيل أداة التنزيل وتحليل الاستخدام بشكل مجهول وعرض الإعلانات حتى يبقى الموقع مجانيًا.",
+    "policyLink": "سياسة ملفات تعريف الارتباط",
+    "rejectAll": "رفض الكل",
+    "acceptAll": "قبول الكل"
+  },
+  "home": {
+    "heroInstagram": "إنستغرام",
+    "heroReel": "ريلز",
+    "heroDownloader": "تنزيل",
+    "heroFree": "مجانًا"
+  },
+  "input": {
+    "urlIconAlt": "أيقونة الرابط",
+    "placeholder": "الصق الرابط هنا",
+    "clear": "مسح",
+    "paste": "لصق",
+    "pasteAria": "لصق من الحافظة",
+    "clearAria": "مسح الحقل",
+    "download": "تنزيل",
+    "loading": "جارٍ التحميل...",
+    "invalidUrl": "يرجى إدخال رابط صالح يبدأ بـ http:// أو https://",
+    "fetchFailed": "تعذّر جلب الفيديو",
+    "noMediaUrl": "لم يُعثر على رابط وسائط قابل للتنزيل في الاستجابة",
+    "processFailed": "تعذّر معالجة الفيديو"
+  },
+  "result": {
+    "videoType": "فيديو",
+    "thumbAlt": "صورة مصغّرة للفيديو",
+    "thumbPlaceholder": "صورة مصغّرة",
+    "downloadHd": "تنزيل بجودة HD",
+    "hintIos": "على آيفون/آيباد: اضغط «فتح ورقة المشاركة» ثم اختر «حفظ الفيديو» لإضافته إلى الصور.",
+    "hintAndroid": "تم الحفظ في التنزيلات. إن لم يظهر في المعرض، انتظر بضع ثوانٍ لاكتشاف الوسائط.",
+    "shareTitle": "فيديو FastVidl",
+    "sharePrepError": "تعذّر تجهيز الملف",
+    "preparing": "جارٍ التجهيز...",
+    "openShareSheet": "فتح ورقة المشاركة",
+    "openVideo": "فتح الفيديو",
+    "likes": "إعجاب",
+    "comments": "تعليق",
+    "justNow": "الآن",
+    "minAgo": "دقيقة مضت",
+    "minsAgo": "دقائق مضت",
+    "hrAgo": "ساعة مضت",
+    "hrsAgo": "ساعات مضت",
+    "dayAgo": "يوم مضى",
+    "daysAgo": "أيام مضت"
+  },
+  "loader": {
+    "text": "جارٍ التنزيل..."
+  },
+  "tools": {
+    "reel": {
+      "docTitle": "تنزيل ريلز إنستغرام مجانًا | FastVidl",
+      "schemaHeadline": "تنزيل ريلز إنستغرام مجانًا: حفظ الريلز بجودة عالية دون علامة مائية (2026)",
+      "w1": "إنستغرام ",
+      "w2": "ريلز ",
+      "w3": "تنزيل",
+      "w4": " مجانًا"
+    },
+    "story": {
+      "docTitle": "تنزيل قصص إنستغرام | FastVidl",
+      "schemaHeadline": "تنزيل قصص إنستغرام: حفظ القصص والمميزات بجودة عالية مجانًا وبخصوصية",
+      "w1": "إنستغرام ",
+      "w2": "قصص ",
+      "w3": "تنزيل"
+    },
+    "photo": {
+      "docTitle": "تنزيل صور إنستغرام | FastVidl",
+      "schemaHeadline": "تنزيل صور إنستغرام: دليل حفظ الصور بجودة عالية",
+      "w1": "إنستغرام ",
+      "w2": "صور ",
+      "w3": "تنزيل"
+    },
+    "facebook": {
+      "docTitle": "تنزيل فيديوهات فيسبوك مجانًا | FastVidl",
+      "schemaHeadline": "تنزيل فيديوهات فيسبوك مجانًا: حفظ فيديوهات فيسبوك بجودة عالية (2026)",
+      "w1": "مجانًا ",
+      "w2": "فيسبوك ",
+      "w3": "فيديو ",
+      "w4": "تنزيل"
+    },
+    "pinterest": {
+      "docTitle": "تنزيل فيديوهات بنترست مجانًا | FastVidl",
+      "schemaHeadline": "تنزيل فيديوهات بنترست مجانًا: حفظ الفيديوهات دون علامة مائية (2026)",
+      "w1": "بنترست ",
+      "w2": "فيديو ",
+      "w3": "تنزيل",
+      "w4": " مجانًا"
+    }
+  },
+  "pages": {
+    "about": { "docTitle": "من نحن | FastVidl" },
+    "contact": { "docTitle": "اتصل بنا | FastVidl" },
+    "faqs": { "docTitle": "الأسئلة الشائعة | FastVidl" },
+    "disclaimer": { "docTitle": "إخلاء المسؤولية | FastVidl" },
+    "privacy": { "docTitle": "سياسة الخصوصية | FastVidl" },
+    "cookie": { "docTitle": "سياسة ملفات تعريف الارتباط | FastVidl" },
+    "terms": { "docTitle": "الشروط والأحكام | FastVidl" }
+  }
+}

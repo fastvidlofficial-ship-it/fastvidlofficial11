@@ -3,8 +3,43 @@ import React from "react";
 import styles from "./TermsAndConditions.module.css";
 import "../Disclaimer/Disclaimer.css";
 import Link from "next/link";
+import { useLocaleCatalog } from "@/contexts/LocaleContext";
+import { usePageDocumentTitle } from "@/components/usePageDocumentTitle";
 
 const TermsAndConditions = () => {
+  const { locale, catalog } = useLocaleCatalog();
+  const sp = catalog.staticPages;
+  usePageDocumentTitle("terms");
+
+  if (locale === "ar" && sp?.termsBody && sp?.terms) {
+    return (
+      <div className={styles.termsPage}>
+        <div className="disclaimer-header">
+          <div className="header-content">
+            <div className="header-icon">
+              <span className="legal-icon">⚖️</span>
+            </div>
+            <h1 className="page-title">{sp.terms.pageTitle}</h1>
+            <p className="page-subtitle">{sp.terms.pageSubtitle}</p>
+          </div>
+        </div>
+        <div className={styles.termsMain}>
+          <div className="global-container">
+            <section className={styles.section}>
+              <div className="global-container__contents">
+                <div className="disclaimer-legal-content">
+                  <div className="section-content global-container__contents">
+                    <div dangerouslySetInnerHTML={{ __html: sp.termsBody }} />
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.termsPage}>
       <div className="disclaimer-header">

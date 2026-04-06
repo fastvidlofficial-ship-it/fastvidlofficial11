@@ -1,0 +1,64 @@
+{
+  "faq": [
+    {
+      "question": "¿Puedo descargar reels de Instagram sin instalar una app?",
+      "answer": "Sí. FastVidl funciona 100% en el navegador. Pega el enlace del reel y descarga al instante en cualquier dispositivo, sin instalar apps ni registrarte."
+    },
+    {
+      "question": "¿FastVidl añade marcas de agua a los reels descargados?",
+      "answer": "No. FastVidl entrega los reels tal como los procesa Instagram. No añadimos logotipos, marcas de agua ni branding adicional."
+    },
+    {
+      "question": "¿Es legal descargar reels de Instagram?",
+      "answer": "Descargar tus propios reels o usar contenido de forma privada suele ser aceptable. Redistribuir contenido de terceros sin permiso puede infringir derechos de autor y los términos de Instagram. Pide siempre permiso al creador para uso público o comercial."
+    },
+    {
+      "question": "¿Necesito cuenta o inicio de sesión en Instagram?",
+      "answer": "No. Solo necesitas el enlace público del reel. No pedimos contraseñas ni acceso a tu cuenta."
+    },
+    {
+      "question": "¿El creador del reel sabrá que lo descargué?",
+      "answer": "No. Descargar con FastVidl no notifica a los creadores. Si republicas el contenido, la marca de agua de Instagram puede mostrar al autor."
+    },
+    {
+      "question": "¿Puedo descargar reels privados o restringidos?",
+      "answer": "No. FastVidl solo accede a reels públicos y sigue las normas de la comunidad de Instagram. No pedimos credenciales ni almacenamos datos personales en nuestros servidores."
+    },
+    {
+      "question": "¿Cuánto pueden durar los reels de Instagram?",
+      "answer": "Hasta unos 3 minutos en la mayoría de cuentas. FastVidl admite cualquier duración, de clips cortos a videos de 3 minutos."
+    },
+    {
+      "question": "¿Es seguro y privado descargar reels?",
+      "answer": "Sí. Usamos HTTPS, solo procesamos enlaces públicos y no almacenamos tus descargas ni datos personales. Priorizamos tu privacidad."
+    },
+    {
+      "question": "¿Se mantiene la calidad original del video?",
+      "answer": "FastVidl conserva la calidad que ofrece Instagram, normalmente hasta 1080p. Si el original es de baja calidad, la descarga no puede mejorarla."
+    },
+    {
+      "question": "¿Puedo descargar perfiles o canales enteros?",
+      "answer": "No. Los reels se descargan uno a uno. Las descargas masivas o automatizadas infringen los términos de Instagram y no están soportadas."
+    },
+    {
+      "question": "¿Hay límite diario de descargas?",
+      "answer": "No hay un límite estricto, pero muchas descargas pueden activar la limitación de Instagram. Usa el servicio de forma responsable y personal."
+    },
+    {
+      "question": "¿Qué pasa si el reel se borra de Instagram después de descargarlo?",
+      "answer": "Una vez guardado en tu dispositivo, conservas el archivo aunque se elimine la publicación en Instagram."
+    },
+    {
+      "question": "¿Necesito crear una cuenta?",
+      "answer": "No. FastVidl.com funciona al instante sin registro ni inicio de sesión."
+    },
+    {
+      "question": "¿Funciona con conexiones lentas?",
+      "answer": "Sí, pero el procesamiento tarda más. Para mejores resultados, usa una conexión estable."
+    },
+    {
+      "question": "¿Hay límite de tamaño de archivo?",
+      "answer": "Podemos procesar reels de hasta unas 4 horas. El tamaño depende de la calidad y duración; archivos muy grandes (más de 2 GB) pueden tardar más."
+    }
+  ]
+}

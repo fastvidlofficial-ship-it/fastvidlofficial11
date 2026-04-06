@@ -1,0 +1,159 @@
+/**
+ * Generates src/messages/locale/ar/toolPhoto.json with full parity vs
+ * InstagramPhotoBlogContent.js (structure, section ids, FAQ order).
+ */
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const out = path.join(__dirname, "../src/messages/locale/ar/toolPhoto.json");
+
+const INSTAGRAM_TERMS = "https://www.instagram.com/about/legal/terms/";
+const RAJA = "https://www.linkedin.com/in/raja-jahangir";
+const AUROXA = "https://auroxatech.com";
+
+const faq = [
+  {
+    question: "هل من القانوني تنزيل صور إنستغرام؟",
+    answer:
+      "تعتمد المشروعية على موقعك الجغرافي ومصدر المحتوى والغرض من الاستخدام. تنزيل محتواك الخاص مسموح به عادةً. الاستخدام الشخصي مقبول غالبًا ضمن أحكام الاستخدام العادل، بينما إعادة النشر دون إذن تخالف قانون حقوق النشر عادةً.",
+  },
+  {
+    question: "هل يمكن استخدام الصور المنزّلة تجاريًا؟",
+    answer:
+      "الاستخدام التجاري يتطلب مراعاة دقيقة لحقوق النشر. معظم محتوى إنستغرام محمي، والاستخدام التجاري دون إذن يعد انتهاكًا. فكّر في إنشاء محتوى أصلي أو الحصول على إذن صريح للاحتياجات التجارية.",
+  },
+  {
+    question: "هل تعمل أدوات التنزيل على جميع الأجهزة؟",
+    answer:
+      "تعمل معظم أدوات التنزيل الحديثة على عدة منصات. أدوات الويب مثل FastVidl توفر أوسع توافق لأنها تعمل على أي جهاز يملك اتصالًا بالإنترنت ومتصفحًا.",
+  },
+  {
+    question: "هل سيؤثر استخدام أدوات التنزيل على حسابي في إنستغرام؟",
+    answer:
+      "استخدام أدوات موثوقة بمسؤولية لا ينبغي أن يضر بحسابك. تجنّب التنزيل الآلي الجماعي المفرط واحترم سياسات المنصة لتقليل أي مخاطر.",
+  },
+  {
+    question: "كيف يمكن للمستخدمين منع تنزيل صورهم؟",
+    answer:
+      "جعل الحساب خاصًا يحد من ظهور المحتوى. يمكن أيضًا استخدام علامات مائية، ونشر صور بدقة أقل، واستخدام أدوات الإبلاغ عن حقوق النشر في إنستغرام.",
+  },
+  {
+    question: "ما أفضل صيغة للصور المنزّلة؟",
+    answer:
+      "صيغة JPG مثالية للصور الفوتوغرافية والاستخدام العام مع ضغط جيد. توفر PNG جودة أفضل للرسوم والصور التي تحتاج شفافية.",
+  },
+  {
+    question: "هل يمكنني تنزيل قصص إنستغرام؟",
+    answer: `توجد أدوات متخصصة لتنزيل القصص، لالتقاط المحتوى قبل اختفائه. كن حريصًا خصوصًا على الخصوصية عند تنزيل القصص، إذ تُشارك بتوقع أنها للمشاهدة المؤقتة. راجع دليلنا المخصص لتنزيل قصص إنستغرام على <a href="/instagram-story-downloader" class="home-blog-article-link">/instagram-story-downloader</a>.`,
+  },
+];
+
+const html = `<article class="home-blog-article-inner">
+<h2 class="home-blog-article-title">تنزيل صور إنستغرام: الدليل الشامل لحفظ الصور بجودة عالية الدقة</h2>
+<p class="home-blog-article-meta">مصدر موثوق ومدقق من الخبراء</p>
+<p class="home-blog-article-meta">بقلم <a href="${RAJA}" target="_blank" rel="noopener noreferrer" class="home-blog-article-link">راجا جهانجير</a> (أخصائي SEO ونمو). بدعم من <a href="${AUROXA}" target="_blank" rel="noopener noreferrer" class="home-blog-article-link">Auroxa Tech</a>. آخر تحديث: 2 أبريل 2026</p>
+
+<h2 class="home-blog-article-h2">جدول المحتويات</h2>
+<ol class="home-blog-article-toc">
+<li><a href="#what-is-photo-downloader" class="toc-link">ما المقصود بأداة تنزيل صور إنستغرام</a></li>
+<li><a href="#why-use-download-tools" class="toc-link">لماذا يستخدم الناس أدوات التنزيل</a></li>
+<li><a href="#types-photo-downloaders" class="toc-link">أنواع أدوات تنزيل صور إنستغرام</a></li>
+<li><a href="#key-features-photo" class="toc-link">الميزات الرئيسية</a></li>
+<li><a href="#how-download-photos" class="toc-link">كيفية تنزيل صور إنستغرام</a></li>
+<li><a href="#legal-ethical-photo" class="toc-link">اعتبارات قانونية وأخلاقية</a></li>
+<li><a href="#privacy-security-photo" class="toc-link">نصائح الخصوصية والأمان</a></li>
+<li><a href="#troubleshooting-photo" class="toc-link">حل المشكلات الشائعة</a></li>
+<li><a href="#free-vs-paid-photo" class="toc-link">أدوات مجانية مقابل مدفوعة</a></li>
+<li><a href="#faq-photo" class="toc-link">الأسئلة الشائعة</a></li>
+<li><a href="#meet-team-photo" class="toc-link">تعرّف على فريق FastVidl</a></li>
+<li><a href="#conclusion-photo" class="toc-link">الخاتمة</a></li>
+</ol>
+
+<h2 class="home-blog-article-h2">ملخص سريع</h2>
+<p class="home-blog-article-p">تبحث عن أداة تنزيل صور إنستغرام أونلاين مجانًا؟ يغطي هذا الدليل الشامل كل ما تحتاج معرفته حول حفظ صور إنستغرام بجودة عالية الدقة (JPG/PNG). يقدّم FastVidl تحليلًا معمقًا لالتقاط صور إنستغرام بالكامل بدقة عالية دون برامج مزعجة أو تثبيتات معقدة. من حلول المتصفح المبسّطة مثل FastVidl إلى البدائل المتقدمة على سطح المكتب، يوضح الدليل كيفية استخراج ملفات JPG وPNG عالية الدقة مع الحفاظ على معايير أمان وخصوصية صارمة. إنه خارطة طريق كاملة لكل من يريد الحفاظ على الذكريات الرقمية أو بناء لوحات إلهام إبداعي بأمان وكفاءة ودون أي تكلفة.</p>
+<p class="home-blog-article-p">أداة تنزيل صور إنستغرام هي أداة تساعد المستخدمين على حفظ الصور من إنستغرام على أجهزتهم. وبما أن إنستغرام لا يوفّر خيار تنزيل أصلي، أصبحت هذه الأدوات ضرورية لملايين ممن يريدون الحفاظ على الذكريات أو جمع الإلهام أو النسخ الاحتياطي لمحتواهم.</p>
+
+<h2 id="what-is-photo-downloader" class="home-blog-article-h2">ما المقصود بأداة تنزيل صور إنستغرام</h2>
+<p class="home-blog-article-p">تعمل أداة تنزيل صور إنستغرام بالوصول إلى البيانات المصدرية لمنشورات إنستغرام واستخراج عناوين URL المباشرة للصور. عند إرسال رابط، تسترجع الأداة بيانات الصفحة، تحدد مصدر الصورة وتوفّر رابط تنزيل خلال ثوانٍ.</p>
+<p class="home-blog-article-p">يمكن لأفضل أدوات تنزيل صور إنستغرام التعامل مع أنواع محتوى متعددة بما في ذلك المنشورات الفردية وصور الكاروسيل. تكتشف الأدوات المتقدمة دقات مختلفة وتتيح للمستخدمين اختي الجودة المناسبة لاحتياجاتهم.</p>
+
+<h2 id="why-use-download-tools" class="home-blog-article-h2">لماذا يستخدم الناس أدوات التنزيل</h2>
+<p class="home-blog-article-p"><strong>الحفاظ على المحتوى الشخصي:</strong> يرغب منشئو المحتوى غالبًا في نسخ احتياطية لأعمالهم، خاصة عند إدارة عدة منصات. امتلاك نسخ محلية يضمن عدم ضياع المحتوى القيّم.</p>
+<p class="home-blog-article-p"><strong>الإلهام الإبداعي:</strong> يبني المصمّمون والفنانون لوحات مزاجية من محتوى إنستغرام. بتنزيل الصور للمرجعية، ينظمون مكتبات بصرية يمكن الوصول إليها دون اتصال.</p>
+
+<h2 id="types-photo-downloaders" class="home-blog-article-h2">أنواع أدوات تنزيل صور إنستغرام</h2>
+<h3 class="home-blog-article-h3">أدوات قائمة على الويب</h3>
+<p class="home-blog-article-p">خيارات تنزيل صور إنستغرام أونلاين المجانية القائمة على الويب هي الأكثر سهولة في الوصول. لا تتطلب تثبيتًا وتعمل مباشرة عبر المتصفح. الصق رابط إنستغرام فتعالج الأداة طلبك فورًا.</p>
+<h3 class="home-blog-article-h3">إضافات المتصفح</h3>
+<p class="home-blog-article-p">للمستخدمين المتكررين، تندمج الإضافات مباشرة في المتصفح وتضيف أزرار تنزيل إلى واجهة إنستغرام. هذا التكامل يبسّط العملية بشكل كبير.</p>
+<h3 class="home-blog-article-h3">تطبيقات الجوال</h3>
+<p class="home-blog-article-p">توفر التطبيقات المخصّصة حلولًا للهواتف الذكية والأجهزة اللوحية. غالبًا ما تشمل تنزيلًا مجمّعًا وأدوات تنظيمًا وخيارات مشاركة مباشرة. يجد مستخدمو Android تطبيقات عديدة على متجر Google Play، بينما يمكن لمستخدمي iOS استخدام حلول ويب متخصصة.</p>
+<h3 class="home-blog-article-h3">برامج سطح المكتب</h3>
+<p class="home-blog-article-p">تقدّم تطبيقات سطح المكتب الحلول الأشمل مع المعالجة المجمّعة وإدارة ملفات متقدمة. يفضّلها المحترفون الذين ينزّلون كميات كبيرة بانتظام.</p>
+
+<h2 id="key-features-photo" class="home-blog-article-h2">الميزات الرئيسية</h2>
+<p class="home-blog-article-p"><strong>خيارات جودة الصورة:</strong> القدرة على الوصول إلى نسخ HD لصور إنستغرام أمر بالغ الأهمية. توفر الأدوات الجيدة عدة خيارات دقة، من الجودة القياسية للحفظ السريع إلى الدقة الكاملة للاستخدام المهني.</p>
+<p class="home-blog-article-p"><strong>تنزيل بلا علامة مائية:</strong> يبحث كثيرون عن أدوات تنزيل صور إنستغرام دون علامة مائية. توفر الأدوات الجيدة ملفات نظيفة بلا طوابع تحافظ على المظهر الأصلي.</p>
+<p class="home-blog-article-p"><strong>مرونة الصيغة:</strong> أفضل الأدوات مثل FastVidl توفر خيار تنزيل JPG إلى جانب PNG. يعمل JPG جيدًا للصور الفوتوغرافية بينما يوفّر PNG جودة أفضل للرسوم التي تحتاج شفافية.</p>
+
+<h2 id="how-download-photos" class="home-blog-article-h2">كيفية تنزيل صور إنستغرام</h2>
+<h3 class="home-blog-article-h3">استخدام أدوات التنزيل القائمة على الويب</h3>
+<p class="home-blog-article-p">انتقل إلى إنستغرام وانسخ عنوان URL للصورة التي تريدها. افتح أداة التنزيل القائمة على الويب التي اخترتها، الصق الرابط وابدأ التنزيل.</p>
+<h3 class="home-blog-article-h3">التنزيل على الحاسوب</h3>
+<p class="home-blog-article-p">توفر إضافات المتصفح أكثر تجربة تكاملًا. ثبّت الأداة من متجر المتصفح الرسمي، انتقل إلى إنستغرام واستخدم أزرار التنزيل المضافة للحفظ بنقرة واحدة.</p>
+<p class="home-blog-article-p">توفّر برامج سطح المكتب ميزات متقدمة. انسخ عناوين URL من إنستغرام والصقها في واجهة البرنامج لخيارات إضافية مثل تنظيم المجلدات تلقائيًا.</p>
+<h3 class="home-blog-article-h3">التنزيل على الجوال</h3>
+<p class="home-blog-article-p">يمكن لمستخدمي Android الوصول إلى تطبيقات مخصصة من متجر Play. قد يستخدم مستخدمو iOS مواقع جوال مصممة جيدًا توفر وظائف ممتازة. أضف هذه المواقع إلى المفضلة للوصول السريع.</p>
+<h3 class="home-blog-article-h3">الوصول إلى الدقة الكاملة</h3>
+<p class="home-blog-article-p">للحصول على نتيجة تنزيل صورة إنستغرام بالحجم الكامل، تصل الأدوات الجيدة تلقائيًا إلى أعلى دقة متاحة. تعتمد الجودة القصوى على الرفع الأصلي، إذ تحتفظ إنستغرام بعدة نسخ من كل صورة.</p>
+
+<h2 id="legal-ethical-photo" class="home-blog-article-h2">اعتبارات قانونية وأخلاقية</h2>
+<p class="home-blog-article-p"><strong>شروط إنستغرام:</strong> يُسمح عادةً للمستخدمين بتنزيل محتواهم الخاص مع وجود قيود عند حفظ منشورات الآخرين. فهم <a href="${INSTAGRAM_TERMS}" target="_blank" rel="noopener noreferrer" class="home-blog-article-link">شروط استخدام إنستغرام</a> يضمن بقاء نشاطك ضمن الحدود المقبولة.</p>
+<p class="home-blog-article-p"><strong>حقوق النشر والاستخدام العادل:</strong> يحمي قانون حقوق النشر المحتوى الأصلي. تنزيل واستخدام محتوى الآخرين دون إذن قد ينتهك هذه الحقوق. تسمح أحكام الاستخدام العادل باستخدام محدود للتعليق والتعليم والبحث.</p>
+<p class="home-blog-article-p"><strong>مخاوف الخصوصية:</strong> لا يجب تنزيل المحتوى المعلّم كخاص دون إذن. احترام الخصوصية أساس الاستخدام الأخلاقي لوسائل التواصل.</p>
+<p class="home-blog-article-p"><strong>النسب:</strong> عند مشاركة المحتوى المنزّل، يقرّ النسب بعمل المنشئ الأصلي. ذكر اسم المنشئ والربط بملفه يظهر الاحترام.</p>
+
+<h2 id="privacy-security-photo" class="home-blog-article-h2">نصائح الخصوصية والأمان</h2>
+<p class="home-blog-article-p"><strong>أدوات موثوقة:</strong> يحافظ FastVidl على ممارسات خصوصية شفافة ويستخدم اتصالات آمنة. ابحث عن HTTPS وسياسات واضحة وتقييمات إيجابية.</p>
+<p class="home-blog-article-p"><strong>تجنب البرمجيات الخبيثة:</strong> احم نفسك باستخدام أدوات راسخة بسجل مثبت. احذر من الأدوات التي تتطلب تثبيتًا من مصادر غير رسمية أو تقدّم وعودًا غير واقعية.</p>
+<p class="home-blog-article-p"><strong>استخدام VPN:</strong> تضيف الشبكات الخاصة الافتراضية خصوصية بإخفاء عنوان IP وتشفير الاتصالات. هذه الحماية قيّمة عند استخدام إنترنت عام.</p>
+
+<h2 id="troubleshooting-photo" class="home-blog-article-h2">حل المشكلات الشائعة</h2>
+<h3 class="home-blog-article-h3">فشل التنزيل</h3>
+<p class="home-blog-article-p">عند فشل التنزيل، جرّب تحديث الصفحة أو أدوات بديلة أو التحقق من اتصال الإنترنت. قد تفرض بعض المنشورات قيودًا تمنع التنزيل.</p>
+<h3 class="home-blog-article-h3">مشاكل الجودة</h3>
+<p class="home-blog-article-p">إذا بدت الصور أقل جودة من المتوقع، تأكد أن أداتك مضبوطة لأعلى جودة متاحة. تضبط بعض الأدوات افتراضيًا دقات أقل لأجل السرعة.</p>
+<h3 class="home-blog-article-h3">مشاكل التوافق</h3>
+<p class="home-blog-article-p">تعمل أدوات مختلفة بشكل أفضل مع متصفحات أو أجهزة معينة. جرّب أدوات أو متصفحات بديلة غالبًا يحل المشكلة.</p>
+<h3 class="home-blog-article-h3">بطء السرعة</h3>
+<p class="home-blog-article-p">قد تسبب ازدحام الشبكة أو حمل الخادم بطء التنزيل. المحاولة خارج أوقات الذروة غالبًا يحسّن السرعة بشكل ملحوظ.</p>
+
+<h2 id="free-vs-paid-photo" class="home-blog-article-h2">أدوات مجانية مقابل مدفوعة</h2>
+<p class="home-blog-article-p"><strong>الأدوات المجانية:</strong> توفر أدوات تنزيل صور إنستغرام المجانية حلولًا في متناول المستخدمين العرضيين. الخيارات القائمة على المتصفح مثل FastVidl مجانية للاستخدام الأساسي دون تسجيل دخول للتنزيل الأساسي للصور.</p>
+<p class="home-blog-article-p">قد تعرض بعض الأدوات المجانية في أماكن أخرى إعلانات أو حدود معدل بسيطة؛ اقرأ شروط كل موقع دائمًا.</p>
+<p class="home-blog-article-p"><strong>المنتجات المدفوعة وبرامج سطح المكتب:</strong> تقدم بعض المنتجات المدفوعة من أطراف ثالثة سير عمل مجمّعًا أو دعمًا مخصصًا أو خيارات تصدير إضافية لمستخدمي الطاقة. قد يختار المحترفون الذين يعالجون أحجامًا ضخمة تلك الأدوات — يركّز FastVidl على تجربة سريعة ومجانية ومتصفح أولًا للحفظ اليومي بجودة عالية.</p>
+</article>`;
+
+const appendAfterFaq = `<p class="home-blog-article-p">تلتزم FastVidl.com بتقديم معلومات دقيقة حول أدوات إدارة المحتوى. باستخدام أدوات التنزيل بمسؤولية واحترام حقوق المنشئين، يمكنك إدارة محتوى إنستغرام بفعالية مع المساهمة في مجتمع إيجابي على الإنترنت.</p>
+
+<h2 id="meet-team-photo" class="home-blog-article-h2">تعرّف على فريق FastVidl</h2>
+<p class="home-blog-article-p">بُني FastVidl العام الماضي من فريق مكرّس لإنشاء الجيل التالي من أدوات تنزيل الفيديو. بدمج الدقة التقنية مع خبرة البحث، نضمن بقاء المنصة سريعة وآمنة ومجانية بالكامل لجميع المستخدمين.</p>
+<p class="home-blog-article-p"><strong>راجا جهانجير: خبير SEO ونمو</strong> — بخبرة SEO تمتد إلى 3 سنوات، يضمن راجا أن يبقى FastVidl موجهًا للمستخدم ومركّزًا على الخصوصية وسهل الوصول لآلاف الباحثين كل شهر عن حلول فيديو موثوقة. <a href="${RAJA}" target="_blank" rel="noopener noreferrer" class="home-blog-article-link">تواصل على LinkedIn</a> بدعم من <a href="${AUROXA}" target="_blank" rel="noopener noreferrer" class="home-blog-article-link">Auroxa Tech</a>.</p>
+
+<h2 id="conclusion-photo" class="home-blog-article-h2">الخاتمة</h2>
+<p class="home-blog-article-p">مستعد للبدء في الحفظ؟ أداة التنزيل المناسبة تجعل إدارة المحتوى سلسة. لأفضل النتائج، أعطِ الأولوية للأدوات التي توفر تنزيلًا بلا علامة مائية وسياسات أمان شفافة. الاستخدام المسؤول يضمن لك الأصول عالية الجودة دون المساس بالسرعة أو الأمان.</p>
+<p class="home-blog-article-p">باستخدام أداة عالية الجودة مثل FastVidl، يمكنك أرشفة محتواك المفضل بدقة كاملة مع البقاء آمناً.</p>
+<p class="home-blog-article-p">استكشف المزيد من الأدوات المجانية: <a href="/instagram-story-downloader" class="home-blog-article-link">تنزيل قصص إنستغرام</a>، و<a href="/instagram-reel-downloader-free" class="home-blog-article-link">تنزيل ريلز إنستغرام مجانًا</a>، و<a href="/pinterest-video-downloader-free" class="home-blog-article-link">تنزيل فيديو بنترست مجانًا</a>.</p>`;
+
+const payload = {
+  faqAnchorId: "faq-photo",
+  faqSectionTitle: "الأسئلة الشائعة",
+  faq,
+  html: html.replace(/\n+/g, "").replace(/>\s+</g, "><").trim(),
+  appendAfterFaq: appendAfterFaq.replace(/\n+/g, "").replace(/>\s+</g, "><").trim(),
+};
+
+fs.writeFileSync(out, JSON.stringify(payload, null, 2) + "\n", "utf8");
+console.log("Wrote", out);

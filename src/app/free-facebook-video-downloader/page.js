@@ -5,9 +5,22 @@ import heroStyles from "../DownloaderHero.module.css";
 import UserInput from "@/components/input/UserInput";
 import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
 import FAQSchema from "@/components/FAQSchema";
-import FacebookBlogContent, { FACEBOOK_FAQ_LIST } from "@/content/free-facebook-video-downloader/FacebookBlogContent";
+import FacebookBlogContent, {
+  FACEBOOK_FAQ_LIST,
+} from "@/content/free-facebook-video-downloader/FacebookBlogContent";
+import ToolPageArticle from "@/components/tool-page/ToolPageArticle";
+import ToolHeroH1 from "@/components/tool-page/ToolHeroH1";
+import { useToolDocumentTitle } from "@/components/tool-page/useToolDocumentTitle";
+import { useLocaleCatalog } from "@/contexts/LocaleContext";
 
 export default function FacebookReelDownloaderService() {
+  const { locale, catalog, t } = useLocaleCatalog();
+  const ar = catalog.toolFacebook;
+  useToolDocumentTitle("facebook");
+
+  const faqList =
+    locale === "ar" && ar?.faq ? ar.faq : FACEBOOK_FAQ_LIST;
+
   return (
     <div className={styles.page}>
       <AuthorOrganizationSchema
@@ -16,40 +29,29 @@ export default function FacebookReelDownloaderService() {
         organizationName="Auroxa Tech"
         organizationUrl="https://auroxatech.com"
         articleUrl="https://fastvidl.com/free-facebook-video-downloader"
-        headline="Free Facebook Video Downloader: Download FB Videos in HD (2026)"
+        headline={
+          locale === "ar"
+            ? t("tools.facebook.schemaHeadline")
+            : "Free Facebook Video Downloader: Download FB Videos in HD (2026)"
+        }
         datePublished="2026-03-26"
         dateModified="2026-04-02"
       />
-      <FAQSchema faqList={FACEBOOK_FAQ_LIST} />
+      <FAQSchema faqList={faqList} />
       <main className={styles.main}>
         <div className={heroStyles.heroWrap}>
-          <h1 className={heroStyles.heroTitle}>
-            <span style={{ color: "var(--heading-color, #1a202c)" }}>Free </span>
-            <span style={{ color: "var(--heading-color, #1a202c)" }}>Facebook </span>
-            <span
-              style={{
-                WebkitTextFillColor: "transparent",
-                background: "linear-gradient(to right, #ff512f, #dd2476)",
-                WebkitBackgroundClip: "text",
-                backgroundClip: "text",
-              }}
-            >
-              Video{" "}
-            </span>
-            <span
-              style={{
-                WebkitTextFillColor: "transparent",
-                background: "linear-gradient(to right, #25ff92, #24afff)",
-                WebkitBackgroundClip: "text",
-                backgroundClip: "text",
-              }}
-            >
-              Downloader
-            </span>
-          </h1>
+          <ToolHeroH1 variant="facebook" titleClassName={heroStyles.heroTitle} />
         </div>
         <UserInput />
-        <FacebookBlogContent />
+        {locale === "ar" ? (
+          <div className="container-blog">
+            <div className="home-blog-article blog-content">
+              <ToolPageArticle arKey="toolFacebook" />
+            </div>
+          </div>
+        ) : (
+          <FacebookBlogContent />
+        )}
       </main>
     </div>
   );

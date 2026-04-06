@@ -1,0 +1,19 @@
+{
+  "subtitle": "Encuentra respuestas a preguntas frecuentes sobre FastVidl",
+  "q0": "¿Cómo descargo un video?",
+  "a0": "Pega la URL del video en el campo, elige la calidad y pulsa Descargar. El video se procesará y se guardará en tu dispositivo.",
+  "q1": "¿Qué plataformas son compatibles?",
+  "a1": "FastVidl admite Instagram (Reels, Stories, IGTV), Facebook (videos y reels) y Pinterest (videos y pines). Pega un enlace público de cualquiera de estas plataformas.",
+  "q2": "¿Hay límite de tamaño de archivo?",
+  "a2": "No hay un límite estricto, pero los videos muy grandes (más de 2 GB) pueden tardar más. El tiempo depende de tu conexión y de la calidad elegida.",
+  "q3": "¿Qué calidades de video hay?",
+  "a3": "Puedes descargar desde 144p hasta 4K (2160p), según lo que ofrezca el video original. Mayor calidad implica archivos más grandes.",
+  "q4": "¿El servicio es gratuito?",
+  "a4": "Sí, FastVidl es totalmente gratuito, sin cargos ocultos. Puedes descargar sin límite ni registro.",
+  "q5": "¿Necesito instalar software?",
+  "a5": "No. FastVidl funciona en el navegador. Visita el sitio, pega el enlace y descarga.",
+  "q6": "¿Funciona en móviles?",
+  "a6": "Sí. FastVidl es responsive y funciona en smartphones, tablets y ordenadores. Usa tu navegador móvil.",
+  "q7": "¿Las descargas son seguras y legales?",
+  "a7": "FastVidl es seguro y no contiene malware. Asegúrate de tener derecho a descargar el contenido y respeta el copyright. Solo descarga lo que tengas permiso de usar."
+}

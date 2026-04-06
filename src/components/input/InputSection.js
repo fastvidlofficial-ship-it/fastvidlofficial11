@@ -4,6 +4,7 @@ import urlLightIcon from "../../../public/assets/icons8-url-48-light.png";
 import urlDarkIcon from "../../../public/assets/icons8-url-48-dark.png";
 import { useTheme } from "../theme/ThemeContext";
 import Image from "next/image";
+import { useLocaleCatalog } from "@/contexts/LocaleContext";
 
 const ClipboardIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -13,6 +14,7 @@ const ClipboardIcon = () => (
 );
 
 const InputSection = (props) => {
+  const { t } = useLocaleCatalog();
   const [userInput, setUserInput] = useState("");
   const [isInputValid, setInputValid] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -46,7 +48,7 @@ const InputSection = (props) => {
 
     const pattern = /^(https:\/\/|http:\/\/)/;
     if (!pattern.test(userInput)) {
-      props.userUrls("Please enter a valid URL.", "error");
+      props.userUrls(t("input.invalidUrl"), "error");
       setInputValid(false);
       return;
     }
@@ -68,7 +70,7 @@ const InputSection = (props) => {
       );
 
       if (!response.ok) {
-        throw new Error("Failed to fetch video");
+        throw new Error(t("input.fetchFailed"));
       }
 
       const data = await response.json();
@@ -88,7 +90,7 @@ const InputSection = (props) => {
   return (
     <form onSubmit={submitHandler} className={style.form}>
       <div className={style.inputRow}>
-        <Image className={style["url-icon"]} src={urlIcon} alt="url icon" />
+        <Image className={style["url-icon"]} src={urlIcon} alt={t("input.urlIconAlt")} />
         <input
           ref={inputRef}
           className={
@@ -98,7 +100,7 @@ const InputSection = (props) => {
           }
           type="text"
           name="search"
-          placeholder="Paste Link Here"
+          placeholder={t("input.placeholder")}
           onChange={userInputHandler}
           value={userInput || ""}
           required
@@ -108,21 +110,21 @@ const InputSection = (props) => {
           type="button"
           className={style.pasteClearBtn}
           onClick={handlePasteOrClear}
-          aria-label={hasText ? "Clear input" : "Paste from clipboard"}
+          aria-label={hasText ? t("input.clearAria") : t("input.pasteAria")}
         >
           {hasText ? (
-            "Clear"
+            t("input.clear")
           ) : (
             <>
               <ClipboardIcon />
-              <span>Paste</span>
+              <span>{t("input.paste")}</span>
             </>
           )}
         </button>
       </div>
       <div className={style.submitWrapper}>
         <button className={style["btn"]} type="submit" disabled={loading}>
-          {loading ? "Loading..." : "Download"}
+          {loading ? t("input.loading") : t("input.download")}
         </button>
       </div>
     </form>

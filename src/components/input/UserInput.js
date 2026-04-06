@@ -1,12 +1,13 @@
-
 import style from "./UserInput.module.css";
 import InputSection from "../input/InputSection";
 import ResultSection from "../result/ResultSection";
 import Loader from "../loader/Loader";
 import { useState, useEffect } from "react";
 import Error from "../error/Error";
+import { useLocaleCatalog } from "@/contexts/LocaleContext";
 
 const UserInput = (props) => {
+  const { t } = useLocaleCatalog();
   const firstDefined = (...values) =>
     values.find((value) => value !== undefined && value !== null && value !== "");
 
@@ -68,7 +69,7 @@ const UserInput = (props) => {
         (typeof firstMedia === "string" ? firstMedia : null);
 
       if (!videoUrl) {
-        throw new Error("No downloadable media URL found in response");
+        throw new Error(t("input.noMediaUrl"));
       }
 
       const thumbnail =
@@ -161,7 +162,7 @@ const UserInput = (props) => {
       });
     } catch (error) {
       console.error("Error processing video:", error);
-      setErrorMessage(error.message || "Failed to process video");
+      setErrorMessage(error.message || t("input.processFailed"));
       setServerOk(false);
     } finally {
       setLoader(false);

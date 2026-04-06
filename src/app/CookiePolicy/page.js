@@ -3,8 +3,39 @@ import React from "react";
 import "./CookiePolicy.css";
 import "../Disclaimer/Disclaimer.css";
 import Link from "next/link";
+import { useLocaleCatalog } from "@/contexts/LocaleContext";
+import { usePageDocumentTitle } from "@/components/usePageDocumentTitle";
 
 const CookiePolicy = () => {
+  const { locale, catalog } = useLocaleCatalog();
+  const sp = catalog.staticPages;
+  usePageDocumentTitle("cookie");
+
+  if (locale === "ar" && sp?.cookieBody && sp?.cookie) {
+    return (
+      <div className="cookie-page">
+        <div className="disclaimer-header">
+          <div className="header-content">
+            <div className="header-icon">
+              <span className="legal-icon">🍪</span>
+            </div>
+            <h1 className="page-title">{sp.cookie.pageTitle}</h1>
+            <p className="page-subtitle">{sp.cookie.pageSubtitle}</p>
+          </div>
+        </div>
+        <div className="cookie-main">
+          <div className="global-container">
+            <div className="cookie-section">
+              <div className="section-content global-container__contents">
+                <div dangerouslySetInnerHTML={{ __html: sp.cookieBody }} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="cookie-page">
       <div className="disclaimer-header">

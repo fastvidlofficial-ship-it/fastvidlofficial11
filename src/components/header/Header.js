@@ -5,15 +5,17 @@ import logo from "../../../public/assets/weblogo.png";
 import Image from "next/image";
 import Link from "next/link";
 import ThemeButton from "../theme/ThemeButton";
-import GoogleTranslateDropdown from "./GoogleTranslateDropdown";
+import LocaleSwitcher from "./LocaleSwitcher";
+import { useLocaleCatalog } from "@/contexts/LocaleContext";
 
-const INSTAGRAM_LINKS = [
-  { href: "/instagram-photo-downloader", label: "Instagram Photo Downloader" },
-  { href: "/instagram-story-downloader", label: "Instagram Story Downloader" },
-  { href: "/instagram-reel-downloader-free", label: "Instagram Reel Downloader Free" },
+const INSTAGRAM_HREFS = [
+  "/instagram-photo-downloader",
+  "/instagram-story-downloader",
+  "/instagram-reel-downloader-free",
 ];
 
 const Header = () => {
+  const { t } = useLocaleCatalog();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [igOpen, setIgOpen] = useState(false);
   const navRef = useRef(null);
@@ -50,7 +52,7 @@ const Header = () => {
           <Image
             className="img-logo"
             src={logo}
-            alt="logo"
+            alt={t("header.logoAlt")}
             style={{ width: "50px", height: "50px" }}
           />
           <div className={styles["tittle-a"]}>
@@ -59,7 +61,7 @@ const Header = () => {
         </a>
       </div>
       <div className={styles["header-actions"]}>
-        <GoogleTranslateDropdown />
+        <LocaleSwitcher />
         <ThemeButton />
       </div>
       <button
@@ -69,7 +71,7 @@ const Header = () => {
           e.stopPropagation();
           setIsMenuOpen((prev) => !prev);
         }}
-        aria-label="Toggle menu"
+        aria-label={t("header.toggleMenu")}
         aria-expanded={isMenuOpen}
       >
         <span className={isMenuOpen ? styles["hamburgerOpen1"] : ""} />
@@ -84,7 +86,7 @@ const Header = () => {
         <ul>
           <li>
             <Link href="/" onClick={closeMenu}>
-              Home
+              {t("header.home")}
             </Link>
           </li>
           <li
@@ -101,7 +103,7 @@ const Header = () => {
                 setIgOpen((v) => !v);
               }}
             >
-              <span>Instagram Downloader</span>
+              <span>{t("header.instagramDownloader")}</span>
               <svg
                 className={styles.navChevron}
                 width="12"
@@ -120,31 +122,39 @@ const Header = () => {
               </svg>
             </button>
             <ul className={styles.navDropdownMenu} role="menu">
-              {INSTAGRAM_LINKS.map(({ href, label }) => (
-                <li key={label} role="none">
-                  <Link
-                    href={href}
-                    role="menuitem"
-                    className={styles.navDropdownLink}
-                    onClick={() => {
-                      closeMenu();
-                      closeIg();
-                    }}
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
+              {INSTAGRAM_HREFS.map((href) => {
+                const labelKey =
+                  href === "/instagram-photo-downloader"
+                    ? "header.igPhoto"
+                    : href === "/instagram-story-downloader"
+                      ? "header.igStory"
+                      : "header.igReel";
+                return (
+                  <li key={href} role="none">
+                    <Link
+                      href={href}
+                      role="menuitem"
+                      className={styles.navDropdownLink}
+                      onClick={() => {
+                        closeMenu();
+                        closeIg();
+                      }}
+                    >
+                      {t(labelKey)}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </li>
           <li>
             <Link href="/free-facebook-video-downloader" onClick={closeMenu}>
-              Free Facebook Video Downloader
+              {t("header.facebook")}
             </Link>
           </li>
           <li>
             <Link href="/pinterest-video-downloader-free" onClick={closeMenu}>
-              Pinterest Video Downloader Free
+              {t("header.pinterest")}
             </Link>
           </li>
         </ul>

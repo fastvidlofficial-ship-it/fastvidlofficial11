@@ -1,0 +1,133 @@
+{
+  "header": {
+    "toggleMenu": "Toggle menu",
+    "logoAlt": "logo",
+    "home": "Home",
+    "instagramDownloader": "Instagram Downloader",
+    "igPhoto": "Instagram Photo Downloader",
+    "igStory": "Instagram Story Downloader",
+    "igReel": "Instagram Reel Downloader Free",
+    "facebook": "Free Facebook Video Downloader",
+    "pinterest": "Pinterest Video Downloader Free",
+    "language": "Language",
+    "langEnglish": "English",
+    "langArabic": "Arabic"
+  },
+  "footer": {
+    "followUs": "Follow us",
+    "instagramAria": "Follow FastVidl on Instagram",
+    "facebookAria": "Follow FastVidl on Facebook",
+    "pinterestAria": "Follow FastVidl on Pinterest",
+    "xAria": "Follow FastVidl on X",
+    "aboutUs": "About Us",
+    "contactUs": "Contact Us",
+    "faqs": "FAQs",
+    "disclaimer": "Disclaimer",
+    "privacyPolicy": "Privacy Policy",
+    "cookiePolicy": "Cookie Policy",
+    "terms": "Terms & Conditions",
+    "affiliation": "We are not affiliated with Instagram, Meta and Pinterest.",
+    "copyright": "FastVidl. All Rights Reserved."
+  },
+  "cookieConsent": {
+    "ariaLabel": "Cookie consent",
+    "text": "We use cookies to run the downloader, analyze usage anonymously, and show ads so the service stays free.",
+    "policyLink": "Cookie Policy",
+    "rejectAll": "Reject All",
+    "acceptAll": "Accept All"
+  },
+  "home": {
+    "heroInstagram": "Instagram",
+    "heroReel": "Reel",
+    "heroDownloader": "Downloader",
+    "heroFree": "Free"
+  },
+  "input": {
+    "urlIconAlt": "url icon",
+    "placeholder": "Paste Link Here",
+    "clear": "Clear",
+    "paste": "Paste",
+    "pasteAria": "Paste from clipboard",
+    "clearAria": "Clear input",
+    "download": "Download",
+    "loading": "Loading...",
+    "invalidUrl": "Please enter a valid URL.",
+    "fetchFailed": "Failed to fetch video",
+    "noMediaUrl": "No downloadable media URL found in response",
+    "processFailed": "Failed to process video"
+  },
+  "result": {
+    "videoType": "Video",
+    "thumbAlt": "Video thumbnail",
+    "thumbPlaceholder": "Thumbnail",
+    "downloadHd": "Download in HD Quality",
+    "hintIos": "On iPhone/iPad: tap Open Share Sheet, then choose Save Video to add it to Photos.",
+    "hintAndroid": "Saved to Downloads. If not visible in Gallery yet, wait a few seconds for media scan.",
+    "shareTitle": "FastVidl Video",
+    "sharePrepError": "Unable to prepare file",
+    "preparing": "Preparing...",
+    "openShareSheet": "Open Share Sheet",
+    "openVideo": "Open Video",
+    "likes": "likes",
+    "comments": "comments",
+    "justNow": "just now",
+    "minAgo": "min ago",
+    "minsAgo": "mins ago",
+    "hrAgo": "hr ago",
+    "hrsAgo": "hrs ago",
+    "dayAgo": "day ago",
+    "daysAgo": "days ago"
+  },
+  "loader": {
+    "text": "Downloading..."
+  },
+  "tools": {
+    "reel": {
+      "docTitle": "Instagram Reel Downloader Free | FastVidl",
+      "schemaHeadline": "Instagram Reel Downloader Free: Download Reels Without Watermark (2026)",
+      "w1": "Instagram ",
+      "w2": "Reel ",
+      "w3": "Downloader",
+      "w4": " Free"
+    },
+    "story": {
+      "docTitle": "Instagram Story Downloader | FastVidl",
+      "schemaHeadline": "Instagram Story Downloader: Save Stories & Highlights in HD (Free & Anonymous)",
+      "w1": "Instagram ",
+      "w2": "Story ",
+      "w3": "Downloader"
+    },
+    "photo": {
+      "docTitle": "Instagram Photo Downloader | FastVidl",
+      "schemaHeadline": "Instagram Photo Downloader: The Ultimate Guide to Saving Images in HD Quality",
+      "w1": "Instagram ",
+      "w2": "Photo ",
+      "w3": "Downloader"
+    },
+    "facebook": {
+      "docTitle": "Free Facebook Video Downloader | FastVidl",
+      "schemaHeadline": "Free Facebook Video Downloader: Download FB Videos in HD (2026)",
+      "w1": "Free ",
+      "w2": "Facebook ",
+      "w3": "Video ",
+      "w4": "Downloader"
+    },
+    "pinterest": {
+      "docTitle": "Pinterest Video Downloader Free | FastVidl",
+      "schemaHeadline": "Pinterest Video Downloader Free: Download Videos Without Watermark (2026)",
+      "w1": "Pinterest ",
+      "w2": "Video ",
+      "w3": "Downloader",
+      "w4": " Free"
+    }
+  },
+  "pages": {
+    "about": { "docTitle": "About Us | FastVidl" },
+    "contact": { "docTitle": "Contact Us | FastVidl" },
+    "faqs": { "docTitle": "FAQs | FastVidl" },
+    "disclaimer": { "docTitle": "Disclaimer | FastVidl" },
+    "privacy": { "docTitle": "Privacy Policy | FastVidl" },
+    "cookie": { "docTitle": "Cookie Policy | FastVidl" },
+    "terms": { "docTitle": "Terms & Conditions | FastVidl" }
+  }
+}

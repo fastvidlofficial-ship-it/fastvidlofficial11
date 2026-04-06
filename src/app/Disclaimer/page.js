@@ -2,8 +2,39 @@
 import React from "react";
 import Link from "next/link";
 import "./Disclaimer.css";
+import { useLocaleCatalog } from "@/contexts/LocaleContext";
+import { usePageDocumentTitle } from "@/components/usePageDocumentTitle";
 
 const Disclaimer = () => {
+  const { locale, catalog } = useLocaleCatalog();
+  const sp = catalog.staticPages;
+  usePageDocumentTitle("disclaimer");
+
+  if (locale === "ar" && sp?.disclaimerBody && sp?.disclaimer) {
+    return (
+      <div className="disclaimer-page">
+        <div className="disclaimer-header">
+          <div className="header-content">
+            <div className="header-icon">
+              <span className="legal-icon">⚖️</span>
+            </div>
+            <h1 className="page-title">{sp.disclaimer.pageTitle}</h1>
+            <p className="page-subtitle">{sp.disclaimer.pageSubtitle}</p>
+          </div>
+        </div>
+        <div className="disclaimer-main disclaimer-main-legal">
+          <div className="global-container">
+            <div className="disclaimer-legal-content">
+              <div className="section-content global-container__contents">
+                <div dangerouslySetInnerHTML={{ __html: sp.disclaimerBody }} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="disclaimer-page">
       <div className="disclaimer-header">

@@ -5,9 +5,22 @@ import heroStyles from "../DownloaderHero.module.css";
 import UserInput from "@/components/input/UserInput";
 import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
 import FAQSchema from "@/components/FAQSchema";
-import PinterestBlogContent, { PINTEREST_FAQ_LIST } from "@/content/pinterest-video-downloader-free/PinterestBlogContent";
+import PinterestBlogContent, {
+  PINTEREST_FAQ_LIST,
+} from "@/content/pinterest-video-downloader-free/PinterestBlogContent";
+import ToolPageArticle from "@/components/tool-page/ToolPageArticle";
+import ToolHeroH1 from "@/components/tool-page/ToolHeroH1";
+import { useToolDocumentTitle } from "@/components/tool-page/useToolDocumentTitle";
+import { useLocaleCatalog } from "@/contexts/LocaleContext";
 
 export default function PinterestReelDownloaderService() {
+  const { locale, catalog, t } = useLocaleCatalog();
+  const ar = catalog.toolPinterest;
+  useToolDocumentTitle("pinterest");
+
+  const faqList =
+    locale === "ar" && ar?.faq ? ar.faq : PINTEREST_FAQ_LIST;
+
   return (
     <div className={styles.page}>
       <AuthorOrganizationSchema
@@ -16,40 +29,32 @@ export default function PinterestReelDownloaderService() {
         organizationName="Auroxa Tech"
         organizationUrl="https://auroxatech.com"
         articleUrl="https://fastvidl.com/pinterest-video-downloader-free"
-        headline="Pinterest Video Downloader Free: Download Videos Without Watermark (2026)"
+        headline={
+          locale === "ar"
+            ? t("tools.pinterest.schemaHeadline")
+            : "Pinterest Video Downloader Free: Download Videos Without Watermark (2026)"
+        }
         datePublished="2026-03-26"
         dateModified="2026-04-02"
       />
-      <FAQSchema faqList={PINTEREST_FAQ_LIST} />
+      <FAQSchema faqList={faqList} />
       <main className={styles.main}>
         <div className={heroStyles.heroWrap}>
-          <h1 className={heroStyles.heroTitle}>
-            <span style={{ color: "var(--heading-color, #1a202c)" }}>Pinterest </span>
-            <span
-              style={{
-                WebkitTextFillColor: "transparent",
-                background: "linear-gradient(to right, #ff512f, #dd2476)",
-                WebkitBackgroundClip: "text",
-                backgroundClip: "text",
-              }}
-            >
-              Video{" "}
-            </span>
-            <span
-              style={{
-                WebkitTextFillColor: "transparent",
-                background: "linear-gradient(to right, #25ff92, #24afff)",
-                WebkitBackgroundClip: "text",
-                backgroundClip: "text",
-              }}
-            >
-              Downloader
-            </span>
-            <span style={{ color: "var(--heading-color, #1a202c)" }}> Free</span>
-          </h1>
+          <ToolHeroH1
+            variant="pinterest"
+            titleClassName={heroStyles.heroTitle}
+          />
         </div>
         <UserInput />
-        <PinterestBlogContent />
+        {locale === "ar" ? (
+          <div className="container-blog">
+            <div className="home-blog-article blog-content">
+              <ToolPageArticle arKey="toolPinterest" />
+            </div>
+          </div>
+        ) : (
+          <PinterestBlogContent />
+        )}
       </main>
     </div>
   );

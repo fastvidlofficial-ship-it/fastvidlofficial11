@@ -4,8 +4,39 @@ import React from "react";
 import Link from "next/link";
 import "./PrivacyPolicy.css";
 import "../Disclaimer/Disclaimer.css";
+import { useLocaleCatalog } from "@/contexts/LocaleContext";
+import { usePageDocumentTitle } from "@/components/usePageDocumentTitle";
 
 const PrivacyPolicy = () => {
+  const { locale, catalog } = useLocaleCatalog();
+  const sp = catalog.staticPages;
+  usePageDocumentTitle("privacy");
+
+  if (locale === "ar" && sp?.privacyBody && sp?.privacy) {
+    return (
+      <div className="privacy-page">
+        <div className="disclaimer-header">
+          <div className="header-content">
+            <div className="header-icon">
+              <span className="legal-icon">⚖️</span>
+            </div>
+            <h1 className="page-title">{sp.privacy.pageTitle}</h1>
+            <p className="page-subtitle">{sp.privacy.pageSubtitle}</p>
+          </div>
+        </div>
+        <div className="privacy-main">
+          <div className="global-container">
+            <div className="privacy-section">
+              <div className="section-content global-container__content">
+                <div dangerouslySetInnerHTML={{ __html: sp.privacyBody }} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="privacy-page">
       <div className="disclaimer-header">
