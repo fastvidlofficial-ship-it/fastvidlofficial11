@@ -781,7 +781,7 @@ export default function PinterestBlogContent() {
           <strong>Backup and Archiving:</strong> Save your own Pinterest videos before deleting pins; create offline portfolios for client meetings; archive successful content for case studies; protect against account issues or platform changes.
         </p>
         <p className="home-blog-article-p">
-          <strong>Content Repurposing:</strong> Turn Pinterest videos into Instagram Reels; extract clips for TikTok or YouTube Shorts; embed videos in blog posts or presentations; create compilation videos from multiple pins.
+          <strong>Content Repurposing:</strong> Turn Pinterest videos into Instagram Reels; embed clips in blog posts or presentations; create compilation videos from multiple pins where permitted.
         </p>
         <p className="home-blog-article-p">
           <strong>Performance Analysis:</strong> Review your content offline; compare video quality across platforms; study successful competitor content; plan future content strategies.

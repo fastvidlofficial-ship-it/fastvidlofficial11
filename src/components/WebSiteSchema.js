@@ -10,14 +10,14 @@ export default function WebSiteSchema() {
         "@type": "WebSite",
         name: "FastVidl",
         description:
-          "FastVidl is a high-speed Instagram Reel downloader supporting 4K resolution and watermark-free saves. The site also offers free video downloaders for Pinterest and Facebook. All tools are free to use in the browser with no app install required.",
+          "FastVidl is a free online downloader for public media from Instagram, Facebook, and Pinterest. The platform supports reels, stories, photos, and videos in a browser-based workflow with no app install required.",
         url: "https://fastvidl.com",
       },
       {
         "@type": "WebApplication",
         name: "FastVidl",
         description:
-          "Free Instagram Reel, Facebook video, and Pinterest video downloader. Save reels and videos in HD without watermark. No login, no app install — browser-based and secure.",
+          "Free browser-based downloader for Instagram Reels, Instagram Stories, Instagram Photos, Facebook videos, and Pinterest videos. No login, no app install, no watermark added by FastVidl.",
         applicationCategory: "MultimediaApplication",
         operatingSystem: "Any",
         url: "https://fastvidl.com",
