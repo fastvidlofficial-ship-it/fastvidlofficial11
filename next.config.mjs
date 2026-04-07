@@ -13,6 +13,11 @@ const nextConfig = {
         destination: 'https://fastvidl.com/:path*',
         permanent: true,
       },
+      {
+        source: '/ads.txt',
+        destination: 'https://srv.adstxtmanager.com/19390/fastvidl.com',
+        permanent: true,
+      },
       // Retired page: send old links to Story downloader (also supports highlight URLs in-app)
       { source: '/instagram-highlights-downloader', destination: '/instagram-story-downloader', permanent: true },
       { source: '/Blogs/instagram-highlights-downloader', destination: '/instagram-story-downloader', permanent: true },
