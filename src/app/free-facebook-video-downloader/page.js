@@ -6,6 +6,8 @@ import UserInput from "@/components/input/UserInput";
 import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
 import FAQSchema from "@/components/FAQSchema";
 import FacebookBlogContent, { FACEBOOK_FAQ_LIST } from "@/content/free-facebook-video-downloader/FacebookBlogContent";
+import EzoicPlacements from "@/components/ads/EzoicPlacements";
+import { getEzoicToolPlacements } from "@/config/ezoicPlacements";
 
 export default function FacebookReelDownloaderService() {
   return (
@@ -18,7 +20,7 @@ export default function FacebookReelDownloaderService() {
         articleUrl="https://fastvidl.com/free-facebook-video-downloader"
         headline="Free Facebook Video Downloader: Download FB Videos in HD (2026)"
         datePublished="2026-03-26"
-        dateModified="2026-04-02"
+        dateModified="2026-04-20"
       />
       <FAQSchema faqList={FACEBOOK_FAQ_LIST} />
       <main className={styles.main}>
@@ -49,6 +51,7 @@ export default function FacebookReelDownloaderService() {
           </h1>
         </div>
         <UserInput />
+        <EzoicPlacements placementIds={getEzoicToolPlacements()} />
         <FacebookBlogContent />
       </main>
     </div>

@@ -7,6 +7,8 @@ import "@/content/Blog.css";
 import FAQSchema from "@/components/FAQSchema";
 import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
 import InstagramStoryBlogContent, { STORY_BLOG_FAQ_LIST } from "@/content/instagram-story-downloader/InstagramStoryBlogContent";
+import EzoicPlacements from "@/components/ads/EzoicPlacements";
+import { getEzoicToolPlacements } from "@/config/ezoicPlacements";
 
 export default function InstagramStoryDownloaderService() {
   return (
@@ -19,7 +21,7 @@ export default function InstagramStoryDownloaderService() {
         articleUrl="https://fastvidl.com/instagram-story-downloader"
         headline="Instagram Story Downloader: Save Stories & Highlights in HD (Free & Anonymous)"
         datePublished="2026-03-27"
-        dateModified="2026-04-02"
+        dateModified="2026-04-20"
       />
       <FAQSchema faqList={STORY_BLOG_FAQ_LIST} />
       <main className={styles.main}>
@@ -49,6 +51,7 @@ export default function InstagramStoryDownloaderService() {
           </h1>
         </div>
         <UserInput />
+        <EzoicPlacements placementIds={getEzoicToolPlacements()} />
         <div className="container-blog">
           <section className="home-blog-article">
             <InstagramStoryBlogContent variant="home" faqList={STORY_BLOG_FAQ_LIST} />

@@ -17,12 +17,13 @@ Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader
 Allow: /faqs
-Allow: /AboutUs
-Allow: /ContactUs
-Allow: /PrivacyPolicy
-Allow: /TermsAndConditions
-Allow: /Disclaimer
-Allow: /CookiePolicy
+Allow: /about-us
+Allow: /contact-us
+Allow: /privacy-policy
+Allow: /terms-and-conditions
+Allow: /disclaimer
+Allow: /dmca-takedown
+Allow: /cookie-policy
 
 # Allow static assets (CSS, JS, Images, Fonts)
 Allow: /next/static/
@@ -76,10 +77,13 @@ Allow: /instagram-story-downloader
 Allow: /pinterest-video-downloader-free
 Allow: /free-facebook-video-downloader
 Allow: /faqs
-Allow: /AboutUs
-Allow: /ContactUs
-Allow: /PrivacyPolicy
-Allow: /TermsAndConditions
+Allow: /about-us
+Allow: /contact-us
+Allow: /privacy-policy
+Allow: /terms-and-conditions
+Allow: /disclaimer
+Allow: /dmca-takedown
+Allow: /cookie-policy
 Allow: /llms.txt
 Allow: /sitemap.xml
 Disallow: /api/

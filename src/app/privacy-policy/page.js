@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import "./PrivacyPolicy.css";
-import "../Disclaimer/Disclaimer.css";
+import "../disclaimer/Disclaimer.css";
 
 const PrivacyPolicy = () => {
   return (
@@ -104,111 +104,78 @@ const PrivacyPolicy = () => {
                     <li>Form submission processing</li>
                   </ul>
 
-                  <h3>Analytics Cookies (Optional)</h3>
+                  <h3>Measurement cookies (Google tag)</h3>
                   <p className="privacy-text">
-                    <strong>Google Analytics:</strong> We use Google Analytics to understand how visitors interact with our Website:
-                  </p>
-                  <ul className="privacy-list">
-                    <li>Which pages are most popular</li>
-                    <li>How long people stay on our site</li>
-                    <li>What devices and browsers are used</li>
-                    <li>General geographic location (country/region)</li>
-                  </ul>
-                  <p className="privacy-text">
-                    <strong>Your Choice:</strong> You can opt out of Google Analytics by installing the{" "}
-                    <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" className="terms-link">
-                      Google Analytics Opt-out Browser Add-on
+                    We load <strong>Google tag (gtag.js)</strong> on the site for measurement and advertising-related signals tied to our Google Ads account. Depending on your browser settings and Google&apos;s policies, this may involve cookies or similar storage to attribute visits and conversions. Google&apos;s documentation describes how those technologies work:{" "}
+                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="terms-link">
+                      Google Privacy Policy
+                    </a>
+                    ,{" "}
+                    <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className="terms-link">
+                      How Google uses information from sites that use their services
                     </a>
                     .
                   </p>
-
-                  <h3>Advertising Cookies (Optional)</h3>
-                  <p className="privacy-text">We display advertisements to keep our service free. Learn more in the advertising section below.</p>
-                </div>
-
-                <div className="card3d">
-                  <h2>Third-Party Advertising — Google AdSense, Ezoic, and AdX</h2>
-
-                  <h3>How Advertising Works on Our Site</h3>
                   <p className="privacy-text">
-                    FastVidl uses <strong>Google AdSense</strong> (a third-party advertising service by Google LLC) and <strong>Ezoic</strong> (a separate platform that may manage third-party advertising, analytics, and site optimization) to display ads on our Website. Google Ad Manager / <strong>AdX</strong> may also be used where applicable through these partners. Here&apos;s what you need to know:
+                    <strong>Your choices:</strong> You can manage ad personalization and related Google settings at{" "}
+                    <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="terms-link">
+                      Google Ads Settings
+                    </a>
+                    , and use industry tools such as{" "}
+                    <a href="https://www.aboutads.info/choices" target="_blank" rel="noopener noreferrer" className="terms-link">
+                      aboutads.info/choices
+                    </a>{" "}
+                    (US) or{" "}
+                    <a href="https://www.youronlinechoices.com" target="_blank" rel="noopener noreferrer" className="terms-link">
+                      youronlinechoices.com
+                    </a>{" "}
+                    (EU).
                   </p>
+
+                  <h3>Advertising &amp; consent (Ezoic)</h3>
                   <p className="privacy-text">
-                    <strong>Cookie-based advertising:</strong> This website may use Ezoic&apos;s services to manage third-party advertising and provide analytics. Ezoic uses cookies to track session information and provide a personalized experience across multiple devices. We use Ezoic to provide personalization and analytic services on this website; Ezoic&apos;s privacy policy applies and can be reviewed here:{" "}
+                    We use <strong>Ezoic</strong> to help deliver and optimize advertising, analytics, and consent management on fastvidl.com. Ezoic and its partners may set cookies or use similar technologies. Ezoic&apos;s privacy policy is here:{" "}
                     <a href="https://www.ezoic.com/privacy-policy/" target="_blank" rel="noopener noreferrer" className="terms-link">
                       https://www.ezoic.com/privacy-policy/
                     </a>
-                    . Ezoic may use a variety of technologies to improve user experience and manage advertising effectively.
-                  </p>
-                  <p className="privacy-text">
-                    <strong>Google AdSense:</strong> Google AdSense uses cookies and web beacons to serve ads based on your browsing activity across the internet, not just on our site.
+                    . Consent-related scripts (for example Gatekeeper CMP) may load as part of that stack.
                   </p>
 
-                  <h3>Personalized vs. Non-Personalized Ads</h3>
+                  <h3>Social sharing (ShareThis)</h3>
+                  <p className="privacy-text">
+                    We may load <strong>ShareThis</strong> scripts for optional sharing features. ShareThis sets its own cookies and processes data under its policies—see ShareThis documentation for details.
+                  </p>
+                </div>
+
+                <div className="card3d">
+                  <h2>Third-party advertising, measurement, and partners</h2>
+
+                  <h3>How this fits together</h3>
+                  <p className="privacy-text">
+                    FastVidl is supported by advertising. In the current build of the site we integrate <strong>Ezoic</strong> (ads, analytics, optimization, and consent tooling), the <strong>Google tag</strong> for measurement tied to Google Ads, and <strong>ShareThis</strong> for sharing UI. We do <strong>not</strong> currently load standalone <strong>Google AdSense</strong> script on pages; if that changes, we will update this policy.
+                  </p>
+
+                  <h3>Personalized vs. non-personalized ads</h3>
                   <ul className="privacy-list">
-                    <li><strong>Personalized Ads:</strong> Based on your interests, browsing history, and previous visits to fastvidl.com and other websites</li>
-                    <li><strong>Non-Personalized Ads:</strong> Based only on the content of the page you&apos;re currently viewing</li>
+                    <li><strong>Personalized ads:</strong> May use interests, prior visits, or similar signals as allowed by your consent settings and partner policies.</li>
+                    <li><strong>Non-personalized ads:</strong> May be shown based more on page context when personalization is off or unavailable.</li>
                   </ul>
 
-                  <h3>What Influences the Ads You See</h3>
-                  <p className="privacy-text">Ads displayed through Google AdSense and partner networks may be based on:</p>
+                  <h3>What can influence the ads you see</h3>
+                  <p className="privacy-text">Depending on partners and your settings, ads may be influenced by factors such as:</p>
                   <ul className="privacy-list">
-                    <li>Your previous visits to fastvidl.com</li>
-                    <li>Your browsing history on other websites</li>
-                    <li>Your interests and online behavior patterns</li>
-                    <li>Your approximate geographic location</li>
-                    <li>The content of the page you&apos;re viewing</li>
+                    <li>The page you are viewing on fastvidl.com</li>
+                    <li>General geography (such as country/region)</li>
+                    <li>Device and browser type</li>
+                    <li>Partner-specific profiles or cohorts where permitted</li>
                   </ul>
 
-                  <h3>The DoubleClick Cookie</h3>
+                  <h3>Your advertising choices</h3>
                   <p className="privacy-text">
-                    Google uses the DoubleClick cookie to help serve relevant ads. This cookie does NOT contain personally identifiable information like your name or email address.
+                    Use the consent tools shown on the site where available, adjust browser cookie settings, and review partner opt-outs (Google, Ezoic, ShareThis, and industry programs linked above). Blocking all cookies can break parts of the downloader experience.
                   </p>
 
-                  <h3>Your Advertising Choices — Take Control</h3>
-                  <p className="privacy-text">You have several options to control the ads you see:</p>
-                  <ol style={{ paddingLeft: "2rem", marginBottom: "1.5rem" }}>
-                    <li style={{ marginBottom: "1rem" }}>
-                      <strong>Opt Out of Personalized Ads:</strong>
-                      <ul style={{ marginTop: "0.5rem", paddingLeft: "1.5rem" }}>
-                        <li>
-                          Visit{" "}
-                          <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="terms-link">
-                            Google Ads Settings
-                          </a>{" "}
-                          to turn off personalized advertising
-                        </li>
-                      </ul>
-                    </li>
-                    <li style={{ marginBottom: "1rem" }}>
-                      <strong>Industry Opt-Out Tools:</strong>
-                      <ul style={{ marginTop: "0.5rem", paddingLeft: "1.5rem" }}>
-                        <li>
-                          North American users: Visit{" "}
-                          <a href="https://www.aboutads.info/choices" target="_blank" rel="noopener noreferrer" className="terms-link">
-                            aboutads.info/choices
-                          </a>
-                        </li>
-                        <li>
-                          European users: Visit{" "}
-                          <a href="https://www.youronlinechoices.com" target="_blank" rel="noopener noreferrer" className="terms-link">
-                            youronlinechoices.com
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li style={{ marginBottom: "1rem" }}>
-                      <strong>Browser Settings:</strong>
-                      <ul style={{ marginTop: "0.5rem", paddingLeft: "1.5rem" }}>
-                        <li>Block or delete cookies through your browser&apos;s privacy settings</li>
-                        <li>
-                          <em>Note: This may affect website functionality</em>
-                        </li>
-                      </ul>
-                    </li>
-                  </ol>
-
-                  <h3>Learn More About Google&apos;s Practices</h3>
+                  <h3>Learn more</h3>
                   <ul className="privacy-list">
                     <li>
                       <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="terms-link">
@@ -216,13 +183,8 @@ const PrivacyPolicy = () => {
                       </a>
                     </li>
                     <li>
-                      <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className="terms-link">
-                        How Google Uses Information
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://support.google.com/adsense/answer/48182" target="_blank" rel="noopener noreferrer" className="terms-link">
-                        Google Advertising Overview
+                      <a href="https://www.ezoic.com/privacy-policy/" target="_blank" rel="noopener noreferrer" className="terms-link">
+                        Ezoic Privacy Policy
                       </a>
                     </li>
                   </ul>
@@ -261,9 +223,9 @@ const PrivacyPolicy = () => {
                           <td style={{ padding: "0.75rem", border: "1px solid #dee2e6" }}>Not stored after download</td>
                         </tr>
                         <tr>
-                          <td style={{ padding: "0.75rem", border: "1px solid #dee2e6" }}>Analytics Data (Google Analytics)</td>
-                          <td style={{ padding: "0.75rem", border: "1px solid #dee2e6" }}>26 months</td>
-                          <td style={{ padding: "0.75rem", border: "1px solid #dee2e6" }}>Industry standard for analysis</td>
+                          <td style={{ padding: "0.75rem", border: "1px solid #dee2e6" }}>Measurement data (Google tags)</td>
+                          <td style={{ padding: "0.75rem", border: "1px solid #dee2e6" }}>As set by Google / your browser</td>
+                          <td style={{ padding: "0.75rem", border: "1px solid #dee2e6" }}>Ads measurement and site analytics</td>
                         </tr>
                         <tr>
                           <td style={{ padding: "0.75rem", border: "1px solid #dee2e6" }}>Contact Form Inquiries</td>
@@ -294,8 +256,9 @@ const PrivacyPolicy = () => {
 
                   <h3>Service Providers We Trust</h3>
                   <ul className="privacy-list">
-                    <li><strong>Google Analytics &amp; AdSense:</strong> As described in the sections above</li>
-                    <li><strong>Ezoic:</strong> Advertising, personalization, and analytics as described above and in Ezoic&apos;s privacy policy</li>
+                    <li><strong>Google (tags):</strong> Measurement and advertising-related signals as described above</li>
+                    <li><strong>Ezoic:</strong> Advertising, consent, personalization, and analytics as described above and in Ezoic&apos;s privacy policy</li>
+                    <li><strong>ShareThis:</strong> Optional sharing features and related cookies</li>
                     <li><strong>Hosting Providers:</strong> To keep our website online and fast</li>
                     <li><strong>CDN Services:</strong> To deliver content quickly worldwide</li>
                   </ul>
@@ -464,16 +427,22 @@ const PrivacyPolicy = () => {
                           <td style={{ padding: "0.75rem", border: "1px solid #dee2e6" }}>No (required for site to work)</td>
                         </tr>
                         <tr>
-                          <td style={{ padding: "0.75rem", border: "1px solid #dee2e6" }}>Analytics (Google Analytics)</td>
-                          <td style={{ padding: "0.75rem", border: "1px solid #dee2e6" }}>Usage statistics &amp; improvements</td>
-                          <td style={{ padding: "0.75rem", border: "1px solid #dee2e6" }}>26 months</td>
-                          <td style={{ padding: "0.75rem", border: "1px solid #dee2e6" }}>Yes (opt-out available)</td>
+                          <td style={{ padding: "0.75rem", border: "1px solid #dee2e6" }}>Measurement (Google tag)</td>
+                          <td style={{ padding: "0.75rem", border: "1px solid #dee2e6" }}>Usage and conversion-related signals</td>
+                          <td style={{ padding: "0.75rem", border: "1px solid #dee2e6" }}>Varies</td>
+                          <td style={{ padding: "0.75rem", border: "1px solid #dee2e6" }}>Yes (browser / partner controls)</td>
                         </tr>
                         <tr>
-                          <td style={{ padding: "0.75rem", border: "1px solid #dee2e6" }}>Advertising (Google AdSense and Ezoic)</td>
+                          <td style={{ padding: "0.75rem", border: "1px solid #dee2e6" }}>Advertising (Ezoic and partners)</td>
                           <td style={{ padding: "0.75rem", border: "1px solid #dee2e6" }}>Ad serving &amp; personalization</td>
                           <td style={{ padding: "0.75rem", border: "1px solid #dee2e6" }}>Varies</td>
-                          <td style={{ padding: "0.75rem", border: "1px solid #dee2e6" }}>Yes (opt-out available)</td>
+                          <td style={{ padding: "0.75rem", border: "1px solid #dee2e6" }}>Yes (consent / browser / partner tools)</td>
+                        </tr>
+                        <tr>
+                          <td style={{ padding: "0.75rem", border: "1px solid #dee2e6" }}>ShareThis</td>
+                          <td style={{ padding: "0.75rem", border: "1px solid #dee2e6" }}>Optional sharing widgets</td>
+                          <td style={{ padding: "0.75rem", border: "1px solid #dee2e6" }}>Varies</td>
+                          <td style={{ padding: "0.75rem", border: "1px solid #dee2e6" }}>Yes (do not use widgets; clear cookies)</td>
                         </tr>
                         <tr>
                           <td style={{ padding: "0.75rem", border: "1px solid #dee2e6" }}>Translation (Google Translate)</td>
@@ -516,8 +485,8 @@ const PrivacyPolicy = () => {
                     </li>
                     <li>
                       <strong>Contact Form:</strong>{" "}
-                      <Link href="/ContactUs" className="terms-link privacy-clickable-link" style={{ position: "relative", zIndex: 10, pointerEvents: "auto", cursor: "pointer" }}>
-                        https://fastvidl.com/ContactUs
+                      <Link href="/contact-us" className="terms-link privacy-clickable-link" style={{ position: "relative", zIndex: 10, pointerEvents: "auto", cursor: "pointer" }}>
+                        https://fastvidl.com/contact-us
                       </Link>
                     </li>
                     <li><strong>Response Time:</strong> Typically 24-48 hours</li>
@@ -539,7 +508,7 @@ const PrivacyPolicy = () => {
                   </p>
                   <ul className="privacy-list">
                     <li>
-                      <Link href="/TermsAndConditions" className="terms-link privacy-clickable-link" style={{ position: "relative", zIndex: 10, pointerEvents: "auto", cursor: "pointer" }}>
+                      <Link href="/terms-and-conditions" className="terms-link privacy-clickable-link" style={{ position: "relative", zIndex: 10, pointerEvents: "auto", cursor: "pointer" }}>
                         Terms and Conditions
                       </Link>
                     </li>
@@ -572,7 +541,7 @@ const PrivacyPolicy = () => {
                   <p style={{ color: "#333", fontSize: "15px", marginTop: "2rem" }}>
                     Read our{" "}
                     <Link
-                      href="/TermsAndConditions"
+                      href="/terms-and-conditions"
                       className="terms-link privacy-clickable-link"
                       style={{
                         color: "#1877f2",

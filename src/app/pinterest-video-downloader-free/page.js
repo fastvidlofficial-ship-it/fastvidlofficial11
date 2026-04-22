@@ -6,6 +6,8 @@ import UserInput from "@/components/input/UserInput";
 import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
 import FAQSchema from "@/components/FAQSchema";
 import PinterestBlogContent, { PINTEREST_FAQ_LIST } from "@/content/pinterest-video-downloader-free/PinterestBlogContent";
+import EzoicPlacements from "@/components/ads/EzoicPlacements";
+import { getEzoicToolPlacements } from "@/config/ezoicPlacements";
 
 export default function PinterestReelDownloaderService() {
   return (
@@ -18,7 +20,7 @@ export default function PinterestReelDownloaderService() {
         articleUrl="https://fastvidl.com/pinterest-video-downloader-free"
         headline="Pinterest Video Downloader Free: Download Videos Without Watermark (2026)"
         datePublished="2026-03-26"
-        dateModified="2026-04-02"
+        dateModified="2026-04-20"
       />
       <FAQSchema faqList={PINTEREST_FAQ_LIST} />
       <main className={styles.main}>
@@ -49,6 +51,7 @@ export default function PinterestReelDownloaderService() {
           </h1>
         </div>
         <UserInput />
+        <EzoicPlacements placementIds={getEzoicToolPlacements()} />
         <PinterestBlogContent />
       </main>
     </div>

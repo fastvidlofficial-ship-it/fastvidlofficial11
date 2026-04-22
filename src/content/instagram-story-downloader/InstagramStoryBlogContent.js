@@ -71,7 +71,7 @@ export default function InstagramStoryBlogContent({ variant = "standalone", faqL
         Instagram Story Downloader: Save Stories &amp; Highlights in HD (Free &amp; Anonymous)
       </h2>
       <p className={metaClass} style={isHome ? {} : { fontStyle: "italic", color: "#666", marginBottom: "0.5rem" }}>
-        Expertly Verified Resource
+        Editorial note
       </p>
       <p className={metaClass} style={isHome ? {} : { fontStyle: "italic", color: "#666", marginBottom: "1rem" }}>
         Written by{" "}
@@ -110,7 +110,7 @@ export default function InstagramStoryBlogContent({ variant = "standalone", faqL
 
       <h2 className={h2Class}>Quick Summary</h2>
       <p className={pClass}>
-        Instagram does not allow viewers to save Stories natively, so a third-party Instagram Story downloader is needed to save them to your device. Both story photos and story videos can be downloaded in their original quality through FastVidl with no watermark added, and Story highlights from public accounts are supported alongside active Stories. No login, no app installation and no registration is required — the service runs entirely in a browser across PC, iPhone, Android and all major browsers. Stories can be saved anonymously, meaning the account owner is not notified, though private account content cannot be accessed by any third-party downloader.
+        Instagram does not allow viewers to save Stories natively, so a third-party Instagram Story downloader is needed to save them to your device. Both story photos and story videos can be downloaded in their original quality through FastVidl with no watermark added by our tool, and Story highlights from public accounts are supported alongside active Stories. No login to FastVidl, no app installation, and no registration is required — the service runs entirely in a browser across PC, iPhone, Android and all major browsers. FastVidl does not notify creators when you save a public Story; platforms and networks may still collect their own technical data. Private account content cannot be accessed by any third-party downloader.
       </p>
 
       <h2 id="story-overview" className={h2Class}>Instagram Story Downloader Overview</h2>

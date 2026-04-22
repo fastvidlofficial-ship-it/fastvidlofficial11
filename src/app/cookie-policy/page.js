@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import "./CookiePolicy.css";
-import "../Disclaimer/Disclaimer.css";
+import "../disclaimer/Disclaimer.css";
 import Link from "next/link";
 
 const CookiePolicy = () => {
@@ -29,14 +29,18 @@ const CookiePolicy = () => {
                     Last Updated: 19th February 2026
                   </p>
                   <p className="cookie-text">
-                    Welcome to fastvidl.com. We use cookies and similar technologies to make our Instagram/Facebook/Pinterest downloader work smoothly, analyze usage anonymously, and display relevant ads (to keep service free). This policy covers everything transparently.
+                    Welcome to fastvidl.com. We use cookies and similar technologies to run the downloader, remember basic preferences, measure traffic and conversions, and support advertising that keeps the service free. Partners such as <strong>Ezoic</strong> (including consent management), <strong>Google</strong> (tags used with Google Ads), and <strong>ShareThis</strong> (optional sharing) may set their own cookies or read storage as described in our{" "}
+                    <Link href="/privacy-policy" className="terms-link">
+                      Privacy Policy
+                    </Link>
+                    .
                   </p>
                 </div>
 
                 <div className="card3d">
                   <h2>What Are Cookies?</h2>
                   <p className="cookie-text">
-                    Small text files stored on your device that remember preferences, track usage (anonymized), and enhance experience. We also use pixels/beacons from social platforms.
+                    Cookies are small files on your device that help sites work, remember settings, and let partners measure or personalize content and ads where allowed. Similar technologies include pixels or local storage. Third parties we integrate may use their own cookies under their policies.
                   </p>
                 </div>
 
@@ -62,18 +66,25 @@ const CookiePolicy = () => {
                           <td>Yes</td>
                         </tr>
                         <tr>
-                          <td>Analytics</td>
-                          <td>Anonymous usage stats</td>
-                          <td>_ga, _gid (Google Analytics)</td>
-                          <td>26 months</td>
-                          <td>Opt-out</td>
+                          <td>Measurement</td>
+                          <td>Site usage and conversion-related signals</td>
+                          <td>Google tag (gtag) cookies / storage as set by Google</td>
+                          <td>Varies</td>
+                          <td>Browser + Google Ads settings</td>
                         </tr>
                         <tr>
                           <td>Advertising</td>
-                          <td>Relevant ads</td>
-                          <td>Google AdSense IDs, DSID</td>
+                          <td>Ads, frequency capping, personalization where permitted</td>
+                          <td>Ezoic and partner ad cookies (examples vary by region)</td>
                           <td>Varies</td>
-                          <td>Opt-out</td>
+                          <td>Consent tools + partner opt-outs</td>
+                        </tr>
+                        <tr>
+                          <td>Consent (CMP)</td>
+                          <td>Store advertising / analytics consent choices</td>
+                          <td>Gatekeeper / Ezoic-related CMP storage</td>
+                          <td>Varies</td>
+                          <td>Re-open consent in partner UI; clear cookies</td>
                         </tr>
                         <tr>
                           <td>Functional</td>
@@ -83,11 +94,11 @@ const CookiePolicy = () => {
                           <td>Clear cookies / choose original language</td>
                         </tr>
                         <tr>
-                          <td>Social Media</td>
-                          <td>Share/embed functionality</td>
-                          <td>fbp (Facebook), ig (Instagram), Pinterest pins</td>
-                          <td>90 days</td>
-                          <td>Opt-out</td>
+                          <td>Share widgets</td>
+                          <td>Optional sharing buttons</td>
+                          <td>ShareThis and related vendor cookies</td>
+                          <td>Varies</td>
+                          <td>Do not use widgets; clear cookies</td>
                         </tr>
                       </tbody>
                     </table>
@@ -96,9 +107,9 @@ const CookiePolicy = () => {
 
                 <div className="card3d">
                   <h2>Your Full Control Options</h2>
-                  <h3>1. On-Site Cookie Banner</h3>
+                  <h3>1. Consent and preference tools</h3>
                   <p className="cookie-text">
-                    Granular consent with equal-sized Accept/Reject All buttons – no dark patterns, pre-checked boxes, or nudging.
+                    Our advertising stack may present consent or preference controls (for example through Ezoic / CMP). You can also manage cookies in your browser. Blocking some third-party cookies may affect ads or measurement but should not block core pasting of a public URL in the downloader.
                   </p>
                   <h3>2. Global Privacy Control (GPC)</h3>
                   <p className="cookie-text">
@@ -113,22 +124,31 @@ const CookiePolicy = () => {
                   </ul>
                   <h3>4. Third-Party Opt-Outs</h3>
                   <ul>
-                    <li><a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google Analytics Opt-out</a></li>
                     <li><a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">Google Ads Settings</a></li>
+                    <li><a href="https://www.ezoic.com/privacy-policy/" target="_blank" rel="noopener noreferrer">Ezoic Privacy Policy</a></li>
                     <li><a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer">AboutAds.info (US)</a></li>
                     <li><a href="https://www.youronlinechoices.com" target="_blank" rel="noopener noreferrer">YourOnlineChoices (EU)</a></li>
                   </ul>
                 </div>
 
                 <div className="card3d">
-                  <h2>Advertising (Google AdSense)</h2>
+                  <h2>Advertising and measurement</h2>
                   <p className="cookie-text">
-                    To keep FastVidl free for everyone, we show advertisements. We use third-party vendors, including Google, which use cookies to serve ads based on your prior visits to our website or other websites.
+                    We use <strong>Ezoic</strong> and related partners to show ads and to operate analytics and consent features. We also load the <strong>Google tag (gtag.js)</strong> for measurement tied to Google Ads. We do <strong>not</strong> currently load standalone Google AdSense on pages; if that changes, we will update this policy.
                   </p>
                   <ul>
-                    <li>Google's use of advertising cookies enables it and its partners to serve ads to you based on your visit to FastVidl and/or other sites on the Internet.</li>
-                    <li>You may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">Google Ads Settings</a>.</li>
-                    <li>Alternatively, you can opt out of a third-party vendor's use of cookies for personalized advertising by visiting <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer">www.aboutads.info</a>.</li>
+                    <li>Partners may use cookies or similar storage for ad delivery, personalization where allowed, fraud prevention, and reporting.</li>
+                    <li>Manage Google-related ad settings at{" "}
+                      <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">Google Ads Settings</a>{" "}
+                      and read{" "}
+                      <a href="https://www.ezoic.com/privacy-policy/" target="_blank" rel="noopener noreferrer">Ezoic&apos;s privacy policy</a>.
+                    </li>
+                    <li>Industry opt-outs:{" "}
+                      <a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer">aboutads.info</a>{" "}
+                      (US) and{" "}
+                      <a href="https://www.youronlinechoices.com" target="_blank" rel="noopener noreferrer">youronlinechoices.com</a>{" "}
+                      (EU).
+                    </li>
                   </ul>
                 </div>
 
@@ -180,9 +200,9 @@ const CookiePolicy = () => {
                           <td>Manual withdrawal</td>
                         </tr>
                         <tr>
-                          <td>Analytics</td>
-                          <td>26 months</td>
-                          <td>Opt-out/GPC</td>
+                          <td>Measurement (Google / partners)</td>
+                          <td>Provider-defined</td>
+                          <td>Browser clear / partner controls</td>
                         </tr>
                         <tr>
                           <td>Advertising</td>
@@ -202,13 +222,13 @@ const CookiePolicy = () => {
                 <div className="card3d">
                   <h2>Third-Party & Social Media Specifics</h2>
                   <p className="cookie-text">
-                    <strong>Google Services:</strong> Analytics, AdSense, and optional Translate – full disclosure in Privacy Policy.
+                    <strong>Google:</strong> Optional Translate cookies when you use the header translator; Google tag cookies/storage for measurement as described in the Privacy Policy.
                   </p>
                   <p className="cookie-text">
-                    <strong>Social Platforms:</strong> Facebook Pixel (fbp), Instagram tracking, Pinterest share cookies used for embeds/sharing only.
+                    <strong>Ezoic:</strong> Advertising, analytics, and consent-related cookies as described in Ezoic&apos;s documentation.
                   </p>
                   <p className="cookie-text">
-                    <strong>Cookie Scanner:</strong> Scan your cookies instantly (third-party tool).
+                    <strong>ShareThis:</strong> Cookies for optional sharing UI when that feature loads.
                   </p>
                 </div>
 
@@ -217,7 +237,9 @@ const CookiePolicy = () => {
                   <p className="cookie-text"><strong>Q: Will rejecting cookies break downloads?</strong></p>
                   <p className="cookie-text">A: No, essential cookies handle downloads; only analytics/ads affected.</p>
                   <p className="cookie-text"><strong>Q: Do you track across Instagram/Facebook?</strong></p>
-                  <p className="cookie-text">A: No, we process URLs temporarily, never track social accounts.</p>
+                  <p className="cookie-text">
+                    A: We do not require you to log in to Instagram, Facebook, or Pinterest to use FastVidl. URLs you paste are processed to fetch public media; third-party analytics or ad partners on our site may collect their own technical data as described in our Privacy Policy.
+                  </p>
                   <p className="cookie-text"><strong>Q: What's Pakistan PDPB compliance?</strong></p>
                   <p className="cookie-text">A: Local data protection following PTA/PEMRA guidelines.</p>
                 </div>
@@ -235,13 +257,13 @@ const CookiePolicy = () => {
                 <div className="card3d">
                   <h2>Changes to Policy</h2>
                   <p className="cookie-text">
-                    Posted here with a new date. Major updates trigger fresh consent banners.
+                    Posted here with a new date. Material changes to cookies or partners will be reflected here and may be surfaced through your consent or CMP interface where applicable.
                   </p>
                   <p className="cookie-text">
                     <strong>Contact:</strong> <a href="mailto:fastvidlofficial@gmail.com">fastvidlofficial@gmail.com</a>
                   </p>
                   <p className="cookie-text">
-                    <strong>Related:</strong> <Link href="/PrivacyPolicy">Privacy Policy</Link>, <Link href="/TermsAndConditions">Terms</Link>
+                    <strong>Related:</strong> <Link href="/privacy-policy">Privacy Policy</Link>, <Link href="/terms-and-conditions">Terms</Link>
                   </p>
                 </div>
               </div>

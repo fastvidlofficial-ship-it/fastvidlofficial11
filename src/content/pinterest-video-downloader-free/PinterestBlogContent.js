@@ -117,7 +117,7 @@ export default function PinterestBlogContent() {
           Pinterest Video Downloader Free: Download Videos Without Watermark (2026)
         </h2>
         <p className="home-blog-article-meta" style={{ fontStyle: "italic", color: "#666", marginBottom: "0.5rem" }}>
-          Expertly Verified Resource
+          Editorial note
         </p>
         <p className="home-blog-article-meta" style={{ fontStyle: "italic", color: "#666", marginBottom: "1rem" }}>
           Written by{" "}

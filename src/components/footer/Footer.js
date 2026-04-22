@@ -66,13 +66,14 @@ const Footer = () => {
         </ul>
       </div>
       <ul className={styles["Ul-d"]}>
-        <li><a href="/AboutUs">| About Us |</a></li>
-        <li><a href="/ContactUs">| Contact Us |</a></li>
+        <li><a href="/about-us">| About Us |</a></li>
+        <li><a href="/contact-us">| Contact Us |</a></li>
         <li><a href="/faqs">| FAQs |</a></li>
-        <li><a href="/Disclaimer">| Disclaimer |</a></li>
-        <li><a href="/PrivacyPolicy">| Privacy Policy |</a></li>
-        <li><a href="/CookiePolicy">| Cookie Policy |</a></li>
-        <li><a href="/TermsAndConditions">| Terms & Conditions |</a></li>
+        <li><a href="/disclaimer">| Disclaimer |</a></li>
+        <li><a href="/dmca-takedown">| DMCA |</a></li>
+        <li><a href="/privacy-policy">| Privacy Policy |</a></li>
+        <li><a href="/cookie-policy">| Cookie Policy |</a></li>
+        <li><a href="/terms-and-conditions">| Terms & Conditions |</a></li>
       </ul>
       <p className={styles.affiliationDisclaimer}>
         We are not affiliated with Instagram, Meta and Pinterest.

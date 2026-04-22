@@ -54,7 +54,7 @@ export default function HomePageBlogSection() {
             FastVidl Free Video Downloader
           </h2>
           <p className="home-blog-article-meta" style={{ marginBottom: "0.5rem" }}>
-            Expertly Verified Resource
+            Editorial note
           </p>
           <p className="home-blog-article-meta" style={{ marginBottom: "1rem" }}>
             Written by{" "}

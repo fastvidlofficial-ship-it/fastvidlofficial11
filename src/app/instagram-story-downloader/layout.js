@@ -2,7 +2,7 @@ export const metadata = {
   metadataBase: new URL("https://fastvidl.com"),
   title: "Instagram Story Downloader",
   description:
-    "Easily download Instagram Stories and Highlights in original HD quality. FastVidl provides a secure, anonymous, and watermark-free solution with no login or app installation required. Works seamlessly on iPhone, Android, and PC.",
+    "Save public Instagram Stories and Highlights in HD from your browser—no FastVidl account, no app install. We do not add a watermark; use only content you are allowed to access and respect Instagram’s Terms.",
   icons: {
     icon: "/assets/favicon.ico",
     shortcut: "/assets/favicon.ico",
@@ -11,7 +11,7 @@ export const metadata = {
   openGraph: {
     title: "Instagram Story Downloader",
     description:
-      "Easily download Instagram Stories and Highlights in original HD quality. FastVidl provides a secure, anonymous, and watermark-free solution with no login or app installation required. Works seamlessly on iPhone, Android, and PC.",
+      "Save public Instagram Stories and Highlights in HD from your browser—no FastVidl account, no app install. We do not add a watermark; use only content you are allowed to access and respect Instagram’s Terms.",
     url: "https://fastvidl.com/instagram-story-downloader",
     siteName: "FastVidl",
     images: ["/assets/weblogo.png"],
@@ -21,7 +21,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Instagram Story Downloader",
     description:
-      "Download Instagram Stories & Highlights in HD — free, anonymous, no watermark. Browser-based for iPhone, Android & PC.",
+      "Download public Instagram Stories and Highlights in HD in your browser—no login to FastVidl, no app. For personal use of public media you may access; no watermark added by our tool.",
   },
   robots: { index: true, follow: true },
 };

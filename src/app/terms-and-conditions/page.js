@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 import styles from "./TermsAndConditions.module.css";
-import "../Disclaimer/Disclaimer.css";
+import "../disclaimer/Disclaimer.css";
 import Link from "next/link";
 
 const TermsAndConditions = () => {
@@ -241,7 +241,7 @@ const TermsAndConditions = () => {
           Your use of FastVidl is also governed by our Privacy Policy, which explains what information we collect (if any), how we use it, and your rights.
         </p>
         <p>
-          Please read our Privacy Policy at: <Link href="/PrivacyPolicy" className="terms-link">https://fastvidl.com/PrivacyPolicy</Link>
+          Please read our Privacy Policy at: <Link href="/privacy-policy" className="terms-link">https://fastvidl.com/privacy-policy</Link>
         </p>
               </div>
 

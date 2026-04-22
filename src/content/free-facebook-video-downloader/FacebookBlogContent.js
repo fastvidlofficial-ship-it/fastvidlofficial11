@@ -95,7 +95,7 @@ export default function FacebookBlogContent() {
       <div className="home-blog-article blog-content">
         <h2 className="home-blog-article-title">Free Facebook Video Downloader: Download FB Videos in HD (2026)</h2>
         <p className="home-blog-article-meta" style={{ fontStyle: "italic", color: "#666", marginBottom: "0.5rem" }}>
-          Expertly Verified Resource
+          Editorial note
         </p>
         <p className="home-blog-article-meta" style={{ fontStyle: "italic", color: "#666", marginBottom: "1rem" }}>
           Written by{" "}

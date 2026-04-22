@@ -1,6 +1,6 @@
 "use client"
 import "./AboutUs.css";
-import "../Disclaimer/Disclaimer.css";
+import "../disclaimer/Disclaimer.css";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -8,11 +8,13 @@ const AboutUs = () => {
   const drivesUs = [
     {
       title: "Privacy first",
-      description: "No tracking, no data storage—HTTPS secure."
+      description:
+        "We do not require an account to download. The site uses HTTPS, and we do not store the videos you save on our servers. Like most free sites, we use limited cookies and third-party tools (for example ads and basic analytics) to run and improve the service—see our Privacy Policy for details.",
     },
     {
       title: "Creator respect",
-      description: "Public content for personal use only. We follow platform APIs and DMCA guidelines. Check Privacy Policy and Terms."
+      description:
+        "FastVidl is meant for public links and responsible personal use (for example backing up your own uploads or offline viewing you are allowed to do). Respect each platform’s Terms of Service and copyright. See Privacy Policy, Terms, and our DMCA page.",
     },
     {
       title: "Reliability",
@@ -74,11 +76,13 @@ const AboutUs = () => {
     },
     {
       question: "Will the content creator know I downloaded their content?",
-      answer: "No. All downloads are completely anonymous and private."
+      answer:
+        "FastVidl does not notify creators and you do not log in to us—but platforms, networks, and advertisers may collect their own technical data under their policies. We do not claim that any online activity is untraceable.",
     },
     {
       question: "Are there any download limits?",
-      answer: "No daily limits, no file size restrictions. Download as much as you need."
+      answer:
+        "We do not impose a daily cap for normal personal use. Please use the tool reasonably: mass scraping, automation that strains the service, or uses that violate platform rules or law are not acceptable.",
     }
   ];
 
@@ -98,7 +102,7 @@ const AboutUs = () => {
           </div>
           <h1 className="page-title">About Us</h1>
           <p className="page-subtitle">
-            Fast. Free. Secure. Download Instagram, Facebook, and Pinterest content instantly.
+            Free browser tools to save public media you are allowed to access—for personal backups, offline viewing, and inspiration—across Instagram, Facebook, and Pinterest.
           </p>
         </div>
       </div>
@@ -110,14 +114,15 @@ const AboutUs = () => {
             <div className="cardsGrid">
               <div className="card3d">
                 <p className="text-base sm:text-lg leading-relaxed mb-6">
-                  Welcome to <strong>fastvidl.com</strong> – We're a small team of developers and social media fans who got tired of clunky downloaders full of ads and restrictions. In 2026, we launched fastvidl.com as a straightforward, free way to save public content from Instagram, Facebook, and Pinterest for personal use—like keeping a reel that inspires you or an image for your project board. We understand how frustrating it is to lose access to inspiring posts, educational content, or memorable moments. That's why we created a simple solution that works seamlessly across all your favorite social platforms.
+                  Welcome to <strong>fastvidl.com</strong> — we are a small team at{" "}
+                  <strong>Auroxa Tech</strong> (Rawalpindi, Pakistan) building simple browser tools for creators and everyday users. We launched FastVidl in <strong>August 2025</strong> to help people keep <strong>public</strong> Instagram, Facebook, and Pinterest media they may lawfully access—especially personal backups, reference, and offline viewing—without installing sketchy apps. We are transparent about limits: you are responsible for how you use downloads; when in doubt, get permission from the rights holder.
                 </p>
               </div>
 
               <div className="card3d">
                 <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">Our Story</h2>
                 <p className="text-base sm:text-lg leading-relaxed mb-6">
-                  It started when one of us needed to archive family videos from Facebook but hated the hassle. We built something simple that works on any device, no apps needed. Today, thousands use it daily because we keep it fast, private, and always free. We're based in <strong>Rawalpindi, Pakistan</strong>, but our users span the globe.
+                  It started when one of us needed to archive family videos from Facebook but hated the hassle. We built something simple that works on any device—no extra apps required. We keep the product fast and free where we can, and we iterate as platforms change. Our users span the globe; the team and operations stay grounded in <strong>Rawalpindi, Pakistan</strong>.
                 </p>
               </div>
 
@@ -134,9 +139,9 @@ const AboutUs = () => {
               </div>
 
               <div className="card3d">
-                <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">Always Free, No Limits</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">Free for personal use</h2>
                 <p className="text-base sm:text-lg leading-relaxed mb-6">
-                  100% free forever—no tiers, no caps, no watermarks. Preserve original quality.
+                  FastVidl stays free to use for typical personal workflows. We do not add our own watermark on supported downloads; quality depends on what the platform serves. Please use the service fairly and in line with our Terms.
                 </p>
               </div>
 
@@ -161,7 +166,7 @@ const AboutUs = () => {
               <div className="card3d">
                 <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">Why Trust FastVidl?</h2>
                 <p className="text-base sm:text-lg leading-relaxed mb-6">
-                  We've handled thousands of downloads without a hitch, preserving original quality (up to 4K) across reels, stories, photos, and pins. No watermarks, no upsells—just the content you want, securely fetched straight from the source.
+                  Many people rely on FastVidl for quick saves when quality and speed matter. We fetch public media over HTTPS and focus on a predictable workflow. If something breaks because a platform changed its rules or URLs, we ship fixes as fast as we can—see <Link href="/contact-us" className="terms-link">Contact</Link> if you need help.
                 </p>
               </div>
 
@@ -242,7 +247,7 @@ const AboutUs = () => {
                   </li>
                   <li className="mb-2">
                     <strong>Contact Form:</strong>{" "}
-                    <Link href="/ContactUs" className="contact-link">
+                    <Link href="/contact-us" className="contact-link">
                       FastVidl Contact Page
                     </Link>
                   </li>
@@ -257,10 +262,14 @@ const AboutUs = () => {
               <div className="card3d">
                 <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">Thank You</h2>
                 <p className="text-base sm:text-lg leading-relaxed mb-6">
-                  Thank you for choosing FastVidl as your trusted content downloader. We're honored to serve thousands of users worldwide and remain committed to providing the best, fastest, and most secure downloading experience.
+                  Thank you for using FastVidl. We are grateful for everyone who shares feedback, reports issues, and keeps us honest about privacy and copyright. Rights holders can reach us through the{" "}
+                  <Link href="/dmca-takedown" className="terms-link">
+                    DMCA / copyright notice
+                  </Link>{" "}
+                  page.
                 </p>
                 <p className="text-base sm:text-lg leading-relaxed mb-6 font-semibold">
-                  FastVidl – Download Instagram, Facebook, and Pinterest content instantly.
+                  FastVidl — public media, responsible personal use, one simple workflow.
                 </p>
                 <p className="text-base sm:text-lg leading-relaxed mb-6 font-semibold">
                   Fast. Free. Secure.
@@ -268,7 +277,7 @@ const AboutUs = () => {
                 <p style={{ color: "#333", fontSize: "15px", marginTop: "2rem" }}>
                   For any info, feel free to{" "}
                   <Link
-                    href="/ContactUs"
+                    href="/contact-us"
                     rel="nofollow"
                     className="terms-link"
                     style={{

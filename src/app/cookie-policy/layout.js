@@ -3,11 +3,11 @@ export const metadata = {
   title: 'Cookie Policy - FastVidl',
   description:
     'FastVidl Cookie Policy. What cookies we use, why we use them, and how you can manage or opt out. GDPR and privacy transparency.',
-  alternates: { canonical: 'https://fastvidl.com/CookiePolicy' },
+  alternates: { canonical: 'https://fastvidl.com/cookie-policy' },
   openGraph: {
     title: 'Cookie Policy - FastVidl',
     description: 'FastVidl Cookie Policy. What cookies we use and how you can manage them.',
-    url: 'https://fastvidl.com/CookiePolicy',
+    url: 'https://fastvidl.com/cookie-policy',
     images: ['/assets/weblogo.png'],
   },
   robots: { index: true, follow: true },

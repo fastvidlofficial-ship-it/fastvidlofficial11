@@ -106,7 +106,7 @@ export default function InstagramReelDownloaderBlogContent({ variant = "standalo
     <>
       <h2 className={titleClass}>Instagram Reel Downloader Free: Download Reels Without Watermark (2026)</h2>
       <p className={metaClass} style={isHome ? {} : { fontStyle: "italic", color: "#666", marginBottom: "0.5rem" }}>
-        Expertly Verified Resource
+        Editorial note
       </p>
       <p className={metaClass} style={isHome ? {} : { fontStyle: "italic", color: "#666", marginBottom: "1rem" }}>
         Written by{" "}

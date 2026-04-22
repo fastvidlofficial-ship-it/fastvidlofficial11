@@ -110,12 +110,12 @@
         "components": ["Header", "IndexMessage", "UserInput", "Blog", "Footer"]
       },
       {
-        "path": "/AboutUs",
+        "path": "/about-us",
         "name": "About Us",
         "description": "Information about the service and team"
       },
       {
-        "path": "/ContactUs",
+        "path": "/contact-us",
         "name": "Contact Us",
         "description": "Contact form for user inquiries",
         "features": ["EmailJS integration"]
@@ -126,19 +126,29 @@
         "description": "Frequently asked questions with accordion UI"
       },
       {
-        "path": "/Disclaimer",
+        "path": "/disclaimer",
         "name": "Disclaimer",
         "description": "Legal disclaimer and terms of use"
       },
       {
-        "path": "/PrivacyPolicy",
+        "path": "/privacy-policy",
         "name": "Privacy Policy",
         "description": "Privacy policy and data handling information"
       },
       {
-        "path": "/TermsAndConditions",
+        "path": "/terms-and-conditions",
         "name": "Terms & Conditions",
         "description": "Terms and conditions for service usage"
+      },
+      {
+        "path": "/cookie-policy",
+        "name": "Cookie Policy",
+        "description": "Cookie usage and consent information"
+      },
+      {
+        "path": "/dmca-takedown",
+        "name": "DMCA & Copyright Takedown",
+        "description": "Copyright and DMCA notice instructions for rights holders"
       }
     ]
   },
@@ -251,7 +261,7 @@
       "canonical": "https://fastvidl.com"
     },
     "files": {
-      "sitemap": "public/sitemap.xml",
+      "sitemap": "https://fastvidl.com/sitemap.xml (generated from src/app/sitemap.js)",
       "robots": "public/robots.txt",
       "favicon": "public/assets/favicon.ico",
       "appleTouchIcon": "public/assets/apple-touch-icon.png",

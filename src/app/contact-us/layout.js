@@ -3,12 +3,12 @@ export const metadata = {
   title: 'Contact Us - FastVidl',
   description:
     'Get in touch with FastVidl support for help, feedback, or business inquiries. We are here to help with download issues and questions.',
-  alternates: { canonical: 'https://fastvidl.com/ContactUs' },
+  alternates: { canonical: 'https://fastvidl.com/contact-us' },
   openGraph: {
     title: 'Contact Us - FastVidl',
     description:
       'Get in touch with FastVidl support for help, feedback, or business inquiries. We are here to help with download issues and questions.',
-    url: 'https://fastvidl.com/ContactUs',
+    url: 'https://fastvidl.com/contact-us',
     images: ['/assets/weblogo.png'],
   },
   robots: { index: true, follow: true },

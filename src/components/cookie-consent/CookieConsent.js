@@ -33,8 +33,8 @@ export default function CookieConsent() {
     <div className={styles.banner} role="dialog" aria-label="Cookie consent">
       <div className={styles.inner}>
         <p className={styles.text}>
-          We use cookies to run the downloader, analyze usage anonymously, and show ads so the service stays free.{" "}
-          <Link href="/CookiePolicy" className={styles.link}>
+          We use cookies and similar technologies to run the downloader, measure basic usage, manage consent where applicable, and show ads so the service stays free.{" "}
+          <Link href="/cookie-policy" className={styles.link}>
             Cookie Policy
           </Link>
         </p>

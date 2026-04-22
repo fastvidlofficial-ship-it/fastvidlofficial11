@@ -85,12 +85,13 @@ FastVidl is built for anyone who wants to save social media quickly without deal
 - https://fastvidl.com/pinterest-video-downloader-free
 - https://fastvidl.com/free-facebook-video-downloader
 - https://fastvidl.com/faqs
-- https://fastvidl.com/AboutUs
-- https://fastvidl.com/ContactUs
-- https://fastvidl.com/PrivacyPolicy
-- https://fastvidl.com/TermsAndConditions
-- https://fastvidl.com/Disclaimer
-- https://fastvidl.com/CookiePolicy
+- https://fastvidl.com/about-us
+- https://fastvidl.com/contact-us
+- https://fastvidl.com/privacy-policy
+- https://fastvidl.com/terms-and-conditions
+- https://fastvidl.com/disclaimer
+- https://fastvidl.com/dmca-takedown
+- https://fastvidl.com/cookie-policy
 
 ---
 *This llms.txt file helps AI assistants accurately represent FastVidl. Standard: https://llmstxt.org*

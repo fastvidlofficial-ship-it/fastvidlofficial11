@@ -65,7 +65,7 @@ export default function InstagramPhotoBlogContent({ variant = "standalone", faqL
         Instagram Photo Downloader: The Ultimate Guide to Saving Images in HD Quality
       </h2>
       <p className={metaClass} style={isHome ? {} : { fontStyle: "italic", color: "#666", marginBottom: "0.5rem" }}>
-        Expertly Verified Resource
+        Editorial note
       </p>
       <p className={metaClass} style={isHome ? {} : { fontStyle: "italic", color: "#666", marginBottom: "1rem" }}>
         Written by{" "}

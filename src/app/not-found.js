@@ -61,10 +61,10 @@ export default function NotFound() {
                 </Link>
               </li>
               <li>
-                <Link href="/AboutUs">About Us</Link>
+                <Link href="/about-us">About Us</Link>
               </li>
               <li>
-                <Link href="/ContactUs">Contact Us</Link>
+                <Link href="/contact-us">Contact Us</Link>
               </li>
             </ul>
           </div>

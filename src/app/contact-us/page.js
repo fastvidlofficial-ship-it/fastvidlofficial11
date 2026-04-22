@@ -80,7 +80,7 @@ const Contact = () => {
               </div>
                <p> Before going further,please visit our {" "}
       <Link
-        href="/Disclaimer" rel="nofollow"
+        href="/disclaimer" rel="nofollow"
         className="terms-link"
         style={{
           color: "#1877f2",          // visible blue color

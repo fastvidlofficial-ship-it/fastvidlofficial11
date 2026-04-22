@@ -46,40 +46,46 @@ export default function sitemap() {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/AboutUs`,
+      url: `${baseUrl}/about-us`,
       lastModified,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/ContactUs`,
+      url: `${baseUrl}/contact-us`,
       lastModified,
       changeFrequency: "monthly",
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/PrivacyPolicy`,
+      url: `${baseUrl}/privacy-policy`,
       lastModified,
       changeFrequency: "yearly",
       priority: 0.5,
     },
     {
-      url: `${baseUrl}/TermsAndConditions`,
+      url: `${baseUrl}/terms-and-conditions`,
       lastModified,
       changeFrequency: "yearly",
       priority: 0.5,
     },
     {
-      url: `${baseUrl}/CookiePolicy`,
+      url: `${baseUrl}/cookie-policy`,
       lastModified,
       changeFrequency: "yearly",
       priority: 0.5,
     },
     {
-      url: `${baseUrl}/Disclaimer`,
+      url: `${baseUrl}/disclaimer`,
       lastModified,
       changeFrequency: "yearly",
       priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/dmca-takedown`,
+      lastModified,
+      changeFrequency: "yearly",
+      priority: 0.55,
     },
   ];
 }

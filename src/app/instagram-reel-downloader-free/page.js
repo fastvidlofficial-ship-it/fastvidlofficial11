@@ -9,6 +9,8 @@ import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
 import InstagramReelDownloaderBlogContent, {
   INSTAGRAM_BLOG_FAQ_LIST,
 } from "@/content/instagram-reel-downloader-free/InstagramReelDownloaderBlogContent";
+import EzoicPlacements from "@/components/ads/EzoicPlacements";
+import { getEzoicToolPlacements } from "@/config/ezoicPlacements";
 
 export default function InstagramReelDownloaderService() {
   return (
@@ -21,7 +23,7 @@ export default function InstagramReelDownloaderService() {
         articleUrl="https://fastvidl.com/instagram-reel-downloader-free"
         headline="Instagram Reel Downloader Free: Download Reels Without Watermark (2026)"
         datePublished="2026-02-27"
-        dateModified="2026-04-02"
+        dateModified="2026-04-20"
       />
       <FAQSchema faqList={INSTAGRAM_BLOG_FAQ_LIST} />
       <main className={styles.main}>
@@ -52,6 +54,7 @@ export default function InstagramReelDownloaderService() {
           </h1>
         </div>
         <UserInput />
+        <EzoicPlacements placementIds={getEzoicToolPlacements()} />
         <div className="container-blog">
           <section className="home-blog-article">
             <InstagramReelDownloaderBlogContent variant="home" faqList={INSTAGRAM_BLOG_FAQ_LIST} />

@@ -5,6 +5,7 @@ import Footer from "@/components/footer/Footer";
 import WebSiteSchema from "@/components/WebSiteSchema";
 import ThemeProvider from "@/components/theme/ThemeContext";
 import ThirdPartyScripts from "@/components/scripts/ThirdPartyScripts";
+import EzoicHeadInjector from "@/components/scripts/EzoicHeadInjector";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,28 +49,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-theme="light">
-      <head>
-        <script
-          data-cfasync="false"
-          src="https://cmp.gatekeeperconsent.com/min.js"
-        />
-        <script
-          data-cfasync="false"
-          src="https://the.gatekeeperconsent.com/cmp.min.js"
-        />
-        <script async src="//www.ezojs.com/ezoic/sa.min.js" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.ezstandalone = window.ezstandalone || {};
-              window.ezstandalone.cmd = window.ezstandalone.cmd || [];
-            `,
-          }}
-        />
-        <script src="//ezoicanalytics.com/analytics.js" />
-      </head>
+    <html lang="en" data-theme="light" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <EzoicHeadInjector />
         <WebSiteSchema />
         <ThemeProvider>
           <Header/>

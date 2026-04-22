@@ -74,16 +74,25 @@ const Disclaimer = () => {
                 <div className="card3d">
                   <h2>DMCA & Takedown Process</h2>
                   <p className="disclaimer-text">
-                    Content owners: Report violations to <a href="mailto:fastvidlofficial@gmail.com">fastvidlofficial@gmail.com</a> with:
+                    Copyright owners and authorized agents: send a complete notice to{" "}
+                    <a href="mailto:copyright@fastvidl.com" className="terms-link">
+                      copyright@fastvidl.com
+                    </a>
+                    . For a full checklist, response expectations, and related policies, see our{" "}
+                    <Link href="/dmca-takedown" className="terms-link">
+                      DMCA &amp; Copyright Takedown
+                    </Link>{" "}
+                    page. General support remains available at{" "}
+                    <a href="mailto:fastvidlofficial@gmail.com">fastvidlofficial@gmail.com</a>.
                   </p>
                   <ul className="disclaimer-list-simple">
                     <li>Description of copyrighted work</li>
-                    <li>URL(s) of infringing content</li>
+                    <li>URL(s) on fastvidl.com and, if known, the source platform URL</li>
                     <li>Your contact information</li>
-                    <li>Good faith infringement statement</li>
+                    <li>Good faith and accuracy statements as described on the DMCA page</li>
                   </ul>
                   <p className="disclaimer-text">
-                    We respond promptly to valid DMCA notices.
+                    We aim to review complete, good-faith notices promptly.
                   </p>
                 </div>
 
@@ -157,7 +166,7 @@ const Disclaimer = () => {
                 <div className="card3d">
                   <h2>Governing Law</h2>
                   <p className="disclaimer-text">
-                    Pakistan law applies. Disputes resolved in Rawalpindi courts. See full <Link href="/TermsAndConditions" className="terms-link">Terms and Conditions</Link>.
+                    Pakistan law applies. Disputes resolved in Rawalpindi courts. See full <Link href="/terms-and-conditions" className="terms-link">Terms and Conditions</Link>.
                   </p>
                 </div>
 
@@ -170,7 +179,7 @@ const Disclaimer = () => {
                     <li>Use responsibly – we're a tool, not legal cover</li>
                   </ul>
                   <p className="disclaimer-text">
-                    Full legal protection: <Link href="/PrivacyPolicy" className="terms-link">Privacy Policy</Link>.
+                    Full legal protection: <Link href="/privacy-policy" className="terms-link">Privacy Policy</Link>.
                   </p>
                 </div>
               </div>
