@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image"; 
-
+ 
 const blogImageStyle = { width: "100%", height: "auto", marginBottom: "1.25rem" };
 
 const INSTAGRAM_TERMS_URL = "https://www.instagram.com/about/legal/terms/";
