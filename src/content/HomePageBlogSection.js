@@ -55,12 +55,7 @@ export default function HomePageBlogSection() {
           <h2 className="home-blog-article-title">
             FastVidl | The Ultimate Free Video Downloader for Instagram, Facebook &amp; Pinterest
           </h2>
-          <p className="home-blog-article-meta" style={{ marginBottom: "0.5rem" }}>
-            Meta Description: FastVidl is a free, secure and blazing-fast online media downloader. Save HD videos, Reels, photos
-          </p>
-          <p className="home-blog-article-meta" style={{ marginBottom: "1rem" }}>
-            and stories from Instagram, Facebook and Pinterest with zero watermarks. No app required!
-          </p>
+          
           <p className="home-blog-article-meta" style={{ marginBottom: "1rem" }}>
             Written by{" "}
             <a
@@ -80,7 +75,7 @@ export default function HomePageBlogSection() {
             >
               Auroxa Tech
             </a>
-            . Last Updated: 22 April 2026
+            . Last Updated: 28 April 2026
           </p>
 
           <h2 className="home-blog-article-h2">Quick Summary</h2>

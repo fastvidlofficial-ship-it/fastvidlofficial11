@@ -69,12 +69,7 @@ export default function InstagramReelDownloaderBlogContent({ variant = "standalo
   return (
     <>
       <h2 className={titleClass}>Best Instagram Reel Downloader Free | HD 1080p No Watermark</h2>
-      <p className={metaClass} style={isHome ? {} : { fontStyle: "italic", color: "#666", marginBottom: "0.5rem" }}>
-        Meta Description: Looking for a fast Instagram reel downloader free of cost? Save IG Reels to your gallery anonymously
-      </p>
-      <p className={metaClass} style={isHome ? {} : { fontStyle: "italic", color: "#666", marginBottom: "1rem" }}>
-        in HD 1080p with zero watermarks. Try FastVidl now!
-      </p>
+     
       <p className={metaClass} style={isHome ? {} : { fontStyle: "italic", color: "#666", marginBottom: "1rem" }}>
         Written by{" "}
         <a href={RAJA_LINKEDIN} target="_blank" rel="noopener noreferrer" className={linkClass}>
@@ -84,7 +79,7 @@ export default function InstagramReelDownloaderBlogContent({ variant = "standalo
         <a href={AUROXA_TECH_URL} target="_blank" rel="noopener noreferrer" className={linkClass}>
           Auroxa Tech
         </a>
-        . Last Updated: 22 April 2026
+        . Last Updated: 28 April 2026
       </p>
 
       <h2 className={h2Class}>Quick Summary</h2>
