@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/image"; 
 
 const blogImageStyle = { width: "100%", height: "auto", marginBottom: "1.25rem" };
 
