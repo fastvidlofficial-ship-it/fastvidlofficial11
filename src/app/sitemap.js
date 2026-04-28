@@ -40,6 +40,12 @@ export default function sitemap() {
       priority: 0.85,
     },
     {
+      url: `${baseUrl}/instagram-video-downloader`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/faqs`,
       lastModified,
       changeFrequency: "weekly",

@@ -2,9 +2,11 @@
 
 import FAQSchema from "@/components/FAQSchema";
 import "@/content/Blog.css";
+import Image from "next/image";
 
 const RAJA_LINKEDIN = "https://www.linkedin.com/in/raja-jahangir";
 const AUROXA_TECH_URL = "https://auroxatech.com";
+const blogImageStyle = { width: "100%", height: "auto", marginBottom: "1.25rem" };
 
 const HOME_PAGE_FAQ_LIST = [
   {
@@ -51,10 +53,13 @@ export default function HomePageBlogSection() {
       <div className="container-blog">
         <section className="home-blog-article">
           <h2 className="home-blog-article-title">
-            FastVidl Free Video Downloader
+            FastVidl | The Ultimate Free Video Downloader for Instagram, Facebook &amp; Pinterest
           </h2>
           <p className="home-blog-article-meta" style={{ marginBottom: "0.5rem" }}>
-            Editorial note
+            Meta Description: FastVidl is a free, secure and blazing-fast online media downloader. Save HD videos, Reels, photos
+          </p>
+          <p className="home-blog-article-meta" style={{ marginBottom: "1rem" }}>
+            and stories from Instagram, Facebook and Pinterest with zero watermarks. No app required!
           </p>
           <p className="home-blog-article-meta" style={{ marginBottom: "1rem" }}>
             Written by{" "}
@@ -75,7 +80,7 @@ export default function HomePageBlogSection() {
             >
               Auroxa Tech
             </a>
-            . Last Updated: 2 April 2026
+            . Last Updated: 22 April 2026
           </p>
 
           <h2 className="home-blog-article-h2">Quick Summary</h2>
@@ -111,17 +116,21 @@ export default function HomePageBlogSection() {
             What is FastVidl?
           </h2>
           <p className="home-blog-article-p">
-            FastVidl is an online media downloader designed for users who want a
-            fast, reliable, and easy way to save public social media content.
-            Instead of using risky third-party apps or tools that ask for login
-            credentials, FastVidl works directly in the browser through a simple
-            paste-and-download process.
+            FastVidl is a premium-grade online media downloader built for users who demand speed, reliability and privacy.
+            Frustrated by spammy APKs and tools asking for social media passwords, our development team built a cleaner
+            browser-first solution.
           </p>
           <p className="home-blog-article-p">
-            The platform is built to support common downloader use cases across
-            major social networks while keeping the experience lightweight,
-            mobile-friendly, and easy to understand for everyday users.
+            FastVidl operates entirely in your browser through a simple paste-and-download workflow. By interacting with
+            public content delivery paths, it fetches high-quality source media without added branding.
           </p>
+          <Image
+            src="/assets/What is FastVidl.png"
+            alt="What is FastVidl"
+            width={1280}
+            height={768}
+            style={blogImageStyle}
+          />
 
           <h2 id="what-can-you-download" className="home-blog-article-h2">
             What can you download with FastVidl?
@@ -225,6 +234,13 @@ export default function HomePageBlogSection() {
             <li style={{ marginBottom: "0.4rem" }}>Researching public creative trends</li>
             <li style={{ marginBottom: "0.4rem" }}>Organizing media references for personal or educational use</li>
           </ul>
+          <Image
+            src="/assets/Who Can Use FastVidl.png"
+            alt="Who Can Use FastVidl"
+            width={1280}
+            height={768}
+            style={blogImageStyle}
+          />
           <p className="home-blog-article-p">
             Different users may have different needs, but the common goal is
             the same: fast access to public media without unnecessary

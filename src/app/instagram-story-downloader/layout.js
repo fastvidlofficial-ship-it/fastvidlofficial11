@@ -1,17 +1,17 @@
 export const metadata = {
   metadataBase: new URL("https://fastvidl.com"),
-  title: "Instagram Story Downloader",
+  title: "Best Instagram Story Downloader | Save Stories with Music in HD",
   description:
-    "Save public Instagram Stories and Highlights in HD from your browser—no FastVidl account, no app install. We do not add a watermark; use only content you are allowed to access and respect Instagram’s Terms.",
+    "Looking for a secure Instagram story downloader? Learn how to save others' Instagram stories in your gallery on Android and iPhone with original music and HD quality. Try FastVidl today!",
   icons: {
     icon: "/assets/favicon.ico",
     shortcut: "/assets/favicon.ico",
   },
   alternates: { canonical: "https://fastvidl.com/instagram-story-downloader" },
   openGraph: {
-    title: "Instagram Story Downloader",
+    title: "Best Instagram Story Downloader | Save Stories with Music in HD",
     description:
-      "Save public Instagram Stories and Highlights in HD from your browser—no FastVidl account, no app install. We do not add a watermark; use only content you are allowed to access and respect Instagram’s Terms.",
+      "Looking for a secure Instagram story downloader? Learn how to save others' Instagram stories in your gallery on Android and iPhone with original music and HD quality. Try FastVidl today!",
     url: "https://fastvidl.com/instagram-story-downloader",
     siteName: "FastVidl",
     images: ["/assets/weblogo.png"],
@@ -19,9 +19,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Instagram Story Downloader",
+    title: "Best Instagram Story Downloader | Save Stories with Music in HD",
     description:
-      "Download public Instagram Stories and Highlights in HD in your browser—no login to FastVidl, no app. For personal use of public media you may access; no watermark added by our tool.",
+      "Looking for a secure Instagram story downloader? Learn how to save others' Instagram stories in your gallery on Android and iPhone with original music and HD quality. Try FastVidl today!",
   },
   robots: { index: true, follow: true },
 };

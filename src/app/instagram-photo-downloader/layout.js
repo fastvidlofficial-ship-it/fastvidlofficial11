@@ -1,6 +1,6 @@
 export const metadata = {
   metadataBase: new URL("https://fastvidl.com"),
-  title: "Instagram Photo Downloader",
+  title: "Best Instagram Photo Downloader Free | Full Size HD JPG",
   description:
     "Discover the best Instagram photo downloader tool to save images in HD and full size. Learn how to download Instagram photos for free in JPG format legally and safely.",
   icons: {
@@ -9,7 +9,7 @@ export const metadata = {
   },
   alternates: { canonical: "https://fastvidl.com/instagram-photo-downloader" },
   openGraph: {
-    title: "Instagram Photo Downloader",
+    title: "Best Instagram Photo Downloader Free | Full Size HD JPG",
     description:
       "Discover the best Instagram photo downloader tool to save images in HD and full size. Learn how to download Instagram photos for free in JPG format legally and safely.",
     url: "https://fastvidl.com/instagram-photo-downloader",
@@ -19,7 +19,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Instagram Photo Downloader",
+    title: "Best Instagram Photo Downloader Free | Full Size HD JPG",
     description:
       "Save Instagram photos in HD and full size — free, browser-based. Expert guide to JPG/PNG downloads, privacy, and legal use.",
   },

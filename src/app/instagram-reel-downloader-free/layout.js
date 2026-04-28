@@ -1,13 +1,13 @@
 export const metadata = {
   metadataBase: new URL('https://fastvidl.com'),
-  title: 'Instagram Reel Downloader Free – HD No Watermark | FastVidl',
+  title: 'Best Instagram Reel Downloader Free | HD 1080p No Watermark',
   description:
-    'Download Instagram Reels for free with FastVidl – no watermark, no login, no app installation. Save IG Reels in HD 1080p on iPhone, Android & desktop in seconds. 100% secure, browser-based tool for public reels only.',
+    'Looking for a fast Instagram reel downloader free of cost? Save IG Reels to your gallery anonymously in HD 1080p with zero watermarks. Try FastVidl now!',
   alternates: { canonical: 'https://fastvidl.com/instagram-reel-downloader-free' },
   openGraph: {
-    title: 'Instagram Reel Downloader Free – HD No Watermark | FastVidl',
+    title: 'Best Instagram Reel Downloader Free | HD 1080p No Watermark',
     description:
-      'Download Instagram Reels for free with FastVidl – no watermark, no login, no app installation. Save IG Reels in HD 1080p on any device. Browser-based, secure.',
+      'Looking for a fast Instagram reel downloader free of cost? Save IG Reels to your gallery anonymously in HD 1080p with zero watermarks. Try FastVidl now!',
     url: 'https://fastvidl.com/instagram-reel-downloader-free',
     images: ['/assets/weblogo.png'],
   },
