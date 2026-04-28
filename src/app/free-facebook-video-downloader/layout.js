@@ -1,17 +1,17 @@
 export const metadata = {
   metadataBase: new URL("https://fastvidl.com"),
-  title: "Free Facebook Video Downloader",
+  title: "Free Facebook Video Downloader | 1080p No Watermark (2026)",
   description:
-    "Download Facebook videos for free with FastVidl – no watermark, no login, no app needed. Save FB videos in HD 1080p on iPhone, Android & desktop in 5–10 seconds. 100% secure browser-based tool for public videos only.",
+    "Looking for a free Facebook video downloader? Save FB videos and extract MP3 audio directly to your phone or PC in HD 1080p without watermarks.",
   icons: {
     icon: "/assets/favicon.ico",
     shortcut: "/assets/favicon.ico",
   },
   alternates: { canonical: "https://fastvidl.com/free-facebook-video-downloader" },
   openGraph: {
-    title: "Free Facebook Video Downloader",
+    title: "Free Facebook Video Downloader | 1080p No Watermark (2026)",
     description:
-      "Download Facebook videos for free with FastVidl – no watermark, no login, no app needed. Save FB videos in HD 1080p on iPhone, Android & desktop in 5–10 seconds. 100% secure browser-based tool for public videos only.",
+      "Looking for a free Facebook video downloader? Save FB videos and extract MP3 audio directly to your phone or PC in HD 1080p without watermarks.",
     url: "https://fastvidl.com/free-facebook-video-downloader",
     siteName: "FastVidl",
     images: ["/assets/weblogo.png"],
@@ -19,9 +19,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Facebook Video Downloader",
+    title: "Free Facebook Video Downloader | 1080p No Watermark (2026)",
     description:
-      "Download Facebook videos for free with FastVidl – no watermark, no login, no app needed. Save FB videos in HD on any device. Browser-based, secure.",
+      "Save FB videos in HD 1080p without watermarks. Use FastVidl on phone or PC—public links, browser-based, no app required.",
   },
   robots: { index: true, follow: true },
 };

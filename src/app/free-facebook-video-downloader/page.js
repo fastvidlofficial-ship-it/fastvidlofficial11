@@ -18,9 +18,9 @@ export default function FacebookReelDownloaderService() {
         organizationName="Auroxa Tech"
         organizationUrl="https://auroxatech.com"
         articleUrl="https://fastvidl.com/free-facebook-video-downloader"
-        headline="Free Facebook Video Downloader: Download FB Videos in HD (2026)"
+        headline="Free Facebook Video Downloader | 1080p No Watermark (2026)"
         datePublished="2026-03-26"
-        dateModified="2026-04-20"
+        dateModified="2026-04-22"
       />
       <FAQSchema faqList={FACEBOOK_FAQ_LIST} />
       <main className={styles.main}>
@@ -49,6 +49,16 @@ export default function FacebookReelDownloaderService() {
               Downloader
             </span>
           </h1>
+          <p
+            style={{
+              marginTop: "0.5rem",
+              fontSize: "clamp(0.9rem, 2vw, 1.05rem)",
+              color: "var(--muted-text, #64748b)",
+              fontWeight: 500,
+            }}
+          >
+            1080p · No watermark · 2026
+          </p>
         </div>
         <UserInput />
         <EzoicPlacements placementIds={getEzoicToolPlacements()} />
