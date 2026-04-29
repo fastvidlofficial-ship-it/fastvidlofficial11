@@ -66,7 +66,7 @@ export default function InstagramPhotoBlogContent({ variant = "standalone", faqL
 
   return (
     <>
-      <h2 className={titleClass}>
+      <h2 className={h2Class}>
         Best Instagram Photo Downloader Free | Full Size HD JPG
       </h2>
    

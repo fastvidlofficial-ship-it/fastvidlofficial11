@@ -62,7 +62,7 @@ export default function InstagramStoryBlogContent({ variant = "standalone", faqL
 
   return (
     <>
-      <h2 className={titleClass}>Best Instagram Story Downloader | Save Stories with Music in HD</h2>
+      <h2 className={h2Class}>Best Instagram Story Downloader | Save Stories with Music in HD</h2>
       
       <p className={metaClass} style={isHome ? {} : { fontStyle: "italic", color: "#666", marginBottom: "1rem" }}>
         Written by{" "}

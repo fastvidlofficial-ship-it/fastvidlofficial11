@@ -68,7 +68,7 @@ export default function InstagramReelDownloaderBlogContent({ variant = "standalo
 
   return (
     <>
-      <h2 className={titleClass}>Best Instagram Reel Downloader Free | HD 1080p No Watermark</h2>
+      <h2 className={h2Class}>Best Instagram Reel Downloader Free | HD 1080p No Watermark</h2>
      
       <p className={metaClass} style={isHome ? {} : { fontStyle: "italic", color: "#666", marginBottom: "1rem" }}>
         Written by{" "}

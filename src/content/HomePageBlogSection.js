@@ -52,7 +52,7 @@ export default function HomePageBlogSection() {
       <FAQSchema faqList={HOME_PAGE_FAQ_LIST} />
       <div className="container-blog">
         <section className="home-blog-article">
-          <h2 className="home-blog-article-title">
+          <h2 className="home-blog-article-h2">
             FastVidl | The Ultimate Free Video Downloader for Instagram, Facebook &amp; Pinterest
           </h2>
           

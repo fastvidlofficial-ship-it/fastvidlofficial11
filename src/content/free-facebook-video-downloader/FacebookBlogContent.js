@@ -49,7 +49,7 @@ export default function FacebookBlogContent() {
   return (
     <div className="container-blog">
       <div className="home-blog-article blog-content">
-        <h2 className="home-blog-article-title">Free Facebook Video Downloader | 1080p No Watermark (2026)</h2>
+        <h2 className="home-blog-article-h2">Free Facebook Video Downloader | 1080p No Watermark (2026)</h2>
       
         <p className="home-blog-article-meta" style={{ fontStyle: "italic", color: "#666", marginBottom: "1rem" }}>
           Written by{" "}
