@@ -1,6 +1,32 @@
-export default function sitemap() {
+import { promises as fs } from "node:fs";
+import path from "node:path";
+
+async function getPseoDownloadUrls(baseUrl, lastModified) {
+  const filePath = path.join(process.cwd(), "pseo-data.json");
+
+  try {
+    const raw = await fs.readFile(filePath, "utf8");
+    const items = JSON.parse(raw);
+
+    if (!Array.isArray(items)) return [];
+
+    return items
+      .filter((item) => item && typeof item.slug === "string" && item.slug.length > 0)
+      .map((item) => ({
+        url: `${baseUrl}/download/${item.slug}`,
+        lastModified,
+        changeFrequency: "weekly",
+        priority: 0.8,
+      }));
+  } catch {
+    return [];
+  }
+}
+
+export default async function sitemap() {
   const baseUrl = "https://fastvidl.com";
   const lastModified = new Date();
+  const pseoDownloadUrls = await getPseoDownloadUrls(baseUrl, lastModified);
 
   return [
     {
@@ -93,5 +119,6 @@ export default function sitemap() {
       changeFrequency: "yearly",
       priority: 0.55,
     },
+    ...pseoDownloadUrls,
   ];
 }

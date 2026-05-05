@@ -63,8 +63,13 @@ export default function InstagramVideoBlogContent() {
   return (
     <div className="container-blog">
       <div className="home-blog-article blog-content">
-        <h2 className="home-blog-article-h2">Best Instagram Video Downloader Free | 1080p No Watermark</h2>
-      
+        <h2 className="home-blog-article-title">Best Instagram Video Downloader Free | 1080p No Watermark</h2>
+        <p className="home-blog-article-meta" style={{ fontStyle: "italic", color: "#666", marginBottom: "0.5rem" }}>
+          Meta Description: Download any Instagram reel or video safely. Use our Instagram video downloader free online to get
+        </p>
+        <p className="home-blog-article-meta" style={{ fontStyle: "italic", color: "#666", marginBottom: "1rem" }}>
+          1080p HD files anonymously without watermarks. Fast &amp; secure!
+        </p>
         <p className="home-blog-article-meta" style={{ fontStyle: "italic", color: "#666", marginBottom: "1rem" }}>
           Written by{" "}
           <a href={RAJA_LINKEDIN} target="_blank" rel="noopener noreferrer" className="home-blog-article-link">
@@ -74,7 +79,7 @@ export default function InstagramVideoBlogContent() {
           <a href={AUROXA_TECH_URL} target="_blank" rel="noopener noreferrer" className="home-blog-article-link">
             Auroxa Tech
           </a>
-          . Last Updated: 28 April 2026
+          . Last Updated: 22 April 2026
         </p>
 
         <h2 className="home-blog-article-h2">Quick Summary</h2>

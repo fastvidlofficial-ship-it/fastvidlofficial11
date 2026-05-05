@@ -62,8 +62,13 @@ export default function InstagramStoryBlogContent({ variant = "standalone", faqL
 
   return (
     <>
-      <h2 className={h2Class}>Best Instagram Story Downloader | Save Stories with Music in HD</h2>
-      
+      <h2 className={titleClass}>Best Instagram Story Downloader | Save Stories with Music in HD</h2>
+      <p className={metaClass} style={isHome ? {} : { fontStyle: "italic", color: "#666", marginBottom: "0.5rem" }}>
+        Meta Description: Looking for a secure Instagram story downloader? Learn how to save others&apos; Instagram stories in your
+      </p>
+      <p className={metaClass} style={isHome ? {} : { fontStyle: "italic", color: "#666", marginBottom: "1rem" }}>
+        gallery on Android and iPhone with original music and HD quality. Try FastVidl today!
+      </p>
       <p className={metaClass} style={isHome ? {} : { fontStyle: "italic", color: "#666", marginBottom: "1rem" }}>
         Written by{" "}
         <a href={RAJA_LINKEDIN} target="_blank" rel="noopener noreferrer" className={linkClass}>
@@ -73,7 +78,7 @@ export default function InstagramStoryBlogContent({ variant = "standalone", faqL
         <a href={AUROXA_TECH_URL} target="_blank" rel="noopener noreferrer" className={linkClass}>
           Auroxa Tech
         </a>
-        . Last Updated: 28 April 2026
+        . Last Updated: 22 April 2026
       </p>
 
       <h2 className={h2Class}>Quick Summary</h2>
