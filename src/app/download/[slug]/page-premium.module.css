@@ -1,0 +1,231 @@
+.premiumWrap {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: 1.25rem 0 2.75rem;
+}
+
+.introSection {
+  max-width: 900px;
+  margin: 0 auto 2rem;
+}
+
+.introText {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  line-height: 1.75;
+  color: var(--muted-text, #64748b);
+  text-align: center;
+}
+
+.howSection {
+  padding: 4rem 1rem;
+  background: color-mix(in srgb, #f8fafc 75%, transparent);
+  border-radius: 1.25rem;
+}
+
+.sectionHeading {
+  text-align: center;
+  font-size: clamp(1.55rem, 3.2vw, 2rem);
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 2.25rem;
+}
+
+.howGrid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.stepCard {
+  background: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid #f1f5f9;
+  padding: 1.75rem;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stepCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+}
+
+.stepBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #9333ea);
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.6rem;
+}
+
+.cardText {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.65;
+}
+
+.featuresSection {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.featureCard {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+.faqSection {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+  background: #ffffff;
+}
+
+.faqList {
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.faqItem {
+  border-bottom: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.faqItem:last-child {
+  border-bottom: 0;
+}
+
+.faqQuestion {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: #111827;
+  padding: 1rem 1.1rem;
+}
+
+.faqQuestion::-webkit-details-marker {
+  display: none;
+}
+
+.faqAnswer {
+  margin: 0;
+  padding: 0 1.1rem 1rem;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.relatedSection {
+  max-width: 72rem;
+  margin: 0 auto 3rem;
+  padding: 4rem 1rem;
+  border-radius: 1.5rem;
+  background: color-mix(in srgb, #dbeafe 35%, transparent);
+}
+
+.relatedHeading {
+  margin: 0 0 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.relatedCard {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  background: #ffffff;
+  color: #1f2937;
+  font-weight: 500;
+  border-radius: 0.85rem;
+  padding: 0.95rem 1rem;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.relatedCard:hover {
+  background: #2563eb;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.trustSection {
+  padding: 3rem 1rem;
+  border-top: 1px solid #f3f4f6;
+}
+
+.trustRow {
+  margin: 0 0 1rem;
+  text-align: center;
+  color: #475569;
+  font-weight: 600;
+}
+
+.authorWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.authorBadge {
+  margin: 0;
+  display: inline-block;
+  background: #f8fafc;
+  border-radius: 999px;
+  padding: 0.75rem 1.25rem;
+  color: #334155;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .howGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .featuresGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .relatedGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .relatedGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
