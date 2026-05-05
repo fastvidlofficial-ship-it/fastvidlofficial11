@@ -81,42 +81,6 @@ export async function generateStaticParams() {
   return data.map((entry) => ({ slug: entry.slug }));
 }
 
-export async function generateMetadata({ params }) {
-  const slug = await getSlugFromParams(params);
-  if (!slug) {
-    notFound();
-  }
-
-  const data = await readPseoData();
-  const entry = data.find((item) => item.slug === slug);
-
-  if (!entry) {
-    notFound();
-  }
-
-  const canonical = `https://fastvidl.com/download/${entry.slug}`;
-
-  return {
-    title: entry.meta_title,
-    description: entry.meta_desc,
-    alternates: { canonical },
-    openGraph: {
-      title: entry.meta_title,
-      description: entry.meta_desc,
-      url: canonical,
-      siteName: "FastVidl",
-      images: ["/assets/weblogo.png"],
-      locale: "en_US",
-      type: "website",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: entry.meta_title,
-      description: entry.meta_desc,
-    },
-  };
-}
-
 export default async function DownloadSlugPage({ params }) {
   const slug = await getSlugFromParams(params);
   if (!slug) {

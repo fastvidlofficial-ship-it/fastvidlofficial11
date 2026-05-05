@@ -1,4 +1,6 @@
 
+"use client";
+
 import style from "./UserInput.module.css";
 import InputSection from "../input/InputSection";
 import ResultSection from "../result/ResultSection";
