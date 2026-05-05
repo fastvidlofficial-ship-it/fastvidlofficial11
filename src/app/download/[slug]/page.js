@@ -17,6 +17,11 @@ async function readPseoData() {
   return parsed.filter((item) => item && typeof item.slug === "string" && item.slug.length > 0);
 }
 
+async function getSlugFromParams(params) {
+  const resolvedParams = await Promise.resolve(params);
+  return resolvedParams?.slug;
+}
+
 function getInputPlaceholder(contentType) {
   const normalized = contentType.toLowerCase();
 
@@ -42,7 +47,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const slug = params?.slug;
+  const slug = await getSlugFromParams(params);
   if (!slug) {
     notFound();
   }
@@ -78,7 +83,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function DownloadSlugPage({ params }) {
-  const slug = params?.slug;
+  const slug = await getSlugFromParams(params);
   if (!slug) {
     notFound();
   }
