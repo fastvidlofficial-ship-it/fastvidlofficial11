@@ -102,12 +102,39 @@ export default async function DownloadSlugPage({ params }) {
   }
 
   const placeholder = getInputPlaceholder(entry.content_type);
+  const basePrefix = `${entry.platform} ${entry.content_type} Downloader`;
+  const tailText = entry.h1_title.toLowerCase().startsWith(basePrefix.toLowerCase())
+    ? entry.h1_title.slice(basePrefix.length).trim()
+    : "";
 
   return (
     <div className={styles.page}>
       <main className={styles.main}>
         <div className={heroStyles.heroWrap}>
-          <h1 className={heroStyles.heroTitle}>{entry.h1_title}</h1>
+          <h1 className={heroStyles.heroTitle}>
+            <span style={{ color: "var(--heading-color, #1a202c)" }}>{entry.platform} </span>
+            <span
+              style={{
+                WebkitTextFillColor: "transparent",
+                background: "linear-gradient(to right, #ff512f, #dd2476)",
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+              }}
+            >
+              {entry.content_type}{" "}
+            </span>
+            <span
+              style={{
+                WebkitTextFillColor: "transparent",
+                background: "linear-gradient(to right, #25ff92, #24afff)",
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+              }}
+            >
+              Downloader
+            </span>
+            {tailText ? <span style={{ color: "var(--heading-color, #1a202c)" }}> {tailText}</span> : null}
+          </h1>
           <p
             style={{
               marginTop: "0.5rem",
@@ -116,7 +143,7 @@ export default async function DownloadSlugPage({ params }) {
               fontWeight: 500,
             }}
           >
-            {entry.platform} · {entry.content_type} · FastVidl
+            1080p · No watermark · 2026
           </p>
         </div>
 
