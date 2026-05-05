@@ -27,9 +27,19 @@ async function getSlugFromParams(params) {
   return resolvedParams?.slug;
 }
 
-function renderStyledHeading(title) {
+function renderStyledHeading(title, contentType) {
   const platformWords = new Set(["instagram", "facebook", "pinterest"]);
-  const contentWords = new Set(["video", "photo", "reel, story"]);
+  const normalizedType = String(contentType || "").toLowerCase().trim();
+  const contentWords = new Set(["video", "photo", "reel", "story", "stories", "pin", "pins", "igtv"]);
+
+  if (normalizedType) {
+    contentWords.add(normalizedType);
+    if (normalizedType.endsWith("y")) {
+      contentWords.add(`${normalizedType.slice(0, -1)}ies`);
+    } else {
+      contentWords.add(`${normalizedType}s`);
+    }
+  }
   const downloaderWord = "downloader";
   const words = title.split(/\s+/);
 
@@ -40,7 +50,7 @@ function renderStyledHeading(title) {
 
   const contentGradientStyle = {
     WebkitTextFillColor: "transparent",
-    background: "linear-gradient(to right, #FF5C2A, #FF2D6F)",
+    background: "linear-gradient(to right, #ff512f, #dd2476)",
     WebkitBackgroundClip: "text",
     backgroundClip: "text",
     fontWeight: 800,
@@ -48,7 +58,7 @@ function renderStyledHeading(title) {
 
   const downloaderGradientStyle = {
     WebkitTextFillColor: "transparent",
-    background: "linear-gradient(to right, #17FF79, #01CBFF)",
+    background: "linear-gradient(to right, #25ff92, #24afff)",
     WebkitBackgroundClip: "text",
     backgroundClip: "text",
     fontWeight: 800,
@@ -102,7 +112,7 @@ export default async function DownloadSlugPage({ params }) {
       <main className={styles.main}>
         <div className={heroStyles.heroWrap}>
           <h1 className={heroStyles.heroTitle} style={{ marginBottom: "0.5rem" }}>
-            {renderStyledHeading(entry.h1_title)}
+            {renderStyledHeading(entry.h1_title, entry.content_type)}
           </h1>
         
         </div>
