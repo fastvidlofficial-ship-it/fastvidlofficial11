@@ -2,10 +2,19 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 import { notFound } from "next/navigation";
 
+export const dynamicParams = true;
+export const runtime = "nodejs";
+
 async function readPseoData() {
   const filePath = path.join(process.cwd(), "pseo-data.json");
   const raw = await fs.readFile(filePath, "utf8");
-  return JSON.parse(raw);
+  const parsed = JSON.parse(raw);
+
+  if (!Array.isArray(parsed)) {
+    return [];
+  }
+
+  return parsed.filter((item) => item && typeof item.slug === "string" && item.slug.length > 0);
 }
 
 function getInputPlaceholder(contentType) {
@@ -33,15 +42,16 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const { slug } = params;
+  const slug = params?.slug;
+  if (!slug) {
+    notFound();
+  }
+
   const data = await readPseoData();
   const entry = data.find((item) => item.slug === slug);
 
   if (!entry) {
-    return {
-      title: "Page Not Found | FastVidl",
-      description: "The page you are looking for does not exist.",
-    };
+    notFound();
   }
 
   const canonical = `https://fastvidl.com/download/${entry.slug}`;
@@ -68,7 +78,11 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function DownloadSlugPage({ params }) {
-  const { slug } = params;
+  const slug = params?.slug;
+  if (!slug) {
+    notFound();
+  }
+
   const data = await readPseoData();
   const entry = data.find((item) => item.slug === slug);
 
