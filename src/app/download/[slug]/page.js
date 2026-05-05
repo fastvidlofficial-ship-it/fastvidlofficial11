@@ -1,6 +1,12 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import { notFound } from "next/navigation";
+import styles from "../../page.module.css";
+import heroStyles from "../../DownloaderHero.module.css";
+import UserInput from "@/components/input/UserInput";
+import "@/content/Blog.css";
+import EzoicPlacements from "@/components/ads/EzoicPlacements";
+import { getEzoicToolPlacements } from "@/config/ezoicPlacements";
 
 export const dynamicParams = true;
 export const runtime = "nodejs";
@@ -98,52 +104,58 @@ export default async function DownloadSlugPage({ params }) {
   const placeholder = getInputPlaceholder(entry.content_type);
 
   return (
-    <main className="min-h-screen bg-[var(--background,#f8fafc)] text-[var(--foreground,#0f172a)]">
-      <section className="mx-auto w-full max-w-5xl px-4 pb-14 pt-10 sm:px-6 lg:px-8">
-        <div className="rounded-2xl border border-slate-200/70 bg-white/90 p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900/70 sm:p-8">
-          <p className="mb-3 inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-slate-600 dark:bg-slate-800 dark:text-slate-300">
-            {entry.platform} {entry.content_type} Downloader
+    <div className={styles.page}>
+      <main className={styles.main}>
+        <div className={heroStyles.heroWrap}>
+          <h1 className={heroStyles.heroTitle}>{entry.h1_title}</h1>
+          <p
+            style={{
+              marginTop: "0.5rem",
+              fontSize: "clamp(0.9rem, 2vw, 1.05rem)",
+              color: "var(--muted-text, #64748b)",
+              fontWeight: 500,
+            }}
+          >
+            {entry.platform} · {entry.content_type} · FastVidl
           </p>
-          <h1 className="text-3xl font-extrabold leading-tight sm:text-4xl">{entry.h1_title}</h1>
-          <p className="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-300">{entry.intro_text}</p>
-
-          <div className="mt-8 rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800/60 sm:p-5">
-            <label htmlFor="download-url" className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-200">
-              Start download
-            </label>
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <input
-                id="download-url"
-                type="url"
-                placeholder={placeholder}
-                className="h-12 w-full rounded-lg border border-slate-300 bg-white px-4 text-sm outline-none ring-0 transition focus:border-slate-500 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100 dark:placeholder:text-slate-400"
-              />
-              <button
-                type="button"
-                className="h-12 shrink-0 rounded-lg bg-gradient-to-r from-rose-500 to-sky-500 px-6 text-sm font-semibold text-white shadow-sm transition hover:opacity-95"
-              >
-                Download
-              </button>
-            </div>
-          </div>
         </div>
 
-        <section className="mt-10 rounded-2xl border border-slate-200/70 bg-white/90 p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900/70 sm:p-8">
-          <h2 className="text-2xl font-bold">Frequently Asked Questions</h2>
-          <div className="mt-5 space-y-4">
-            <article className="rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800/60">
-              <h3 className="text-base font-semibold">{entry.faq_q}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{entry.faq_a}</p>
-            </article>
-          </div>
-        </section>
+        <UserInput />
+        <EzoicPlacements placementIds={getEzoicToolPlacements()} />
 
-        <section className="mt-8 rounded-2xl border border-slate-200/70 bg-white/90 p-5 text-center shadow-sm dark:border-slate-700 dark:bg-slate-900/70">
-          <p className="text-sm font-medium text-slate-700 dark:text-slate-200">
-            Written by Raja Jahangir | Powered by Auroxa Tech
-          </p>
-        </section>
-      </section>
-    </main>
+        <div className="container-blog">
+          <section className="home-blog-article">
+            <p className="home-blog-article-meta" style={{ marginBottom: "0.75rem" }}>
+              Download helper: {placeholder}
+            </p>
+            <p className="home-blog-article-p">{entry.intro_text}</p>
+
+            <h2 className="home-blog-article-h2">Frequently Asked Questions</h2>
+            <div className="blog-content">
+              <div className="faq-section">
+                <div className="faq-item">
+                  <h3 className="faq-question">{entry.faq_q}</h3>
+                  <p className="faq-answer">{entry.faq_a}</p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              style={{
+                marginTop: "1.5rem",
+                border: "1px solid var(--article-border, #e5e7eb)",
+                borderRadius: "12px",
+                padding: "0.9rem 1rem",
+                background: "var(--article-soft-bg, #f8fafc)",
+              }}
+            >
+              <p className="home-blog-article-p" style={{ marginBottom: 0 }}>
+                Written by Raja Jahangir | Powered by Auroxa Tech
+              </p>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
   );
 }
