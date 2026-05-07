@@ -1,124 +1,142 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
+import pseoAll from "../../pseo-data.json";
 
-async function getPseoDownloadUrls(baseUrl, lastModified) {
-  const filePath = path.join(process.cwd(), "pseo-data.json");
+const BASE_URL = "https://fastvidl.com";
 
-  try {
-    const raw = await fs.readFile(filePath, "utf8");
-    const items = JSON.parse(raw);
+const PAGE_FILE_RE = /^page\.(js|jsx|ts|tsx)$/;
 
-    if (!Array.isArray(items)) return [];
+/** Slugs for programmatic /download/[slug] pages */
+function getPseoSlugs() {
+  if (!Array.isArray(pseoAll)) return [];
+  return pseoAll
+    .map((item) => (item && typeof item.slug === "string" ? item.slug.trim() : ""))
+    .filter(Boolean);
+}
 
-    return items
-      .filter((item) => item && typeof item.slug === "string" && item.slug.length > 0)
-      .map((item) => ({
-        url: `${baseUrl}/download/${item.slug}`,
-        lastModified,
-        changeFrequency: "weekly",
-        priority: 0.8,
-      }));
-  } catch {
-    return [];
+/**
+ * Walk src/app and collect route folder paths (posix) that contain a page file.
+ * Examples: "", "about-us", "download/[slug]"
+ */
+async function discoverRouteFolders(appRootAbs, relativePosix = "") {
+  const dirAbs = relativePosix ? path.join(appRootAbs, ...relativePosix.split("/")) : appRootAbs;
+  const entries = await fs.readdir(dirAbs, { withFileTypes: true });
+
+  const routes = [];
+
+  const hasPage = entries.some((e) => e.isFile() && PAGE_FILE_RE.test(e.name));
+  if (hasPage) {
+    routes.push(relativePosix);
   }
+
+  for (const entry of entries) {
+    if (!entry.isDirectory()) continue;
+    const name = entry.name;
+    if (name === "api") continue;
+
+    const childRel = relativePosix ? `${relativePosix}/${name}` : name;
+    const nested = await discoverRouteFolders(appRootAbs, childRel);
+    routes.push(...nested);
+  }
+
+  return routes;
+}
+
+function toPublicPath(routeFolder) {
+  if (!routeFolder) return "/";
+  const segments = routeFolder.split("/").filter(Boolean);
+  const urlSegments = [];
+  for (const seg of segments) {
+    if (seg.startsWith("(") && seg.endsWith(")")) continue;
+    if (seg.startsWith("[")) {
+      urlSegments.push(seg);
+      continue;
+    }
+    urlSegments.push(seg);
+  }
+  if (urlSegments.some((s) => s.startsWith("["))) {
+    return null;
+  }
+  return `/${urlSegments.join("/")}`;
+}
+
+function expandDynamicRoutes(routeFolder, pseoSlugs) {
+  if (routeFolder === "download/[slug]") {
+    return pseoSlugs.map((slug) => `/download/${slug}`);
+  }
+  return [];
+}
+
+function getRouteMetadata(urlPath) {
+  if (urlPath === "/") {
+    return { changeFrequency: "daily", priority: 1.0 };
+  }
+
+  const legalPaths = new Set([
+    "/privacy-policy",
+    "/terms-and-conditions",
+    "/cookie-policy",
+    "/disclaimer",
+  ]);
+
+  if (legalPaths.has(urlPath)) {
+    return { changeFrequency: "yearly", priority: 0.5 };
+  }
+
+  if (urlPath === "/dmca-takedown") {
+    return { changeFrequency: "yearly", priority: 0.55 };
+  }
+
+  if (urlPath === "/about-us" || urlPath === "/contact-us") {
+    return { changeFrequency: "monthly", priority: 0.7 };
+  }
+
+  if (urlPath === "/faqs") {
+    return { changeFrequency: "weekly", priority: 0.8 };
+  }
+
+  if (urlPath.startsWith("/download/")) {
+    return { changeFrequency: "weekly", priority: 0.8 };
+  }
+
+  return { changeFrequency: "weekly", priority: 0.9 };
+}
+
+function toSitemapEntry(urlPath, lastModified) {
+  const { changeFrequency, priority } = getRouteMetadata(urlPath);
+  const url = urlPath === "/" ? BASE_URL : `${BASE_URL}${urlPath}`;
+  return {
+    url,
+    lastModified,
+    changeFrequency,
+    priority,
+  };
 }
 
 export default async function sitemap() {
-  const baseUrl = "https://fastvidl.com";
   const lastModified = new Date();
-  const pseoDownloadUrls = await getPseoDownloadUrls(baseUrl, lastModified);
+  const appRoot = path.join(process.cwd(), "src", "app");
+  const pseoSlugs = getPseoSlugs();
 
-  return [
-    {
-      url: baseUrl,
-      lastModified,
-      changeFrequency: "daily",
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/instagram-reel-downloader-free`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.95,
-    },
-    {
-      url: `${baseUrl}/pinterest-video-downloader-free`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.95,
-    },
-    {
-      url: `${baseUrl}/free-facebook-video-downloader`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.95,
-    },
-    {
-      url: `${baseUrl}/instagram-photo-downloader`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/instagram-story-downloader`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/instagram-video-downloader`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/faqs`,
-      lastModified,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/about-us`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/contact-us`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/privacy-policy`,
-      lastModified,
-      changeFrequency: "yearly",
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/terms-and-conditions`,
-      lastModified,
-      changeFrequency: "yearly",
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/cookie-policy`,
-      lastModified,
-      changeFrequency: "yearly",
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/disclaimer`,
-      lastModified,
-      changeFrequency: "yearly",
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/dmca-takedown`,
-      lastModified,
-      changeFrequency: "yearly",
-      priority: 0.55,
-    },
-    ...pseoDownloadUrls,
-  ];
+  const folderRoutes = await discoverRouteFolders(appRoot);
+  const urlPathsSet = new Set();
+
+  for (const folder of folderRoutes) {
+    const staticPath = toPublicPath(folder);
+    if (staticPath) {
+      urlPathsSet.add(staticPath);
+      continue;
+    }
+    for (const expanded of expandDynamicRoutes(folder, pseoSlugs)) {
+      urlPathsSet.add(expanded);
+    }
+  }
+
+  const sortedPaths = [...urlPathsSet].sort((a, b) => {
+    if (a === "/") return -1;
+    if (b === "/") return 1;
+    return a.localeCompare(b);
+  });
+
+  return sortedPaths.map((p) => toSitemapEntry(p, lastModified));
 }
