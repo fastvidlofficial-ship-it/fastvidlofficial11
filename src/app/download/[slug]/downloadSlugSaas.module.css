@@ -1,0 +1,235 @@
+/* Premium pSEO sections — CSS only (no Tailwind) */
+
+.subTag {
+  margin-top: 0.5rem;
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  color: var(--muted-text, #64748b);
+  font-weight: 500;
+}
+
+/* H1 word spans */
+.wordPlain {
+  color: #111827;
+  font-weight: 700;
+}
+
+.wordContent {
+  font-weight: 800;
+  color: transparent;
+  background-image: linear-gradient(to right, #ff5c2a, #ff2d6f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.wordAction {
+  font-weight: 800;
+  color: transparent;
+  background-image: linear-gradient(to right, #17ff79, #01cbff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.body {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+.intro {
+  max-width: 52rem;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  line-height: 1.75;
+  color: #475569;
+}
+
+.sectionMuted {
+  padding: 4rem 1rem;
+  margin-bottom: 2rem;
+  border-radius: 1.25rem;
+  background: color-mix(in srgb, #f8fafc 82%, transparent);
+}
+
+.sectionWhite {
+  padding: 4rem 1rem;
+  margin-bottom: 2rem;
+}
+
+.sectionHeading {
+  text-align: center;
+  margin: 0 0 2rem;
+  font-size: clamp(1.5rem, 3vw, 1.85rem);
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.stepCard {
+  background: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid #f1f5f9;
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stepCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+}
+
+.stepNum {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 999px;
+  margin-bottom: 0.85rem;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #fff;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+}
+
+.stepTitle {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.stepBody {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #64748b;
+}
+
+.faqWrap {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.faqList {
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #fff;
+}
+
+.faqItem {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.faqItem:last-child {
+  border-bottom: none;
+}
+
+.faqSummary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1rem 1.15rem;
+  font-weight: 600;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.faqSummary::-webkit-details-marker {
+  display: none;
+}
+
+.faqSummary::after {
+  content: "+";
+  font-weight: 700;
+  color: #64748b;
+  flex-shrink: 0;
+}
+
+details[open] .faqSummary::after {
+  content: "−";
+}
+
+.faqAnswer {
+  margin: 0;
+  padding: 0 1.15rem 1.1rem;
+  color: #64748b;
+  line-height: 1.7;
+  font-size: 0.98rem;
+}
+
+.relatedSection {
+  padding: 4rem 1.25rem;
+  margin-bottom: 2rem;
+  border-radius: 1.5rem;
+  background: color-mix(in srgb, #dbeafe 38%, transparent);
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.relatedHeading {
+  text-align: center;
+  margin: 0 0 2rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+}
+
+.relatedLink {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  background: #ffffff;
+  color: #1f2937;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 0.85rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  line-height: 1.35;
+}
+
+.relatedLink:hover {
+  background: #2563eb;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  .stepsGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .relatedGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .relatedGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

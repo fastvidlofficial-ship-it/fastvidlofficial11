@@ -1,18 +1,9 @@
-import { promises as fs } from "node:fs";
-import path from "node:path";
 import { notFound } from "next/navigation";
+import pseoAll from "../../../../pseo-data.json";
 
-async function readPseoData() {
-  const filePath = path.join(process.cwd(), "pseo-data.json");
-  const raw = await fs.readFile(filePath, "utf8");
-  const parsed = JSON.parse(raw);
-
-  if (!Array.isArray(parsed)) {
-    return [];
-  }
-
-  return parsed.filter((item) => item && typeof item.slug === "string" && item.slug.length > 0);
-}
+const pseoData = (Array.isArray(pseoAll) ? pseoAll : []).filter(
+  (item) => item && typeof item.slug === "string" && item.slug.length > 0
+);
 
 async function getSlugFromParams(params) {
   const resolvedParams = await Promise.resolve(params);
@@ -25,8 +16,7 @@ export async function generateMetadata({ params }) {
     notFound();
   }
 
-  const data = await readPseoData();
-  const entry = data.find((item) => item.slug === slug);
+  const entry = pseoData.find((item) => item.slug === slug);
 
   if (!entry) {
     notFound();
