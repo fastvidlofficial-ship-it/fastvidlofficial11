@@ -1,6 +1,7 @@
 "use client";
 
 import FAQSchema from "@/components/FAQSchema";
+import FaqSection from "@/components/faq/FaqSection";
 import "@/content/Blog.css";
 import Image from "next/image";
 
@@ -299,19 +300,7 @@ export default function HomePageBlogSection() {
             require permission from the rights holder.
           </p>
 
-          <h2 id="frequently-asked-questions" className="home-blog-article-h2">
-            Frequently Asked Questions
-          </h2>
-          <div className="blog-content">
-            <div className="faq-section">
-              {HOME_PAGE_FAQ_LIST.map((faq, index) => (
-                <div key={index} className="faq-item">
-                  <h3 className="faq-question">{faq.question}</h3>
-                  <p className="faq-answer">{faq.answer}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          <FaqSection items={HOME_PAGE_FAQ_LIST} headingId="frequently-asked-questions" />
         </section>
       </div>
     </div>

@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import FaqSection from "@/components/faq/FaqSection";
 
 const INSTAGRAM_TERMS_URL = "https://www.instagram.com/about/legal/terms/";
 const RAJA_LINKEDIN = "https://www.linkedin.com/in/raja-jahangir";
@@ -194,14 +195,7 @@ export default function InstagramPhotoBlogContent({ variant = "standalone", faqL
         Frequently Asked Questions
       </h2>
       <div className="blog-content">
-        <div className="faq-section">
-          {faqList.map((faq, index) => (
-            <div key={index} className="faq-item">
-              <h3 className="faq-question">{faq.question}</h3>
-              <p className="faq-answer">{faq.answer}</p>
-            </div>
-          ))}
-        </div>
+        <FaqSection items={faqList} showHeading={false} />
       </div>
 
       <h2 id="meet-team-photo" className={h2Class}>

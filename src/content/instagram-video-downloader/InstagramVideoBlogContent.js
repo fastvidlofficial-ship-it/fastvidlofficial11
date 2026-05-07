@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import FaqSection from "@/components/faq/FaqSection";
 
 const RAJA_LINKEDIN = "https://www.linkedin.com/in/raja-jahangir";
 const AUROXA_TECH_URL = "https://auroxatech.com";
@@ -197,14 +198,7 @@ export default function InstagramVideoBlogContent() {
           Frequently Asked Questions
         </h2>
         <div className="blog-content">
-          <div className="faq-section">
-            {INSTAGRAM_VIDEO_FAQ_LIST.map((faq, index) => (
-              <div key={index} className="faq-item">
-                <h3 className="faq-question">{faq.question}</h3>
-                <p className="faq-answer">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
+          <FaqSection items={INSTAGRAM_VIDEO_FAQ_LIST} showHeading={false} />
         </div>
 
         <h2 id="meet-the-team" className="home-blog-article-h2">Meet the Team Behind FastVidl</h2>

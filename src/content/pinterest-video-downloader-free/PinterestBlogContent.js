@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import FaqSection from "@/components/faq/FaqSection";
 import "../Blog.css";
 
 const RAJA_LINKEDIN = "https://www.linkedin.com/in/raja-jahangir";
@@ -209,16 +210,9 @@ export default function PinterestBlogContent() {
         <h2 id="frequently-asked-questions" className="home-blog-article-h2">
           Frequently Asked Questions
         </h2>
-        <div className="blog-content">
-          <div className="faq-section">
-            {PINTEREST_FAQ_LIST.map((faq, index) => (
-              <div key={index} className="faq-item">
-                <h3 className="faq-question">{faq.question}</h3>
-                <p className="faq-answer">{faq.answer}</p>
-              </div>
-            ))}
+          <div className="blog-content">
+            <FaqSection items={PINTEREST_FAQ_LIST} showHeading={false} />
           </div>
-        </div>
 
         <h2 id="meet-the-team" className="home-blog-article-h2">Meet the Team Behind FastVidl</h2>
         <p className="home-blog-article-p">

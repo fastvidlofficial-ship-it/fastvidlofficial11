@@ -3,6 +3,7 @@ import "./AboutUs.css";
 import "../disclaimer/Disclaimer.css";
 import Link from "next/link";
 import Image from "next/image";
+import FaqSection from "@/components/faq/FaqSection";
 
 const AboutUs = () => {
   const drivesUs = [
@@ -209,15 +210,7 @@ const AboutUs = () => {
               </div>
 
               <div className="card3d">
-                <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">Frequently Asked Questions</h2>
-                <div className="faqs-container">
-                  {faqs.map((faq, index) => (
-                    <div key={index} className="faq-item mb-4">
-                      <h3 className="text-xl font-semibold mb-2">{faq.question}</h3>
-                      <p className="text-base leading-relaxed">{faq.answer}</p>
-                    </div>
-                  ))}
-                </div>
+                <FaqSection items={faqs} headingId="about-faq-heading" className="about-us-faq-section" />
               </div>
 
               <div className="card3d">

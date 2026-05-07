@@ -47,42 +47,6 @@
   --theme-trigger-hover-bg: rgba(255, 255, 255, 0.12);
 }
 
-.dropdown {
-  position: absolute;
-  top: calc(100% + 8px);
-  right: 0;
-  margin: 0;
-  padding: 6px 0;
-  list-style: none;
-  min-width: 132px;
-  background: var(--background-color, #fff);
-  border: 1px solid var(--nav-border-color, rgba(0, 0, 0, 0.1));
-  border-radius: 12px;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
-  overscroll-behavior: contain;
-}
-
-.option {
-  padding: 10px 18px;
-  font-size: 15px;
-  font-weight: 400;
-  color: var(--nav-link-color, #1a1a1a);
-  cursor: pointer;
-  transition: background 0.15s ease, color 0.15s ease;
-  line-height: 1.4;
-}
-
-.option:hover {
-  background: var(--nav-link-hover-bg, rgba(66, 133, 244, 0.08));
-  color: #1a73e8;
-}
-
-.optionActive {
-  color: #1a73e8;
-  font-weight: 600;
-  background: rgba(66, 133, 244, 0.06);
-}
-
 @media (max-width: 768px) {
   .trigger {
     width: 40px;
@@ -97,14 +61,5 @@
   .triggerIcon svg {
     width: 18px;
     height: 18px;
-  }
-
-  .dropdown {
-    min-width: 120px;
-  }
-
-  .option {
-    font-size: 14px;
-    padding: 9px 16px;
   }
 }

@@ -66,6 +66,12 @@
   margin-top: 0;
 }
 
+/* FAQ block uses shared FaqSection — tighten padding inside card */
+.about-main .about-us-faq-section {
+  padding: 0;
+  margin-bottom: 0;
+}
+
 /* Hero Section (kept for reference; banner now uses Disclaimer.css) */
 .hero-section {
   /* position: relative; */

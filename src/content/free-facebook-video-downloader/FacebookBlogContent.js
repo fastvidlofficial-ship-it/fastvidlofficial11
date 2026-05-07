@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import FaqSection from "@/components/faq/FaqSection";
 import "../Blog.css";
 
 const RAJA_LINKEDIN = "https://www.linkedin.com/in/raja-jahangir";
@@ -227,14 +228,7 @@ export default function FacebookBlogContent() {
           Frequently Asked Questions
         </h2>
         <div className="blog-content">
-          <div className="faq-section">
-            {FACEBOOK_FAQ_LIST.map((faq, index) => (
-              <div key={index} className="faq-item">
-                <h3 className="faq-question">{faq.question}</h3>
-                <p className="faq-answer">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
+          <FaqSection items={FACEBOOK_FAQ_LIST} showHeading={false} />
         </div>
 
         <h2 id="meet-the-team" className="home-blog-article-h2">Meet the Team Behind FastVidl</h2>

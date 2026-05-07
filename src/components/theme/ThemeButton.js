@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import { useTheme } from "./ThemeContext";
 import styles from "./ThemeButton.module.css";
 
@@ -25,55 +24,22 @@ const MoonIcon = () => (
 );
 
 const ThemeButton = () => {
-  const { theme, setTheme } = useTheme();
-  const [open, setOpen] = useState(false);
-  const wrapRef = useRef(null);
+  const { theme, themeControler } = useTheme();
 
-  useEffect(() => {
-    const handleOutside = (e) => {
-      if (wrapRef.current && !wrapRef.current.contains(e.target)) setOpen(false);
-    };
-    const onKey = (e) => {
-      if (e.key === "Escape") setOpen(false);
-    };
-    if (open) {
-      document.addEventListener("mousedown", handleOutside);
-      document.addEventListener("keydown", onKey);
-    }
-    return () => {
-      document.removeEventListener("mousedown", handleOutside);
-      document.removeEventListener("keydown", onKey);
-    };
-  }, [open]);
-
-  const select = (next) => {
-    setTheme(next);
-    setOpen(false);
-  };
+  const label =
+    theme === "dark" ? "Switch to light mode" : "Switch to dark mode";
 
   return (
-    <div className={styles.wrap} ref={wrapRef}>
+    <div className={styles.wrap}>
       <button
         type="button"
         className={styles.trigger}
-        onClick={() => setOpen((v) => !v)}
-        aria-haspopup="listbox"
-        aria-expanded={open}
-        aria-label="Theme: choose light or dark"
+        onClick={() => themeControler()}
+        aria-label={label}
+        aria-pressed={theme === "dark"}
       >
         <span className={styles.triggerIcon}>{theme === "dark" ? <MoonIcon /> : <SunIcon />}</span>
       </button>
-
-      {open && (
-        <ul className={styles.dropdown} role="listbox" aria-label="Theme">
-          <li role="option" aria-selected={theme === "light"} className={`${styles.option} ${theme === "light" ? styles.optionActive : ""}`} onClick={() => select("light")}>
-            Light
-          </li>
-          <li role="option" aria-selected={theme === "dark"} className={`${styles.option} ${theme === "dark" ? styles.optionActive : ""}`} onClick={() => select("dark")}>
-            Dark
-          </li>
-        </ul>
-      )}
     </div>
   );
 };

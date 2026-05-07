@@ -4,6 +4,7 @@ import styles from "../../page.module.css";
 import heroStyles from "../../DownloaderHero.module.css";
 import saasStyles from "./downloadSlugSaas.module.css";
 import UserInput from "@/components/input/UserInput";
+import FaqSection from "@/components/faq/FaqSection";
 import pseoAll from "../../../../pseo-data.json";
 
 export const dynamicParams = true;
@@ -192,21 +193,7 @@ export default async function DownloadSlugPage({ params }) {
           ) : null}
 
           {faqs.length > 0 ? (
-            <section className={saasStyles.sectionWhite} aria-labelledby="faq-heading">
-              <h2 id="faq-heading" className={saasStyles.sectionHeading}>
-                Frequently Asked Questions
-              </h2>
-              <div className={saasStyles.faqWrap}>
-                <div className={saasStyles.faqList}>
-                  {faqs.map((faq, index) => (
-                    <details key={`faq-${index}`} className={saasStyles.faqItem} open={index === 0}>
-                      <summary className={saasStyles.faqSummary}>{faq.question}</summary>
-                      <p className={saasStyles.faqAnswer}>{faq.answer}</p>
-                    </details>
-                  ))}
-                </div>
-              </div>
-            </section>
+            <FaqSection items={faqs} headingId="faq-heading" />
           ) : null}
 
           {relatedTools.length > 0 ? (
