@@ -18,7 +18,12 @@ const nextConfig = {
       { source: '/PrivacyPolicy', destination: '/privacy-policy', permanent: true },
       { source: '/TermsAndConditions', destination: '/terms-and-conditions', permanent: true },
       { source: '/CookiePolicy', destination: '/cookie-policy', permanent: true },
-      { source: '/Disclaimer', destination: '/disclaimer', permanent: true },
+      // NOTE: Removed `/Disclaimer -> /disclaimer` redirect.
+      // Next.js 16 matches redirect sources case-insensitively, so this rule
+      // also caught lowercase `/disclaimer` and redirected it to itself,
+      // creating an infinite HTTP 308 loop (ERR_TOO_MANY_REDIRECTS).
+      // Single-word PascalCase paths like `/Disclaimer` are now resolved
+      // by Next.js routing directly to the `/disclaimer` page — no redirect needed.
       // Retired page: send old links to Story downloader (also supports highlight URLs in-app)
       { source: '/instagram-highlights-downloader', destination: '/instagram-story-downloader', permanent: true },
       { source: '/Blogs/instagram-highlights-downloader', destination: '/instagram-story-downloader', permanent: true },

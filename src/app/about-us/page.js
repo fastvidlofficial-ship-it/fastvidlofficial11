@@ -1,6 +1,7 @@
 "use client"
 import "./AboutUs.css";
 import "../disclaimer/Disclaimer.css";
+import "@/content/Blog.css";
 import Link from "next/link";
 import Image from "next/image";
 import FaqSection from "@/components/faq/FaqSection";
@@ -108,186 +109,145 @@ const AboutUs = () => {
         </div>
       </div>
 
-      {/* Main Content – grey area + 3D cards */}
-      <div className="about-main">
-        <div className="global-container">
-          <div className="about-content global-container__content">
-            <div className="cardsGrid">
-              <div className="card3d">
-                <p className="text-base sm:text-lg leading-relaxed mb-6">
-                  Welcome to <strong>fastvidl.com</strong> — we are a small team at{" "}
-                  <strong>Auroxa Tech</strong> (Rawalpindi, Pakistan) building simple browser tools for creators and everyday users. We launched FastVidl in <strong>August 2025</strong> to help people keep <strong>public</strong> Instagram, Facebook, and Pinterest media they may lawfully access—especially personal backups, reference, and offline viewing—without installing sketchy apps. We are transparent about limits: you are responsible for how you use downloads; when in doubt, get permission from the rights holder.
-                </p>
-              </div>
+      {/* Flowing blog-style content – mirrors the homepage layout */}
+      <div className="container-blog">
+        <section className="home-blog-article">
+          <p className="home-blog-article-p">
+            Welcome to <strong>fastvidl.com</strong> — we are a small team at{" "}
+            <strong>Auroxa Tech</strong> (Rawalpindi, Pakistan) building simple browser tools for creators and everyday users. We launched FastVidl in <strong>August 2025</strong> to help people keep <strong>public</strong> Instagram, Facebook, and Pinterest media they may lawfully access—especially personal backups, reference, and offline viewing—without installing sketchy apps. We are transparent about limits: you are responsible for how you use downloads; when in doubt, get permission from the rights holder.
+          </p>
 
-              <div className="card3d">
-                <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">Our Story</h2>
-                <p className="text-base sm:text-lg leading-relaxed mb-6">
-                  It started when one of us needed to archive family videos from Facebook but hated the hassle. We built something simple that works on any device—no extra apps required. We keep the product fast and free where we can, and we iterate as platforms change. Our users span the globe; the team and operations stay grounded in <strong>Rawalpindi, Pakistan</strong>.
-                </p>
-              </div>
+          <h2 className="home-blog-article-h2">Our Story</h2>
+          <p className="home-blog-article-p">
+            It started when one of us needed to archive family videos from Facebook but hated the hassle. We built something simple that works on any device—no extra apps required. We keep the product fast and free where we can, and we iterate as platforms change. Our users span the globe; the team and operations stay grounded in <strong>Rawalpindi, Pakistan</strong>.
+          </p>
 
-              <div className="card3d">
-                <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">What Drives Us</h2>
-                <ul className="drives-list">
-                  {drivesUs.map((item, index) => (
-                    <li key={index} className="mb-4">
-                      <strong className="text-lg">● {item.title}:</strong>{" "}
-                      <span className="text-base">{item.description}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          <h2 className="home-blog-article-h2">What Drives Us</h2>
+          <ul className="drives-list">
+            {drivesUs.map((item, index) => (
+              <li key={index}>
+                <strong>● {item.title}:</strong>{" "}
+                <span>{item.description}</span>
+              </li>
+            ))}
+          </ul>
 
-              <div className="card3d">
-                <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">Free for personal use</h2>
-                <p className="text-base sm:text-lg leading-relaxed mb-6">
-                  FastVidl stays free to use for typical personal workflows. We do not add our own watermark on supported downloads; quality depends on what the platform serves. Please use the service fairly and in line with our Terms.
-                </p>
-              </div>
+          <h2 className="home-blog-article-h2">Free for personal use</h2>
+          <p className="home-blog-article-p">
+            FastVidl stays free to use for typical personal workflows. We do not add our own watermark on supported downloads; quality depends on what the platform serves. Please use the service fairly and in line with our Terms.
+          </p>
 
-              <div className="card3d">
-                <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">What Makes FastVidl Special?</h2>
-                <p className="text-base sm:text-lg leading-relaxed mb-4">
-                  One tool for three platforms for downloads:
-                </p>
-                <ul className="platforms-list mb-4">
-                  <li>
-                    <strong>Instagram:</strong> {supportedPlatforms.instagram.join(", ")}
-                  </li>
-                  <li>
-                    <strong>Facebook:</strong> {supportedPlatforms.facebook.join(", ")}
-                  </li>
-                  <li>
-                    <strong>Pinterest:</strong> {supportedPlatforms.pinterest.join(", ")}
-                  </li>
-                </ul>
-              </div>
+          <h2 className="home-blog-article-h2">What Makes FastVidl Special?</h2>
+          <p className="home-blog-article-p">One tool for three platforms for downloads:</p>
+          <ul className="platforms-list">
+            <li>
+              <strong>Instagram:</strong> {supportedPlatforms.instagram.join(", ")}
+            </li>
+            <li>
+              <strong>Facebook:</strong> {supportedPlatforms.facebook.join(", ")}
+            </li>
+            <li>
+              <strong>Pinterest:</strong> {supportedPlatforms.pinterest.join(", ")}
+            </li>
+          </ul>
 
-              <div className="card3d">
-                <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">Why Trust FastVidl?</h2>
-                <p className="text-base sm:text-lg leading-relaxed mb-6">
-                  Many people rely on FastVidl for quick saves when quality and speed matter. We fetch public media over HTTPS and focus on a predictable workflow. If something breaks because a platform changed its rules or URLs, we ship fixes as fast as we can—see <Link href="/contact-us" className="terms-link">Contact</Link> if you need help.
-                </p>
-              </div>
+          <h2 className="home-blog-article-h2">Why Trust FastVidl?</h2>
+          <p className="home-blog-article-p">
+            Many people rely on FastVidl for quick saves when quality and speed matter. We fetch public media over HTTPS and focus on a predictable workflow. If something breaks because a platform changed its rules or URLs, we ship fixes as fast as we can—see <Link href="/contact-us" className="home-blog-article-link">Contact</Link> if you need help.
+          </p>
 
-              <div className="card3d team-section">
-                <h2 className="team-heading">Meet the Team</h2>
-                <p className="team-subheading">
-                  We're not a big corp — just a passionate crew building tools we actually use.
-                </p>
-
-                <div className="team-grid">
-                  {team.map((member, index) => (
-                    <div key={index} className="team-card">
-                      <div className="team-card-img-wrapper">
-                        <Image
-                          src={member.image}
-                          alt={member.name}
-                          width={160}
-                          height={160}
-                          className="team-card-img"
-                        />
-                      </div>
-                      <h3 className="team-card-name">{member.name}</h3>
-                      <p className="team-card-role">{member.role}</p>
-                      {member.linkedin && (
-                        <a
-                          href={member.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="team-card-linkedin"
-                        >
-                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                          </svg>
-                          LinkedIn
-                        </a>
-                      )}
-                    </div>
-                  ))}
+          <h2 className="home-blog-article-h2">Meet the Team</h2>
+          <p className="home-blog-article-p">
+            We're not a big corp — just a passionate crew building tools we actually use.
+          </p>
+          <div className="team-grid">
+            {team.map((member, index) => (
+              <div key={index} className="team-card">
+                <div className="team-card-img-wrapper">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    width={160}
+                    height={160}
+                    className="team-card-img"
+                  />
                 </div>
-              </div>
-
-              <div className="card3d">
-                <FaqSection items={faqs} headingId="about-faq-heading" className="about-us-faq-section" />
-              </div>
-
-              <div className="card3d">
-                <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">Contact Us</h2>
-                <p className="text-base sm:text-lg leading-relaxed mb-4">
-                  We're here to help and love hearing from our users!
-                </p>
-                <h3 className="text-xl font-semibold mt-6 mb-3">Get In Touch</h3>
-                <ul className="contact-list mb-4">
-                  <li className="mb-2">
-                    <strong>General Inquiries:</strong>{" "}
-                    <a href="mailto:fastvidlofficial@gmail.com" className="email-link">
-                      fastvidlofficial@gmail.com
-                    </a>
-                  </li>
-                  <li className="mb-2">
-                    <strong>Technical Support:</strong> Help with download issues or technical problems
-                  </li>
-                  <li className="mb-2">
-                    <strong>Feature Requests:</strong> Suggest new features or improvements
-                  </li>
-                  <li className="mb-2">
-                    <strong>Partnership Opportunities:</strong> Business and collaboration inquiries
-                  </li>
-                  <li className="mb-2">
-                    <strong>Press & Media:</strong> Media inquiries and press releases
-                  </li>
-                  <li className="mb-2">
-                    <strong>Contact Form:</strong>{" "}
-                    <Link href="/contact-us" className="contact-link">
-                      FastVidl Contact Page
-                    </Link>
-                  </li>
-                  <li className="mb-4">
-                    <strong>Response Time:</strong> We typically respond within 24-48 hours
-                  </li>
-                </ul>
-              </div>
-
-             
-
-              <div className="card3d">
-                <h2 className="text-2xl sm:text-3xl font-bold mt-8 mb-4">Thank You</h2>
-                <p className="text-base sm:text-lg leading-relaxed mb-6">
-                  Thank you for using FastVidl. We are grateful for everyone who shares feedback, reports issues, and keeps us honest about privacy and copyright. Rights holders can reach us through the{" "}
-                  <Link href="/dmca-takedown" className="terms-link">
-                    DMCA / copyright notice
-                  </Link>{" "}
-                  page.
-                </p>
-                <p className="text-base sm:text-lg leading-relaxed mb-6 font-semibold">
-                  FastVidl — public media, responsible personal use, one simple workflow.
-                </p>
-                <p className="text-base sm:text-lg leading-relaxed mb-6 font-semibold">
-                  Fast. Free. Secure.
-                </p>
-                <p style={{ color: "#333", fontSize: "15px", marginTop: "2rem" }}>
-                  For any info, feel free to{" "}
-                  <Link
-                    href="/contact-us"
-                    rel="nofollow"
-                    className="terms-link"
-                    style={{
-                      color: "#1877f2",
-                      textDecoration: "none",
-                      fontWeight: "600",
-                      cursor: "pointer",
-                    }}
+                <h3 className="team-card-name">{member.name}</h3>
+                <p className="team-card-role">{member.role}</p>
+                {member.linkedin && (
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="team-card-linkedin"
                   >
-                    Contact Us
-                  </Link>
-                  .
-                </p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                    LinkedIn
+                  </a>
+                )}
               </div>
-            </div>
+            ))}
           </div>
-        </div>
+
+          <FaqSection items={faqs} headingId="about-faq-heading" />
+
+          <h2 className="home-blog-article-h2">Contact Us</h2>
+          <p className="home-blog-article-p">We're here to help and love hearing from our users!</p>
+          <h3 className="home-blog-article-h3">Get In Touch</h3>
+          <ul className="contact-list">
+            <li>
+              <strong>General Inquiries:</strong>{" "}
+              <a href="mailto:fastvidlofficial@gmail.com" className="email-link">
+                fastvidlofficial@gmail.com
+              </a>
+            </li>
+            <li>
+              <strong>Technical Support:</strong> Help with download issues or technical problems
+            </li>
+            <li>
+              <strong>Feature Requests:</strong> Suggest new features or improvements
+            </li>
+            <li>
+              <strong>Partnership Opportunities:</strong> Business and collaboration inquiries
+            </li>
+            <li>
+              <strong>Press &amp; Media:</strong> Media inquiries and press releases
+            </li>
+            <li>
+              <strong>Contact Form:</strong>{" "}
+              <Link href="/contact-us" className="contact-link">
+                FastVidl Contact Page
+              </Link>
+            </li>
+            <li>
+              <strong>Response Time:</strong> We typically respond within 24-48 hours
+            </li>
+          </ul>
+
+          <h2 className="home-blog-article-h2">Thank You</h2>
+          <p className="home-blog-article-p">
+            Thank you for using FastVidl. We are grateful for everyone who shares feedback, reports issues, and keeps us honest about privacy and copyright. Rights holders can reach us through the{" "}
+            <Link href="/dmca-takedown" className="home-blog-article-link">
+              DMCA / copyright notice
+            </Link>{" "}
+            page.
+          </p>
+          <p className="home-blog-article-p">
+            <strong>FastVidl — public media, responsible personal use, one simple workflow.</strong>
+          </p>
+          <p className="home-blog-article-p">
+            <strong>Fast. Free. Secure.</strong>
+          </p>
+          <p className="home-blog-article-p">
+            For any info, feel free to{" "}
+            <Link href="/contact-us" rel="nofollow" className="contact-link">
+              Contact Us
+            </Link>
+            .
+          </p>
+        </section>
       </div>
     </div>
   );

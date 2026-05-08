@@ -5,6 +5,7 @@ import UserInput from "@/components/input/UserInput";
 import HomePageBlogSection from "@/content/HomePageBlogSection";
 import EzoicPlacements from "@/components/ads/EzoicPlacements";
 import { getEzoicHomePlacements } from "@/config/ezoicPlacements";
+import PopularDownloaders from "@/components/popular-tools/PopularDownloaders";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <UserInput />
         <EzoicPlacements placementIds={getEzoicHomePlacements()} />
         <HomePageBlogSection />
+        <PopularDownloaders />
       </main>
     </div>
   );
