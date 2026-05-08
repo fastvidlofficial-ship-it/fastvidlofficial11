@@ -113,6 +113,13 @@ function toSitemapEntry(urlPath, lastModified) {
   };
 }
 
+/**
+ * Next.js App Router sitemap convention.
+ * Returning a plain array lets Next.js render the canonical
+ * <urlset> XML document at /sitemap.xml — never emit XML manually here.
+ *
+ * @returns {Promise<import("next").MetadataRoute.Sitemap>}
+ */
 export default async function sitemap() {
   const lastModified = new Date();
   const appRoot = path.join(process.cwd(), "src", "app");
@@ -138,5 +145,14 @@ export default async function sitemap() {
     return a.localeCompare(b);
   });
 
-  return sortedPaths.map((p) => toSitemapEntry(p, lastModified));
+  const seen = new Set();
+  const entries = [];
+  for (const p of sortedPaths) {
+    const entry = toSitemapEntry(p, lastModified);
+    if (seen.has(entry.url)) continue;
+    seen.add(entry.url);
+    entries.push(entry);
+  }
+
+  return entries;
 }

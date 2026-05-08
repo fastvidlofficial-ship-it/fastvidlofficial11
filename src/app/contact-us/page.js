@@ -73,7 +73,7 @@ const Contact = () => {
                 <span className="info-icon">📧</span>
                 <div>
                   <h3>Email Us</h3>
-                  <p>support@fastvidl.com</p>
+                  <p>fastvidlofficial@gmail.com</p>
                 
                 </div>
                 
