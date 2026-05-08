@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import FaqSection from "@/components/faq/FaqSection";
+import "../Blog.css";
 
 const RAJA_LINKEDIN = "https://www.linkedin.com/in/raja-jahangir";
 const AUROXA_TECH_URL = "https://auroxatech.com";

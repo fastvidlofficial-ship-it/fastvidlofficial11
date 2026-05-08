@@ -56,12 +56,7 @@ export default function PinterestBlogContent() {
     <div className="container-blog">
       <div className="home-blog-article blog-content">
         <h2 className="home-blog-article-title">Best Pinterest Video Downloader Free | HD &amp; 4K No Watermark</h2>
-        <p className="home-blog-article-meta" style={{  color: "#666", marginBottom: "0.5rem" }}>
-          Meta Description: Download Pinterest videos online free of cost. Save Pinterest videos, images and GIFs in HD or 4K
-        </p>
-        <p className="home-blog-article-meta" style={{ fontStyle: "italic", color: "#666", marginBottom: "1rem" }}>
-          without watermarks. Fast, secure and no app needed!
-        </p>
+       
         <p className="home-blog-article-meta" style={{ fontStyle: "italic", color: "#666", marginBottom: "1rem" }}>
           Written by{" "}
           <a href={RAJA_LINKEDIN} target="_blank" rel="noopener noreferrer" className="home-blog-article-link">
