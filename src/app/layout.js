@@ -1,4 +1,3 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
@@ -8,15 +7,12 @@ import ThemeProvider from "@/components/theme/ThemeContext";
 import ThirdPartyScripts from "@/components/scripts/ThirdPartyScripts";
 import EzoicHeadInjector from "@/components/scripts/EzoicHeadInjector";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// NOTE: `next/font/google` for Geist / Geist Mono was removed.
+// 1. Those CSS variables weren't used anywhere in the project — globals.css
+//    sets the body font to a system stack (-apple-system, Segoe UI…).
+// 2. `next/font/google` fetches the font files from fonts.googleapis.com
+//    AT BUILD TIME, so any network/DNS hiccup makes `next build` fail.
+//    Removing the import eliminates that dependency entirely.
 
 export const metadata = {
   metadataBase: new URL('https://fastvidl.com'),
@@ -51,7 +47,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="light" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body>
         <EzoicHeadInjector />
         <WebSiteSchema />
         <ThemeProvider>

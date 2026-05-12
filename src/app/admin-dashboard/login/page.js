@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import LoginForm from "./LoginForm";
 
 export const metadata = {
@@ -6,5 +7,12 @@ export const metadata = {
 };
 
 export default function AdminLoginPage() {
-  return <LoginForm />;
+  // LoginForm uses useSearchParams() to honor the ?from= return URL.
+  // Next.js requires that hook to live under a Suspense boundary during
+  // static prerendering — otherwise `next build` bails out with a CSR error.
+  return (
+    <Suspense fallback={null}>
+      <LoginForm />
+    </Suspense>
+  );
 }
