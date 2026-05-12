@@ -1,7 +1,7 @@
 .section {
   position: relative;
   padding: 4.5rem 1.5rem 5rem;
-  margin-top: 3rem;
+  /* margin-top: 3rem; */
   background:
     radial-gradient(1100px 460px at 50% 0%, var(--highlight-bg), transparent 70%),
     var(--background-color);
