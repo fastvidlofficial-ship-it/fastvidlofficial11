@@ -1,0 +1,272 @@
+.form {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-muted);
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.backLink {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--link-color);
+}
+
+.backLink:hover {
+  color: var(--link-hover-color);
+}
+
+.publishRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.publishRow input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--brand-primary);
+}
+
+.errorBanner {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #dc2626;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+}
+
+[data-theme="dark"] .errorBanner {
+  color: #fca5a5;
+}
+
+.section {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 1.25rem 1.35rem;
+}
+
+.sectionTitle {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  letter-spacing: -0.01em;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 720px) {
+  .grid2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.field:last-child {
+  margin-bottom: 0;
+}
+
+.field > span:first-child {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+}
+
+.input,
+.textarea {
+  width: 100%;
+  background: var(--input-background);
+  color: var(--input-text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 9px;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.hint {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.editorWrap {
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.fileInput {
+  font-size: 0.88rem;
+}
+
+.imgPreview {
+  margin-top: 0.75rem;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  max-width: 420px;
+}
+
+.imgPreview img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.faqHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.faqHeader .sectionTitle {
+  margin: 0;
+}
+
+.addFaqBtn {
+  appearance: none;
+  border: 1px dashed var(--brand-primary);
+  background: var(--highlight-bg);
+  color: var(--brand-primary);
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.addFaqBtn:hover {
+  background: var(--subtle-bg);
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.faqCard {
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1rem;
+  background: var(--subtle-bg);
+}
+
+.faqCardHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.faqIndex {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.removeFaqBtn {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: #dc2626;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.removeFaqBtn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.65rem;
+  padding-top: 0.5rem;
+}
+
+.cancelBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.1rem;
+  border-radius: 9px;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  color: var(--text-body);
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+}
+
+.cancelBtn:hover {
+  border-color: var(--text-muted);
+}
+
+.saveBtn {
+  appearance: none;
+  border: none;
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-color);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.65rem 1.35rem;
+  border-radius: 9px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(102, 126, 234, 0.22);
+}
+
+.saveBtn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}

@@ -67,6 +67,7 @@ const Footer = () => {
       </div>
       <ul className={styles["Ul-d"]}>
         <li><a href="/about-us">| About Us |</a></li>
+        <li><a href="/blogs">| Blog |</a></li>
         <li><a href="/contact-us">| Contact Us |</a></li>
         <li><a href="/faqs">| FAQs |</a></li>
         <li><a href="/disclaimer">| Disclaimer |</a></li>

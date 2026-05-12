@@ -7,13 +7,19 @@
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint",
-    "pseo:build": "node scripts/build-pseo-data.mjs"
+    "pseo:build": "node scripts/build-pseo-data.mjs",
+    "seed:blog": "node scripts/seed-blog.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@tinymce/tinymce-react": "^6.3.0",
+    "bcryptjs": "^3.0.3",
+    "jose": "^6.2.3",
+    "mongoose": "^9.6.2",
     "next": "^16.1.6",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "tinymce": "^7.9.2",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {

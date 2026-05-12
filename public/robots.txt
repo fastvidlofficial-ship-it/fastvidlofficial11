@@ -50,6 +50,7 @@ Disallow: /amp/
 
 # Disallow admin, config and sensitive paths
 Disallow: /admin/
+Disallow: /admin-dashboard/
 Disallow: /dashboard/
 Disallow: /config/
 Disallow: /.env

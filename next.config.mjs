@@ -34,7 +34,13 @@ const nextConfig = {
       { source: '/Blogs/pinterest-video-downloader-free', destination: '/pinterest-video-downloader-free', permanent: true },
       { source: '/Blogs/instagram-story-downloader', destination: '/instagram-story-downloader', permanent: true },
       { source: '/Blogs/instagram-photo-downloader', destination: '/instagram-photo-downloader', permanent: true },
-      { source: '/Blogs', destination: '/', permanent: true },
+      // NOTE: Removed `/Blogs -> /` redirect.
+      // Next.js 16 matches redirect sources case-insensitively, so this rule
+      // also caught the new lowercase `/blogs` listing page and bounced
+      // visitors to the homepage. Since `/blogs` is now a real route, the
+      // PascalCase `/Blogs` URL is naturally handled by Next.js routing.
+      // Common typo from spec
+      { source: '/admin-dashboard/blogs-managemengt', destination: '/admin-dashboard/blogs-management', permanent: false },
     ]
   },
 }

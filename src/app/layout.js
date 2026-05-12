@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
+import ConditionalChrome from "@/components/layout/ConditionalChrome";
 import WebSiteSchema from "@/components/WebSiteSchema";
 import ThemeProvider from "@/components/theme/ThemeContext";
 import ThirdPartyScripts from "@/components/scripts/ThirdPartyScripts";
@@ -54,9 +55,13 @@ export default function RootLayout({ children }) {
         <EzoicHeadInjector />
         <WebSiteSchema />
         <ThemeProvider>
-          <Header/>
+          <ConditionalChrome>
+            <Header />
+          </ConditionalChrome>
           {children}
-          <Footer/>
+          <ConditionalChrome>
+            <Footer />
+          </ConditionalChrome>
         </ThemeProvider>
         <ThirdPartyScripts />
       </body>

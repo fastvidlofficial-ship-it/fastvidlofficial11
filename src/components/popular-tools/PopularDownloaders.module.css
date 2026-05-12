@@ -71,8 +71,65 @@
   font-size: 1.025rem;
   line-height: 1.65;
   color: var(--text-secondary);
-  margin: 0 0 2.5rem;
+  margin: 0 0 2.75rem;
 }
+
+/* ===================================================================
+   Categories
+   =================================================================== */
+
+.categoryStack {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.category {
+  position: relative;
+}
+
+.categoryHead {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0 0 0.85rem;
+  margin-bottom: 1.1rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.categoryIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.categoryText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.categoryName {
+  margin: 0;
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: var(--heading-color);
+  letter-spacing: -0.01em;
+}
+
+.categoryTagline {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+/* ===================================================================
+   Grid + cards
+   =================================================================== */
 
 .grid {
   list-style: none;
@@ -146,6 +203,40 @@
   border: 1px solid var(--border-subtle);
 }
 
+/* Per-platform badge tint */
+.badge_instagram {
+  color: #c8226c;
+  background: rgba(214, 41, 118, 0.08);
+  border-color: rgba(214, 41, 118, 0.18);
+}
+
+.badge_facebook {
+  color: #1565d8;
+  background: rgba(24, 119, 242, 0.08);
+  border-color: rgba(24, 119, 242, 0.18);
+}
+
+.badge_pinterest {
+  color: #c4001f;
+  background: rgba(230, 0, 35, 0.08);
+  border-color: rgba(230, 0, 35, 0.18);
+}
+
+[data-theme="dark"] .badge_instagram {
+  color: #f6a4cc;
+  background: rgba(214, 41, 118, 0.16);
+}
+
+[data-theme="dark"] .badge_facebook {
+  color: #92baff;
+  background: rgba(24, 119, 242, 0.16);
+}
+
+[data-theme="dark"] .badge_pinterest {
+  color: #ff8595;
+  background: rgba(230, 0, 35, 0.16);
+}
+
 .cardTitle {
   font-size: 1rem;
   font-weight: 700;
@@ -153,12 +244,6 @@
   color: var(--heading-color);
   letter-spacing: -0.005em;
   padding-right: 2.25rem;
-}
-
-.cardMeta {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  font-weight: 500;
 }
 
 .cardArrow {
@@ -190,9 +275,27 @@
   color: #fff;
 }
 
+/* ===================================================================
+   Responsive
+   =================================================================== */
+
 @media (max-width: 768px) {
   .section {
     padding: 3rem 1.1rem 3.5rem;
+  }
+  .categoryStack {
+    gap: 2.25rem;
+  }
+  .categoryHead {
+    gap: 0.6rem;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .categoryName {
+    font-size: 1.05rem;
+  }
+  .categoryTagline {
+    font-size: 0.82rem;
   }
   .grid {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));

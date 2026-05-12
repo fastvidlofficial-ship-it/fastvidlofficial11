@@ -18,6 +18,9 @@ function getPseoSlugs() {
  * Walk src/app and collect route folder paths (posix) that contain a page file.
  * Examples: "", "about-us", "download/[slug]"
  */
+// Routes that must never appear in the public sitemap.
+const SITEMAP_SKIP_FOLDERS = new Set(["api", "admin-dashboard"]);
+
 async function discoverRouteFolders(appRootAbs, relativePosix = "") {
   const dirAbs = relativePosix ? path.join(appRootAbs, ...relativePosix.split("/")) : appRootAbs;
   const entries = await fs.readdir(dirAbs, { withFileTypes: true });
@@ -32,7 +35,7 @@ async function discoverRouteFolders(appRootAbs, relativePosix = "") {
   for (const entry of entries) {
     if (!entry.isDirectory()) continue;
     const name = entry.name;
-    if (name === "api") continue;
+    if (SITEMAP_SKIP_FOLDERS.has(name)) continue;
 
     const childRel = relativePosix ? `${relativePosix}/${name}` : name;
     const nested = await discoverRouteFolders(appRootAbs, childRel);
