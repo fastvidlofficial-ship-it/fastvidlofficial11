@@ -68,10 +68,10 @@ export default function InstagramReelDownloaderBlogContent({ variant = "standalo
   const linkClass = isHome ? "home-blog-article-link" : "";
 
   return (
-    <>
+    <section className="blog-content">
       <h2 className={titleClass}>Best Instagram Reel Downloader Free | HD 1080p No Watermark</h2>
      
-      <p className={metaClass} style={isHome ? {} : { fontStyle: "italic", color: "#666", marginBottom: "1rem" }}>
+      <p className={metaClass} style={isHome ? {} : {  marginBottom: "1rem" }}>
         Written by{" "}
         <a href={RAJA_LINKEDIN} target="_blank" rel="noopener noreferrer" className={linkClass}>
           Raja Jahangir
@@ -300,6 +300,6 @@ export default function InstagramReelDownloaderBlogContent({ variant = "standalo
         </Link>
         .
       </p>
-    </>
+    </section>
   );
 }

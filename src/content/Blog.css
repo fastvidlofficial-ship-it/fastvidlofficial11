@@ -735,7 +735,7 @@ html {
   padding-left: 2rem;
   padding-right: 2rem;
   padding-top: 0.5rem;
-  padding-bottom: 2rem;
+  /* padding-bottom: 2rem; */
   box-sizing: border-box;
 }
 
@@ -756,10 +756,10 @@ html {
 .home-blog-article {
   max-width: 900px;
   margin: 0 auto ;
-  padding: 0 20px 40px;
+  padding: 0 20px 0px;
   color: var(--text-secondary, #444);
   font-size: 1.05em;
-  border-bottom: 1px solid var(--border-subtle, #e2e8f0);
+  /* border-bottom: 1px solid var(--border-subtle, #e2e8f0); */
 }
 
 .home-blog-article-title {

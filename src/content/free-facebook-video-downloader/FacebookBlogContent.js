@@ -51,7 +51,7 @@ export default function FacebookBlogContent() {
     <div className="container-blog">
       <div className="home-blog-article blog-content">
         <h2 className="home-blog-article-title">Free Facebook Video Downloader | 1080p No Watermark (2026)</h2>
-        <p className="home-blog-article-meta" style={{ fontStyle: "italic", color: "#666", marginBottom: "1rem" }}>
+        <p className="home-blog-article-meta" style={{  marginBottom: "1rem" }}>
           Written by{" "}
           <a href={RAJA_LINKEDIN} target="_blank" rel="noopener noreferrer" className="home-blog-article-link">
             Raja Jahangir

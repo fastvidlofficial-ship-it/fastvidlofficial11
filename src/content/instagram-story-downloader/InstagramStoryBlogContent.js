@@ -62,10 +62,10 @@ export default function InstagramStoryBlogContent({ variant = "standalone", faqL
   const linkClass = isHome ? "home-blog-article-link" : "";
 
   return (
-    <>
-      <h2 className={titleClass}>Best Instagram Story Downloader | Save Stories with Music in HD</h2>
+    <section className="blog-content">
+      <h2 className={titleClass }>Best Instagram Story Downloader | Save Stories with Music in HD</h2>
     
-      <p className={metaClass} style={isHome ? {} : { fontStyle: "italic", color: "#666", marginBottom: "1rem" }}>
+      <p className={metaClass} style={isHome ? {} : { marginBottom: "1rem" }}>
         Written by{" "}
         <a href={RAJA_LINKEDIN} target="_blank" rel="noopener noreferrer" className={linkClass}>
           Raja Jahangir
@@ -258,6 +258,6 @@ export default function InstagramStoryBlogContent({ variant = "standalone", faqL
         </Link>
         .
       </p>
-    </>
+    </section>
   );
 }
