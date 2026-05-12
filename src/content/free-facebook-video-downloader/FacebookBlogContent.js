@@ -51,12 +51,6 @@ export default function FacebookBlogContent() {
     <div className="container-blog">
       <div className="home-blog-article blog-content">
         <h2 className="home-blog-article-title">Free Facebook Video Downloader | 1080p No Watermark (2026)</h2>
-        <p className="home-blog-article-meta" style={{  color: "#666", marginBottom: "0.5rem" }}>
-          Meta Description: Looking for a free Facebook video downloader? Save FB videos and extract MP3 audio directly to your
-        </p>
-        <p className="home-blog-article-meta" style={{ fontStyle: "italic", color: "#666", marginBottom: "1rem" }}>
-          phone or PC in HD 1080p without watermarks.
-        </p>
         <p className="home-blog-article-meta" style={{ fontStyle: "italic", color: "#666", marginBottom: "1rem" }}>
           Written by{" "}
           <a href={RAJA_LINKEDIN} target="_blank" rel="noopener noreferrer" className="home-blog-article-link">

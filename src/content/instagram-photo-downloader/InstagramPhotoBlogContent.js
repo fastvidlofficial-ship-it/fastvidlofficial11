@@ -70,12 +70,7 @@ export default function InstagramPhotoBlogContent({ variant = "standalone", faqL
       <h2 className={titleClass}>
         Best Instagram Photo Downloader Free | Full Size HD JPG
       </h2>
-      <p className={metaClass} style={isHome ? {} : { fontStyle: "italic", color: "#666", marginBottom: "0.5rem" }}>
-        Meta Description: Download Instagram photos online free of cost. Save full-size IG pictures directly to your gallery
-      </p>
-      <p className={metaClass} style={isHome ? {} : { fontStyle: "italic", color: "#666", marginBottom: "1rem" }}>
-        in HD quality (JPG) without watermarks. Try FastVidl now!
-      </p>
+      
       <p className={metaClass} style={isHome ? {} : { fontStyle: "italic", color: "#666", marginBottom: "1rem" }}>
         Written by{" "}
         <a href={RAJA_LINKEDIN} target="_blank" rel="noopener noreferrer" className={linkClass}>

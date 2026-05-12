@@ -128,6 +128,46 @@
 }
 
 /* ===================================================================
+   Sub-groups (Reels, Videos, Photos…) inside a platform
+   =================================================================== */
+
+.subgroup {
+  margin-bottom: 1.75rem;
+}
+
+.subgroup:last-child {
+  margin-bottom: 0;
+}
+
+.subgroupTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.subgroupCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.4rem;
+  height: 1.4rem;
+  padding: 0 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: var(--brand-primary);
+  background: var(--highlight-bg);
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+}
+
+/* ===================================================================
    Grid + cards
    =================================================================== */
 
@@ -203,38 +243,15 @@
   border: 1px solid var(--border-subtle);
 }
 
-/* Per-platform badge tint */
 .badge_instagram {
   color: #c8226c;
   background: rgba(214, 41, 118, 0.08);
   border-color: rgba(214, 41, 118, 0.18);
 }
 
-.badge_facebook {
-  color: #1565d8;
-  background: rgba(24, 119, 242, 0.08);
-  border-color: rgba(24, 119, 242, 0.18);
-}
-
-.badge_pinterest {
-  color: #c4001f;
-  background: rgba(230, 0, 35, 0.08);
-  border-color: rgba(230, 0, 35, 0.18);
-}
-
 [data-theme="dark"] .badge_instagram {
   color: #f6a4cc;
   background: rgba(214, 41, 118, 0.16);
-}
-
-[data-theme="dark"] .badge_facebook {
-  color: #92baff;
-  background: rgba(24, 119, 242, 0.16);
-}
-
-[data-theme="dark"] .badge_pinterest {
-  color: #ff8595;
-  background: rgba(230, 0, 35, 0.16);
 }
 
 .cardTitle {
@@ -296,6 +313,13 @@
   }
   .categoryTagline {
     font-size: 0.82rem;
+  }
+  .subgroup {
+    margin-bottom: 1.4rem;
+  }
+  .subgroupTitle {
+    font-size: 0.72rem;
+    margin-bottom: 0.65rem;
   }
   .grid {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
