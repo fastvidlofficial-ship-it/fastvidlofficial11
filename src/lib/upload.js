@@ -1,6 +1,7 @@
 import { writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
 import crypto from "node:crypto";
+import { put } from "@vercel/blob";
 
 const UPLOAD_DIR = path.join(process.cwd(), "public", "uploads", "blogs");
 const PUBLIC_PREFIX = "/uploads/blogs";
@@ -12,7 +13,8 @@ const ALLOWED_MIME = new Set([
   "image/gif",
   "image/svg+xml",
 ]);
-const MAX_BYTES = 5 * 1024 * 1024; // 5 MB
+// Vercel Blob server uploads support up to 4.5 MB per request.
+const MAX_BYTES = Math.floor(4.5 * 1024 * 1024);
 
 function extFromMime(mime) {
   switch (mime) {
@@ -40,28 +42,61 @@ function slugifyBase(name) {
     .slice(0, 40) || "image";
 }
 
-/**
- * Persists an uploaded File (from request.formData()) to public/uploads/blogs/
- * and returns the public URL path that can be used directly as <img src>.
- */
-export async function saveBlogImage(file) {
-  if (!file || typeof file === "string") {
-    throw new Error("No file provided");
-  }
-  if (!ALLOWED_MIME.has(file.type)) {
-    throw new Error(`Unsupported image type: ${file.type}`);
-  }
-  if (file.size > MAX_BYTES) {
-    throw new Error(`Image too large (max ${MAX_BYTES / 1024 / 1024} MB)`);
-  }
+function makeUploadError(message, statusCode = 400) {
+  const err = new Error(message);
+  err.statusCode = statusCode;
+  return err;
+}
 
-  await mkdir(UPLOAD_DIR, { recursive: true });
-
+function makeFileName(file) {
   const baseName = slugifyBase(file.name || "image");
   const ext = extFromMime(file.type) || path.extname(file.name || "") || ".bin";
   const stamp = Date.now().toString(36);
   const rand = crypto.randomBytes(4).toString("hex");
-  const finalName = `${baseName}-${stamp}-${rand}${ext}`;
+  return `${baseName}-${stamp}-${rand}${ext}`;
+}
+
+function shouldUseBlobStorage() {
+  return !!process.env.BLOB_READ_WRITE_TOKEN;
+}
+
+/**
+ * Saves an uploaded File and returns a URL that can be used directly in <img src>.
+ *
+ * Storage strategy:
+ * - Production / Vercel: Vercel Blob (persistent and serverless-safe)
+ * - Local dev without BLOB_READ_WRITE_TOKEN: fallback to public/uploads/blogs/
+ */
+export async function saveBlogImage(file) {
+  if (!file || typeof file === "string") {
+    throw makeUploadError("No file provided");
+  }
+  if (!ALLOWED_MIME.has(file.type)) {
+    throw makeUploadError(`Unsupported image type: ${file.type}`);
+  }
+  if (file.size > MAX_BYTES) {
+    throw makeUploadError("Image too large (max 4.5 MB)");
+  }
+
+  const finalName = makeFileName(file);
+
+  if (shouldUseBlobStorage()) {
+    const blob = await put(`blogs/${finalName}`, file, {
+      access: "public",
+      addRandomSuffix: false,
+      contentType: file.type,
+    });
+    return blob.url;
+  }
+
+  if (process.env.NODE_ENV === "production" || process.env.VERCEL) {
+    throw makeUploadError(
+      "Image uploads require BLOB_READ_WRITE_TOKEN in production.",
+      500
+    );
+  }
+
+  await mkdir(UPLOAD_DIR, { recursive: true });
   const absPath = path.join(UPLOAD_DIR, finalName);
 
   const buffer = Buffer.from(await file.arrayBuffer());

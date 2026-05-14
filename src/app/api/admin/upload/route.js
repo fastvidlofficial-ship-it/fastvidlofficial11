@@ -32,7 +32,7 @@ export async function POST(req) {
   } catch (err) {
     return NextResponse.json(
       { ok: false, error: err?.message || "Upload failed" },
-      { status: 400 }
+      { status: err?.statusCode || 400 }
     );
   }
 }
