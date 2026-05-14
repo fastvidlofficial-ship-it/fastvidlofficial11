@@ -8,6 +8,14 @@ import { slugify } from "@/lib/slugify";
 import styles from "./BlogForm.module.css";
 
 const emptyFaq = () => ({ question: "", answer: "" });
+const MAX_IMAGE_BYTES = 5 * 1024 * 1024;
+const ALLOWED_IMAGE_TYPES = new Set([
+  "image/jpeg",
+  "image/png",
+  "image/webp",
+  "image/gif",
+  "image/svg+xml",
+]);
 
 export default function BlogForm({ mode, blogId }) {
   const router = useRouter();
@@ -25,10 +33,21 @@ export default function BlogForm({ mode, blogId }) {
   const [slugTouched, setSlugTouched] = useState(false);
   const [longDescription, setLongDescription] = useState("");
   const [image, setImage] = useState("");
+  const [imageFile, setImageFile] = useState(null);
+  const [imagePreview, setImagePreview] = useState("");
   const [imageAlt, setImageAlt] = useState("");
   const [faqs, setFaqs] = useState([emptyFaq()]);
   const [published, setPublished] = useState(true);
   const [uploading, setUploading] = useState(false);
+
+  function setPreviewUrl(nextPreview) {
+    setImagePreview((prev) => {
+      if (prev && prev.startsWith("blob:")) {
+        URL.revokeObjectURL(prev);
+      }
+      return nextPreview;
+    });
+  }
 
   useEffect(() => {
     if (!isEdit) return;
@@ -51,6 +70,8 @@ export default function BlogForm({ mode, blogId }) {
         setSlugTouched(true);
         setLongDescription(b.longDescription || "");
         setImage(b.image || "");
+        setImageFile(null);
+        setPreviewUrl("");
         setImageAlt(b.imageAlt || "");
         setFaqs(Array.isArray(b.faqs) && b.faqs.length ? b.faqs : [emptyFaq()]);
         setPublished(b.published !== false);
@@ -76,24 +97,31 @@ export default function BlogForm({ mode, blogId }) {
     setSlug(slugify(title));
   }, [title, isEdit, slugTouched]);
 
-  async function handleImageUpload(e) {
+  useEffect(() => {
+    return () => {
+      if (imagePreview && imagePreview.startsWith("blob:")) {
+        URL.revokeObjectURL(imagePreview);
+      }
+    };
+  }, [imagePreview]);
+
+  function handleImageSelect(e) {
     const file = e.target.files?.[0];
     e.target.value = "";
     if (!file) return;
-    setUploading(true);
+
     setError("");
-    try {
-      const fd = new FormData();
-      fd.append("file", file);
-      const res = await fetch("/api/admin/upload", { method: "POST", body: fd });
-      const data = await res.json();
-      if (!res.ok || !data.ok) throw new Error(data.error || "Upload failed");
-      setImage(data.url);
-    } catch (err) {
-      setError(err.message || "Upload failed");
-    } finally {
-      setUploading(false);
+    if (!ALLOWED_IMAGE_TYPES.has(file.type)) {
+      setError("Unsupported image type. Use JPG, PNG, WEBP, GIF, or SVG.");
+      return;
     }
+    if (file.size > MAX_IMAGE_BYTES) {
+      setError("Image too large. Maximum allowed size is 5 MB.");
+      return;
+    }
+
+    setImageFile(file);
+    setPreviewUrl(URL.createObjectURL(file));
   }
 
   function addFaq() {
@@ -112,24 +140,47 @@ export default function BlogForm({ mode, blogId }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    if (saving) return;
+    if (saving || uploading) return;
     setSaving(true);
     setError("");
 
-    const payload = {
-      metaTitle,
-      metaDescription,
-      metaKeywords,
-      title,
-      slug: slug.trim() ? slugify(slug) : undefined,
-      longDescription,
-      image,
-      imageAlt,
-      faqs,
-      published,
-    };
-
     try {
+      let imageUrl = image;
+
+      if (imageFile) {
+        setUploading(true);
+        const fd = new FormData();
+        fd.append("file", imageFile);
+
+        const uploadRes = await fetch("/api/admin/upload", {
+          method: "POST",
+          body: fd,
+          credentials: "same-origin",
+        });
+        const uploadData = await uploadRes.json().catch(() => ({}));
+        if (!uploadRes.ok || !uploadData.ok) {
+          throw new Error(uploadData.error || "Image upload failed");
+        }
+
+        imageUrl = uploadData.url;
+        setImage(imageUrl);
+        setImageFile(null);
+        setPreviewUrl("");
+      }
+
+      const payload = {
+        metaTitle,
+        metaDescription,
+        metaKeywords,
+        title,
+        slug: slug.trim() ? slugify(slug) : undefined,
+        longDescription,
+        image: imageUrl,
+        imageAlt,
+        faqs,
+        published,
+      };
+
       const url = isEdit ? `/api/admin/blogs/${blogId}` : "/api/admin/blogs";
       const method = isEdit ? "PUT" : "POST";
       const res = await fetch(url, {
@@ -144,6 +195,7 @@ export default function BlogForm({ mode, blogId }) {
     } catch (err) {
       setError(err.message || "Save failed");
     } finally {
+      setUploading(false);
       setSaving(false);
     }
   }
@@ -246,28 +298,30 @@ export default function BlogForm({ mode, blogId }) {
 
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>Featured image</h2>
-        <div className={styles.grid2}>
-          <label className={styles.field}>
-            <span>Image URL</span>
-            <input
-              className={styles.input}
-              value={image}
-              onChange={(e) => setImage(e.target.value)}
-              placeholder="/uploads/blogs/… or full URL"
-            />
-          </label>
-          <label className={styles.field}>
-            <span>Upload file</span>
-            <input
-              type="file"
-              accept="image/*"
-              className={styles.fileInput}
-              disabled={uploading || saving}
-              onChange={handleImageUpload}
-            />
-            {uploading && <span className={styles.hint}>Uploading…</span>}
-          </label>
-        </div>
+        <label className={styles.field}>
+          <span>Upload image</span>
+          <input
+            type="file"
+            accept="image/*"
+            className={styles.fileInput}
+            disabled={uploading || saving}
+            onChange={handleImageSelect}
+          />
+          <span className={styles.hint}>
+            JPG, PNG, WEBP, GIF or SVG. Maximum size: 5 MB.
+          </span>
+          {imageFile && (
+            <span className={styles.fileStatus}>
+              Selected: <strong>{imageFile.name}</strong>
+            </span>
+          )}
+          {!imageFile && image && (
+            <span className={styles.fileStatus}>
+              Existing image will be kept unless you choose a new file.
+            </span>
+          )}
+          {uploading && <span className={styles.fileStatus}>Uploading image…</span>}
+        </label>
         <label className={styles.field}>
           <span>Image alt text</span>
           <input
@@ -277,10 +331,13 @@ export default function BlogForm({ mode, blogId }) {
             placeholder="Describe the image for accessibility"
           />
         </label>
-        {image && (
+        {(imagePreview || image) && (
           <div className={styles.imgPreview}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={image} alt={imageAlt || title || "Preview"} />
+            <img
+              src={imagePreview || image}
+              alt={imageAlt || title || "Preview"}
+            />
           </div>
         )}
       </section>
@@ -334,8 +391,18 @@ export default function BlogForm({ mode, blogId }) {
         <Link href="/admin-dashboard/blogs-management" className={styles.cancelBtn}>
           Cancel
         </Link>
-        <button type="submit" className={styles.saveBtn} disabled={saving || !title}>
-          {saving ? "Saving…" : isEdit ? "Update blog" : "Create blog"}
+        <button
+          type="submit"
+          className={styles.saveBtn}
+          disabled={saving || uploading || !title}
+        >
+          {saving || uploading
+            ? uploading
+              ? "Uploading image…"
+              : "Saving…"
+            : isEdit
+              ? "Update blog"
+              : "Create blog"}
         </button>
       </div>
     </form>
