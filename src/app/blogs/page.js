@@ -49,7 +49,7 @@ export default async function BlogsListingPage({ searchParams }) {
     <div className={styles.page}>
       <header className={styles.hero}>
         <div className={styles.heroInner}>
-          <h1 className={styles.heroTitle}>FastVidl Blog</h1>
+          <h1 className={styles.heroTitle}>FastVidl Blogs</h1>
           <p className={styles.heroSubtitle}>
             Tutorials, tips, and step-by-step guides for downloading social-media
             content the easy way.
