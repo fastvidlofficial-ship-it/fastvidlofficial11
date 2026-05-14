@@ -60,6 +60,17 @@ function shouldUseBlobStorage() {
   return !!process.env.BLOB_READ_WRITE_TOKEN;
 }
 
+function isPrivateStoreError(err) {
+  return (
+    typeof err?.message === "string" &&
+    err.message.includes("Cannot use public access on a private store")
+  );
+}
+
+function buildPrivateBlobProxyUrl(pathname) {
+  return `/api/blob?pathname=${encodeURIComponent(pathname)}`;
+}
+
 /**
  * Saves an uploaded File and returns a URL that can be used directly in <img src>.
  *
@@ -81,12 +92,29 @@ export async function saveBlogImage(file) {
   const finalName = makeFileName(file);
 
   if (shouldUseBlobStorage()) {
-    const blob = await put(`blogs/${finalName}`, file, {
-      access: "public",
-      addRandomSuffix: false,
-      contentType: file.type,
-    });
-    return blob.url;
+    const blobPath = `blogs/${finalName}`;
+
+    try {
+      const blob = await put(blobPath, file, {
+        access: "public",
+        addRandomSuffix: false,
+        contentType: file.type,
+      });
+      return blob.url;
+    } catch (err) {
+      if (!isPrivateStoreError(err)) {
+        throw err;
+      }
+
+      // The project is connected to a private Blob store. Upload there and
+      // return a proxy URL that streams the file back through our own route.
+      const blob = await put(blobPath, file, {
+        access: "private",
+        addRandomSuffix: false,
+        contentType: file.type,
+      });
+      return buildPrivateBlobProxyUrl(blob.pathname);
+    }
   }
 
   if (process.env.NODE_ENV === "production" || process.env.VERCEL) {
