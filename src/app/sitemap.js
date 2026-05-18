@@ -1,115 +1,17 @@
-import { promises as fs } from "node:fs";
-import path from "node:path";
-import pseoAll from "../../pseo-data.json";
+import {
+  collectStaticUrlPaths,
+  getPublishedBlogsForDiscovery,
+  getRouteMetadata,
+  toAbsoluteUrl,
+} from "@/lib/site-discovery";
 
-const BASE_URL = "https://fastvidl.com";
-
-const PAGE_FILE_RE = /^page\.(js|jsx|ts|tsx)$/;
-
-/** Slugs for programmatic /download/[slug] pages */
-function getPseoSlugs() {
-  if (!Array.isArray(pseoAll)) return [];
-  return pseoAll
-    .map((item) => (item && typeof item.slug === "string" ? item.slug.trim() : ""))
-    .filter(Boolean);
-}
-
-/**
- * Walk src/app and collect route folder paths (posix) that contain a page file.
- * Examples: "", "about-us", "download/[slug]"
- */
-// Routes that must never appear in the public sitemap.
-const SITEMAP_SKIP_FOLDERS = new Set(["api", "admin-dashboard"]);
-
-async function discoverRouteFolders(appRootAbs, relativePosix = "") {
-  const dirAbs = relativePosix ? path.join(appRootAbs, ...relativePosix.split("/")) : appRootAbs;
-  const entries = await fs.readdir(dirAbs, { withFileTypes: true });
-
-  const routes = [];
-
-  const hasPage = entries.some((e) => e.isFile() && PAGE_FILE_RE.test(e.name));
-  if (hasPage) {
-    routes.push(relativePosix);
-  }
-
-  for (const entry of entries) {
-    if (!entry.isDirectory()) continue;
-    const name = entry.name;
-    if (SITEMAP_SKIP_FOLDERS.has(name)) continue;
-
-    const childRel = relativePosix ? `${relativePosix}/${name}` : name;
-    const nested = await discoverRouteFolders(appRootAbs, childRel);
-    routes.push(...nested);
-  }
-
-  return routes;
-}
-
-function toPublicPath(routeFolder) {
-  if (!routeFolder) return "/";
-  const segments = routeFolder.split("/").filter(Boolean);
-  const urlSegments = [];
-  for (const seg of segments) {
-    if (seg.startsWith("(") && seg.endsWith(")")) continue;
-    if (seg.startsWith("[")) {
-      urlSegments.push(seg);
-      continue;
-    }
-    urlSegments.push(seg);
-  }
-  if (urlSegments.some((s) => s.startsWith("["))) {
-    return null;
-  }
-  return `/${urlSegments.join("/")}`;
-}
-
-function expandDynamicRoutes(routeFolder, pseoSlugs) {
-  if (routeFolder === "download/[slug]") {
-    return pseoSlugs.map((slug) => `/download/${slug}`);
-  }
-  return [];
-}
-
-function getRouteMetadata(urlPath) {
-  if (urlPath === "/") {
-    return { changeFrequency: "daily", priority: 1.0 };
-  }
-
-  const legalPaths = new Set([
-    "/privacy-policy",
-    "/terms-and-conditions",
-    "/cookie-policy",
-    "/disclaimer",
-  ]);
-
-  if (legalPaths.has(urlPath)) {
-    return { changeFrequency: "yearly", priority: 0.5 };
-  }
-
-  if (urlPath === "/dmca-takedown") {
-    return { changeFrequency: "yearly", priority: 0.55 };
-  }
-
-  if (urlPath === "/about-us" || urlPath === "/contact-us") {
-    return { changeFrequency: "monthly", priority: 0.7 };
-  }
-
-  if (urlPath === "/faqs") {
-    return { changeFrequency: "weekly", priority: 0.8 };
-  }
-
-  if (urlPath.startsWith("/download/")) {
-    return { changeFrequency: "weekly", priority: 0.8 };
-  }
-
-  return { changeFrequency: "weekly", priority: 0.9 };
-}
+/** Re-fetch published blog URLs from MongoDB periodically. */
+export const revalidate = 3600;
 
 function toSitemapEntry(urlPath, lastModified) {
   const { changeFrequency, priority } = getRouteMetadata(urlPath);
-  const url = urlPath === "/" ? BASE_URL : `${BASE_URL}${urlPath}`;
   return {
-    url,
+    url: toAbsoluteUrl(urlPath),
     lastModified,
     changeFrequency,
     priority,
@@ -118,31 +20,25 @@ function toSitemapEntry(urlPath, lastModified) {
 
 /**
  * Next.js App Router sitemap convention.
- * Returning a plain array lets Next.js render the canonical
- * <urlset> XML document at /sitemap.xml — never emit XML manually here.
  *
  * @returns {Promise<import("next").MetadataRoute.Sitemap>}
  */
 export default async function sitemap() {
-  const lastModified = new Date();
-  const appRoot = path.join(process.cwd(), "src", "app");
-  const pseoSlugs = getPseoSlugs();
+  const buildTime = new Date();
+  const [staticPaths, blogs] = await Promise.all([
+    collectStaticUrlPaths(),
+    getPublishedBlogsForDiscovery(),
+  ]);
 
-  const folderRoutes = await discoverRouteFolders(appRoot);
-  const urlPathsSet = new Set();
+  const blogPaths = blogs.map((b) => `/blogs/${b.slug}`);
+  const blogLastMod = new Map(
+    blogs.map((b) => [
+      `/blogs/${b.slug}`,
+      b.updatedAt || b.createdAt || buildTime,
+    ])
+  );
 
-  for (const folder of folderRoutes) {
-    const staticPath = toPublicPath(folder);
-    if (staticPath) {
-      urlPathsSet.add(staticPath);
-      continue;
-    }
-    for (const expanded of expandDynamicRoutes(folder, pseoSlugs)) {
-      urlPathsSet.add(expanded);
-    }
-  }
-
-  const sortedPaths = [...urlPathsSet].sort((a, b) => {
+  const allPaths = [...new Set([...staticPaths, ...blogPaths])].sort((a, b) => {
     if (a === "/") return -1;
     if (b === "/") return 1;
     return a.localeCompare(b);
@@ -150,11 +46,17 @@ export default async function sitemap() {
 
   const seen = new Set();
   const entries = [];
-  for (const p of sortedPaths) {
-    const entry = toSitemapEntry(p, lastModified);
-    if (seen.has(entry.url)) continue;
-    seen.add(entry.url);
-    entries.push(entry);
+
+  for (const urlPath of allPaths) {
+    const url = toAbsoluteUrl(urlPath);
+    if (seen.has(url)) continue;
+    seen.add(url);
+
+    const lastModified =
+      blogLastMod.get(urlPath) ??
+      (urlPath === "/" ? buildTime : buildTime);
+
+    entries.push(toSitemapEntry(urlPath, lastModified));
   }
 
   return entries;
