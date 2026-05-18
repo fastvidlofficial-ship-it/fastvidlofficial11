@@ -2,29 +2,39 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import {
+  COOKIE_CONSENT_EVENT,
+  COOKIE_CONSENT_STORAGE_KEY,
+  hasCookieConsent,
+} from "@/lib/cookie-consent";
 import styles from "./CookieConsentBar.module.css";
 
-const STORAGE_KEY = "fastvidl_cookie_ack";
+export { COOKIE_CONSENT_EVENT, COOKIE_CONSENT_STORAGE_KEY } from "@/lib/cookie-consent";
 
 export default function CookieConsentBar() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    try {
-      if (!localStorage.getItem(STORAGE_KEY)) {
-        setVisible(true);
-      }
-    } catch {
-      setVisible(true);
+    const needsBanner = !hasCookieConsent();
+    setVisible(needsBanner);
+    if (needsBanner) {
+      document.body.classList.add("fastvidl-cookie-pending");
+    } else {
+      document.body.classList.remove("fastvidl-cookie-pending");
     }
+    return () => {
+      document.body.classList.remove("fastvidl-cookie-pending");
+    };
   }, []);
 
   const accept = () => {
     try {
-      localStorage.setItem(STORAGE_KEY, "1");
+      localStorage.setItem(COOKIE_CONSENT_STORAGE_KEY, "1");
     } catch {
       /* ignore */
     }
+    document.body.classList.remove("fastvidl-cookie-pending");
+    window.dispatchEvent(new Event(COOKIE_CONSENT_EVENT));
     setVisible(false);
   };
 

@@ -392,3 +392,19 @@ body {
     font-size: 13px;
   }
 }
+
+/* Cookie banner open: lift ShareThis above the bar so Accept stays clickable */
+body.fastvidl-cookie-pending #st-1,
+body.fastvidl-cookie-pending .st-sticky-share-buttons,
+body.fastvidl-cookie-pending [id^="st-"] {
+  bottom: 7.5rem !important;
+  z-index: 2147483645 !important;
+}
+
+@media (max-width: 480px) {
+  body.fastvidl-cookie-pending #st-1,
+  body.fastvidl-cookie-pending .st-sticky-share-buttons,
+  body.fastvidl-cookie-pending [id^="st-"] {
+    bottom: 9.5rem !important;
+  }
+}

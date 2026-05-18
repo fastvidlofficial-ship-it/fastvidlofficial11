@@ -148,6 +148,11 @@ const Header = () => {
               Pinterest Video Downloader Free
             </Link>
           </li>
+          <li>
+            <Link href="/blogs" onClick={closeMenu}>
+              Blogs
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>
