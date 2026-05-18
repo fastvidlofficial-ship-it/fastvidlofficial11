@@ -225,6 +225,28 @@
   transform: translateY(-2px);
 }
 
+.submit-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.form-result {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #c53030;
+  text-align: center;
+}
+
+.form-result--success {
+  color: #276749;
+}
+
+.form-result--pending {
+  color: var(--text-secondary, #4a5568);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .contact-container {
