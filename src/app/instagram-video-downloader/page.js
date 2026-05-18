@@ -2,7 +2,8 @@
 
 import styles from "../page.module.css";
 import heroStyles from "../DownloaderHero.module.css";
-import UserInput from "@/components/input/UserInput";
+import DownloaderToolSection from "@/components/DownloaderToolSection";
+import NotAffiliatedNote from "@/components/NotAffiliatedNote";
 import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
 import FAQSchema from "@/components/FAQSchema";
 import InstagramVideoBlogContent, {
@@ -52,9 +53,10 @@ export default function InstagramVideoDownloaderPage() {
             <span style={{ color: "var(--heading-color, #1a202c)" }}> Free</span>
           </h1>
         </div>
-        <UserInput />
+        <DownloaderToolSection />
         <EzoicPlacements placementIds={getEzoicToolPlacements()} />
         <InstagramVideoBlogContent />
+        <NotAffiliatedNote />
       </main>
     </div>
   );

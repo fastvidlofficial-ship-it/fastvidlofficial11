@@ -2,7 +2,8 @@
 
 import styles from "../page.module.css";
 import heroStyles from "../DownloaderHero.module.css";
-import UserInput from "@/components/input/UserInput";
+import DownloaderToolSection from "@/components/DownloaderToolSection";
+import NotAffiliatedNote from "@/components/NotAffiliatedNote";
 import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
 import FAQSchema from "@/components/FAQSchema";
 import FacebookBlogContent, { FACEBOOK_FAQ_LIST } from "@/content/free-facebook-video-downloader/FacebookBlogContent";
@@ -60,9 +61,10 @@ export default function FacebookReelDownloaderService() {
             1080p · No watermark · 2026
           </p>
         </div>
-        <UserInput />
+        <DownloaderToolSection />
         <EzoicPlacements placementIds={getEzoicToolPlacements()} />
         <FacebookBlogContent />
+        <NotAffiliatedNote />
       </main>
     </div>
   );

@@ -3,8 +3,12 @@ import { notFound } from "next/navigation";
 import styles from "../../page.module.css";
 import heroStyles from "../../DownloaderHero.module.css";
 import saasStyles from "./downloadSlugSaas.module.css";
-import UserInput from "@/components/input/UserInput";
+import DownloaderToolSection from "@/components/DownloaderToolSection";
+import NotAffiliatedNote from "@/components/NotAffiliatedNote";
 import FaqSection from "@/components/faq/FaqSection";
+import EzoicPlacements from "@/components/ads/EzoicPlacements";
+import { getEzoicToolPlacements } from "@/config/ezoicPlacements";
+import "@/content/Blog.css";
 import pseoAll from "../../../../pseo-data.json";
 
 export const dynamicParams = true;
@@ -161,7 +165,7 @@ export default async function DownloadSlugPage({ params }) {
 
       <main className={styles.main}>
         <div className={heroStyles.heroWrap}>
-          <h1 className={heroStyles.heroTitle} style={{ marginBottom: "0.35rem" }}>
+          <h1 className={heroStyles.heroTitle}>
             {renderStyledHeading(entry.h1_title, entry.content_type)}
           </h1>
           <p className={saasStyles.subTag}>
@@ -169,48 +173,102 @@ export default async function DownloadSlugPage({ params }) {
           </p>
         </div>
 
-        <UserInput />
+        <DownloaderToolSection />
+        <EzoicPlacements placementIds={getEzoicToolPlacements()} />
 
-        <div className={saasStyles.body}>
-          <p className={saasStyles.intro}>{entry.intro_text}</p>
+        <div className="container-blog">
+          <section className="home-blog-article blog-content">
+            <p className={`home-blog-article-p ${saasStyles.intro}`}>{entry.intro_text}</p>
 
-          {steps.length > 0 ? (
-            <section className={saasStyles.sectionMuted} aria-labelledby="how-to-heading">
-              <h2 id="how-to-heading" className={saasStyles.sectionHeading}>
-                {howToHeading}
-              </h2>
-              <div className={saasStyles.stepsGrid}>
-                {steps.map((stepText, index) => (
-                  <article key={`step-${index}`} className={saasStyles.stepCard}>
-                    <span className={saasStyles.stepNum} aria-hidden="true">
-                      {index + 1}
-                    </span>
-                    <p className={saasStyles.stepBody}>{stepText}</p>
-                  </article>
-                ))}
-              </div>
-            </section>
-          ) : null}
+            {steps.length > 0 ? (
+              <section className={saasStyles.sectionMuted} aria-labelledby="how-to-heading">
+                <h2 id="how-to-heading" className={saasStyles.sectionHeading}>
+                  {howToHeading}
+                </h2>
+                <div className={saasStyles.stepsGrid}>
+                  {steps.map((stepText, index) => (
+                    <article key={`step-${index}`} className={saasStyles.stepCard}>
+                      <span className={saasStyles.stepNum} aria-hidden="true">
+                        {index + 1}
+                      </span>
+                      <p className={saasStyles.stepBody}>{stepText}</p>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            ) : null}
 
-          {faqs.length > 0 ? (
-            <FaqSection items={faqs} headingId="faq-heading" />
-          ) : null}
 
-          {relatedTools.length > 0 ? (
-            <section className={saasStyles.relatedSection} aria-labelledby="related-heading">
-              <h2 id="related-heading" className={saasStyles.relatedHeading}>
-                More Free Tools
-              </h2>
-              <div className={saasStyles.relatedGrid}>
-                {relatedTools.map((item) => (
-                  <Link key={item.slug} href={`/download/${item.slug}`} className={saasStyles.relatedLink}>
-                    {item.h1_title || item.meta_title || item.slug}
-                  </Link>
-                ))}
-              </div>
-            </section>
-          ) : null}
+            {entry.richContent ? (
+              <section className={saasStyles.richContent} aria-label="More about this downloader">
+                <h2 className="home-blog-article-h2">{entry.richContent.whyTitle}</h2>
+                <p className="home-blog-article-p">{entry.richContent.whyBody}</p>
+
+                <h2 className="home-blog-article-h2">{entry.richContent.featuresTitle}</h2>
+                <ul className={saasStyles.richFeaturesList}>
+                  {entry.richContent.features.map((f, i) => (
+                    <li key={i}>
+                      <strong>{f.heading}:</strong> {f.detail}
+                    </li>
+                  ))}
+                </ul>
+
+                <h2 className="home-blog-article-h2">{entry.richContent.useCasesTitle}</h2>
+                <p className="home-blog-article-p">{entry.richContent.useCasesBody}</p>
+
+                <h2 className="home-blog-article-h2">{entry.richContent.deviceGuideTitle}</h2>
+                <div className={saasStyles.deviceGuideGrid}>
+                  <div className={saasStyles.deviceGuideCol}>
+                    <h3 className="home-blog-article-h3">iPhone / iOS</h3>
+                    <ol>
+                      {entry.richContent.iosSteps.map((step, i) => (
+                        <li key={i}>{step}</li>
+                      ))}
+                    </ol>
+                  </div>
+                  <div className={saasStyles.deviceGuideCol}>
+                    <h3 className="home-blog-article-h3">Android</h3>
+                    <ol>
+                      {entry.richContent.androidSteps.map((step, i) => (
+                        <li key={i}>{step}</li>
+                      ))}
+                    </ol>
+                  </div>
+                </div>
+
+                <h2 className="home-blog-article-h2">{entry.richContent.tipsTitle}</h2>
+                <p className="home-blog-article-p">{entry.richContent.tipsBody}</p>
+
+                <h2 className="home-blog-article-h2">{entry.richContent.comparisonTitle}</h2>
+                <p className="home-blog-article-p">{entry.richContent.comparisonBody}</p>
+              </section>
+            ) : null}
+
+            {relatedTools.length > 0 ? (
+              <section className={saasStyles.relatedSection} aria-labelledby="related-heading">
+                <h2 id="related-heading" className={saasStyles.relatedHeading}>
+                  More Free Tools
+                </h2>
+                <div className={saasStyles.relatedGrid}>
+                  {relatedTools.map((item) => (
+                    <Link
+                      key={item.slug}
+                      href={`/download/${item.slug}`}
+                      className={saasStyles.relatedLink}
+                    >
+                      {item.h1_title || item.meta_title || item.slug}
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            ) : null}
+          </section>
         </div>
+        {faqs.length > 0 ? (
+              <FaqSection items={faqs} headingId="faq-heading" />
+            ) : null}
+
+        <NotAffiliatedNote />
       </main>
     </div>
   );

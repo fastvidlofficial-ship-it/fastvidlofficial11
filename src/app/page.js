@@ -1,7 +1,8 @@
 'use client'
 import styles from "./page.module.css";
 import IndexMessage from "@/components/index/IndexMessage";
-import UserInput from "@/components/input/UserInput";
+import DownloaderToolSection from "@/components/DownloaderToolSection";
+import NotAffiliatedNote from "@/components/NotAffiliatedNote";
 import HomePageBlogSection from "@/content/HomePageBlogSection";
 import EzoicPlacements from "@/components/ads/EzoicPlacements";
 import { getEzoicHomePlacements } from "@/config/ezoicPlacements";
@@ -12,10 +13,11 @@ export default function Home() {
     <div className={styles.page}>
       <main className={styles.main}>
         <IndexMessage />
-        <UserInput />
+        <DownloaderToolSection />
         <EzoicPlacements placementIds={getEzoicHomePlacements()} />
         <HomePageBlogSection />
         <PopularDownloaders />
+        <NotAffiliatedNote />
       </main>
     </div>
   );

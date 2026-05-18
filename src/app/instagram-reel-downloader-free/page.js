@@ -2,7 +2,8 @@
 
 import styles from "../page.module.css";
 import heroStyles from "../DownloaderHero.module.css";
-import UserInput from "@/components/input/UserInput";
+import DownloaderToolSection from "@/components/DownloaderToolSection";
+import NotAffiliatedNote from "@/components/NotAffiliatedNote";
 import "@/content/Blog.css";
 import FAQSchema from "@/components/FAQSchema";
 import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
@@ -53,13 +54,14 @@ export default function InstagramReelDownloaderService() {
             <span style={{ color: "var(--heading-color, #1a202c)" }}> Free</span>
           </h1>
         </div>
-        <UserInput />
+        <DownloaderToolSection />
         <EzoicPlacements placementIds={getEzoicToolPlacements()} />
         <div className="container-blog">
           <section className="home-blog-article">
             <InstagramReelDownloaderBlogContent variant="home" faqList={INSTAGRAM_BLOG_FAQ_LIST} />
           </section>
         </div>
+        <NotAffiliatedNote />
       </main>
     </div>
   );

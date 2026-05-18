@@ -2,7 +2,8 @@
 
 import styles from "../page.module.css";
 import heroStyles from "../DownloaderHero.module.css";
-import UserInput from "@/components/input/UserInput";
+import DownloaderToolSection from "@/components/DownloaderToolSection";
+import NotAffiliatedNote from "@/components/NotAffiliatedNote";
 import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
 import FAQSchema from "@/components/FAQSchema";
 import PinterestBlogContent, { PINTEREST_FAQ_LIST } from "@/content/pinterest-video-downloader-free/PinterestBlogContent";
@@ -50,9 +51,10 @@ export default function PinterestReelDownloaderService() {
             <span style={{ color: "var(--heading-color, #1a202c)" }}> Free</span>
           </h1>
         </div>
-        <UserInput />
+        <DownloaderToolSection />
         <EzoicPlacements placementIds={getEzoicToolPlacements()} />
         <PinterestBlogContent />
+        <NotAffiliatedNote />
       </main>
     </div>
   );
