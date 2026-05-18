@@ -8,7 +8,7 @@ import FaqSection from "@/components/faq/FaqSection";
 const blogImageStyle = { width: "100%", height: "auto", marginBottom: "1.25rem" };
 
 const INSTAGRAM_TERMS_URL = "https://www.instagram.com/about/legal/terms/";
-const RAJA_LINKEDIN = "https://www.linkedin.com/in/raja-jahangir";
+const AUTHOR_PAGE = "/author/raja-jahangir";
 const AUROXA_TECH_URL = "https://auroxatech.com";
 
 const listStyle = { marginBottom: "1rem", paddingLeft: "1.5rem" };
@@ -68,7 +68,7 @@ export default function InstagramReelDownloaderBlogContent({ variant = "standalo
      
       <p className={metaClass} style={isHome ? {} : {  marginBottom: "1rem" }}>
         Written by{" "}
-        <a href={RAJA_LINKEDIN} target="_blank" rel="noopener noreferrer" className={linkClass}>
+        <a href={AUTHOR_PAGE} className={linkClass}>
           Raja Jahangir
         </a>{" "}
         (SEO &amp; Growth Specialist). Powered by{" "}
@@ -254,8 +254,8 @@ export default function InstagramReelDownloaderBlogContent({ variant = "standalo
         FastVidl was built by a dedicated team focused on next-generation downloading tools. By combining technical precision with search expertise, we keep the platform fast, secure and free for all users.
       </p>
       <p className={pClass}>
-        <strong>Raja Jahangir: SEO &amp; Growth Expert</strong> — Bringing 3 years of SEO experience, Raja ensures that FastVidl remains user-centric and accessible.{" "}
-        <a href={RAJA_LINKEDIN} target="_blank" rel="noopener noreferrer" className={linkClass}>
+        <strong>Raja Jahangir, SEO &amp; Growth Specialist</strong>. With three years of SEO experience, Raja ensures that FastVidl remains user-centric and accessible.{" "}
+        <a href={AUTHOR_PAGE} className={linkClass}>
           Connect on LinkedIn
         </a>{" "}
         Powered by{" "}

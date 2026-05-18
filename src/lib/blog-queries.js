@@ -1,5 +1,9 @@
 import { dbConnect } from "@/lib/db";
 import Blog from "@/models/Blog";
+import {
+  normalizeBlogDocument,
+  normalizeBlogImageUrl,
+} from "@/lib/blog-html";
 
 function buildSearchFilter(q) {
   const filter = {};
@@ -47,7 +51,10 @@ export async function getPublishedBlogs({ q = "", page = 1, limit = 10 } = {}) {
   const items = await cursor.lean();
 
   return {
-    items,
+    items: items.map((item) => ({
+      ...item,
+      image: item.image ? normalizeBlogImageUrl(item.image) : "",
+    })),
     total,
     page: useAll ? 1 : safePage,
     limit: useAll ? items.length : safeLimit,
@@ -61,5 +68,7 @@ export async function getPublishedBlogBySlug(slug) {
     slug: String(slug || "").toLowerCase(),
     published: true,
   }).lean();
-  return doc;
+
+  if (!doc) return null;
+  return normalizeBlogDocument(doc);
 }

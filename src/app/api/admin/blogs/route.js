@@ -3,6 +3,8 @@ import { dbConnect } from "@/lib/db";
 import Blog from "@/models/Blog";
 import { getAdminSession } from "@/lib/auth";
 import { slugify } from "@/lib/slugify";
+import { prepareBlogHtml, normalizeBlogImageUrl } from "@/lib/blog-html";
+import { submitBlogPostToIndexNow } from "@/lib/indexnow";
 
 export const dynamic = "force-dynamic";
 
@@ -110,18 +112,29 @@ export async function POST(req) {
         .filter((f) => f.question || f.answer)
     : [];
 
+  const longDescription = await prepareBlogHtml(
+    String(body.longDescription || ""),
+    slug
+  );
+  const image = normalizeBlogImageUrl(String(body.image || "").trim());
+  const published = body.published !== false;
+
   const doc = await Blog.create({
     metaTitle: String(body.metaTitle || "").trim(),
     metaDescription: String(body.metaDescription || "").trim(),
     metaKeywords: String(body.metaKeywords || "").trim(),
     title,
     slug,
-    longDescription: String(body.longDescription || ""),
-    image: String(body.image || "").trim(),
+    longDescription,
+    image,
     imageAlt: String(body.imageAlt || "").trim(),
     faqs,
-    published: body.published !== false,
+    published,
   });
+
+  if (published) {
+    submitBlogPostToIndexNow(slug);
+  }
 
   return NextResponse.json({ ok: true, item: doc.toJSON() }, { status: 201 });
 }

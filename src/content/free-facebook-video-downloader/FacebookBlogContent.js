@@ -6,7 +6,7 @@ import Image from "next/image";
 import FaqSection from "@/components/faq/FaqSection";
 import "../Blog.css";
 
-const RAJA_LINKEDIN = "https://www.linkedin.com/in/raja-jahangir";
+const AUTHOR_PAGE = "/author/raja-jahangir";
 const AUROXA_TECH_URL = "https://auroxatech.com";
 
 const listStyle = { marginBottom: "1rem", paddingLeft: "1.5rem" };
@@ -53,7 +53,7 @@ export default function FacebookBlogContent() {
         <h2 className="home-blog-article-title">Free Facebook Video Downloader | 1080p No Watermark (2026)</h2>
         <p className="home-blog-article-meta" style={{  marginBottom: "1rem" }}>
           Written by{" "}
-          <a href={RAJA_LINKEDIN} target="_blank" rel="noopener noreferrer" className="home-blog-article-link">
+          <a href={AUTHOR_PAGE} className="home-blog-article-link">
             Raja Jahangir
           </a>{" "}
           (SEO &amp; Growth Specialist). Powered by{" "}
@@ -223,8 +223,8 @@ export default function FacebookBlogContent() {
           FastVidl was built by a dedicated team focused on next-generation video downloading workflows, balancing speed, safety and accessibility.
         </p>
         <p className="home-blog-article-p">
-          <strong>Raja Jahangir: SEO &amp; Growth Expert</strong> — Bringing 3 years of SEO experience, Raja helps keep FastVidl user-centric and privacy-focused.{" "}
-          <a href={RAJA_LINKEDIN} target="_blank" rel="noopener noreferrer" className="home-blog-article-link">
+          <strong>Raja Jahangir, SEO &amp; Growth Specialist</strong>. With three years of SEO experience, Raja helps keep FastVidl user-centric and privacy-focused.{" "}
+          <a href={AUTHOR_PAGE} className="home-blog-article-link">
             Connect on LinkedIn
           </a>{" "}
           Powered by{" "}

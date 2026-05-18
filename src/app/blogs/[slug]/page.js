@@ -1,24 +1,19 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { getPublishedBlogBySlug } from "@/lib/blog-queries";
 import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
+import BlogArticleSchema from "@/components/BlogArticleSchema";
 import FaqSection from "@/components/faq/FaqSection";
+import { getSiteUrl, getMetadataBase, toAbsoluteUrl } from "@/lib/site-url";
 import "@/content/Blog.css";
 import styles from "./BlogShow.module.css";
 
 export const dynamic = "force-dynamic";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://fastvidl.com";
-
 function toSchemaDate(value) {
   if (!value) return undefined;
-  return new Date(value).toISOString().split("T")[0];
-}
-
-function toAbsoluteUrl(path) {
-  if (!path) return undefined;
-  if (path.startsWith("http")) return path;
-  return `${SITE_URL.replace(/\/$/, "")}${path}`;
+  return new Date(value).toISOString();
 }
 
 export async function generateMetadata({ params }) {
@@ -27,7 +22,7 @@ export async function generateMetadata({ params }) {
   try {
     blog = await getPublishedBlogBySlug(slug);
   } catch {
-    /* swallow — handled below */
+    /* swallow */
   }
 
   if (!blog) {
@@ -37,15 +32,12 @@ export async function generateMetadata({ params }) {
   const title = blog.metaTitle || blog.title;
   const description =
     blog.metaDescription ||
-    `${blog.title} — read the full guide on FastVidl.`;
-  const url = `${SITE_URL.replace(/\/$/, "")}/blogs/${blog.slug}`;
-  const imageAbs = blog.image
-    ? blog.image.startsWith("http")
-      ? blog.image
-      : `${SITE_URL.replace(/\/$/, "")}${blog.image}`
-    : undefined;
+    `${blog.title}. Read the full guide on FastVidl.`;
+  const url = `${getSiteUrl()}/blogs/${blog.slug}`;
+  const imageAbs = toAbsoluteUrl(blog.image);
 
   return {
+    metadataBase: getMetadataBase(),
     title,
     description,
     keywords: blog.metaKeywords || undefined,
@@ -55,7 +47,7 @@ export async function generateMetadata({ params }) {
       description,
       url,
       type: "article",
-      images: imageAbs ? [imageAbs] : undefined,
+      images: imageAbs ? [{ url: imageAbs }] : undefined,
     },
     twitter: {
       card: imageAbs ? "summary_large_image" : "summary",
@@ -96,9 +88,15 @@ export default async function BlogShowPage({ params }) {
     ? blog.faqs.filter((f) => f && f.question && f.answer)
     : [];
 
-  const articleUrl = `${SITE_URL.replace(/\/$/, "")}/blogs/${blog.slug}`;
+  const articleUrl = `${getSiteUrl()}/blogs/${blog.slug}`;
   const imageAbs = toAbsoluteUrl(blog.image);
-  const publisherLogo = `${SITE_URL.replace(/\/$/, "")}/assets/weblogo.png`;
+  const publisherLogo = `${getSiteUrl()}/assets/weblogo.png`;
+  const publishedIso = blog.createdAt
+    ? new Date(blog.createdAt).toISOString()
+    : undefined;
+  const modifiedIso = blog.updatedAt
+    ? new Date(blog.updatedAt).toISOString()
+    : publishedIso;
 
   const faqLd =
     cleanFaqs.length > 0
@@ -113,13 +111,24 @@ export default async function BlogShowPage({ params }) {
         }
       : null;
 
+  const featuredSrc =
+    blog.image && !blog.image.startsWith("data:") ? blog.image : null;
+
   return (
     <div className={styles.page}>
+      <BlogArticleSchema
+        headline={blog.metaTitle || blog.title}
+        description={blog.metaDescription}
+        image={imageAbs}
+        datePublished={publishedIso}
+        dateModified={modifiedIso}
+        slug={blog.slug}
+      />
       <AuthorOrganizationSchema
         authorName="Raja Jahangir"
         authorUrl="https://fastvidl.com/author/raja-jahangir"
-        organizationName="Auroxa Tech"
-        organizationUrl="https://auroxatech.com"
+        organizationName="FastVidl"
+        organizationUrl={getSiteUrl()}
         articleUrl={articleUrl}
         headline={blog.metaTitle || blog.title}
         description={blog.metaDescription || undefined}
@@ -143,26 +152,41 @@ export default async function BlogShowPage({ params }) {
             <Link href="/blogs">Blog</Link>
           </div>
           <h1 className={styles.heroTitle}>{blog.title}</h1>
-          {blog.createdAt && (
-            <p className={styles.heroMeta}>
-              Published{" "}
-              <time dateTime={new Date(blog.createdAt).toISOString()}>
-                {new Date(blog.createdAt).toLocaleDateString(undefined, {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </time>
-            </p>
-          )}
+          <p className={styles.heroMeta}>
+            By{" "}
+            <Link href="/author/raja-jahangir" className={styles.authorLink}>
+              Raja Jahangir
+            </Link>
+            {blog.createdAt && (
+              <>
+                {" "}
+                · Published{" "}
+                <time dateTime={publishedIso}>
+                  {new Date(blog.createdAt).toLocaleDateString(undefined, {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </time>
+              </>
+            )}
+          </p>
         </div>
       </header>
 
       <article className={styles.article}>
-        {blog.image && (
+        {featuredSrc && (
           <figure className={styles.featuredImage}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={blog.image} alt={blog.imageAlt || blog.title} />
+            <Image
+              src={featuredSrc}
+              alt={blog.imageAlt || blog.title}
+              width={1200}
+              height={630}
+              className={styles.featuredImg}
+              priority
+              sizes="(max-width: 900px) 100vw, 900px"
+              quality={75}
+            />
             {blog.imageAlt && (
               <figcaption className={styles.figureCaption}>
                 {blog.imageAlt}

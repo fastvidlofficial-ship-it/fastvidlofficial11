@@ -18,7 +18,7 @@ export default function InstagramReelDownloaderService() {
     <div className={styles.page}>
       <AuthorOrganizationSchema
         authorName="Raja Jahangir"
-        authorUrl="https://www.linkedin.com/in/raja-jahangir"
+        authorUrl="https://fastvidl.com/author/raja-jahangir"
         organizationName="Auroxa Tech"
         organizationUrl="https://auroxatech.com"
         articleUrl="https://fastvidl.com/instagram-reel-downloader-free"

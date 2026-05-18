@@ -5,7 +5,7 @@ import FaqSection from "@/components/faq/FaqSection";
 import "@/content/Blog.css";
 import Image from "next/image";
 
-const RAJA_LINKEDIN = "https://www.linkedin.com/in/raja-jahangir";
+const AUTHOR_PAGE = "/author/raja-jahangir";
 const AUROXA_TECH_URL = "https://auroxatech.com";
 const blogImageStyle = { width: "100%", height: "auto", marginBottom: "1.25rem" };
 
@@ -59,12 +59,7 @@ export default function HomePageBlogSection() {
           
           <p className="home-blog-article-meta" style={{ marginBottom: "1rem" }}>
             Written by{" "}
-            <a
-              href={RAJA_LINKEDIN}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="home-blog-article-link"
-            >
+            <a href={AUTHOR_PAGE} className="home-blog-article-link">
               Raja Jahangir
             </a>{" "}
             (SEO &amp; Growth Specialist). Powered by{" "}

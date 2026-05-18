@@ -9,7 +9,7 @@ export const rajaJahangirProfile = {
   titles: ["SEO & Growth Specialist", "Content Author"],
   linkedInUrl: "https://www.linkedin.com/in/raja-jahangir",
   profileImage: "/images/jahangir1.jpeg",
-  profileImageAlt: "Raja Jahangir — SEO & Growth Specialist",
+  profileImageAlt: "Raja Jahangir, SEO and Growth Specialist",
 
   aboutSummary:
     "Raja Jahangir is an SEO & Growth Specialist and Content Author for FastVidl. With three years of hands-on SEO experience, he helps keep the platform user-centric, privacy-focused, and easy to find for people searching for reliable ways to save public Instagram, Facebook, and Pinterest media. His work spans technical SEO, long-form guides, and growth-focused UX across the site’s downloader tools and blog.",

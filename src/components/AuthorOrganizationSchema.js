@@ -18,7 +18,7 @@
  */
 export default function AuthorOrganizationSchema({
   authorName = "Raja Jahangir",
-  authorUrl = "https://www.linkedin.com/in/raja-jahangir",
+  authorUrl = "https://fastvidl.com/author/raja-jahangir",
   organizationName = "Auroxa Tech",
   organizationUrl = "https://auroxatech.com",
   articleUrl,

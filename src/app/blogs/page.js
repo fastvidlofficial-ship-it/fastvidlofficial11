@@ -1,20 +1,30 @@
 import Link from "next/link";
 import { getPublishedBlogs } from "@/lib/blog-queries";
+import { getMetadataBase, getSiteUrl } from "@/lib/site-url";
 import BlogSearch from "./BlogSearch";
 import styles from "./BlogsPage.module.css";
 
 export const dynamic = "force-dynamic";
 
+const BLOG_LIST_TITLE = "FastVidl Blog: Tutorials for Instagram, Facebook & Pinterest";
+const BLOG_LIST_DESCRIPTION =
+  "Step-by-step tutorials, tips, and guides for downloading videos, reels, stories, and photos from Instagram, Facebook, and Pinterest.";
+
 export const metadata = {
+  metadataBase: getMetadataBase(),
   title: "Blog · FastVidl",
-  description:
-    "Expert guides on saving Instagram Reels, Facebook videos & Pinterest pins. Step-by-step tutorials for iPhone, Android & desktop. Free tips from FastVidl.",
-  alternates: { canonical: "https://fastvidl.com/blogs" },
+  description: BLOG_LIST_DESCRIPTION,
+  alternates: { canonical: `${getSiteUrl()}/blogs` },
   openGraph: {
-    title: "Blog · FastVidl",
-    description:
-      "Tutorials and guides for downloading social-media content with FastVidl.",
-    url: "https://fastvidl.com/blogs",
+    title: BLOG_LIST_TITLE,
+    description: BLOG_LIST_DESCRIPTION,
+    url: `${getSiteUrl()}/blogs`,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: BLOG_LIST_TITLE,
+    description: BLOG_LIST_DESCRIPTION,
   },
 };
 

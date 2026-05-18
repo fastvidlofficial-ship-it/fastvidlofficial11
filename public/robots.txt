@@ -24,6 +24,8 @@ Allow: /terms-and-conditions
 Allow: /disclaimer
 Allow: /dmca-takedown
 Allow: /cookie-policy
+Allow: /blogs
+Allow: /author/
 
 # Allow static assets (CSS, JS, Images, Fonts)
 Allow: /next/static/
@@ -153,3 +155,6 @@ Disallow: /
 # -----------------------------------------------------------
 Sitemap: https://fastvidl.com/sitemap.xml
 # LLMs.txt: https://fastvidl.com/llms.txt
+
+# IndexNow
+# Key file: https://fastvidl.com/a3f7c2e1-9b4d-4f8a-ae6c-1d8e5b0c7f2a.txt

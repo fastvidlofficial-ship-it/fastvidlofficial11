@@ -24,6 +24,12 @@ export default function WebSiteSchema() {
           "@type": "ImageObject",
           url: "https://fastvidl.com/assets/weblogo.png",
         },
+        sameAs: [
+          "https://www.instagram.com/fastvidl/",
+          "https://www.facebook.com/profile.php?id=61581793203905",
+          "https://www.pinterest.com/fastvidl/",
+          "https://x.com/FastVidl",
+        ],
       },
       {
         "@type": "WebApplication",

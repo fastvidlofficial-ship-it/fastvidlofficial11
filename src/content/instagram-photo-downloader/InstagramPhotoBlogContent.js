@@ -6,7 +6,7 @@ import Image from "next/image";
 import FaqSection from "@/components/faq/FaqSection";
 
 const INSTAGRAM_TERMS_URL = "https://www.instagram.com/about/legal/terms/";
-const RAJA_LINKEDIN = "https://www.linkedin.com/in/raja-jahangir";
+const AUTHOR_PAGE = "/author/raja-jahangir";
 const AUROXA_TECH_URL = "https://auroxatech.com";
 
 const blogImageStyle = { width: "100%", height: "auto", marginBottom: "1.25rem" };
@@ -73,7 +73,7 @@ export default function InstagramPhotoBlogContent({ variant = "standalone", faqL
       
       <p className={metaClass} style={isHome ? {} : {  marginBottom: "1rem" }}>
         Written by{" "}
-        <a href={RAJA_LINKEDIN} target="_blank" rel="noopener noreferrer" className={linkClass}>
+        <a href={AUTHOR_PAGE} className={linkClass}>
           Raja Jahangir
         </a>{" "}
         (SEO &amp; Growth Specialist). Powered by{" "}
@@ -201,7 +201,7 @@ export default function InstagramPhotoBlogContent({ variant = "standalone", faqL
       </p>
       <p className={pClass}>
         <strong>Raja Jahangir: SEO &amp; Growth Expert</strong>—Bringing 3 years of SEO experience, Raja ensures that FastVidl remains user-centric, privacy-focused and easily accessible to the thousands of users searching for reliable video solutions every month.{" "}
-        <a href={RAJA_LINKEDIN} target="_blank" rel="noopener noreferrer" className={linkClass}>
+        <a href={AUTHOR_PAGE} className={linkClass}>
           Connect on LinkedIn
         </a>{" "}
         Powered by{" "}

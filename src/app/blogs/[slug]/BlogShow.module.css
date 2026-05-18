@@ -48,6 +48,23 @@
   margin: 0;
 }
 
+.authorLink {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.authorLink:hover {
+  opacity: 0.9;
+}
+
+.featuredImg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .article {
   max-width: 860px;
   margin: 0 auto;

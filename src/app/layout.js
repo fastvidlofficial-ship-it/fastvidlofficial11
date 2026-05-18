@@ -18,7 +18,7 @@ import CookieConsentBar from "@/components/CookieConsentBar";
 export const metadata = {
   metadataBase: new URL('https://fastvidl.com'),
   title: {
-    default: "FastVidl — Free Downloader for Instagram & Facebook",
+    default: "FastVidl | Free Downloader for Instagram & Facebook",
     template: "%s | FastVidl",
   },
   description:
@@ -31,7 +31,7 @@ export const metadata = {
     canonical: 'https://fastvidl.com',
   },
   openGraph: {
-    title: "FastVidl — Free Downloader for Instagram & Facebook",
+    title: "FastVidl | Free Downloader for Instagram & Facebook",
     description:
       "FastVidl is a free online downloader for Instagram Reels, Stories, Photos, Facebook videos, and Pinterest videos. No watermark, no login, no app. Save public media in HD on mobile and desktop.",
     url: "https://fastvidl.com",
@@ -41,7 +41,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FastVidl — Free Downloader for Instagram & Facebook",
+    title: "FastVidl | Free Downloader for Instagram & Facebook",
     description:
       "Free online downloader for Instagram, Facebook, and Pinterest public media. No watermark, no login, no app.",
     images: ["/assets/What is FastVidl.png"],
