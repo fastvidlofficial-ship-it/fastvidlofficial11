@@ -255,8 +255,19 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
+/* Blogs — mobile hamburger menu only (beats .navstyle ul li { display: inline-block }) */
+@media (min-width: 769px) {
+  .navstyle ul li.navMobileOnly {
+    display: none !important;
+  }
+}
+
 /* Mobile: show hamburger, hide horizontal nav; when open show vertical nav */
 @media (max-width: 768px) {
+  .navstyle ul li.navMobileOnly {
+    display: block;
+  }
+
   .hamburger {
     display: flex;
   }
