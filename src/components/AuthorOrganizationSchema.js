@@ -12,6 +12,9 @@
  * @param {string} [props.headline] - Article headline
  * @param {string} [props.datePublished] - ISO date (e.g. "2026-02-27")
  * @param {string} [props.dateModified] - ISO date (e.g. "2026-02-27")
+ * @param {string} [props.description] - Article description
+ * @param {string} [props.image] - Absolute URL of featured image
+ * @param {string} [props.publisherLogo] - Absolute URL of publisher logo
  */
 export default function AuthorOrganizationSchema({
   authorName = "Raja Jahangir",
@@ -22,6 +25,9 @@ export default function AuthorOrganizationSchema({
   headline,
   datePublished,
   dateModified,
+  description,
+  image,
+  publisherLogo,
 }) {
   const author = {
     "@type": "Person",
@@ -33,6 +39,9 @@ export default function AuthorOrganizationSchema({
     "@type": "Organization",
     name: organizationName,
     ...(organizationUrl && { url: organizationUrl }),
+    ...(publisherLogo && {
+      logo: { "@type": "ImageObject", url: publisherLogo },
+    }),
   };
 
   const graph = [
@@ -45,6 +54,8 @@ export default function AuthorOrganizationSchema({
             headline,
             datePublished,
             ...(dateModified && { dateModified }),
+            ...(description && { description }),
+            ...(image && { image }),
             author: { "@id": "#author" },
             publisher: { "@id": "#publisher" },
             mainEntityOfPage: { "@type": "WebPage", "@id": articleUrl },

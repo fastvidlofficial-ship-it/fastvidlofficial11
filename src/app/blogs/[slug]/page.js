@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getPublishedBlogBySlug } from "@/lib/blog-queries";
+import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
 import FaqSection from "@/components/faq/FaqSection";
 import "@/content/Blog.css";
 import styles from "./BlogShow.module.css";
@@ -8,6 +9,17 @@ import styles from "./BlogShow.module.css";
 export const dynamic = "force-dynamic";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://fastvidl.com";
+
+function toSchemaDate(value) {
+  if (!value) return undefined;
+  return new Date(value).toISOString().split("T")[0];
+}
+
+function toAbsoluteUrl(path) {
+  if (!path) return undefined;
+  if (path.startsWith("http")) return path;
+  return `${SITE_URL.replace(/\/$/, "")}${path}`;
+}
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
@@ -84,32 +96,9 @@ export default async function BlogShowPage({ params }) {
     ? blog.faqs.filter((f) => f && f.question && f.answer)
     : [];
 
-  const blogPostingLd = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: blog.title,
-    description: blog.metaDescription || undefined,
-    image: blog.image
-      ? blog.image.startsWith("http")
-        ? blog.image
-        : `${SITE_URL.replace(/\/$/, "")}${blog.image}`
-      : undefined,
-    datePublished: blog.createdAt ? new Date(blog.createdAt).toISOString() : undefined,
-    dateModified: blog.updatedAt ? new Date(blog.updatedAt).toISOString() : undefined,
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `${SITE_URL.replace(/\/$/, "")}/blogs/${blog.slug}`,
-    },
-    author: { "@type": "Organization", name: "FastVidl" },
-    publisher: {
-      "@type": "Organization",
-      name: "FastVidl",
-      logo: {
-        "@type": "ImageObject",
-        url: `${SITE_URL.replace(/\/$/, "")}/assets/weblogo.png`,
-      },
-    },
-  };
+  const articleUrl = `${SITE_URL.replace(/\/$/, "")}/blogs/${blog.slug}`;
+  const imageAbs = toAbsoluteUrl(blog.image);
+  const publisherLogo = `${SITE_URL.replace(/\/$/, "")}/assets/weblogo.png`;
 
   const faqLd =
     cleanFaqs.length > 0
@@ -126,9 +115,18 @@ export default async function BlogShowPage({ params }) {
 
   return (
     <div className={styles.page}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingLd) }}
+      <AuthorOrganizationSchema
+        authorName="Raja Jahangir"
+        authorUrl="https://www.linkedin.com/in/raja-jahangir"
+        organizationName="Auroxa Tech"
+        organizationUrl="https://auroxatech.com"
+        articleUrl={articleUrl}
+        headline={blog.metaTitle || blog.title}
+        description={blog.metaDescription || undefined}
+        image={imageAbs}
+        publisherLogo={publisherLogo}
+        datePublished={toSchemaDate(blog.createdAt)}
+        dateModified={toSchemaDate(blog.updatedAt || blog.createdAt)}
       />
       {faqLd && (
         <script

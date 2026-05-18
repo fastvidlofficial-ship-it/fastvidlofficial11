@@ -774,6 +774,34 @@
   line-height: 1.4;
 }
 
+.team-card-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  width: 100%;
+}
+
+.team-card-author {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  padding: 0.55rem 1.25rem;
+  border-radius: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: 1.5px solid transparent;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.team-card-author:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(102, 126, 234, 0.4);
+}
+
 .team-card-linkedin {
   display: inline-flex;
   align-items: center;
