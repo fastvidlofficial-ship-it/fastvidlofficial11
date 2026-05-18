@@ -8,10 +8,22 @@ export default function WebSiteSchema() {
     "@graph": [
       {
         "@type": "WebSite",
+        "@id": "https://fastvidl.com/#website",
         name: "FastVidl",
         description:
           "FastVidl is a free online downloader for public media from Instagram, Facebook, and Pinterest. The platform supports reels, stories, photos, and videos in a browser-based workflow with no app install required.",
         url: "https://fastvidl.com",
+        publisher: { "@id": "https://fastvidl.com/#organization" },
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://fastvidl.com/#organization",
+        name: "FastVidl",
+        url: "https://fastvidl.com",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://fastvidl.com/assets/weblogo.png",
+        },
       },
       {
         "@type": "WebApplication",

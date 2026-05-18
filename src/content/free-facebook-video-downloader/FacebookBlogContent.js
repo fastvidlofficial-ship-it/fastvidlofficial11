@@ -160,39 +160,32 @@ export default function FacebookBlogContent() {
               <tr>
                 <th>Features</th>
                 <th>FastVidl</th>
-                <th>Competitors</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>Login Required</td>
-                <td>No</td>
-                <td>No</td>
+                <td>No — public links only</td>
               </tr>
               <tr>
                 <td>Max Quality</td>
-                <td>1080p</td>
-                <td>720p</td>
+                <td>Up to 1080p when the source allows</td>
               </tr>
               <tr>
                 <td>Mobile Support</td>
-                <td>Excellent</td>
-                <td>Good</td>
+                <td>iPhone, Android, tablets, desktop browsers</td>
               </tr>
               <tr>
-                <td>Processing Speed</td>
-                <td>5-10 sec</td>
-                <td>15-30 sec</td>
+                <td>Typical Processing</td>
+                <td>Most public links process in under 10 seconds on broadband</td>
               </tr>
               <tr>
-                <td>Ads</td>
-                <td>Not yet</td>
-                <td>Many</td>
+                <td>Browser-Based</td>
+                <td>No app install required</td>
               </tr>
               <tr>
-                <td>Dark/Light Button</td>
-                <td>Yes, fully functional</td>
-                <td>No</td>
+                <td>Theme Toggle</td>
+                <td>Dark and light mode supported</td>
               </tr>
             </tbody>
           </table>

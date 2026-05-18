@@ -6,6 +6,7 @@ import WebSiteSchema from "@/components/WebSiteSchema";
 import ThemeProvider from "@/components/theme/ThemeContext";
 import ThirdPartyScripts from "@/components/scripts/ThirdPartyScripts";
 import EzoicHeadInjector from "@/components/scripts/EzoicHeadInjector";
+import CookieConsentBar from "@/components/CookieConsentBar";
 
 // NOTE: `next/font/google` for Geist / Geist Mono was removed.
 // 1. Those CSS variables weren't used anywhere in the project — globals.css
@@ -16,7 +17,10 @@ import EzoicHeadInjector from "@/components/scripts/EzoicHeadInjector";
 
 export const metadata = {
   metadataBase: new URL('https://fastvidl.com'),
-  title: "FastVidl | Free Video Downloader for Instagram, Facebook & Pinterest",
+  title: {
+    default: "FastVidl — Free Downloader for Instagram & Facebook",
+    template: "%s | FastVidl",
+  },
   description:
     "FastVidl is a free online downloader for Instagram Reels, Stories, Photos, Facebook videos, and Pinterest videos. No watermark, no login, no app. Save public media in HD on mobile and desktop.",
   icons: {
@@ -27,19 +31,20 @@ export const metadata = {
     canonical: 'https://fastvidl.com',
   },
   openGraph: {
-    title: "FastVidl | Free Video Downloader for Instagram, Facebook & Pinterest",
+    title: "FastVidl — Free Downloader for Instagram & Facebook",
     description:
       "FastVidl is a free online downloader for Instagram Reels, Stories, Photos, Facebook videos, and Pinterest videos. No watermark, no login, no app. Save public media in HD on mobile and desktop.",
     url: "https://fastvidl.com",
     siteName: "FastVidl",
-    images: ["/assets/weblogo.png"],
+    images: ["/assets/What is FastVidl.png"],
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "FastVidl | Free Video Downloader for Instagram, Facebook & Pinterest",
+    title: "FastVidl — Free Downloader for Instagram & Facebook",
     description:
       "Free online downloader for Instagram, Facebook, and Pinterest public media. No watermark, no login, no app.",
+    images: ["/assets/What is FastVidl.png"],
   },
   robots: { index: true, follow: true },
 };
@@ -60,6 +65,7 @@ export default function RootLayout({ children }) {
           </ConditionalChrome>
         </ThemeProvider>
         <ThirdPartyScripts />
+        <CookieConsentBar />
       </body>
     </html>
   );

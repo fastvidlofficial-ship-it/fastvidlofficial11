@@ -8,7 +8,7 @@ export const dynamic = "force-dynamic";
 export const metadata = {
   title: "Blog · FastVidl",
   description:
-    "Tutorials, guides, and how-tos for downloading videos, reels, photos and stories from Instagram, Facebook, and Pinterest.",
+    "Expert guides on saving Instagram Reels, Facebook videos & Pinterest pins. Step-by-step tutorials for iPhone, Android & desktop. Free tips from FastVidl.",
   alternates: { canonical: "https://fastvidl.com/blogs" },
   openGraph: {
     title: "Blog · FastVidl",

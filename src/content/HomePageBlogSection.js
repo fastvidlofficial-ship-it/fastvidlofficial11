@@ -54,7 +54,7 @@ export default function HomePageBlogSection() {
       <div className="container-blog">
         <section className="home-blog-article blog-content">
           <h2 className="home-blog-article-title">
-            FastVidl | The Ultimate Free Video Downloader for Instagram, Facebook &amp; Pinterest
+            The Ultimate Free Video Downloader for Instagram, Facebook &amp; Pinterest
           </h2>
           
           <p className="home-blog-article-meta" style={{ marginBottom: "1rem" }}>

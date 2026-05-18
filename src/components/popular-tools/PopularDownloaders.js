@@ -99,8 +99,13 @@ function ArrowIcon() {
 function ToolCard({ item }) {
   return (
     <li className={styles.cell}>
-      <Link href={item.href} className={styles.card} prefetch={false}>
-        <span className={`${styles.cardBadge} ${styles.badge_instagram}`}>
+      <Link
+        href={item.href}
+        className={styles.card}
+        prefetch={false}
+        aria-label={`${item.title} — free ${item.type} downloader`}
+      >
+        <span className={`${styles.cardBadge} ${styles.badge_instagram}`} aria-hidden="true">
           {item.type}
         </span>
         <span className={styles.cardTitle}>{item.title}</span>

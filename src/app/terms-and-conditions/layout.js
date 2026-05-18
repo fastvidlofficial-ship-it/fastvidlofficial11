@@ -10,7 +10,7 @@ export const metadata = {
     url: 'https://fastvidl.com/terms-and-conditions',
     images: ['/assets/weblogo.png'],
   },
-  robots: { index: true, follow: true },
+  robots: { index: false, follow: true },
 };
 
 export default function Layout({ children }) {

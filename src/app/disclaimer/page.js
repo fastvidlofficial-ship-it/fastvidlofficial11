@@ -139,6 +139,13 @@ const Disclaimer = () => {
             </Link>
             .
           </p>
+          <p className="home-blog-article-p">
+            For EU/UK users, FastVidl also complies with applicable data protection laws including GDPR. See our{" "}
+            <Link href="/privacy-policy" className="home-blog-article-link">
+              Privacy Policy
+            </Link>{" "}
+            for full details on cookies, advertising partners, and your rights.
+          </p>
 
           <h2 className="home-blog-article-h2">Important Reminders</h2>
           <ul className="disclaimer-list-simple">

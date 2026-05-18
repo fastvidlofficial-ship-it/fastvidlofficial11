@@ -136,7 +136,9 @@ export default function InstagramStoryBlogContent({ variant = "standalone", faqL
         <li style={liStyle}>Download the file.</li>
         <li style={liStyle}>Locate it in Downloads and move to gallery albums if needed.</li>
       </ol>
-      <p className={pClass}>If needed, clear browser cache for troubleshooting on Android.</p>
+      <p className={pClass}>
+        If the file does not appear in Gallery, open your phone&apos;s Files or Downloads app, confirm the MP4 saved successfully, then use Share or Move to DCIM/Camera if your device requires it. Allow storage permissions when Chrome prompts you on first download. If playback fails, try re-downloading the link or clearing Chrome cache, then repeat the steps above.
+      </p>
 
       <h2 id="iphone-guide" className={h2Class}>How to Download Instagram Stories on iPhone</h2>
       <p className={pClass}>
@@ -148,10 +150,13 @@ export default function InstagramStoryBlogContent({ variant = "standalone", faqL
         <li style={liStyle}>Paste link and download.</li>
         <li style={liStyle}>From Files, use Share - Save Video to move into Photos.</li>
       </ol>
+      <p className={pClass}>
+        On iPhone, Safari saves downloads to the Files app by default—not Photos. After download, tap the file, choose Share, then Save Video. If iOS asks for permission, allow Files access. For troubleshooting, confirm the story URL is from a public account, disable content blockers temporarily, and retry in a private tab if the fetch stalls.
+      </p>
 
-      <h2 id="privacy-anon" className={h2Class}>Privacy and Anonymity: Saving Without Them Knowing</h2>
+      <h2 id="privacy-anon" className={h2Class}>Privacy and Responsible Use</h2>
       <ul style={listStyle}>
-        <li style={liStyle}><strong>Anonymous viewing:</strong> Server-side fetching means your account is not added to story viewers in this workflow.</li>
+        <li style={liStyle}><strong>Public links only:</strong> FastVidl only fetches public story content using publicly accessible links—no account login or private data access is involved.</li>
         <li style={liStyle}><strong>Screenshots:</strong> Instagram currently does not notify story screenshots, but screenshot quality is worse than raw download.</li>
         <li style={liStyle}><strong>Private accounts:</strong> Ethical tools should not bypass private-account protections.</li>
       </ul>
@@ -244,7 +249,7 @@ export default function InstagramStoryBlogContent({ variant = "standalone", faqL
         Archiving short-form social content should not mean losing audio or exposing your data to unsafe apps. A robust instagram story downloader helps preserve media quality while keeping the process simple and anonymous.
       </p>
       <p className={pClass}>
-        FastVidl is engineered to bypass native limits, protect quality and deliver secure downloads quickly. Explore more tools:{" "}
+        FastVidl is built to deliver high-quality, secure downloads from public story links quickly. Explore more tools:{" "}
         <Link href="/instagram-reel-downloader-free" className={linkClass}>
           Instagram Reel Downloader Free
         </Link>

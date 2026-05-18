@@ -1,24 +1,28 @@
-'use client'
-import styles from "./page.module.css";
-import IndexMessage from "@/components/index/IndexMessage";
-import DownloaderToolSection from "@/components/DownloaderToolSection";
-import NotAffiliatedNote from "@/components/NotAffiliatedNote";
-import HomePageBlogSection from "@/content/HomePageBlogSection";
-import EzoicPlacements from "@/components/ads/EzoicPlacements";
-import { getEzoicHomePlacements } from "@/config/ezoicPlacements";
-import PopularDownloaders from "@/components/popular-tools/PopularDownloaders";
+import HomePageClient from "./HomePageClient";
+
+const HOME_TITLE = "FastVidl — Free Downloader for Instagram & Facebook";
+const HOME_DESCRIPTION =
+  "FastVidl is a free online downloader for Instagram Reels, Stories, Photos, Facebook videos, and Pinterest videos. No watermark, no login, no app. Save public media in HD on mobile and desktop.";
+
+export const metadata = {
+  title: HOME_TITLE,
+  description: HOME_DESCRIPTION,
+  alternates: { canonical: "https://fastvidl.com" },
+  openGraph: {
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    url: "https://fastvidl.com",
+    images: ["/assets/What is FastVidl.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: HOME_TITLE,
+    description:
+      "Free downloader for Instagram, Facebook & Pinterest public media. No watermark, no login. Try FastVidl now.",
+    images: ["/assets/What is FastVidl.png"],
+  },
+};
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <IndexMessage />
-        <DownloaderToolSection />
-        <EzoicPlacements placementIds={getEzoicHomePlacements()} />
-        <HomePageBlogSection />
-        <PopularDownloaders />
-        <NotAffiliatedNote />
-      </main>
-    </div>
-  );
+  return <HomePageClient />;
 }

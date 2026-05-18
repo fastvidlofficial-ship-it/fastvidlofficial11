@@ -32,7 +32,15 @@ export default function AuthorOrganizationSchema({
   const author = {
     "@type": "Person",
     name: authorName,
-    ...(authorUrl && { url: authorUrl, sameAs: [authorUrl] }),
+    ...(authorUrl && {
+      url: authorUrl,
+      sameAs: [
+        authorUrl,
+        ...(authorUrl.includes("/author/")
+          ? ["https://www.linkedin.com/in/raja-jahangir"]
+          : ["https://fastvidl.com/author/raja-jahangir"]),
+      ],
+    }),
   };
 
   const publisher = {

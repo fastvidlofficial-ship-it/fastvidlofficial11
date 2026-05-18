@@ -1,0 +1,58 @@
+.bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--card-bg, #fff);
+  border-top: 1px solid var(--border-color, #e2e8f0);
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.12);
+}
+
+.text {
+  flex: 1;
+  min-width: 200px;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-secondary, #4a5568);
+}
+
+.link {
+  color: var(--brand-primary, #667eea);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.accept {
+  flex-shrink: 0;
+  padding: 0.6rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.accept:hover {
+  opacity: 0.95;
+}
+
+@media (max-width: 480px) {
+  .bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .accept {
+    width: 100%;
+  }
+}

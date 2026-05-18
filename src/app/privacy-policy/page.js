@@ -135,7 +135,7 @@ const PrivacyPolicy = () => {
 
           <h3 className="home-blog-article-h3">How this fits together</h3>
           <p className="home-blog-article-p">
-            FastVidl is supported by advertising. In the current build of the site we integrate <strong>Ezoic</strong> (ads, analytics, optimization, and consent tooling), the <strong>Google tag</strong> for measurement tied to Google Ads, and <strong>ShareThis</strong> for sharing UI. We do <strong>not</strong> currently load standalone <strong>Google AdSense</strong> script on pages; if that changes, we will update this policy.
+            FastVidl is supported by advertising. We use <strong>Ezoic</strong> to serve and optimize ads. Ezoic may deliver advertising through <strong>Google&apos;s advertising network</strong> (including AdSense inventory) as part of its platform. We also use the <strong>Google tag</strong> for measurement tied to Google Ads and <strong>ShareThis</strong> for sharing UI. See our <strong>Cookie Policy</strong> for consent and opt-out options.
           </p>
 
           <h3 className="home-blog-article-h3">Personalized vs. non-personalized ads</h3>
