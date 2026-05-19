@@ -35,7 +35,7 @@ yarn-error.log*
 # but DO commit the example file so collaborators know what to set
 !.env.example
 
-# uploaded blog images (runtime user content — never commit)
+# uploaded blog images (runtime user content, never commit)
 /public/uploads/blogs/*
 !/public/uploads/blogs/.gitkeep
 

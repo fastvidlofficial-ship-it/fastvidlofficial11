@@ -24,7 +24,7 @@ const Disclaimer = () => {
           <p className="home-blog-article-meta">Last Updated: 19th February 2026</p>
 
           <p className="home-blog-article-p">
-            FastVidl.com is a free tool for downloading public Instagram, Facebook, and Pinterest content. We provide NO GUARANTEES – use entirely at your own risk. Here's what you need to know:
+            FastVidl.com is a free tool for downloading public Instagram, Facebook, and Pinterest content. We provide NO GUARANTEES, use entirely at your own risk. Here's what you need to know:
           </p>
 
           <h2 className="home-blog-article-h2">No Platform Affiliation</h2>
@@ -55,7 +55,7 @@ const Disclaimer = () => {
             <li>Claim others' work as your own</li>
           </ul>
           <p className="home-blog-article-p">
-            Your responsibility: Verify you have rights to download/use content. We don't host/store files – content streams directly from source platforms.
+            Your responsibility: Verify you have rights to download/use content. We don't host/store files, content streams directly from source platforms.
           </p>
 
           <h2 className="home-blog-article-h2">DMCA &amp; Takedown Process</h2>
@@ -82,12 +82,12 @@ const Disclaimer = () => {
           </ul>
           <p className="home-blog-article-p">We aim to review complete, good-faith notices promptly.</p>
 
-          <h2 className="home-blog-article-h2">Service "AS IS" – No Guarantees</h2>
+          <h2 className="home-blog-article-h2">Service "AS IS", No Guarantees</h2>
           <ul className="disclaimer-list-simple">
-            <li>No uptime warranty – platforms change APIs daily</li>
-            <li>No quality guarantee – depends on source content</li>
-            <li>No error-free promise – technical issues happen</li>
-            <li>No legal advice – consult an attorney for copyright questions</li>
+            <li>No uptime warranty, platforms change APIs daily</li>
+            <li>No quality guarantee, depends on source content</li>
+            <li>No error-free promise, technical issues happen</li>
+            <li>No legal advice, consult an attorney for copyright questions</li>
           </ul>
           <p className="home-blog-article-p">Liability capped at $0 (service is free).</p>
 
@@ -99,7 +99,7 @@ const Disclaimer = () => {
             <li>Use antivirus software (we can't scan downloads)</li>
             <li>Indemnify FastVidl against claims from your use</li>
           </ul>
-          <p className="home-blog-article-p">Fair use? We can't determine this – consult legal counsel.</p>
+          <p className="home-blog-article-p">Fair use? We can't determine this, consult legal counsel.</p>
 
           <h2 className="home-blog-article-h2">What We Don't Control</h2>
           <ul className="disclaimer-list-simple">
@@ -149,10 +149,10 @@ const Disclaimer = () => {
 
           <h2 className="home-blog-article-h2">Important Reminders</h2>
           <ul className="disclaimer-list-simple">
-            <li>Respect creators – get permission for anything beyond personal use</li>
-            <li>Check local laws – downloading rules vary by country</li>
-            <li>Read platform TOS – violations risk account bans</li>
-            <li>Use responsibly – we're a tool, not legal cover</li>
+            <li>Respect creators, get permission for anything beyond personal use</li>
+            <li>Check local laws, downloading rules vary by country</li>
+            <li>Read platform TOS, violations risk account bans</li>
+            <li>Use responsibly, we're a tool, not legal cover</li>
           </ul>
           <p className="home-blog-article-p">
             Full legal protection:{" "}

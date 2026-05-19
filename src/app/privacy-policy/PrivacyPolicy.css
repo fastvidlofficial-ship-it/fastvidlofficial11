@@ -17,7 +17,7 @@
   }
 }
 
-/* Banner uses Disclaimer.css – same as Terms & Conditions (no overrides here) */
+/* Banner uses Disclaimer.css, same as Terms & Conditions (no overrides here) */
 
 .privacy-main {
   padding: 2rem 0;
@@ -76,7 +76,7 @@
   max-width: 100%;
 }
 
-/* 3D cards grid – same as Terms and Conditions */
+/* 3D cards grid, same as Terms and Conditions */
 .privacy-section .cardsGrid {
   display: flex;
   flex-direction: column;
@@ -155,10 +155,8 @@
   border-bottom: none;
 }
 
-/* Force all policy links to be clickable – above checkmarks and any card transform */
-.privacy-section a,
-.privacy-section .card3d a,
-.privacy-section a.terms-link,
+/* Force all policy links to be clickable, above checkmarks and any card transform */
+.privacy-section a.privacy-section .card3d a.privacy-section a.terms-link,
 a.privacy-clickable-link {
   position: relative;
   z-index: 10;
@@ -169,8 +167,7 @@ a.privacy-clickable-link {
   display: inline-block;
   min-height: 1.4em;
 }
-.privacy-section a:hover,
-.privacy-section .card3d a:hover,
+.privacy-section a:hover.privacy-section .card3d a:hover,
 a.privacy-clickable-link:hover {
   color: var(--link-hover-color, #0051a2) !important;
 }
@@ -448,8 +445,7 @@ a.privacy-clickable-link:hover {
     font-size: 0.9rem;
   }
   
-  .privacy-section table th,
-  .privacy-section table td {
+  .privacy-section table th.privacy-section table td {
     padding: 0.5rem;
   }
   

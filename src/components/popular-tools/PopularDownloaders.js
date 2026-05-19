@@ -5,7 +5,7 @@ import styles from "./PopularDownloaders.module.css";
 /* ===================================================================
    Group every pSEO entry by content_type so the section is organised
    into Reels / Videos / Photos / Stories / IGTV / Highlights buckets.
-   Source of truth: pseo-data.json — nothing else is added.
+   Source of truth: pseo-data.json, nothing else is added.
    =================================================================== */
 
 const TYPE_ORDER = ["Reel", "Video", "Photo", "Story", "IGTV", "Highlight"];
@@ -56,7 +56,7 @@ function buildGroups() {
 const GROUPS = buildGroups();
 
 /* ===================================================================
-   Icons — inline SVGs, no network requests
+   Icons, inline SVGs, no network requests
    =================================================================== */
 
 function InstagramIcon() {
@@ -103,7 +103,7 @@ function ToolCard({ item }) {
         href={item.href}
         className={styles.card}
         prefetch={false}
-        aria-label={`${item.title} — free ${item.type} downloader`}
+        aria-label={`${item.title}, free ${item.type} downloader`}
       >
         <span className={`${styles.cardBadge} ${styles.badge_instagram}`} aria-hidden="true">
           {item.type}
@@ -138,7 +138,7 @@ export default function PopularDownloaders() {
         </h2>
         <p className={styles.subtitle}>
           Hand-picked downloaders for Instagram Reels, Stories, Photos and HD
-          videos — instant, watermark-free, no sign-up.
+          videos, instant, watermark-free, no sign-up.
         </p>
 
         <div className={styles.categoryStack}>

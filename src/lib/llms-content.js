@@ -65,7 +65,7 @@ function pseoToolLine(item) {
     .trim()
     .slice(0, 160);
   const url = `${BASE_URL}/download/${item.slug}`;
-  return desc ? `- **${title}:** ${url} — ${desc}` : `- **${title}:** ${url}`;
+  return desc ? `- **${title}:** ${url}, ${desc}` : `- **${title}:** ${url}`;
 }
 
 /**
@@ -86,14 +86,14 @@ export async function buildLlmsTxtContent() {
   });
 
   const lines = [
-    "# FastVidl — Instagram Reel, Story, Photo & Video Downloader | Pinterest & Facebook",
+    "# FastVidl, Instagram Reel, Story, Photo & Video Downloader | Pinterest & Facebook",
     `> FastVidl (${BASE_URL}) is a free, browser-based utility to save videos, reels, stories, and photos from Instagram, Pinterest, and Facebook. Built with Next.js on Vercel.`,
     `> Last Updated: ${formatDate()}`,
     "",
     "---",
     "",
     "## Who Is FastVidl For?",
-    "Anyone who wants to save public social media quickly — no apps, no subscriptions, no watermarks added by FastVidl.",
+    "Anyone who wants to save public social media quickly, no apps, no subscriptions, no watermarks added by FastVidl.",
     "",
     "---",
     "",
@@ -153,7 +153,7 @@ export async function buildLlmsTxtContent() {
       const url = `${BASE_URL}/blogs/${blog.slug}`;
       lines.push(
         summary
-          ? `- **${title}:** ${url} — ${summary.slice(0, 200)}`
+          ? `- **${title}:** ${url}, ${summary.slice(0, 200)}`
           : `- **${title}:** ${url}`
       );
     }

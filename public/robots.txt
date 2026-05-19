@@ -1,11 +1,11 @@
 # ===========================================================
-# robots.txt — FastVidl (https://fastvidl.com)
+# robots.txt, FastVidl (https://fastvidl.com)
 # Instagram, Pinterest & Facebook Downloader Tools
 # Built with Next.js | Hosted on Vercel
 # Last Updated: May 2026
 # ===========================================================
 
-# ─── DEFAULT: All crawlers ───────────────────────────────────
+# DEFAULT: All crawlers
 User-agent: *
 Allow: /
 Allow: /_next/static/
@@ -18,7 +18,7 @@ Disallow: /.next/
 Disallow: /admin/
 Disallow: /admin-dashboard/
 
-# ─── Google Search ───────────────────────────────────────────
+# Google Search
 User-agent: Googlebot
 Allow: /
 Allow: /_next/static/
@@ -27,13 +27,13 @@ Allow: /_next/image
 User-agent: Googlebot-Image
 Allow: /
 
-# ─── Google Gemini / AI Overviews ────────────────────────────
+# Google Gemini / AI Overviews
 User-agent: Google-Extended
 Allow: /
 Allow: /_next/static/
 Allow: /_next/image
 
-# ─── Bing ────────────────────────────────────────────────────
+# Bing
 User-agent: Bingbot
 Allow: /
 Allow: /_next/static/
@@ -42,7 +42,7 @@ Allow: /_next/image
 User-agent: DuckDuckBot
 Allow: /
 
-# ─── OpenAI / ChatGPT ────────────────────────────────────────
+# OpenAI / ChatGPT
 User-agent: GPTBot
 Allow: /
 Allow: /_next/static/
@@ -58,7 +58,7 @@ Allow: /
 Allow: /_next/static/
 Allow: /_next/image
 
-# ─── Anthropic / Claude ──────────────────────────────────────
+# Anthropic / Claude
 User-agent: ClaudeBot
 Allow: /
 Allow: /_next/static/
@@ -72,7 +72,7 @@ Allow: /_next/image
 User-agent: Claude-Web
 Allow: /
 
-# ─── Perplexity ──────────────────────────────────────────────
+# Perplexity
 User-agent: PerplexityBot
 Allow: /
 Allow: /_next/static/
@@ -83,7 +83,7 @@ Allow: /
 Allow: /_next/static/
 Allow: /_next/image
 
-# ─── Apple ───────────────────────────────────────────────────
+# Apple
 User-agent: Applebot
 Allow: /
 Allow: /_next/static/
@@ -94,7 +94,7 @@ Allow: /
 Allow: /_next/static/
 Allow: /_next/image
 
-# ─── Meta AI ─────────────────────────────────────────────────
+# Meta AI
 User-agent: meta-externalagent
 Allow: /
 Allow: /_next/static/
@@ -105,7 +105,7 @@ Allow: /
 Allow: /_next/static/
 Allow: /_next/image
 
-# ─── Social Media Bots ───────────────────────────────────────
+# Social Media Bots
 User-agent: Twitterbot
 Allow: /
 
@@ -115,14 +115,14 @@ Allow: /
 User-agent: Pinterest
 Allow: /
 
-# ─── SEO Audit Tools ─────────────────────────────────────────
+# SEO Audit Tools
 User-agent: AhrefsBot
 Allow: /
 
 User-agent: SemrushBot
 Allow: /
 
-# ─── Block Spam & Malicious Bots ─────────────────────────────
+# Block Spam & Malicious Bots
 User-agent: MJ12bot
 Disallow: /
 
@@ -165,5 +165,5 @@ Disallow: /
 User-agent: Amazonbot
 Disallow: /
 
-# ─── Sitemap ─────────────────────────────────────────────────
+# Sitemap
 Sitemap: https://fastvidl.com/sitemap.xml

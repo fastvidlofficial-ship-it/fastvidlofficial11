@@ -58,7 +58,7 @@ function clearGoogtransCookies() {
 /**
  * Apply target language using Google's googtrans cookie and reload.
  * Relying on .goog-te-combo is unreliable (widget often not ready or hidden).
- * @see https://translate.google.com/manager/website/ — cookie format /source/target
+ * @see https://translate.google.com/manager/website/, cookie format /source/target
  */
 function applyLanguageAndReload(targetCode) {
   if (targetCode === "en") {

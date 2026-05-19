@@ -151,12 +151,12 @@ export default function InstagramStoryBlogContent({ variant = "standalone", faqL
         <li style={liStyle}>From Files, use Share - Save Video to move into Photos.</li>
       </ol>
       <p className={pClass}>
-        On iPhone, Safari saves downloads to the Files app by default—not Photos. After download, tap the file, choose Share, then Save Video. If iOS asks for permission, allow Files access. For troubleshooting, confirm the story URL is from a public account, disable content blockers temporarily, and retry in a private tab if the fetch stalls.
+        On iPhone, Safari saves downloads to the Files app by default, not Photos. After download, tap the file, choose Share, then Save Video. If iOS asks for permission, allow Files access. For troubleshooting, confirm the story URL is from a public account, disable content blockers temporarily, and retry in a private tab if the fetch stalls.
       </p>
 
       <h2 id="privacy-anon" className={h2Class}>Privacy and Responsible Use</h2>
       <ul style={listStyle}>
-        <li style={liStyle}><strong>Public links only:</strong> FastVidl only fetches public story content using publicly accessible links—no account login or private data access is involved.</li>
+        <li style={liStyle}><strong>Public links only:</strong> FastVidl only fetches public story content using publicly accessible links, no account login or private data access is involved.</li>
         <li style={liStyle}><strong>Screenshots:</strong> Instagram currently does not notify story screenshots, but screenshot quality is worse than raw download.</li>
         <li style={liStyle}><strong>Private accounts:</strong> Ethical tools should not bypass private-account protections.</li>
       </ul>
@@ -252,12 +252,10 @@ export default function InstagramStoryBlogContent({ variant = "standalone", faqL
         FastVidl is built to deliver high-quality, secure downloads from public story links quickly. Explore more tools:{" "}
         <Link href="/instagram-reel-downloader-free" className={linkClass}>
           Instagram Reel Downloader Free
-        </Link>
-        ,{" "}
+        </Link>,{" "}
         <Link href="/instagram-photo-downloader-free" className={linkClass}>
           Instagram Photo Downloader
-        </Link>
-        , and{" "}
+        </Link>, and{" "}
         <Link href="/pinterest-video-downloader-free" className={linkClass}>
           Pinterest Video Downloader Free
         </Link>

@@ -41,7 +41,7 @@
   height: 22px;
 }
 
-/* Dark mode: match reference — soft circle on dark header */
+/* Dark mode: match reference, soft circle on dark header */
 [data-theme="dark"] .trigger {
   --theme-trigger-bg: rgba(255, 255, 255, 0.08);
   --theme-trigger-hover-bg: rgba(255, 255, 255, 0.12);

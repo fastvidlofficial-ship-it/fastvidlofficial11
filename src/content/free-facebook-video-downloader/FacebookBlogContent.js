@@ -165,7 +165,7 @@ export default function FacebookBlogContent() {
             <tbody>
               <tr>
                 <td>Login Required</td>
-                <td>No — public links only</td>
+                <td>No, public links only</td>
               </tr>
               <tr>
                 <td>Max Quality</td>
@@ -245,12 +245,10 @@ export default function FacebookBlogContent() {
           Explore more tools:{" "}
           <Link href="/instagram-reel-downloader-free" className="home-blog-article-link">
             Instagram Reel Downloader Free
-          </Link>
-          ,{" "}
+          </Link>,{" "}
           <Link href="/instagram-story-downloader" className="home-blog-article-link">
             Instagram Story Downloader
-          </Link>
-          , and{" "}
+          </Link>, and{" "}
           <Link href="/pinterest-video-downloader-free" className="home-blog-article-link">
             Pinterest Video Downloader Free
           </Link>

@@ -73,7 +73,7 @@ export async function GET(req) {
 }
 
 /**
- * POST /api/admin/blogs — create a new blog post.
+ * POST /api/admin/blogs, create a new blog post.
  */
 export async function POST(req) {
   const denied = await requireAdmin();
@@ -96,7 +96,7 @@ export async function POST(req) {
   let slug = slugify(body.slug || title);
   if (!slug) slug = `post-${Date.now().toString(36)}`;
 
-  // Ensure slug uniqueness by appending -2, -3, ... if needed.
+  // Ensure slug uniqueness by appending -2, -3... if needed.
   const baseSlug = slug;
   let suffix = 2;
   while (await Blog.exists({ slug })) {

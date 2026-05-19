@@ -11,7 +11,7 @@ const AboutUs = () => {
     {
       title: "Privacy first",
       description:
-        "We do not require an account to download. The site uses HTTPS, and we do not store the videos you save on our servers. Like most free sites, we use limited cookies and third-party tools (for example ads and basic analytics) to run and improve the service—see our Privacy Policy for details.",
+        "We do not require an account to download. The site uses HTTPS, and we do not store the videos you save on our servers. Like most free sites, we use limited cookies and third-party tools (for example ads and basic analytics) to run and improve the service, see our Privacy Policy for details.",
     },
     {
       title: "Creator respect",
@@ -80,7 +80,7 @@ const AboutUs = () => {
     {
       question: "Will the content creator know I downloaded their content?",
       answer:
-        "FastVidl does not notify creators and you do not log in to us—but platforms, networks, and advertisers may collect their own technical data under their policies. We do not claim that any online activity is untraceable.",
+        "FastVidl does not notify creators and you do not log in to us, but platforms, networks, and advertisers may collect their own technical data under their policies. We do not claim that any online activity is untraceable.",
     },
     {
       question: "Are there any download limits?",
@@ -97,7 +97,7 @@ const AboutUs = () => {
 
   return (
     <div className="about-page">
-      {/* Banner – same as Privacy & Terms */}
+      {/* Banner, same as Privacy & Terms */}
       <div className="disclaimer-header">
         <div className="header-content">
           <div className="header-icon">
@@ -105,22 +105,22 @@ const AboutUs = () => {
           </div>
           <h1 className="page-title">About Us</h1>
           <p className="page-subtitle">
-            Free browser tools to save public media you are allowed to access—for personal backups, offline viewing, and inspiration—across Instagram, Facebook, and Pinterest.
+            Free browser tools to save public media you are allowed to access, for personal backups, offline viewing, and inspiration, across Instagram, Facebook, and Pinterest.
           </p>
         </div>
       </div>
 
-      {/* Flowing blog-style content – mirrors the homepage layout */}
+      {/* Flowing blog-style content, mirrors the homepage layout */}
       <div className="container-blog">
         <section className="home-blog-article">
           <p className="home-blog-article-p">
-            Welcome to <strong>fastvidl.com</strong> — we are a small team at{" "}
-            <strong>Auroxa Tech</strong> (Rawalpindi, Pakistan) building simple browser tools for creators and everyday users. We launched FastVidl in <strong>August 2025</strong> to help people keep <strong>public</strong> Instagram, Facebook, and Pinterest media they may lawfully access—especially personal backups, reference, and offline viewing—without installing sketchy apps. We are transparent about limits: you are responsible for how you use downloads; when in doubt, get permission from the rights holder.
+            Welcome to <strong>fastvidl.com</strong>, we are a small team at{" "}
+            <strong>Auroxa Tech</strong> (Rawalpindi, Pakistan) building simple browser tools for creators and everyday users. We launched FastVidl in <strong>August 2025</strong> to help people keep <strong>public</strong> Instagram, Facebook, and Pinterest media they may lawfully access, especially personal backups, reference, and offline viewing, without installing sketchy apps. We are transparent about limits: you are responsible for how you use downloads; when in doubt, get permission from the rights holder.
           </p>
 
           <h2 className="home-blog-article-h2">Our Story</h2>
           <p className="home-blog-article-p">
-            It started when one of us needed to archive family videos from Facebook but hated the hassle. We built something simple that works on any device—no extra apps required. We keep the product fast and free where we can, and we iterate as platforms change. Our users span the globe; the team and operations stay grounded in <strong>Rawalpindi, Pakistan</strong>.
+            It started when one of us needed to archive family videos from Facebook but hated the hassle. We built something simple that works on any device, no extra apps required. We keep the product fast and free where we can, and we iterate as platforms change. Our users span the globe; the team and operations stay grounded in <strong>Rawalpindi, Pakistan</strong>.
           </p>
 
           <h2 className="home-blog-article-h2">What Drives Us</h2>
@@ -154,12 +154,12 @@ const AboutUs = () => {
 
           <h2 className="home-blog-article-h2">Why Trust FastVidl?</h2>
           <p className="home-blog-article-p">
-            Many people rely on FastVidl for quick saves when quality and speed matter. We fetch public media over HTTPS and focus on a predictable workflow. If something breaks because a platform changed its rules or URLs, we ship fixes as fast as we can—see <Link href="/contact-us" className="home-blog-article-link">Contact</Link> if you need help.
+            Many people rely on FastVidl for quick saves when quality and speed matter. We fetch public media over HTTPS and focus on a predictable workflow. If something breaks because a platform changed its rules or URLs, we ship fixes as fast as we can, see <Link href="/contact-us" className="home-blog-article-link">Contact</Link> if you need help.
           </p>
 
           <h2 className="home-blog-article-h2">Meet the Team</h2>
           <p className="home-blog-article-p">
-            We're not a big corp — just a passionate crew building tools we actually use.
+            We're not a big corp, just a passionate crew building tools we actually use.
           </p>
           <div className="team-grid">
             {team.map((member, index) => (
@@ -253,7 +253,7 @@ const AboutUs = () => {
             page.
           </p>
           <p className="home-blog-article-p">
-            <strong>FastVidl — public media, responsible personal use, one simple workflow.</strong>
+            <strong>FastVidl, public media, responsible personal use, one simple workflow.</strong>
           </p>
           <p className="home-blog-article-p">
             <strong>Fast. Free. Secure.</strong>

@@ -1,7 +1,7 @@
 import HomePageClient from "./HomePageClient";
 import LatestBlogsSection from "@/components/latest-blogs/LatestBlogsSection";
 
-const HOME_TITLE = "FastVidl — Free Downloader for Instagram & Facebook";
+const HOME_TITLE = "FastVidl, Free Downloader for Instagram & Facebook";
 const HOME_DESCRIPTION =
   "FastVidl is a free online downloader for Instagram Reels, Stories, Photos, Facebook videos, and Pinterest videos. No watermark, no login, no app. Save public media in HD on mobile and desktop.";
 

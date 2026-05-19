@@ -75,7 +75,7 @@ const TermsAndConditions = () => {
             <li>Guarantee that the service will always be available, error-free, or unchanged.</li>
           </ul>
 
-          <h2 className="home-blog-article-h2">4. Acceptable use – personal use only</h2>
+          <h2 className="home-blog-article-h2">4. Acceptable use, personal use only</h2>
           <p className="home-blog-article-p"><strong>You may:</strong></p>
           <ul className="disclaimer-list-simple">
             <li>Download content for your own personal, offline viewing.</li>

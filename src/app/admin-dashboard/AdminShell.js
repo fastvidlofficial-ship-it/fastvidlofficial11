@@ -39,7 +39,7 @@ export default function AdminShell({ children }) {
     try {
       await fetch("/api/admin/logout", { method: "POST" });
     } catch {
-      // ignore network errors — cookie may already be gone
+      // ignore network errors, cookie may already be gone
     }
     router.replace("/admin-dashboard/login");
     router.refresh();

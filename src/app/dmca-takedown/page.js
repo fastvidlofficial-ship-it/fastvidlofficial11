@@ -48,7 +48,7 @@ export default function DmcaTakedownPage() {
             </a>
           </p>
           <p className="home-blog-article-p">
-            Use the subject line: <strong>Copyright / DMCA Notice — fastvidl.com</strong>. We
+            Use the subject line: <strong>Copyright / DMCA Notice, fastvidl.com</strong>. We
             aim to acknowledge receipt within <strong>five business days</strong> and to review
             complete, good-faith notices promptly. Complex cases may take longer.
           </p>
@@ -63,7 +63,7 @@ export default function DmcaTakedownPage() {
               number if applicable, or a clear description of the work).
             </li>
             <li>
-              <strong>Location of the material you believe is infringing</strong> — for
+              <strong>Location of the material you believe is infringing</strong>, for
               example the <strong>full fastvidl.com page URL</strong> you used, and the{" "}
               <strong>original public URL</strong> on Instagram, Facebook, or Pinterest (if
               known).

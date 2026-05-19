@@ -196,7 +196,7 @@ export default function InstagramReelDownloaderBlogContent({ variant = "standalo
           <tbody>
             <tr>
               <td>Login Required</td>
-              <td>No — public links only</td>
+              <td>No, public links only</td>
             </tr>
             <tr>
               <td>Watermark Added</td>
@@ -275,12 +275,10 @@ export default function InstagramReelDownloaderBlogContent({ variant = "standalo
         Explore more tools:{" "}
         <Link href="/instagram-photo-downloader-free" className={linkClass}>
           Instagram Photo Downloader
-        </Link>
-        ,{" "}
+        </Link>,{" "}
         <Link href="/instagram-story-downloader" className={linkClass}>
           Instagram Story Downloader
-        </Link>
-        , and{" "}
+        </Link>, and{" "}
         <Link href="/pinterest-video-downloader-free" className={linkClass}>
           Pinterest Video Downloader Free
         </Link>

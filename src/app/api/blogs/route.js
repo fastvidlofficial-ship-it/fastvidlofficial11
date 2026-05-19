@@ -5,7 +5,7 @@ import Blog from "@/models/Blog";
 export const dynamic = "force-dynamic";
 
 /**
- * GET /api/blogs — public listing.
+ * GET /api/blogs, public listing.
  *   ?q=     optional search query
  *   ?page=  1-based page index (default 1)
  *   ?limit= rows per page (default 10, max 50)

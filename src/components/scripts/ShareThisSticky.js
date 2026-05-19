@@ -15,7 +15,7 @@ function loadShareThis() {
   document.body.appendChild(s);
 }
 
-/** ShareThis sticky share bar — loads on every page after mount. */
+/** ShareThis sticky share bar, loads on every page after mount. */
 export default function ShareThisSticky() {
   useEffect(() => {
     loadShareThis();

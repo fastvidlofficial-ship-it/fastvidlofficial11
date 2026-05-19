@@ -21,7 +21,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Best Instagram Photo Downloader Free | Full Size HD JPG",
     description:
-      "Save Instagram photos in HD and full size — free, browser-based. Expert guide to JPG/PNG downloads, privacy, and legal use.",
+      "Save Instagram photos in HD and full size, free, browser-based. Expert guide to JPG/PNG downloads, privacy, and legal use.",
   },
   robots: { index: true, follow: true },
 };

@@ -117,8 +117,7 @@
     transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
   }
 
-  .navDropdown:hover .navDropdownMenu,
-  .navDropdown:focus-within .navDropdownMenu {
+  .navDropdown:hover .navDropdownMenu.navDropdown:focus-within .navDropdownMenu {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -162,9 +161,7 @@
   text-decoration: none;
   margin: 0;
 }
-.Anchar:focus,
-.Anchar:active,
-.Anchar:hover {
+.Anchar:focus.Anchar:active.Anchar:hover {
   text-decoration: none; /* make sure it doesn’t reappear */
 }
 .header > div {
@@ -207,9 +204,7 @@
 .tittle-a a{
   text-decoration: none;
 }
-.tittle-a a:focus,
-.tittle-a a:active,
-.tittle-a a:hover {
+.tittle-a a:focus.tittle-a a:active.tittle-a a:hover {
   text-decoration: none; 
 }
 
@@ -255,7 +250,7 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Blogs — mobile hamburger menu only (beats .navstyle ul li { display: inline-block }) */
+/* Blogs, mobile hamburger menu only (beats .navstyle ul li { display: inline-block }) */
 @media (min-width: 769px) {
   .navstyle ul li.navMobileOnly {
     display: none !important;

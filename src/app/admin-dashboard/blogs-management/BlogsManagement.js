@@ -13,7 +13,7 @@ const DEFAULT_LIMIT = 10;
  *
  * Pagination rules (per spec):
  *   - Default: 10 rows per page, paginated with prev/next.
- *   - When a search query is active: pagination disabled — all matches shown.
+ *   - When a search query is active: pagination disabled, all matches shown.
  *   - When rows-per-page is 25 / 50 / 100 (and no search): first N rows only,
  *     no pagination controls.
  *   - Selecting 10 again restores normal pagination.
@@ -104,7 +104,7 @@ export default function BlogsManagement() {
     if (!isPaginated) return `${items.length} of ${total} (top ${rowsPerPage})`;
     const start = (page - 1) * rowsPerPage + 1;
     const end = start + items.length - 1;
-    return `${start}–${end} of ${total}`;
+    return `${start}, ${end} of ${total}`;
   }, [debouncedQuery, items, isPaginated, page, rowsPerPage, total]);
 
   async function confirmDelete() {
@@ -276,7 +276,7 @@ export default function BlogsManagement() {
                           className={styles.thumb}
                         />
                       ) : (
-                        <div className={styles.thumbPlaceholder}>—</div>
+                        <div className={styles.thumbPlaceholder}>, </div>
                       )}
                     </td>
                     <td>
@@ -295,7 +295,7 @@ export default function BlogsManagement() {
                             month: "short",
                             day: "numeric",
                           })
-                        : "—"}
+                        : ", "}
                     </td>
                     <td>
                       <span

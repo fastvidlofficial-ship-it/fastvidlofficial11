@@ -8,7 +8,7 @@ const SITE_URL = "https://fastvidl.com";
 const PAGE_URL = `${SITE_URL}/author/raja-jahangir`;
 const PAGE_DESCRIPTION =
   "Raja Jahangir is an SEO & Growth Specialist at FastVidl with 3 years of hands-on SEO experience across technical SEO, content strategy, and organic growth.";
-const PAGE_TITLE = "Raja Jahangir — SEO & Growth Specialist | FastVidl";
+const PAGE_TITLE = "Raja Jahangir, SEO & Growth Specialist | FastVidl";
 const PROFILE_IMAGE = "/images/jahangir1.jpeg";
 
 export const metadata = {
@@ -97,7 +97,7 @@ export default function RajaJahangirAuthorPage() {
           </h2>
           <p className="home-blog-article-p">
             Below is how Raja applies SEO, content, and growth skills day to day
-            on FastVidl—grouped by area so you can see both the skill and what it
+            on FastVidl, grouped by area so you can see both the skill and what it
             means in practice.
           </p>
 

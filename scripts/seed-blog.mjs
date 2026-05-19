@@ -21,7 +21,7 @@ const ROOT = path.resolve(__dirname, "..");
 
 /**
  * Tiny .env parser so we don't need an extra dependency.
- * Later files override earlier ones — matches Next.js precedence:
+ * Later files override earlier ones, matches Next.js precedence:
  * .env  <  .env.local
  */
 function loadEnv() {
@@ -56,7 +56,7 @@ if (!MONGODB_URI) {
   process.exit(1);
 }
 
-// Same shape as src/models/Blog.js — kept in sync manually.
+// Same shape as src/models/Blog.js, kept in sync manually.
 const FaqSchema = new mongoose.Schema(
   {
     question: { type: String, trim: true, default: "" },
@@ -92,9 +92,9 @@ const Blog = mongoose.models.Blog || mongoose.model("Blog", BlogSchema);
 
 const SEED_BLOG = {
   metaTitle:
-    "How to Download Instagram Reels Without Watermark in 2026 — FastVidl",
+    "How to Download Instagram Reels Without Watermark in 2026, FastVidl",
   metaDescription:
-    "Step-by-step guide to download Instagram Reels in HD quality without a watermark. Free, no login, no app — works on phone, tablet and desktop.",
+    "Step-by-step guide to download Instagram Reels in HD quality without a watermark. Free, no login, no app, works on phone, tablet and desktop.",
   metaKeywords:
     "instagram reel downloader, download instagram reels, instagram reels without watermark, hd instagram reels, save instagram reels, free instagram video downloader",
   title:
@@ -104,13 +104,13 @@ const SEED_BLOG = {
   imageAlt:
     "Illustration of an Instagram Reel being saved with FastVidl on a smartphone",
   longDescription: `
-<p>Instagram Reels are everywhere — from viral dances and quick recipe hacks to tutorials, product launches and creator tips. Sooner or later you'll come across one you want to keep: maybe to watch offline on a long flight, share with a friend, or repurpose with credit to the original creator.</p>
+<p>Instagram Reels are everywhere, from viral dances and quick recipe hacks to tutorials, product launches and creator tips. Sooner or later you'll come across one you want to keep: maybe to watch offline on a long flight, share with a friend, or repurpose with credit to the original creator.</p>
 
 <p>The catch? Instagram doesn't ship a built-in download button for Reels, and most third-party tools either bake in their own watermark, force you to install a shady app, or hide the real download behind 10 pop-up ads. <strong>FastVidl removes all of that.</strong></p>
 
 <h2>What you'll need</h2>
 <ul>
-  <li>Any modern browser — Chrome, Edge, Safari, Firefox or Brave on phone, tablet or desktop.</li>
+  <li>Any modern browser, Chrome, Edge, Safari, Firefox or Brave on phone, tablet or desktop.</li>
   <li>The <strong>public link</strong> of the Reel you want to save (private accounts are not supported).</li>
   <li>About 30 seconds.</li>
 </ul>
@@ -124,28 +124,28 @@ const SEED_BLOG = {
 <p>Open <a href="/instagram-reel-downloader-free">FastVidl's Instagram Reel Downloader</a>, paste the URL into the input box and press <strong>Download</strong>. No sign-up, no captcha, no app install.</p>
 
 <h3>3. Pick your quality</h3>
-<p>FastVidl fetches the original media so you can pick the highest available resolution — typically up to <strong>1080p HD</strong>. The file is delivered straight from Instagram's CDN, which means no re-encoding, no quality loss, and no FastVidl logo plastered on top.</p>
+<p>FastVidl fetches the original media so you can pick the highest available resolution, typically up to <strong>1080p HD</strong>. The file is delivered straight from Instagram's CDN, which means no re-encoding, no quality loss, and no FastVidl logo plastered on top.</p>
 
 <h3>4. Save the file</h3>
 <p>Hit the <strong>Save Video</strong> button. On phones it lands in your Photos / Gallery; on desktop it goes straight to your Downloads folder. Done.</p>
 
 <h2>Why use FastVidl instead of other tools?</h2>
 <ul>
-  <li><strong>No watermark.</strong> The MP4 we serve is the original — exactly what Instagram stores.</li>
+  <li><strong>No watermark.</strong> The MP4 we serve is the original, exactly what Instagram stores.</li>
   <li><strong>No app, no login.</strong> Everything happens in your browser.</li>
   <li><strong>HD quality.</strong> Up to 1080p where Instagram makes it available.</li>
   <li><strong>Works everywhere.</strong> iPhone, Android, Windows, Mac and Linux.</li>
   <li><strong>100% free.</strong> No paywalls, no "premium" upsell.</li>
 </ul>
 
-<h2>Beyond Reels — what else can FastVidl save?</h2>
+<h2>Beyond Reels, what else can FastVidl save?</h2>
 <p>The same flow works for almost any public Instagram content as well as several other platforms. Try our dedicated tools:</p>
 <ul>
-  <li><a href="/instagram-video-downloader">Instagram Video Downloader</a> — feed videos and IGTV.</li>
-  <li><a href="/instagram-photo-downloader-free">Instagram Photo Downloader</a> — single photos and carousel posts.</li>
-  <li><a href="/instagram-story-downloader">Instagram Story Downloader</a> — stories and highlights.</li>
-  <li><a href="/free-facebook-video-downloader">Facebook Video Downloader</a> — public Facebook videos.</li>
-  <li><a href="/pinterest-video-downloader-free">Pinterest Video Downloader</a> — Pinterest pins and videos.</li>
+  <li><a href="/instagram-video-downloader">Instagram Video Downloader</a>, feed videos and IGTV.</li>
+  <li><a href="/instagram-photo-downloader-free">Instagram Photo Downloader</a>, single photos and carousel posts.</li>
+  <li><a href="/instagram-story-downloader">Instagram Story Downloader</a>, stories and highlights.</li>
+  <li><a href="/free-facebook-video-downloader">Facebook Video Downloader</a>, public Facebook videos.</li>
+  <li><a href="/pinterest-video-downloader-free">Pinterest Video Downloader</a>, Pinterest pins and videos.</li>
 </ul>
 
 <h2>Pro tips for creators</h2>
@@ -153,17 +153,17 @@ const SEED_BLOG = {
 <ul>
   <li><strong>Credit the creator</strong> whenever you re-share their content.</li>
   <li><strong>Don't re-upload paid or sponsored content</strong> without permission.</li>
-  <li>Use downloads for offline viewing, backups of your own work, or learning — not impersonation.</li>
+  <li>Use downloads for offline viewing, backups of your own work, or learning, not impersonation.</li>
 </ul>
 
 <h2>That's it</h2>
-<p>One paste, one click, one HD MP4 — no watermark, no nonsense. Bookmark <a href="/">FastVidl</a> for next time you spot a Reel worth keeping.</p>
+<p>One paste, one click, one HD MP4, no watermark, no nonsense. Bookmark <a href="/">FastVidl</a> for next time you spot a Reel worth keeping.</p>
   `.trim(),
   faqs: [
     {
       question: "Is downloading Instagram Reels with FastVidl free?",
       answer:
-        "Yes — FastVidl is 100% free with no hidden charges, no premium tier, and no ads blocking the download button. You can save as many public Reels as you want.",
+        "Yes, FastVidl is 100% free with no hidden charges, no premium tier, and no ads blocking the download button. You can save as many public Reels as you want.",
     },
     {
       question: "Will the downloaded Reel have a watermark?",
@@ -178,7 +178,7 @@ const SEED_BLOG = {
     {
       question: "Do I need to install an app or extension?",
       answer:
-        "Not at all. FastVidl runs entirely in your browser — desktop or mobile. There is nothing to install, sign up for, or update.",
+        "Not at all. FastVidl runs entirely in your browser, desktop or mobile. There is nothing to install, sign up for, or update.",
     },
     {
       question: "Is it legal to download Instagram Reels?",

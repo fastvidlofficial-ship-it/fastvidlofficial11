@@ -9,7 +9,7 @@ import EzoicHeadInjector from "@/components/scripts/EzoicHeadInjector";
 import CookieConsentBar from "@/components/CookieConsentBar";
 
 // NOTE: `next/font/google` for Geist / Geist Mono was removed.
-// 1. Those CSS variables weren't used anywhere in the project — globals.css
+// 1. Those CSS variables weren't used anywhere in the project, globals.css
 //    sets the body font to a system stack (-apple-system, Segoe UI…).
 // 2. `next/font/google` fetches the font files from fonts.googleapis.com
 //    AT BUILD TIME, so any network/DNS hiccup makes `next build` fail.

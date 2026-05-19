@@ -4,7 +4,7 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Full-width banner uses Disclaimer.css – same as Privacy Policy */
+/* Full-width banner uses Disclaimer.css, same as Privacy Policy */
 
 .termsMain {
   padding: 2rem 0;
@@ -82,8 +82,7 @@
   color: var(--heading-color, #1a202c);
 }
 
-.section p,
-.section ul {
+.section p.section ul {
   font-size: 15px;
   color: var(--text-secondary, #4a5568);
   padding: 0;
@@ -112,8 +111,7 @@
   margin-bottom: 0.75rem;
 }
 
-.section ul li,
-.section ol li {
+.section ul li.section ol li {
   line-height: 1.7;
   margin-bottom: 0.5rem;
 }

@@ -214,7 +214,7 @@ code {
     monospace;
 }
 
-/* Global content container for About, Terms, Privacy Policy – consistent alignment & readable width */
+/* Global content container for About, Terms, Privacy Policy, consistent alignment & readable width */
 .global-container {
   max-width: 1200px;
   margin-left: auto;
@@ -249,8 +249,7 @@ code {
 
 /* Hide Google Translate injected top bar */
 .goog-te-banner-frame,
-#goog-gt-tt,
-.goog-te-balloon-frame {
+#goog-gt-tt.goog-te-balloon-frame {
   display: none !important;
 }
 
@@ -262,7 +261,7 @@ body {
   display: none !important;
 }
 
-/* pSEO download pages — rich content section */
+/* pSEO download pages, rich content section */
 .rich-content-section {
   max-width: 800px;
   margin: 48px auto;
@@ -338,7 +337,7 @@ body {
   }
 }
 
-/* Tool pages — responsible use & affiliation notices */
+/* Tool pages, responsible use & affiliation notices */
 .responsible-use-banner {
   display: flex;
   align-items: flex-start;

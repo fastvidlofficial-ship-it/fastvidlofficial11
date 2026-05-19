@@ -94,8 +94,7 @@ const PrivacyPolicy = () => {
             We load <strong>Google tag (gtag.js)</strong> on the site for measurement and advertising-related signals tied to our Google Ads account. Depending on your browser settings and Google&apos;s policies, this may involve cookies or similar storage to attribute visits and conversions. Google&apos;s documentation describes how those technologies work:{" "}
             <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="home-blog-article-link">
               Google Privacy Policy
-            </a>
-            ,{" "}
+            </a>,{" "}
             <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className="home-blog-article-link">
               How Google uses information from sites that use their services
             </a>
@@ -105,8 +104,7 @@ const PrivacyPolicy = () => {
             <strong>Your choices:</strong> You can manage ad personalization and related Google settings at{" "}
             <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="home-blog-article-link">
               Google Ads Settings
-            </a>
-            , and use industry tools such as{" "}
+            </a>, and use industry tools such as{" "}
             <a href="https://www.aboutads.info/choices" target="_blank" rel="noopener noreferrer" className="home-blog-article-link">
               aboutads.info/choices
             </a>{" "}
@@ -128,7 +126,7 @@ const PrivacyPolicy = () => {
 
           <h3 className="home-blog-article-h3">Social sharing (ShareThis)</h3>
           <p className="home-blog-article-p">
-            We may load <strong>ShareThis</strong> scripts for optional sharing features. ShareThis sets its own cookies and processes data under its policies—see ShareThis documentation for details.
+            We may load <strong>ShareThis</strong> scripts for optional sharing features. ShareThis sets its own cookies and processes data under its policies, see ShareThis documentation for details.
           </p>
 
           <h2 className="home-blog-article-h2">Third-party advertising, measurement, and partners</h2>
@@ -184,7 +182,7 @@ const PrivacyPolicy = () => {
             for how Google handles data. You can clear translation cookies in your browser or select the original language in the menu to stop using the feature.
           </p>
 
-          <h2 className="home-blog-article-h2">Data Retention — How Long We Keep Information</h2>
+          <h2 className="home-blog-article-h2">Data Retention, How Long We Keep Information</h2>
           <p className="home-blog-article-p">We believe in keeping data only as long as necessary:</p>
           <div className="home-blog-article-table-wrap">
             <table className="home-blog-article-table">
@@ -198,7 +196,7 @@ const PrivacyPolicy = () => {
               <tbody>
                 <tr>
                   <td>Content URLs (Instagram, Facebook, Pinterest)</td>
-                  <td>Real-time processing only — immediately discarded</td>
+                  <td>Real-time processing only, immediately discarded</td>
                   <td>Not stored after download</td>
                 </tr>
                 <tr>

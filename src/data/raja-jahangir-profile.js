@@ -26,7 +26,7 @@ export const rajaJahangirProfile = {
         {
           name: "On-Page SEO",
           description:
-            "Optimizes title tags, meta descriptions, heading hierarchy (H1–H3), and internal links so each downloader page targets the right intent without keyword stuffing.",
+            "Optimizes title tags, meta descriptions, heading hierarchy (H1 to H3), and internal links so each downloader page targets the right intent without keyword stuffing.",
         },
         {
           name: "Programmatic SEO",
@@ -41,7 +41,7 @@ export const rajaJahangirProfile = {
         {
           name: "Content Strategy",
           description:
-            "Plans and edits in-depth guides that match real user questions—step-by-step downloads, device-specific tips, and responsible-use notices—so content is helpful, not thin.",
+            "Plans and edits in-depth guides that match real user questions, step-by-step downloads, device-specific tips, and responsible-use notices, so content is helpful, not thin.",
         },
         {
           name: "Author & Trust Signals",
@@ -66,7 +66,7 @@ export const rajaJahangirProfile = {
         {
           name: "Organic Growth",
           description:
-            "Focuses on sustainable traffic through search visibility and helpful content rather than misleading claims—aligned with platform terms and copyright respect.",
+            "Focuses on sustainable traffic through search visibility and helpful content rather than misleading claims, aligned with platform terms and copyright respect.",
         },
         {
           name: "Analytics & Iteration",

@@ -21,7 +21,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Free Facebook Video Downloader | 1080p No Watermark (2026)",
     description:
-      "Save FB videos in HD 1080p without watermarks. Use FastVidl on phone or PC—public links, browser-based, no app required.",
+      "Save FB videos in HD 1080p without watermarks. Use FastVidl on phone or PC, public links, browser-based, no app required.",
   },
   robots: { index: true, follow: true },
 };

@@ -9,7 +9,7 @@ export const BASE_URL = "https://fastvidl.com";
 const PAGE_FILE_RE = /^page\.(js|jsx|ts|tsx)$/;
 const SITEMAP_SKIP_FOLDERS = new Set(["api", "admin-dashboard"]);
 
-/** Always include — nav-critical pages that must never drop from discovery. */
+/** Always include, nav-critical pages that must never drop from discovery. */
 const REQUIRED_STATIC_PATHS = ["/instagram-video-downloader"];
 
 export function getPseoSlugs() {

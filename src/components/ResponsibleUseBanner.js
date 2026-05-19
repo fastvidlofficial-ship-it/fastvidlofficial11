@@ -7,7 +7,7 @@ export default function ResponsibleUseBanner() {
       <div className="banner-text">
         <strong>Responsible Use Notice: </strong>
         FastVidl is designed for downloading publicly available content for{" "}
-        <strong>personal use only</strong> — such as backing up your own uploads, saving content for offline
+        <strong>personal use only</strong>, such as backing up your own uploads, saving content for offline
         viewing, or keeping a personal reference copy. Downloading does not transfer copyright ownership.
         Always respect the original creator&apos;s rights and the platform&apos;s Terms of Service.{" "}
         <a href="/disclaimer" className="banner-link">

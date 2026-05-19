@@ -1,4 +1,4 @@
-/* /download/[slug] — aligned with tool pages (Blog.css + DownloaderHero) */
+/* /download/[slug], aligned with tool pages (Blog.css + DownloaderHero) */
 
 .subTag {
   margin-top: 0.5rem;
@@ -7,7 +7,7 @@
   font-weight: 500;
 }
 
-/* H1 word spans — same gradients as instagram-* downloader pages */
+/* H1 word spans, same gradients as instagram-* downloader pages */
 .wordPlain {
   color: var(--heading-color, #1a202c);
   font-weight: 700;
