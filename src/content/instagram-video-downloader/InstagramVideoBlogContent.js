@@ -223,7 +223,7 @@ export default function InstagramVideoBlogContent() {
             Instagram Reel Downloader Free
           </Link>
           ,{" "}
-          <Link href="/instagram-photo-downloader" className="home-blog-article-link">
+          <Link href="/instagram-photo-downloader-free" className="home-blog-article-link">
             Instagram Photo Downloader
           </Link>
           , and{" "}

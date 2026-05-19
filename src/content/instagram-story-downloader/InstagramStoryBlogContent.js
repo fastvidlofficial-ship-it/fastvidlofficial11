@@ -254,7 +254,7 @@ export default function InstagramStoryBlogContent({ variant = "standalone", faqL
           Instagram Reel Downloader Free
         </Link>
         ,{" "}
-        <Link href="/instagram-photo-downloader" className={linkClass}>
+        <Link href="/instagram-photo-downloader-free" className={linkClass}>
           Instagram Photo Downloader
         </Link>
         , and{" "}

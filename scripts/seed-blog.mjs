@@ -142,7 +142,7 @@ const SEED_BLOG = {
 <p>The same flow works for almost any public Instagram content as well as several other platforms. Try our dedicated tools:</p>
 <ul>
   <li><a href="/instagram-video-downloader">Instagram Video Downloader</a> — feed videos and IGTV.</li>
-  <li><a href="/instagram-photo-downloader">Instagram Photo Downloader</a> — single photos and carousel posts.</li>
+  <li><a href="/instagram-photo-downloader-free">Instagram Photo Downloader</a> — single photos and carousel posts.</li>
   <li><a href="/instagram-story-downloader">Instagram Story Downloader</a> — stories and highlights.</li>
   <li><a href="/free-facebook-video-downloader">Facebook Video Downloader</a> — public Facebook videos.</li>
   <li><a href="/pinterest-video-downloader-free">Pinterest Video Downloader</a> — Pinterest pins and videos.</li>

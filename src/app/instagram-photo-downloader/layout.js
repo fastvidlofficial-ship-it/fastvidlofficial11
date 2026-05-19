@@ -7,12 +7,12 @@ export const metadata = {
     icon: "/assets/favicon.ico",
     shortcut: "/assets/favicon.ico",
   },
-  alternates: { canonical: "https://fastvidl.com/instagram-photo-downloader" },
+  alternates: { canonical: "https://fastvidl.com/instagram-photo-downloader-free" },
   openGraph: {
     title: "Best Instagram Photo Downloader Free | Full Size HD JPG",
     description:
       "Discover the best Instagram photo downloader tool to save images in HD and full size. Learn how to download Instagram photos for free in JPG format legally and safely.",
-    url: "https://fastvidl.com/instagram-photo-downloader",
+    url: "https://fastvidl.com/instagram-photo-downloader-free",
     siteName: "FastVidl",
     images: ["/assets/weblogo.png"],
     locale: "en_US",

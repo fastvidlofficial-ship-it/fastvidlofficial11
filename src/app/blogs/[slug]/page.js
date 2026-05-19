@@ -98,7 +98,7 @@ function getRelatedBlogTool(slug) {
   }
   if (slug.includes("photo") || slug.includes("carousel")) {
     return {
-      href: "/instagram-photo-downloader",
+      href: "/instagram-photo-downloader-free",
       name: "Instagram Photo Downloader",
       anchor: "Instagram photo downloader",
       sentence: "For public Instagram photos and carousel posts, try the",

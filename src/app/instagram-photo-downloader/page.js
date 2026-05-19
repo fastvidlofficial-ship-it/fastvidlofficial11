@@ -34,7 +34,7 @@ export default function InstagramPhotoDownloaderService() {
         authorUrl="https://fastvidl.com/author/raja-jahangir"
         organizationName="Auroxa Tech"
         organizationUrl="https://auroxatech.com"
-        articleUrl="https://fastvidl.com/instagram-photo-downloader"
+        articleUrl="https://fastvidl.com/instagram-photo-downloader-free"
         headline="Instagram Photo Downloader: The Ultimate Guide to Saving Images in HD Quality"
         datePublished="2026-03-26"
         dateModified="2026-04-20"

@@ -273,7 +273,7 @@ export default function InstagramReelDownloaderBlogContent({ variant = "standalo
       </p>
       <p className={pClass}>
         Explore more tools:{" "}
-        <Link href="/instagram-photo-downloader" className={linkClass}>
+        <Link href="/instagram-photo-downloader-free" className={linkClass}>
           Instagram Photo Downloader
         </Link>
         ,{" "}

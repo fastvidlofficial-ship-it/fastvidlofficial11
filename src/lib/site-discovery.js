@@ -165,7 +165,7 @@ export function getRouteMetadata(urlPath) {
 
   const downloaderRoots = [
     "/instagram-reel-downloader-free",
-    "/instagram-photo-downloader",
+    "/instagram-photo-downloader-free",
     "/instagram-story-downloader",
     "/instagram-video-downloader",
     "/pinterest-video-downloader-free",

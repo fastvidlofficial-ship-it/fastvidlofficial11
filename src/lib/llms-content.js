@@ -23,7 +23,7 @@ const DOWNLOADER_SUMMARIES = [
   },
   {
     title: "Instagram Photo Downloader",
-    path: "/instagram-photo-downloader",
+    path: "/instagram-photo-downloader-free",
     summary:
       "Downloads high-resolution photos and carousels from public Instagram posts.",
     keywords: "instagram photo downloader, download IG images, save Instagram pictures HD",
@@ -120,7 +120,7 @@ export async function buildLlmsTxtContent() {
     "- **Video Downloader:** https://fastvidl.com/instagram-video-downloader (Feed videos & IGTV)",
     "- **Reel Downloader:** https://fastvidl.com/instagram-reel-downloader-free (MP4)",
     "- **Story Downloader:** https://fastvidl.com/instagram-story-downloader (Stories & highlights)",
-    "- **Photo Downloader:** https://fastvidl.com/instagram-photo-downloader (HD JPG/PNG)",
+    "- **Photo Downloader:** https://fastvidl.com/instagram-photo-downloader-free (HD JPG/PNG)",
     "",
     "### Pinterest & Facebook",
     "- **Pinterest Video Downloader:** https://fastvidl.com/pinterest-video-downloader-free",

@@ -1,4 +1,5 @@
 import HomePageClient from "./HomePageClient";
+import LatestBlogsSection from "@/components/latest-blogs/LatestBlogsSection";
 
 const HOME_TITLE = "FastVidl — Free Downloader for Instagram & Facebook";
 const HOME_DESCRIPTION =
@@ -24,5 +25,10 @@ export const metadata = {
 };
 
 export default function Home() {
-  return <HomePageClient />;
+  return (
+    <>
+      <HomePageClient />
+      <LatestBlogsSection />
+    </>
+  );
 }
