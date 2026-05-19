@@ -1,5 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "fastvidl.com",
+        pathname: "/api/blob",
+      },
+      {
+        protocol: "https",
+        hostname: "www.fastvidl.com",
+        pathname: "/api/blob",
+      },
+    ],
+  },
   async redirects() {
     return [
       {
