@@ -61,8 +61,8 @@ const Disclaimer = () => {
           <h2 className="home-blog-article-h2">DMCA &amp; Takedown Process</h2>
           <p className="home-blog-article-p">
             Copyright owners and authorized agents: send a complete notice to{" "}
-            <a href="mailto:copyright@fastvidl.com" className="home-blog-article-link">
-              copyright@fastvidl.com
+            <a href="mailto:fastvidlofficial@gmail.com" className="home-blog-article-link">
+              fastvidlofficial@gmail.com
             </a>
             . For a full checklist, response expectations, and related policies, see our{" "}
             <Link href="/dmca-takedown" className="home-blog-article-link">
