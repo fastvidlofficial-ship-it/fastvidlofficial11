@@ -1,47 +1,53 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  rajaJahangirProfile,
-  getSkillNames,
-} from "@/data/raja-jahangir-profile";
+import { rajaJahangirProfile } from "@/data/raja-jahangir-profile";
 import "@/content/Blog.css";
 import "./AuthorPage.css";
 
 const SITE_URL = "https://fastvidl.com";
 const PAGE_URL = `${SITE_URL}/author/raja-jahangir`;
 const PAGE_DESCRIPTION =
-  "Raja Jahangir is an SEO & Growth Specialist and Content Author focused on search visibility, content strategy, and sustainable organic growth.";
+  "Raja Jahangir is an SEO & Growth Specialist at FastVidl with 3 years of hands-on SEO experience across technical SEO, content strategy, and organic growth.";
+const PAGE_TITLE = "Raja Jahangir — SEO & Growth Specialist | FastVidl";
+const PROFILE_IMAGE = "/images/jahangir1.jpeg";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Raja Jahangir - SEO & Growth Specialist | Author",
+  title: PAGE_TITLE,
   description: PAGE_DESCRIPTION,
   alternates: { canonical: PAGE_URL },
   openGraph: {
-    title: "Raja Jahangir - SEO & Growth Specialist | Author",
+    title: PAGE_TITLE,
     description: PAGE_DESCRIPTION,
     url: PAGE_URL,
     type: "profile",
-    images: [rajaJahangirProfile.profileImage],
+    images: [PROFILE_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
+    images: [PROFILE_IMAGE],
   },
   robots: { index: true, follow: true },
 };
 
 function PersonSchema() {
-  const { name, titles, linkedInUrl, profileImage, aboutSummary } =
-    rajaJahangirProfile;
-  const skills = getSkillNames();
+  const { name, linkedInUrl } = rajaJahangirProfile;
 
   const schema = {
     "@context": "https://schema.org",
     "@type": "Person",
     name,
+    jobTitle: "SEO & Growth Specialist",
     url: PAGE_URL,
-    image: `${SITE_URL}${profileImage}`,
-    jobTitle: titles[0],
-    description: aboutSummary || PAGE_DESCRIPTION,
-    sameAs: [linkedInUrl, PAGE_URL],
-    knowsAbout: skills,
+    image: `${SITE_URL}${PROFILE_IMAGE}`,
+    sameAs: [linkedInUrl],
+    worksFor: {
+      "@type": "Organization",
+      name: "FastVidl",
+      url: SITE_URL,
+    },
   };
 
   return (

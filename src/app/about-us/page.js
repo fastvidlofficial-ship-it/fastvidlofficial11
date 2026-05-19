@@ -173,7 +173,15 @@ const AboutUs = () => {
                     className="team-card-img"
                   />
                 </div>
-                <h3 className="team-card-name">{member.name}</h3>
+                <h3 className="team-card-name">
+                  {member.authorPage ? (
+                    <Link href={member.authorPage} className="team-card-author-name">
+                      {member.name}
+                    </Link>
+                  ) : (
+                    member.name
+                  )}
+                </h3>
                 <p className="team-card-role">{member.role}</p>
                 {(member.authorPage || member.linkedin) && (
                   <div className="team-card-actions">

@@ -125,7 +125,7 @@ export async function getPublishedBlogsForDiscovery() {
 
 export function getRouteMetadata(urlPath) {
   if (urlPath === "/") {
-    return { changeFrequency: "daily", priority: 1.0 };
+    return { changeFrequency: "weekly", priority: 1.0 };
   }
 
   const legalPaths = new Set([
@@ -148,11 +148,11 @@ export function getRouteMetadata(urlPath) {
   }
 
   if (urlPath === "/faqs") {
-    return { changeFrequency: "weekly", priority: 0.8 };
+    return { changeFrequency: "monthly", priority: 0.65 };
   }
 
   if (urlPath === "/blogs") {
-    return { changeFrequency: "weekly", priority: 0.75 };
+    return { changeFrequency: "weekly", priority: 0.85 };
   }
 
   if (urlPath.startsWith("/blogs/")) {
@@ -172,7 +172,7 @@ export function getRouteMetadata(urlPath) {
     "/free-facebook-video-downloader",
   ];
   if (downloaderRoots.includes(urlPath)) {
-    return { changeFrequency: "monthly", priority: 0.9 };
+    return { changeFrequency: "weekly", priority: 0.95 };
   }
 
   if (urlPath.startsWith("/author/")) {

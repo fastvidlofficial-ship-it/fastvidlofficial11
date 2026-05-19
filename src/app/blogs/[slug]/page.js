@@ -11,6 +11,107 @@ import styles from "./BlogShow.module.css";
 
 export const dynamic = "force-dynamic";
 
+const BLOG_TOOL_LINKS = {
+  "save-pinterest-board-offline-viewing-ipad-iphone": {
+    href: "/pinterest-video-downloader-free",
+    name: "Pinterest Video Downloader",
+    anchor: "Pinterest video downloader",
+    sentence:
+      "If the board includes video pins you want to keep for offline viewing, use our",
+  },
+  "save-instagram-stories-with-music-not-muted": {
+    href: "/instagram-story-downloader",
+    name: "Instagram Story Downloader",
+    anchor: "Instagram story downloader",
+    sentence:
+      "For public stories where audio matters, the quickest route is our",
+  },
+  "why-downloaded-video-quality-is-bad-fix": {
+    href: "/instagram-reel-downloader-free",
+    name: "Instagram Reel Downloader",
+    anchor: "free Instagram reel downloader",
+    sentence:
+      "For Reels, start with a clean public link and try the",
+  },
+  "facebook-video-no-sound-quick-fix": {
+    href: "/free-facebook-video-downloader",
+    name: "Facebook Video Downloader",
+    anchor: "Facebook video downloader",
+    sentence:
+      "If you need to re-download a public Facebook clip with audio intact, use our",
+  },
+  "download-hd-wallpapers-pinterest-iphone": {
+    href: "/pinterest-video-downloader-free",
+    name: "Pinterest Downloader",
+    anchor: "Pinterest downloader",
+    sentence:
+      "For Pinterest saves from public pins, you can also use the",
+  },
+  "download-instagram-carousel-photos-phone": {
+    href: "/download/instagram-carousel-downloader",
+    name: "Instagram Carousel Downloader",
+    anchor: "Instagram carousel downloader",
+    sentence:
+      "For multi-photo posts and carousels, the dedicated",
+  },
+  "pinterest-not-saving-pictures-fix": {
+    href: "/pinterest-video-downloader-free",
+    name: "Pinterest Video Downloader",
+    anchor: "Pinterest video downloader",
+    sentence:
+      "When Pinterest save buttons fail on public pins, try the",
+  },
+  "download-facebook-live-videos-after-end": {
+    href: "/free-facebook-video-downloader",
+    name: "Facebook Video Downloader",
+    anchor: "Facebook video downloader",
+    sentence:
+      "After a public live video is available as a replay, our",
+  },
+};
+
+function getRelatedBlogTool(slug) {
+  if (BLOG_TOOL_LINKS[slug]) return BLOG_TOOL_LINKS[slug];
+  if (slug.includes("pinterest")) {
+    return {
+      href: "/pinterest-video-downloader-free",
+      name: "Pinterest Video Downloader",
+      anchor: "Pinterest video downloader",
+      sentence: "For public Pinterest pins and videos, try the",
+    };
+  }
+  if (slug.includes("facebook")) {
+    return {
+      href: "/free-facebook-video-downloader",
+      name: "Facebook Video Downloader",
+      anchor: "Facebook video downloader",
+      sentence: "For public Facebook videos and reels, try the",
+    };
+  }
+  if (slug.includes("story") || slug.includes("stories")) {
+    return {
+      href: "/instagram-story-downloader",
+      name: "Instagram Story Downloader",
+      anchor: "Instagram story downloader",
+      sentence: "For public Instagram stories and highlights, try the",
+    };
+  }
+  if (slug.includes("photo") || slug.includes("carousel")) {
+    return {
+      href: "/instagram-photo-downloader",
+      name: "Instagram Photo Downloader",
+      anchor: "Instagram photo downloader",
+      sentence: "For public Instagram photos and carousel posts, try the",
+    };
+  }
+  return {
+    href: "/instagram-reel-downloader-free",
+    name: "Instagram Reel Downloader",
+    anchor: "free Instagram reel downloader",
+    sentence: "For public Instagram reels, try the",
+  };
+}
+
 function toSchemaDate(value) {
   if (!value) return undefined;
   return new Date(value).toISOString();
@@ -113,6 +214,7 @@ export default async function BlogShowPage({ params }) {
 
   const featuredSrc =
     blog.image && !blog.image.startsWith("data:") ? blog.image : null;
+  const relatedTool = getRelatedBlogTool(blog.slug);
 
   return (
     <div className={styles.page}>
@@ -201,6 +303,10 @@ export default async function BlogShowPage({ params }) {
               className={`blog-content ${styles.body}`}
               dangerouslySetInnerHTML={{ __html: blog.longDescription || "" }}
             />
+            <p className={styles.contextualToolLink}>
+              {relatedTool.sentence}{" "}
+              <Link href={relatedTool.href}>{relatedTool.anchor}</Link>.
+            </p>
           </section>
         </div>
 
@@ -209,6 +315,11 @@ export default async function BlogShowPage({ params }) {
             <FaqSection items={cleanFaqs} />
           </div>
         )}
+
+        <div className={styles.relatedTool}>
+          <p>Looking for a fast, free downloader? Try:</p>
+          <Link href={relatedTool.href}>{relatedTool.name} →</Link>
+        </div>
 
         <div className={styles.footerActions}>
           <Link href="/blogs" className={styles.footerLink}>

@@ -7,9 +7,22 @@ import NotAffiliatedNote from "@/components/NotAffiliatedNote";
 import "@/content/Blog.css";
 import FAQSchema from "@/components/FAQSchema";
 import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
+import RelatedToolsSection from "@/components/RelatedToolsSection";
 import InstagramStoryBlogContent, { STORY_BLOG_FAQ_LIST } from "@/content/instagram-story-downloader/InstagramStoryBlogContent";
 import EzoicPlacements from "@/components/ads/EzoicPlacements";
 import { getEzoicToolPlacements } from "@/config/ezoicPlacements";
+
+const RELATED_STORY_TOOLS = [
+  { href: "/download/instagram-story-saver-hd", label: "Instagram Story Saver HD" },
+  {
+    href: "/download/instagram-highlight-downloader-hd",
+    label: "Instagram Highlight Downloader HD",
+  },
+  {
+    href: "/download/instagram-igtv-downloader-1080p",
+    label: "Instagram IGTV Downloader 1080p",
+  },
+];
 
 export default function InstagramStoryDownloaderService() {
   return (
@@ -58,6 +71,10 @@ export default function InstagramStoryDownloaderService() {
             <InstagramStoryBlogContent variant="home" faqList={STORY_BLOG_FAQ_LIST} />
           </section>
         </div>
+        <RelatedToolsSection
+          heading="More Free Instagram Story Tools"
+          tools={RELATED_STORY_TOOLS}
+        />
         <NotAffiliatedNote />
       </main>
     </div>

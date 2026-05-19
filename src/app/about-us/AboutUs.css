@@ -767,6 +767,17 @@
   margin-bottom: 0.35rem;
 }
 
+.team-card-author-name {
+  color: inherit;
+  text-decoration: none;
+}
+
+.team-card-author-name:hover {
+  color: var(--link-color, #667eea);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .team-card-role {
   font-size: 0.95rem;
   color: var(--text-secondary, #64748b);

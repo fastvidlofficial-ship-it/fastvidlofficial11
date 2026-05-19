@@ -7,11 +7,26 @@ import NotAffiliatedNote from "@/components/NotAffiliatedNote";
 import "@/content/Blog.css";
 import FAQSchema from "@/components/FAQSchema";
 import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
+import RelatedToolsSection from "@/components/RelatedToolsSection";
 import InstagramReelDownloaderBlogContent, {
   INSTAGRAM_BLOG_FAQ_LIST,
 } from "@/content/instagram-reel-downloader-free/InstagramReelDownloaderBlogContent";
 import EzoicPlacements from "@/components/ads/EzoicPlacements";
 import { getEzoicToolPlacements } from "@/config/ezoicPlacements";
+
+const RELATED_REEL_TOOLS = [
+  { href: "/download/ig-reel-downloader-hd", label: "Free IG Reel Downloader HD" },
+  {
+    href: "/download/insta-reel-downloader-without-watermark",
+    label: "Insta Reel Downloader Without Watermark",
+  },
+  { href: "/download/download-instagram-reels-mp4", label: "Download Instagram Reels MP4" },
+  { href: "/download/1080p-ig-reels-download-free", label: "1080p IG Reels Download Free" },
+  {
+    href: "/download/download-instagram-reels-via-link",
+    label: "Download Instagram Reels via Link",
+  },
+];
 
 export default function InstagramReelDownloaderService() {
   return (
@@ -61,6 +76,10 @@ export default function InstagramReelDownloaderService() {
             <InstagramReelDownloaderBlogContent variant="home" faqList={INSTAGRAM_BLOG_FAQ_LIST} />
           </section>
         </div>
+        <RelatedToolsSection
+          heading="More Free Instagram Reel Downloaders"
+          tools={RELATED_REEL_TOOLS}
+        />
         <NotAffiliatedNote />
       </main>
     </div>

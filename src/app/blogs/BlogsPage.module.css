@@ -316,6 +316,23 @@
   color: var(--brand-secondary);
 }
 
+.cardAuthor {
+  margin: -0.25rem 1.2rem 1.2rem;
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+}
+
+.cardAuthor a {
+  color: var(--link-color);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cardAuthor a:hover {
+  color: var(--link-hover-color);
+}
+
 /* --- Pagination ---------------------------------------------------------- */
 
 .pagination {

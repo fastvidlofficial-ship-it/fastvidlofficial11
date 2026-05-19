@@ -181,6 +181,10 @@ export default async function BlogsListingPage({ searchParams }) {
                   </span>
                 </div>
               </Link>
+              <p className={styles.cardAuthor}>
+                Written by{" "}
+                <Link href="/author/raja-jahangir">Raja Jahangir</Link>
+              </p>
             </li>
           ))}
         </ul>

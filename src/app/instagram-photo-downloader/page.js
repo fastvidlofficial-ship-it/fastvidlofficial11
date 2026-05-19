@@ -7,9 +7,24 @@ import NotAffiliatedNote from "@/components/NotAffiliatedNote";
 import "@/content/Blog.css";
 import FAQSchema from "@/components/FAQSchema";
 import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
+import RelatedToolsSection from "@/components/RelatedToolsSection";
 import InstagramPhotoBlogContent, { PHOTO_BLOG_FAQ_LIST } from "@/content/instagram-photo-downloader/InstagramPhotoBlogContent";
 import EzoicPlacements from "@/components/ads/EzoicPlacements";
 import { getEzoicToolPlacements } from "@/config/ezoicPlacements";
+
+const RELATED_PHOTO_TOOLS = [
+  { href: "/download/ig-photo-download-free", label: "IG Photo Download Free" },
+  { href: "/download/ig-post-download-hd", label: "HD IG Post Downloader" },
+  { href: "/download/instagram-carousel-downloader", label: "Instagram Carousel Downloader" },
+  {
+    href: "/download/instagram-multiple-photo-downloader",
+    label: "Instagram Multiple Photo Downloader",
+  },
+  {
+    href: "/download/website-to-download-instagram-photos",
+    label: "Website to Download Instagram Photos",
+  },
+];
 
 export default function InstagramPhotoDownloaderService() {
   return (
@@ -58,6 +73,10 @@ export default function InstagramPhotoDownloaderService() {
             <InstagramPhotoBlogContent variant="home" faqList={PHOTO_BLOG_FAQ_LIST} />
           </section>
         </div>
+        <RelatedToolsSection
+          heading="More Free Instagram Photo Downloaders"
+          tools={RELATED_PHOTO_TOOLS}
+        />
         <NotAffiliatedNote />
       </main>
     </div>

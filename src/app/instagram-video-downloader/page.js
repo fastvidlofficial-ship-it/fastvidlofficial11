@@ -6,11 +6,26 @@ import DownloaderToolSection from "@/components/DownloaderToolSection";
 import NotAffiliatedNote from "@/components/NotAffiliatedNote";
 import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
 import FAQSchema from "@/components/FAQSchema";
+import RelatedToolsSection from "@/components/RelatedToolsSection";
 import InstagramVideoBlogContent, {
   INSTAGRAM_VIDEO_FAQ_LIST,
 } from "@/content/instagram-video-downloader/InstagramVideoBlogContent";
 import EzoicPlacements from "@/components/ads/EzoicPlacements";
 import { getEzoicToolPlacements } from "@/config/ezoicPlacements";
+
+const RELATED_VIDEO_TOOLS = [
+  {
+    href: "/download/instagram-video-download-without-watermark",
+    label: "Instagram Video Download Without Watermark",
+  },
+  { href: "/download/instagram-video-download-mp4", label: "Instagram Video Download MP4" },
+  { href: "/download/fast-insta-video-download", label: "Fast Instagram Video Download" },
+  { href: "/download/insta-video-download-hd", label: "Insta Video Download HD" },
+  {
+    href: "/download/instagram-video-download-online",
+    label: "Instagram Video Download Online",
+  },
+];
 
 export default function InstagramVideoDownloaderPage() {
   return (
@@ -56,6 +71,10 @@ export default function InstagramVideoDownloaderPage() {
         <DownloaderToolSection />
         <EzoicPlacements placementIds={getEzoicToolPlacements()} />
         <InstagramVideoBlogContent />
+        <RelatedToolsSection
+          heading="More Free Instagram Video Downloaders"
+          tools={RELATED_VIDEO_TOOLS}
+        />
         <NotAffiliatedNote />
       </main>
     </div>
