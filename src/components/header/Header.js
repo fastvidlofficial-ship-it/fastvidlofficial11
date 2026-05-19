@@ -148,11 +148,11 @@ const Header = () => {
               Pinterest Video Downloader Free
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/faqs" onClick={closeMenu}>
               FAQs
             </Link>
-          </li>
+          </li> */}
           <li className={styles.navMobileOnly}>
             <Link href="/blogs" onClick={closeMenu}>
               Blogs
