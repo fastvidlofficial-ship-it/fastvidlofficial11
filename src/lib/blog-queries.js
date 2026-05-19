@@ -70,5 +70,17 @@ export async function getPublishedBlogBySlug(slug) {
   }).lean();
 
   if (!doc) return null;
-  return normalizeBlogDocument(doc);
+  const normalized = await normalizeBlogDocument(doc);
+
+  if (
+    normalized?.longDescription &&
+    normalized.longDescription !== doc.longDescription
+  ) {
+    await Blog.updateOne(
+      { _id: doc._id },
+      { $set: { longDescription: normalized.longDescription } }
+    );
+  }
+
+  return normalized;
 }

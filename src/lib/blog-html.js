@@ -1,24 +1,83 @@
 import { writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
 import crypto from "node:crypto";
+import { put } from "@vercel/blob";
 import { toAbsoluteUrl } from "@/lib/site-url";
 
 const UPLOAD_DIR = path.join(process.cwd(), "public", "uploads", "blogs");
 const PUBLIC_PREFIX = "/uploads/blogs";
+const MAX_INLINE_IMAGE_BYTES = Math.floor(4.5 * 1024 * 1024);
 
 const BASE64_IMG_RE =
   /<img([^>]*?)\ssrc=["'](data:image\/(?:png|jpeg|jpg|gif|webp);base64,[^"']+)["']([^>]*)>/gi;
 
 const LOCALHOST_RE = /https?:\/\/(?:localhost|127\.0\.0\.1)(?::\d+)?/gi;
 
+function shouldUseBlobStorage() {
+  return !!process.env.BLOB_READ_WRITE_TOKEN;
+}
+
+function isPrivateStoreError(err) {
+  return (
+    typeof err?.message === "string" &&
+    err.message.includes("Cannot use public access on a private store")
+  );
+}
+
+function buildPrivateBlobProxyUrl(pathname) {
+  return `/api/blob?pathname=${encodeURIComponent(pathname)}`;
+}
+
+function sanitizeSlug(slug) {
+  return String(slug || "post")
+    .toLowerCase()
+    .replace(/[^a-z0-9-]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 40) || "post";
+}
+
+async function saveInlineImageToBlob({ buffer, contentType, ext, slug, hash }) {
+  const pathname = `blogs/${sanitizeSlug(slug)}-inline-${hash}.${ext}`;
+
+  try {
+    const blob = await put(pathname, buffer, {
+      access: "public",
+      addRandomSuffix: false,
+      contentType,
+    });
+    return blob.url;
+  } catch (err) {
+    if (!isPrivateStoreError(err)) {
+      throw err;
+    }
+
+    const blob = await put(pathname, buffer, {
+      access: "private",
+      addRandomSuffix: false,
+      contentType,
+    });
+    return buildPrivateBlobProxyUrl(blob.pathname);
+  }
+}
+
+async function saveInlineImageToLocalUploads({ buffer, ext, slug, hash }) {
+  await mkdir(UPLOAD_DIR, { recursive: true });
+  const name = `${sanitizeSlug(slug)}-inline-${hash}.${ext}`;
+  await writeFile(path.join(UPLOAD_DIR, name), buffer);
+  return `${PUBLIC_PREFIX}/${name}`;
+}
+
 /**
- * Decode inline base64 images to /uploads/blogs/*.png files (dev + Node runtime).
- * On Vercel without writable disk, strips base64 src to avoid multi-MB HTML.
+ * Decode inline base64 images into durable image URLs.
+ *
+ * - With BLOB_READ_WRITE_TOKEN: stores in Vercel Blob (production-safe).
+ * - Local dev without Blob: writes to public/uploads/blogs.
+ * - Production without Blob: keeps the original base64 image instead of
+ *   deleting it, so old posts still render while the env is being fixed.
  */
 export async function extractBase64ImagesFromHtml(html, slug = "post") {
   if (!html || typeof html !== "string") return html;
 
-  let index = 0;
   let out = html;
   const matches = [...html.matchAll(BASE64_IMG_RE)];
 
@@ -26,35 +85,34 @@ export async function extractBase64ImagesFromHtml(html, slug = "post") {
 
   const canWrite =
     process.env.NODE_ENV !== "production" || !process.env.VERCEL;
+  const canUploadToBlob = shouldUseBlobStorage();
 
   for (const match of matches) {
     const dataUrl = match[2];
-    const mime = dataUrl.match(/^data:image\/(\w+);base64,/i)?.[1] || "png";
+    const rawMime = dataUrl.match(/^data:image\/(\w+);base64,/i)?.[1] || "png";
+    const mime = rawMime === "jpg" ? "jpeg" : rawMime;
     const ext = mime === "jpeg" ? "jpg" : mime;
-
-    if (!canWrite) {
-      out = out.replace(match[0], "");
-      continue;
-    }
+    const contentType = `image/${mime}`;
 
     try {
       const base64 = dataUrl.split(",")[1];
       if (!base64) continue;
 
       const buffer = Buffer.from(base64, "base64");
-      if (buffer.length > 4.5 * 1024 * 1024) continue;
+      if (buffer.length > MAX_INLINE_IMAGE_BYTES) continue;
 
-      await mkdir(UPLOAD_DIR, { recursive: true });
-      const safeSlug = String(slug)
-        .toLowerCase()
-        .replace(/[^a-z0-9-]+/g, "-")
-        .slice(0, 40);
-      const name = `${safeSlug}-inline-${index++}-${crypto.randomBytes(4).toString("hex")}.${ext}`;
-      await writeFile(path.join(UPLOAD_DIR, name), buffer);
+      const hash = crypto.createHash("sha256").update(buffer).digest("hex").slice(0, 12);
+      const imageUrl = canUploadToBlob
+        ? await saveInlineImageToBlob({ buffer, contentType, ext, slug, hash })
+        : canWrite
+          ? await saveInlineImageToLocalUploads({ buffer, ext, slug, hash })
+          : dataUrl;
 
-      out = out.replace(dataUrl, `${PUBLIC_PREFIX}/${name}`);
+      out = out.replace(dataUrl, imageUrl);
     } catch {
-      out = out.replace(dataUrl, "");
+      // Preserve the original data URL if persistent storage has a temporary issue.
+      // Showing the image is better than silently deleting article media.
+      continue;
     }
   }
 
