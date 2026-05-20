@@ -102,7 +102,9 @@ const Contact = () => {
                 <span className="info-icon">📧</span>
                 <div>
                   <h3>Email Us</h3>
-                  <p>fastvidlofficial@gmail.com</p>
+                  <p>
+                    <a href="mailto:fastvidlofficial@gmail.com">fastvidlofficial@gmail.com</a>
+                  </p>
                 </div>
               </div>
               <p>

@@ -122,7 +122,7 @@ const CookiePolicy = () => {
 
           <h2 className="home-blog-article-h2">Advertising and measurement</h2>
           <p className="home-blog-article-p">
-            We use <strong>Ezoic</strong> and related partners to show ads and to operate analytics and consent features. We also load the <strong>Google tag (gtag.js)</strong> for measurement tied to Google Ads. We do <strong>not</strong> currently load standalone Google AdSense on pages; if that changes, we will update this policy.
+            We use <strong>Ezoic</strong> and related partners to show ads, manage consent, and operate analytics. When you accept optional cookies, we may also load the <strong>Google tag (gtag.js)</strong> for measurement tied to Google Ads. <strong>Google AdSense</strong> or similar ad inventory may be served through Ezoic&apos;s platform; we do not load ad scripts until you accept optional cookies via our banner or partner CMP.
           </p>
           <ul className="disclaimer-list-simple">
             <li>Partners may use cookies or similar storage for ad delivery, personalization where allowed, fraud prevention, and reporting.</li>

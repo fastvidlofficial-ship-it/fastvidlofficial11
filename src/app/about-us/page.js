@@ -138,6 +138,14 @@ const AboutUs = () => {
             FastVidl stays free to use for typical personal workflows. We do not add our own watermark on supported downloads; quality depends on what the platform serves. Please use the service fairly and in line with our Terms.
           </p>
 
+          <h2 className="home-blog-article-h2">Advertising on FastVidl</h2>
+          <p className="home-blog-article-p">
+            FastVidl is supported by advertising so we can keep the core downloader free. We may use <strong>Ezoic</strong> and related partners (including Google advertising inventory where applicable) to display ads, measure performance, and manage consent. We do not sell your personal data. You can learn how cookies and ad partners work in our{" "}
+            <Link href="/privacy-policy" className="home-blog-article-link">Privacy Policy</Link>{" "}
+            and <Link href="/cookie-policy" className="home-blog-article-link">Cookie Policy</Link>. Questions about ads or partnerships? Email{" "}
+            <a href="mailto:fastvidlofficial@gmail.com" className="home-blog-article-link">fastvidlofficial@gmail.com</a>.
+          </p>
+
           <h2 className="home-blog-article-h2">What Makes FastVidl Special?</h2>
           <p className="home-blog-article-p">One tool for three platforms for downloads:</p>
           <ul className="platforms-list">

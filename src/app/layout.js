@@ -4,8 +4,7 @@ import Footer from "@/components/footer/Footer";
 import ConditionalChrome from "@/components/layout/ConditionalChrome";
 import WebSiteSchema from "@/components/WebSiteSchema";
 import ThemeProvider from "@/components/theme/ThemeContext";
-import ThirdPartyScripts from "@/components/scripts/ThirdPartyScripts";
-import EzoicHeadInjector from "@/components/scripts/EzoicHeadInjector";
+import ConsentGatedScripts from "@/components/scripts/ConsentGatedScripts";
 import CookieConsentBar from "@/components/CookieConsentBar";
 
 // NOTE: `next/font/google` for Geist / Geist Mono was removed.
@@ -61,7 +60,6 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <EzoicHeadInjector />
         <WebSiteSchema />
         <ThemeProvider>
           <ConditionalChrome>
@@ -72,7 +70,7 @@ export default function RootLayout({ children }) {
             <Footer />
           </ConditionalChrome>
         </ThemeProvider>
-        <ThirdPartyScripts />
+        <ConsentGatedScripts />
         <CookieConsentBar />
       </body>
     </html>

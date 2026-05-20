@@ -199,6 +199,7 @@ export default function HomePageBlogSection() {
             <li style={{ marginBottom: "0.4rem" }}><a href="/instagram-reel-downloader-free" className="home-blog-article-link">Instagram Reel Downloader Free</a></li>
             <li style={{ marginBottom: "0.4rem" }}><a href="/instagram-story-downloader" className="home-blog-article-link">Instagram Story Downloader</a></li>
             <li style={{ marginBottom: "0.4rem" }}><a href="/instagram-photo-downloader-free" className="home-blog-article-link">Instagram Photo Downloader</a></li>
+            <li style={{ marginBottom: "0.4rem" }}><a href="/instagram-video-downloader" className="home-blog-article-link">Instagram Video Downloader</a></li>
             <li style={{ marginBottom: "0.4rem" }}><a href="/free-facebook-video-downloader" className="home-blog-article-link">Free Facebook Video Downloader</a></li>
             <li style={{ marginBottom: "0.4rem" }}><a href="/pinterest-video-downloader-free" className="home-blog-article-link">Pinterest Video Downloader Free</a></li>
           </ul>

@@ -1,3 +1,6 @@
-# ads.txt for fastvidl.com
-# Replace this file with your Ezoic- or ad-network-provided ads.txt lines when available.
-# Authorized seller entries belong here (one record per line). See https://iabtechlab.com/ads-txt/
+# ads.txt for https://fastvidl.com
+# After Ezoic approval: paste the full ads.txt from Ezoic dashboard (Site Settings > ads.txt).
+# After AdSense approval: include your google.com, pub-XXXXXXXXXXXXXXXX line from AdSense.
+# See https://iabtechlab.com/ads-txt/
+# Placeholder (replace when Ezoic provides your file):
+# ezoic.com, PLACEHOLDER, DIRECT

@@ -38,7 +38,9 @@ export default async function sitemap() {
     ])
   );
 
-  const allPaths = [...new Set([...staticPaths, ...blogPaths])].sort((a, b) => {
+  const allPaths = [...new Set([...staticPaths, ...blogPaths])]
+    .filter((urlPath) => !urlPath.startsWith("/download/"))
+    .sort((a, b) => {
     if (a === "/") return -1;
     if (b === "/") return 1;
     return a.localeCompare(b);
