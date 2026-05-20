@@ -8,7 +8,7 @@ import ThemeButton from "../theme/ThemeButton";
 import GoogleTranslateDropdown from "./GoogleTranslateDropdown";
 
 const INSTAGRAM_LINKS = [
-  { href: "/instagram-photo-downloader-free", label: "Instagram Photo Downloader" },
+  { href: "/instagram-photo-downloader", label: "Instagram Photo Downloader" },
   { href: "/instagram-story-downloader", label: "Instagram Story Downloader" },
   { href: "/instagram-video-downloader", label: "Instagram Video Downloader Free" },
   { href: "/instagram-reel-downloader-free", label: "Instagram Reel Downloader Free" },

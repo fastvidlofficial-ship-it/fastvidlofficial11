@@ -1,5 +1,5 @@
 import {
-  collectStaticUrlPaths,
+  collectSitemapUrlPaths,
   getPublishedBlogsForDiscovery,
   getRouteMetadata,
   toAbsoluteUrl,
@@ -25,26 +25,17 @@ function toSitemapEntry(urlPath, lastModified) {
  */
 export default async function sitemap() {
   const buildTime = new Date();
-  const [staticPaths, blogs] = await Promise.all([
-    collectStaticUrlPaths(),
+  const [allPaths, blogs] = await Promise.all([
+    collectSitemapUrlPaths(),
     getPublishedBlogsForDiscovery(),
   ]);
 
-  const blogPaths = blogs.map((b) => `/blogs/${b.slug}`);
   const blogLastMod = new Map(
     blogs.map((b) => [
       `/blogs/${b.slug}`,
       b.updatedAt || b.createdAt || buildTime,
     ])
   );
-
-  const allPaths = [...new Set([...staticPaths, ...blogPaths])]
-    .filter((urlPath) => !urlPath.startsWith("/download/"))
-    .sort((a, b) => {
-    if (a === "/") return -1;
-    if (b === "/") return 1;
-    return a.localeCompare(b);
-  });
 
   const seen = new Set();
   const entries = [];

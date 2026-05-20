@@ -1,6 +1,6 @@
 import {
   BASE_URL,
-  collectStaticUrlPaths,
+  collectSitemapUrlPaths,
   getPseoEntries,
   getPublishedBlogsForDiscovery,
   toAbsoluteUrl,
@@ -23,7 +23,7 @@ const DOWNLOADER_SUMMARIES = [
   },
   {
     title: "Instagram Photo Downloader",
-    path: "/instagram-photo-downloader-free",
+    path: "/instagram-photo-downloader",
     summary:
       "Downloads high-resolution photos and carousels from public Instagram posts.",
     keywords: "instagram photo downloader, download IG images, save Instagram pictures HD",
@@ -72,18 +72,11 @@ function pseoToolLine(item) {
  * @returns {Promise<string>}
  */
 export async function buildLlmsTxtContent() {
-  const [staticPaths, blogs, pseoItems] = await Promise.all([
-    collectStaticUrlPaths(),
+  const [indexablePaths, blogs, pseoItems] = await Promise.all([
+    collectSitemapUrlPaths(),
     getPublishedBlogsForDiscovery(),
     Promise.resolve(getPseoEntries()),
   ]);
-
-  const blogPaths = blogs.map((b) => `/blogs/${b.slug}`);
-  const allPaths = [...new Set([...staticPaths, ...blogPaths])].sort((a, b) => {
-    if (a === "/") return -1;
-    if (b === "/") return 1;
-    return a.localeCompare(b);
-  });
 
   const lines = [
     "# FastVidl, Instagram Reel, Story, Photo & Video Downloader | Pinterest & Facebook",
@@ -120,7 +113,7 @@ export async function buildLlmsTxtContent() {
     "- **Video Downloader:** https://fastvidl.com/instagram-video-downloader (Feed videos & IGTV)",
     "- **Reel Downloader:** https://fastvidl.com/instagram-reel-downloader-free (MP4)",
     "- **Story Downloader:** https://fastvidl.com/instagram-story-downloader (Stories & highlights)",
-    "- **Photo Downloader:** https://fastvidl.com/instagram-photo-downloader-free (HD JPG/PNG)",
+    "- **Photo Downloader:** https://fastvidl.com/instagram-photo-downloader (HD JPG/PNG)",
     "",
     "### Pinterest & Facebook",
     "- **Pinterest Video Downloader:** https://fastvidl.com/pinterest-video-downloader-free",
@@ -140,7 +133,14 @@ export async function buildLlmsTxtContent() {
     lines.push("");
   }
 
-  lines.push("---", "", `## Programmatic Download Tools (${pseoItems.length} pages)`, "");
+    lines.push(
+      "---",
+      "",
+      `## Specialized Download Tools (${pseoItems.length} pages)`,
+      "",
+      "These `/download/*` pages are supplementary keyword landing pages. Each uses a canonical URL pointing to the main Instagram, Facebook, or Pinterest downloader above. They are **not** listed in sitemap.xml (noindex for search engines).",
+      ""
+    );
   for (const item of pseoItems) {
     lines.push(pseoToolLine(item));
   }
@@ -171,11 +171,11 @@ export async function buildLlmsTxtContent() {
     "",
     "---",
     "",
-    `## Full Sitemap Reference (${allPaths.length} URLs)`,
+    `## Indexable URLs (sitemap.xml, ${indexablePaths.length} URLs)`,
     ""
   );
 
-  for (const p of allPaths) {
+  for (const p of indexablePaths) {
     lines.push(`- ${toAbsoluteUrl(p)}`);
   }
 

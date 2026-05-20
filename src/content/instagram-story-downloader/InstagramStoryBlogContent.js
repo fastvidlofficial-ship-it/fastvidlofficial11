@@ -225,7 +225,7 @@ export default function InstagramStoryBlogContent({ variant = "standalone", faqL
         Frequently Asked Questions
       </h2>
       <div className="blog-content">
-        <FaqSection items={faqList} showHeading={false} />
+        <FaqSection items={faqList} showHeading={false} showFaqsPageLink />
       </div>
 
       <h2 id="meet-team-story" className={h2Class}>Meet the Team Behind FastVidl</h2>
@@ -235,7 +235,7 @@ export default function InstagramStoryBlogContent({ variant = "standalone", faqL
       <p className={pClass}>
         <strong>Raja Jahangir, SEO &amp; Growth Specialist</strong>. With three years of SEO experience, Raja keeps FastVidl user-centric and privacy-focused.{" "}
         <a href={AUTHOR_PAGE} className={linkClass}>
-          Connect on LinkedIn
+          View Author Profile
         </a>{" "}
         Powered by{" "}
         <a href={AUROXA_TECH_URL} target="_blank" rel="noopener noreferrer" className={linkClass}>
@@ -253,7 +253,7 @@ export default function InstagramStoryBlogContent({ variant = "standalone", faqL
         <Link href="/instagram-reel-downloader-free" className={linkClass}>
           Instagram Reel Downloader Free
         </Link>,{" "}
-        <Link href="/instagram-photo-downloader-free" className={linkClass}>
+        <Link href="/instagram-photo-downloader" className={linkClass}>
           Instagram Photo Downloader
         </Link>, and{" "}
         <Link href="/pinterest-video-downloader-free" className={linkClass}>

@@ -11,7 +11,7 @@ export default function BlogRelatedArticles({ slug }) {
 
   return (
     <section className={styles.section} aria-labelledby="related-articles-heading">
-      <h2 id="related-articles-heading" className={styles.heading}>
+      <h2 id="related-articles-heading" className="home-blog-article-h2">
         Related Articles
       </h2>
       <ul className={styles.list}>

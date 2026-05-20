@@ -3,6 +3,7 @@ import path from "node:path";
 import crypto from "node:crypto";
 import { put } from "@vercel/blob";
 import { toAbsoluteUrl } from "@/lib/site-url";
+import { patchBlogLinks } from "@/lib/blog-link-patches";
 
 const UPLOAD_DIR = path.join(process.cwd(), "public", "uploads", "blogs");
 const PUBLIC_PREFIX = "/uploads/blogs";
@@ -180,7 +181,8 @@ export function normalizeBlogImageUrl(url) {
 export async function prepareBlogHtml(html, slug) {
   const step1 = await extractBase64ImagesFromHtml(html, slug);
   const step2 = normalizeBlogHtml(step1);
-  return normalizeExternalLinksInHtml(step2);
+  const step3 = normalizeExternalLinksInHtml(step2);
+  return patchBlogLinks(step3, slug);
 }
 
 /**

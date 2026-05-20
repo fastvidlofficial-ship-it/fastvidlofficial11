@@ -190,7 +190,7 @@ export default function InstagramPhotoBlogContent({ variant = "standalone", faqL
         Frequently Asked Questions
       </h2>
       <div className="blog-content">
-        <FaqSection items={faqList} showHeading={false} />
+        <FaqSection items={faqList} showHeading={false} showFaqsPageLink />
       </div>
 
       <h2 id="meet-team-photo" className={h2Class}>
@@ -202,7 +202,7 @@ export default function InstagramPhotoBlogContent({ variant = "standalone", faqL
       <p className={pClass}>
         <strong>Raja Jahangir: SEO &amp; Growth Expert</strong>, Bringing 3 years of SEO experience, Raja ensures that FastVidl remains user-centric, privacy-focused and easily accessible to the thousands of users searching for reliable video solutions every month.{" "}
         <a href={AUTHOR_PAGE} className={linkClass}>
-          Connect on LinkedIn
+          View Author Profile
         </a>{" "}
         Powered by{" "}
         <a href={AUROXA_TECH_URL} target="_blank" rel="noopener noreferrer" className={linkClass}>

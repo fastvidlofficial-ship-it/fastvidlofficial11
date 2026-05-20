@@ -217,7 +217,20 @@ const AboutUs = () => {
             ))}
           </div>
 
-          <FaqSection items={faqs} headingId="about-faq-heading" />
+          <FaqSection
+            items={faqs}
+            headingId="about-faq-heading"
+            showFaqsPageLink
+            subtitle={
+              <>
+                See all frequently asked questions on our{" "}
+                <Link href="/faqs" className="home-blog-article-link">
+                  FAQs page
+                </Link>
+                .
+              </>
+            }
+          />
 
           <h2 className="home-blog-article-h2">Contact Us</h2>
           <p className="home-blog-article-p">We're here to help and love hearing from our users!</p>

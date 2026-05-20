@@ -7,10 +7,8 @@
   background: var(--card-bg, #f8fafc);
 }
 
-.heading {
-  font-size: 1.35rem;
-  margin: 0 0 1rem;
-  color: var(--heading-color, #1a202c);
+.section :global(.home-blog-article-h2) {
+  margin-top: 0;
 }
 
 .list {

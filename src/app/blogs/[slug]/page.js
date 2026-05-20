@@ -100,7 +100,7 @@ function getRelatedBlogTool(slug) {
   }
   if (slug.includes("photo") || slug.includes("carousel")) {
     return {
-      href: "/instagram-photo-downloader-free",
+      href: "/instagram-photo-downloader",
       name: "Instagram Photo Downloader",
       anchor: "Instagram photo downloader",
       sentence: "For public Instagram photos and carousel posts, try the",
@@ -322,7 +322,7 @@ export default async function BlogShowPage({ params }) {
 
         {cleanFaqs.length > 0 && (
           <div className={styles.faqWrap}>
-            <FaqSection items={cleanFaqs} />
+            <FaqSection items={cleanFaqs} showFaqsPageLink />
           </div>
         )}
 

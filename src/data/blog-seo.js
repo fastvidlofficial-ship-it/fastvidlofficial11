@@ -110,15 +110,15 @@ export const DOWNLOADER_HELPFUL_GUIDES = {
   "/instagram-reel-downloader-free": [
     {
       slug: "why-downloaded-video-quality-is-bad-fix",
-      label: "Why downloaded video quality looks bad (and how to fix it)",
+      label: "Why Is My Downloaded Video Quality So Bad?",
+    },
+    {
+      slug: "clear-instagram-cache",
+      label: "How to Clear Instagram Cache",
     },
     {
       slug: "save-instagram-stories-with-music-not-muted",
       label: "Save Instagram stories with music not muted",
-    },
-    {
-      slug: "download-instagram-carousel-photos-phone",
-      label: "Download Instagram carousel photos on your phone",
     },
   ],
   "/instagram-story-downloader": [
@@ -135,7 +135,7 @@ export const DOWNLOADER_HELPFUL_GUIDES = {
       label: "Fix Instagram action blocked errors",
     },
   ],
-  "/instagram-photo-downloader-free": [
+  "/instagram-photo-downloader": [
     {
       slug: "download-instagram-carousel-photos-phone",
       label: "Download Instagram carousel photos step by step",

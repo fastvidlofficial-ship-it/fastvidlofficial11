@@ -11,9 +11,18 @@ const SITEMAP_SKIP_FOLDERS = new Set(["api", "admin-dashboard"]);
 
 /** Always include, nav-critical pages that must never drop from discovery. */
 const REQUIRED_STATIC_PATHS = [
-  "/instagram-photo-downloader-free",
+  "/instagram-photo-downloader",
   "/instagram-video-downloader",
 ];
+
+/** Retired URLs that 301 to canonical paths (exclude from sitemap). */
+const LEGACY_REDIRECT_PATHS = new Set([
+  "/instagram-photo-downloader-free",
+  "/instagram-video-downloader-free",
+]);
+
+/** Paths excluded from XML sitemap (noindex or non-canonical). */
+const SITEMAP_EXCLUDED_PREFIXES = ["/download/"];
 
 export function getPseoSlugs() {
   if (!Array.isArray(pseoAll)) return [];
@@ -76,9 +85,11 @@ function expandDynamicRoutes(routeFolder, pseoSlugs) {
 }
 
 /**
+ * @param {{ includePseoDownload?: boolean }} [opts]
  * @returns {Promise<string[]>}
  */
-export async function collectStaticUrlPaths() {
+export async function collectStaticUrlPaths(opts = {}) {
+  const { includePseoDownload = true } = opts;
   const appRoot = path.join(process.cwd(), "src", "app");
   const pseoSlugs = getPseoSlugs();
   const folderRoutes = await discoverRouteFolders(appRoot);
@@ -90,8 +101,10 @@ export async function collectStaticUrlPaths() {
       urlPathsSet.add(staticPath);
       continue;
     }
-    for (const expanded of expandDynamicRoutes(folder, pseoSlugs)) {
-      urlPathsSet.add(expanded);
+    if (includePseoDownload) {
+      for (const expanded of expandDynamicRoutes(folder, pseoSlugs)) {
+        urlPathsSet.add(expanded);
+      }
     }
   }
 
@@ -100,6 +113,34 @@ export async function collectStaticUrlPaths() {
     if (b === "/") return 1;
     return a.localeCompare(b);
   });
+}
+
+/** URLs safe for XML sitemap (indexable, canonical routes only). */
+export function filterSitemapPaths(urlPaths) {
+  return urlPaths.filter(
+    (urlPath) =>
+      !LEGACY_REDIRECT_PATHS.has(urlPath) &&
+      !SITEMAP_EXCLUDED_PREFIXES.some((prefix) => urlPath.startsWith(prefix))
+  );
+}
+
+/**
+ * Indexable paths for sitemap.xml (no /download/*, no legacy redirects).
+ * @returns {Promise<string[]>}
+ */
+export async function collectSitemapUrlPaths() {
+  const [staticPaths, blogs] = await Promise.all([
+    collectStaticUrlPaths({ includePseoDownload: false }),
+    getPublishedBlogsForDiscovery(),
+  ]);
+  const blogPaths = blogs.map((b) => `/blogs/${b.slug}`);
+  return filterSitemapPaths([...new Set([...staticPaths, ...blogPaths])]).sort(
+    (a, b) => {
+      if (a === "/") return -1;
+      if (b === "/") return 1;
+      return a.localeCompare(b);
+    }
+  );
 }
 
 /**
@@ -162,13 +203,9 @@ export function getRouteMetadata(urlPath) {
     return { changeFrequency: "monthly", priority: 0.7 };
   }
 
-  if (urlPath.startsWith("/download/")) {
-    return { changeFrequency: "monthly", priority: 0.8 };
-  }
-
   const downloaderRoots = [
     "/instagram-reel-downloader-free",
-    "/instagram-photo-downloader-free",
+    "/instagram-photo-downloader",
     "/instagram-story-downloader",
     "/instagram-video-downloader",
     "/pinterest-video-downloader-free",

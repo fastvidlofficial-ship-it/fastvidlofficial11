@@ -47,7 +47,6 @@ const nextConfig = {
       { source: '/Blogs/free-facebook-video-downloader', destination: '/free-facebook-video-downloader', permanent: true },
       { source: '/Blogs/pinterest-video-downloader-free', destination: '/pinterest-video-downloader-free', permanent: true },
       { source: '/Blogs/instagram-story-downloader', destination: '/instagram-story-downloader', permanent: true },
-      { source: '/Blogs/instagram-photo-downloader-free', destination: '/instagram-photo-downloader-free', permanent: true },
       // NOTE: Removed `/Blogs -> /` redirect.
       // Next.js 16 matches redirect sources case-insensitively, so this rule
       // also caught the new lowercase `/blogs` listing page and bounced
@@ -56,7 +55,8 @@ const nextConfig = {
       // Common typo from spec
       { source: '/admin-dashboard/blogs-managemengt', destination: '/admin-dashboard/blogs-management', permanent: false },
       // Canonical downloader URLs (retired paths)
-      { source: '/instagram-photo-downloader', destination: '/instagram-photo-downloader-free', permanent: true },
+      { source: '/instagram-photo-downloader-free', destination: '/instagram-photo-downloader', permanent: true },
+      { source: '/Blogs/instagram-photo-downloader-free', destination: '/instagram-photo-downloader', permanent: true },
       { source: '/instagram-video-downloader-free', destination: '/instagram-video-downloader', permanent: true },
     ]
   },

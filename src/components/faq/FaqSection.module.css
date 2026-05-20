@@ -33,6 +33,22 @@
   margin-top: 0.5rem;
 }
 
+.faqsPageLink {
+  text-align: center;
+  margin: 1.25rem auto 0;
+  max-width: 48rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary, #64748b);
+  line-height: 1.5;
+}
+
+.faqsPageLink a {
+  color: var(--link-color, #667eea);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .faqWrap {
   max-width: 48rem;
   margin: 0 auto;

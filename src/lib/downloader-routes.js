@@ -1,6 +1,6 @@
 /** Canonical main downloader paths (single source of truth for nav + SEO). */
 export const DOWNLOADER_CANONICAL = {
-  instagramPhoto: "/instagram-photo-downloader-free",
+  instagramPhoto: "/instagram-photo-downloader",
   instagramStory: "/instagram-story-downloader",
   instagramVideo: "/instagram-video-downloader",
   instagramReel: "/instagram-reel-downloader-free",

@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint",
     "pseo:build": "node scripts/build-pseo-data.mjs",
-    "seed:blog": "node scripts/seed-blog.mjs"
+    "seed:blog": "node scripts/seed-blog.mjs",
+    "generate:llms": "node scripts/generate-llms.mjs",
+    "migrate:blog-links": "node scripts/migrate-blog-links.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

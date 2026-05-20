@@ -2,7 +2,10 @@
 # robots.txt, FastVidl (https://fastvidl.com)
 # Instagram, Pinterest & Facebook Downloader Tools
 # Built with Next.js | Hosted on Vercel
-# Last Updated: May 2026
+# Last Updated: 20 May 2026
+# Canonical tool URLs: /instagram-photo-downloader, /instagram-video-downloader,
+# /instagram-reel-downloader-free, /instagram-story-downloader,
+# /free-facebook-video-downloader, /pinterest-video-downloader-free
 # ===========================================================
 
 # DEFAULT: All crawlers
@@ -17,6 +20,8 @@ Disallow: /api/
 Disallow: /.next/
 Disallow: /admin/
 Disallow: /admin-dashboard/
+# Supplementary PSEO pages (noindex; canonical points to main downloader tools)
+Disallow: /download/
 
 # Google Search
 User-agent: Googlebot

@@ -194,7 +194,7 @@ export default function InstagramVideoBlogContent() {
           Frequently Asked Questions
         </h2>
         <div className="blog-content">
-          <FaqSection items={INSTAGRAM_VIDEO_FAQ_LIST} showHeading={false} />
+          <FaqSection items={INSTAGRAM_VIDEO_FAQ_LIST} showHeading={false} showFaqsPageLink />
         </div>
 
         <h2 id="meet-the-team" className="home-blog-article-h2">Meet the Team Behind FastVidl</h2>
@@ -204,7 +204,7 @@ export default function InstagramVideoBlogContent() {
         <p className="home-blog-article-p">
           <strong>Raja Jahangir, SEO &amp; Growth Specialist</strong>. With three years of SEO experience, Raja helps keep FastVidl user-centric and privacy-focused.{" "}
           <a href={AUTHOR_PAGE} className="home-blog-article-link">
-            Connect on LinkedIn
+            View Author Profile
           </a>{" "}
           Powered by{" "}
           <a href={AUROXA_TECH_URL} target="_blank" rel="noopener noreferrer" className="home-blog-article-link">
@@ -223,7 +223,7 @@ export default function InstagramVideoBlogContent() {
             Instagram Reel Downloader Free
           </Link>
           ,{" "}
-          <Link href="/instagram-photo-downloader-free" className="home-blog-article-link">
+          <Link href="/instagram-photo-downloader" className="home-blog-article-link">
             Instagram Photo Downloader
           </Link>
           , and{" "}

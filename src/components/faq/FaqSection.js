@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import styles from "./FaqSection.module.css";
 
 /**
@@ -12,6 +13,7 @@ export default function FaqSection({
   headingId = "frequently-asked-questions",
   subtitle,
   showHeading = true,
+  showFaqsPageLink = false,
   firstOpenIndex = 0,
   className,
 }) {
@@ -32,7 +34,16 @@ export default function FaqSection({
   );
 
   if (!showHeading) {
-    return <div className={`${styles.embedded} ${className || ""}`.trim()}>{inner}</div>;
+    return (
+      <div className={`${styles.embedded} ${className || ""}`.trim()}>
+        {inner}
+        {showFaqsPageLink ? (
+          <p className={styles.faqsPageLink}>
+            For more answers, see our <Link href="/faqs">full FAQ page</Link>.
+          </p>
+        ) : null}
+      </div>
+    );
   }
 
   return (
@@ -45,6 +56,12 @@ export default function FaqSection({
       </h2>
       {subtitle ? <p className={styles.sectionSubtitle}>{subtitle}</p> : null}
       {inner}
+      {showFaqsPageLink ? (
+        <p className={styles.faqsPageLink}>
+          Have more questions?{" "}
+          <Link href="/faqs">Visit our complete FAQ page</Link>.
+        </p>
+      ) : null}
     </section>
   );
 }
