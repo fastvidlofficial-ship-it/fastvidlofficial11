@@ -7,7 +7,8 @@ import BlogArticleSchema from "@/components/BlogArticleSchema";
 import BlogBreadcrumbSchema from "@/components/blog/BlogBreadcrumbSchema";
 import BlogRelatedArticles from "@/components/blog/BlogRelatedArticles";
 import FaqSection from "@/components/faq/FaqSection";
-import { getSiteUrl, getMetadataBase, toAbsoluteUrl } from "@/lib/site-url";
+import { getSiteUrl, getMetadataBase } from "@/lib/site-url";
+import { getBlogOgImageAbsolute, getBlogOgImagePath } from "@/lib/blog-assets";
 import "@/content/Blog.css";
 import styles from "./BlogShow.module.css";
 
@@ -137,7 +138,8 @@ export async function generateMetadata({ params }) {
     blog.metaDescription ||
     `${blog.title}. Read the full guide on FastVidl.`;
   const url = `${getSiteUrl()}/blogs/${blog.slug}`;
-  const imageAbs = toAbsoluteUrl(blog.image);
+  const siteUrl = getSiteUrl();
+  const ogUrl = getBlogOgImageAbsolute(blog.slug, siteUrl);
 
   return {
     metadataBase: getMetadataBase(),
@@ -150,13 +152,20 @@ export async function generateMetadata({ params }) {
       description,
       url,
       type: "article",
-      images: imageAbs ? [{ url: imageAbs }] : undefined,
+      images: [
+        {
+          url: ogUrl,
+          width: 1200,
+          height: 630,
+          alt: blog.imageAlt || blog.title,
+        },
+      ],
     },
     twitter: {
-      card: imageAbs ? "summary_large_image" : "summary",
+      card: "summary_large_image",
       title,
       description,
-      images: imageAbs ? [imageAbs] : undefined,
+      images: [ogUrl],
     },
   };
 }
@@ -192,7 +201,7 @@ export default async function BlogShowPage({ params }) {
     : [];
 
   const articleUrl = `${getSiteUrl()}/blogs/${blog.slug}`;
-  const imageAbs = toAbsoluteUrl(blog.image);
+  const imageAbs = getBlogOgImageAbsolute(blog.slug, getSiteUrl());
   const publisherLogo = `${getSiteUrl()}/assets/weblogo.png`;
   const publishedIso = blog.createdAt
     ? new Date(blog.createdAt).toISOString()
@@ -214,8 +223,7 @@ export default async function BlogShowPage({ params }) {
         }
       : null;
 
-  const featuredSrc =
-    blog.image && !blog.image.startsWith("data:") ? blog.image : null;
+  const featuredSrc = getBlogOgImagePath(blog.slug);
   const relatedTool = getRelatedBlogTool(blog.slug);
 
   return (

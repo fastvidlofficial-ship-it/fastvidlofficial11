@@ -1,12 +1,15 @@
 import { writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
-import crypto from "node:crypto";
-import { put } from "@vercel/blob";
-import { toAbsoluteUrl } from "@/lib/site-url";
 import { patchBlogLinks } from "@/lib/blog-link-patches";
+import {
+  sanitizeBlogSlug,
+  BLOG_ASSETS_PREFIX,
+  normalizeBlogImageUrl,
+} from "@/lib/blog-assets";
 
-const UPLOAD_DIR = path.join(process.cwd(), "public", "uploads", "blogs");
-const PUBLIC_PREFIX = "/uploads/blogs";
+export { normalizeBlogImageUrl } from "@/lib/blog-assets";
+
+const ASSETS_DIR = path.join(process.cwd(), "public", "assets", "blogs");
 const MAX_INLINE_IMAGE_BYTES = Math.floor(4.5 * 1024 * 1024);
 
 const BASE64_IMG_RE =
@@ -14,6 +17,13 @@ const BASE64_IMG_RE =
 
 const LOCALHOST_RE = /https?:\/\/(?:localhost|127\.0\.0\.1)(?::\d+)?/gi;
 const SITE_HOST_RE = /^(?:https?:\/\/)?(?:www\.)?fastvidl\.com/i;
+const BLOB_IMG_SRC_RE =
+  /src=["']https?:\/\/(?:www\.)?fastvidl\.com\/api\/blob\?pathname=[^"']+["']/gi;
+const BLOB_IMG_SRC_REL_RE = /src=["']\/api\/blob\?pathname=[^"']+["']/gi;
+
+function canWriteAssetsToDisk() {
+  return !process.env.VERCEL;
+}
 
 /** Add rel/target to external anchors in stored blog HTML. */
 export function normalizeExternalLinksInHtml(html) {
@@ -54,123 +64,101 @@ export function normalizeExternalLinksInHtml(html) {
   });
 }
 
-function shouldUseBlobStorage() {
-  return !!process.env.BLOB_READ_WRITE_TOKEN;
+async function saveInlineImageToAssets({ buffer, ext, slug, index }) {
+  await mkdir(ASSETS_DIR, { recursive: true });
+  const name = `${sanitizeBlogSlug(slug)}-inline-${index}.${ext}`;
+  await writeFile(path.join(ASSETS_DIR, name), buffer);
+  return `${BLOG_ASSETS_PREFIX}/${name}`;
 }
 
-function isPrivateStoreError(err) {
-  return (
-    typeof err?.message === "string" &&
-    err.message.includes("Cannot use public access on a private store")
-  );
+function stripBase64ImgTag(fullMatch) {
+  return "";
 }
 
-function buildPrivateBlobProxyUrl(pathname) {
-  return `/api/blob?pathname=${encodeURIComponent(pathname)}`;
-}
-
-function sanitizeSlug(slug) {
-  return String(slug || "post")
-    .toLowerCase()
-    .replace(/[^a-z0-9-]+/g, "-")
-    .replace(/^-+|-+$/g, "")
-    .slice(0, 40) || "post";
-}
-
-async function saveInlineImageToBlob({ buffer, contentType, ext, slug, hash }) {
-  const pathname = `blogs/${sanitizeSlug(slug)}-inline-${hash}.${ext}`;
-
-  try {
-    const blob = await put(pathname, buffer, {
-      access: "public",
-      addRandomSuffix: false,
-      contentType,
-    });
-    return blob.url;
-  } catch (err) {
-    if (!isPrivateStoreError(err)) {
-      throw err;
-    }
-
-    const blob = await put(pathname, buffer, {
-      access: "private",
-      addRandomSuffix: false,
-      contentType,
-    });
-    return buildPrivateBlobProxyUrl(blob.pathname);
+function ensureImgDimensions(imgTag, width = 1200, height = 630) {
+  let tag = imgTag;
+  if (!/\bwidth\s*=/i.test(tag)) {
+    tag = tag.replace(/<img/i, `<img width="${width}"`);
   }
-}
-
-async function saveInlineImageToLocalUploads({ buffer, ext, slug, hash }) {
-  await mkdir(UPLOAD_DIR, { recursive: true });
-  const name = `${sanitizeSlug(slug)}-inline-${hash}.${ext}`;
-  await writeFile(path.join(UPLOAD_DIR, name), buffer);
-  return `${PUBLIC_PREFIX}/${name}`;
+  if (!/\bheight\s*=/i.test(tag)) {
+    tag = tag.replace(/<img/i, `<img height="${height}"`);
+  }
+  if (!/\bloading\s*=/i.test(tag)) {
+    tag = tag.replace(/<img/i, '<img loading="lazy"');
+  }
+  return tag;
 }
 
 /**
- * Decode inline base64 images into durable image URLs.
- *
- * - With BLOB_READ_WRITE_TOKEN: stores in Vercel Blob (production-safe).
- * - Local dev without Blob: writes to public/uploads/blogs.
- * - Production without Blob: keeps the original base64 image instead of
- *   deleting it, so old posts still render while the env is being fixed.
+ * Decode inline base64 images into /public/assets/blogs files (committed to repo).
+ * On Vercel (read-only FS): strips base64 img tags so HTML stays crawlable.
  */
 export async function extractBase64ImagesFromHtml(html, slug = "post") {
   if (!html || typeof html !== "string") return html;
 
   let out = html;
   const matches = [...html.matchAll(BASE64_IMG_RE)];
-
   if (matches.length === 0) return html;
 
-  const canWrite =
-    process.env.NODE_ENV !== "production" || !process.env.VERCEL;
-  const canUploadToBlob = shouldUseBlobStorage();
+  const canWrite = canWriteAssetsToDisk();
+  let index = 0;
 
   for (const match of matches) {
     const dataUrl = match[2];
     const rawMime = dataUrl.match(/^data:image\/(\w+);base64,/i)?.[1] || "png";
     const mime = rawMime === "jpg" ? "jpeg" : rawMime;
     const ext = mime === "jpeg" ? "jpg" : mime;
-    const contentType = `image/${mime}`;
 
     try {
       const base64 = dataUrl.split(",")[1];
-      if (!base64) continue;
+      if (!base64) {
+        out = out.replace(match[0], "");
+        continue;
+      }
 
       const buffer = Buffer.from(base64, "base64");
-      if (buffer.length > MAX_INLINE_IMAGE_BYTES) continue;
+      if (buffer.length > MAX_INLINE_IMAGE_BYTES) {
+        out = out.replace(match[0], "");
+        continue;
+      }
 
-      const hash = crypto.createHash("sha256").update(buffer).digest("hex").slice(0, 12);
-      const imageUrl = canUploadToBlob
-        ? await saveInlineImageToBlob({ buffer, contentType, ext, slug, hash })
-        : canWrite
-          ? await saveInlineImageToLocalUploads({ buffer, ext, slug, hash })
-          : dataUrl;
+      if (!canWrite) {
+        out = out.replace(match[0], "");
+        continue;
+      }
 
-      out = out.replace(dataUrl, imageUrl);
+      const imageUrl = await saveInlineImageToAssets({
+        buffer,
+        ext,
+        slug,
+        index: index++,
+      });
+      const newTag = ensureImgDimensions(
+        match[0].replace(dataUrl, imageUrl)
+      );
+      out = out.replace(match[0], newTag);
     } catch {
-      // Preserve the original data URL if persistent storage has a temporary issue.
-      // Showing the image is better than silently deleting article media.
-      continue;
+      out = out.replace(match[0], stripBase64ImgTag(match[0]));
     }
   }
 
   return out;
 }
 
-/** Normalize localhost URLs inside HTML and image fields. */
+/** Replace blob proxy image URLs with static asset paths. */
+export function replaceBlobImagesInHtml(html, slug) {
+  if (!html || !slug) return html || "";
+  const ogFallback = `${BLOG_ASSETS_PREFIX}/${sanitizeBlogSlug(slug)}-og.png`;
+  let out = html;
+  out = out.replace(BLOB_IMG_SRC_RE, `src="${ogFallback}"`);
+  out = out.replace(BLOB_IMG_SRC_REL_RE, `src="${ogFallback}"`);
+  return out;
+}
+
+/** Normalize localhost URLs inside HTML. */
 export function normalizeBlogHtml(html) {
   if (!html || typeof html !== "string") return html || "";
   return html.replace(LOCALHOST_RE, "https://fastvidl.com");
-}
-
-export function normalizeBlogImageUrl(url) {
-  if (!url || typeof url !== "string") return "";
-  const trimmed = url.trim();
-  if (trimmed.startsWith("data:")) return "";
-  return toAbsoluteUrl(trimmed) || trimmed.replace(LOCALHOST_RE, "https://fastvidl.com");
 }
 
 /**
@@ -180,9 +168,10 @@ export function normalizeBlogImageUrl(url) {
  */
 export async function prepareBlogHtml(html, slug) {
   const step1 = await extractBase64ImagesFromHtml(html, slug);
-  const step2 = normalizeBlogHtml(step1);
-  const step3 = normalizeExternalLinksInHtml(step2);
-  return patchBlogLinks(step3, slug);
+  const step2 = replaceBlobImagesInHtml(step1, slug);
+  const step3 = normalizeBlogHtml(step2);
+  const step4 = normalizeExternalLinksInHtml(step3);
+  return patchBlogLinks(step4, slug);
 }
 
 /**
@@ -200,6 +189,6 @@ export async function normalizeBlogDocument(blog) {
   return {
     ...blog,
     longDescription,
-    image: normalizeBlogImageUrl(blog.image),
+    image: normalizeBlogImageUrl(blog.image, slug),
   };
 }

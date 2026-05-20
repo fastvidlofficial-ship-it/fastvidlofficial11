@@ -61,6 +61,10 @@ export function patchBlogLinks(html, slug) {
 
   out = out.replace(PROFILE_VIEWER_BLOCK_RE, "");
   out = out.replace(
+    /<a([^>]*)href=["']https?:\/\/(?:www\.)?fastvidl\.com\/?["']([^>]*)>\s*FastVidl Facebook Video Downloader\s*<\/a>/gi,
+    `<a$1href="/free-facebook-video-downloader"$2>FastVidl Facebook Video Downloader</a>`
+  );
+  out = out.replace(
     /<a([^>]*)href=["']https?:\/\/(?:www\.)?fastvidl\.com\/?["']([^>]*)>\s*FastVidl Downloader\s*<\/a>/gi,
     `<a$1href="/instagram-story-downloader"$2>FastVidl Instagram Story Downloader</a>`
   );

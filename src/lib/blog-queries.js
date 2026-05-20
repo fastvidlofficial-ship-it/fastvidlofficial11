@@ -1,9 +1,8 @@
 import { dbConnect } from "@/lib/db";
 import Blog from "@/models/Blog";
-import {
-  normalizeBlogDocument,
-  normalizeBlogImageUrl,
-} from "@/lib/blog-html";
+import { normalizeBlogDocument } from "@/lib/blog-html";
+import { normalizeBlogImageUrl } from "@/lib/blog-assets";
+import { applyBlogMetaOverrides } from "@/lib/blog-meta-overrides";
 
 function buildSearchFilter(q) {
   const filter = {};
@@ -53,7 +52,13 @@ export async function getPublishedBlogs({ q = "", page = 1, limit = 10 } = {}) {
   return {
     items: items.map((item) => ({
       ...item,
-      image: item.image ? normalizeBlogImageUrl(item.image) : "",
+      image: item.image
+        ? normalizeBlogImageUrl(item.image, item.slug)
+        : "",
+      metaDescription: applyBlogMetaOverrides(
+        item.slug,
+        item.metaDescription
+      ),
     })),
     total,
     page: useAll ? 1 : safePage,
@@ -82,9 +87,18 @@ export async function getPublishedBlogBySlug(slug) {
   if (normalized?.image && normalized.image !== doc.image) {
     persist.image = normalized.image;
   }
+
+  const metaDescription = applyBlogMetaOverrides(
+    doc.slug,
+    normalized.metaDescription || doc.metaDescription
+  );
+  if (metaDescription !== doc.metaDescription) {
+    persist.metaDescription = metaDescription;
+  }
+
   if (Object.keys(persist).length > 0) {
     await Blog.updateOne({ _id: doc._id }, { $set: persist });
   }
 
-  return normalized;
+  return { ...normalized, metaDescription };
 }

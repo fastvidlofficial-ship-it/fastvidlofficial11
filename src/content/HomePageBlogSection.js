@@ -107,9 +107,9 @@ export default function HomePageBlogSection() {
             What is FastVidl?
           </h2>
           <p className="home-blog-article-p">
-            FastVidl is a premium-grade online media downloader built for users who demand speed, reliability and privacy.
-            Frustrated by spammy APKs and tools asking for social media passwords, our development team built a cleaner
-            browser-first solution.
+            FastVidl is a free online downloader for saving public videos, reels, stories, and photos from Instagram, Facebook, and Pinterest.
+            We built it because most tools require app installs or social logins.
+            FastVidl runs in your browser with no installation needed.
           </p>
           <p className="home-blog-article-p">
             FastVidl operates entirely in your browser through a simple paste-and-download workflow. By interacting with
@@ -149,8 +149,7 @@ export default function HomePageBlogSection() {
           </h2>
           <p className="home-blog-article-p">
             Users choose FastVidl because it combines speed, simplicity, and
-            convenience in one browser-based tool. The platform removes
-            unnecessary friction and focuses on supported public content only.
+            convenience in one browser-based tool. The tool works with public links only and keeps the process simple.
           </p>
           <ul style={{ marginBottom: "1rem", paddingInlineStart: "1.5rem" }}>
             <li style={{ marginBottom: "0.4rem" }}>Free to use</li>
@@ -163,9 +162,7 @@ export default function HomePageBlogSection() {
             <li style={{ marginBottom: "0.4rem" }}>Supports multiple social platforms</li>
           </ul>
           <p className="home-blog-article-p">
-            This combination makes FastVidl useful for casual users, content
-            creators, marketers, and anyone who needs a fast downloader without
-            extra software.
+            FastVidl works for anyone who needs a quick way to save public social media content without installing extra software.
           </p>
 
           <h2 id="how-fastvidl-works" className="home-blog-article-h2">
