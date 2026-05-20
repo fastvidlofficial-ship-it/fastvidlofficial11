@@ -8,6 +8,7 @@ import "@/content/Blog.css";
 import FAQSchema from "@/components/FAQSchema";
 import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
 import RelatedToolsSection from "@/components/RelatedToolsSection";
+import HelpfulGuidesSection from "@/components/downloader/HelpfulGuidesSection";
 import InstagramStoryBlogContent, { STORY_BLOG_FAQ_LIST } from "@/content/instagram-story-downloader/InstagramStoryBlogContent";
 import EzoicPlacements from "@/components/ads/EzoicPlacements";
 import { getEzoicToolPlacements } from "@/config/ezoicPlacements";
@@ -70,6 +71,9 @@ export default function InstagramStoryDownloaderService() {
           <section className="home-blog-article">
             <InstagramStoryBlogContent variant="home" faqList={STORY_BLOG_FAQ_LIST} />
           </section>
+        </div>
+        <div className="container-blog">
+          <HelpfulGuidesSection downloaderPath="/instagram-story-downloader" />
         </div>
         <RelatedToolsSection
           heading="More Free Instagram Story Tools"

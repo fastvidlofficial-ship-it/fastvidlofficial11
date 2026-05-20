@@ -4,29 +4,31 @@ import styles from "../page.module.css";
 import heroStyles from "../DownloaderHero.module.css";
 import DownloaderToolSection from "@/components/DownloaderToolSection";
 import NotAffiliatedNote from "@/components/NotAffiliatedNote";
-import "@/content/Blog.css";
-import FAQSchema from "@/components/FAQSchema";
 import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
+import FAQSchema from "@/components/FAQSchema";
 import RelatedToolsSection from "@/components/RelatedToolsSection";
-import InstagramPhotoBlogContent, { PHOTO_BLOG_FAQ_LIST } from "@/content/instagram-photo-downloader/InstagramPhotoBlogContent";
+import HelpfulGuidesSection from "@/components/downloader/HelpfulGuidesSection";
+import InstagramVideoBlogContent, {
+  INSTAGRAM_VIDEO_FAQ_LIST,
+} from "@/content/instagram-video-downloader/InstagramVideoBlogContent";
 import EzoicPlacements from "@/components/ads/EzoicPlacements";
 import { getEzoicToolPlacements } from "@/config/ezoicPlacements";
 
-const RELATED_PHOTO_TOOLS = [
-  { href: "/download/ig-photo-download-free", label: "IG Photo Download Free" },
-  { href: "/download/ig-post-download-hd", label: "HD IG Post Downloader" },
-  { href: "/download/instagram-carousel-downloader", label: "Instagram Carousel Downloader" },
+const RELATED_VIDEO_TOOLS = [
   {
-    href: "/download/instagram-multiple-photo-downloader",
-    label: "Instagram Multiple Photo Downloader",
+    href: "/download/instagram-video-download-without-watermark",
+    label: "Instagram Video Download Without Watermark",
   },
+  { href: "/download/instagram-video-download-mp4", label: "Instagram Video Download MP4" },
+  { href: "/download/fast-insta-video-download", label: "Fast Instagram Video Download" },
+  { href: "/download/insta-video-download-hd", label: "Insta Video Download HD" },
   {
-    href: "/download/website-to-download-instagram-photos",
-    label: "Website to Download Instagram Photos",
+    href: "/download/instagram-video-download-online",
+    label: "Instagram Video Download Online",
   },
 ];
 
-export default function InstagramPhotoDownloaderService() {
+export default function InstagramVideoDownloaderPage() {
   return (
     <div className={styles.page}>
       <AuthorOrganizationSchema
@@ -34,12 +36,12 @@ export default function InstagramPhotoDownloaderService() {
         authorUrl="https://fastvidl.com/author/raja-jahangir"
         organizationName="Auroxa Tech"
         organizationUrl="https://auroxatech.com"
-        articleUrl="https://fastvidl.com/instagram-photo-downloader-free"
-        headline="Instagram Photo Downloader: The Ultimate Guide to Saving Images in HD Quality"
-        datePublished="2026-03-26"
-        dateModified="2026-04-20"
+        articleUrl="https://fastvidl.com/instagram-video-downloader"
+        headline="Best Instagram Video Downloader Free | 1080p No Watermark"
+        datePublished="2026-04-28"
+        dateModified="2026-04-28"
       />
-      <FAQSchema faqList={PHOTO_BLOG_FAQ_LIST} />
+      <FAQSchema faqList={INSTAGRAM_VIDEO_FAQ_LIST} />
       <main className={styles.main}>
         <div className={heroStyles.heroWrap}>
           <h1 className={heroStyles.heroTitle}>
@@ -52,7 +54,7 @@ export default function InstagramPhotoDownloaderService() {
                 backgroundClip: "text",
               }}
             >
-              Photo{" "}
+              Video{" "}
             </span>
             <span
               style={{
@@ -64,18 +66,18 @@ export default function InstagramPhotoDownloaderService() {
             >
               Downloader
             </span>
+            <span style={{ color: "var(--heading-color, #1a202c)" }}> Free</span>
           </h1>
         </div>
         <DownloaderToolSection />
         <EzoicPlacements placementIds={getEzoicToolPlacements()} />
+        <InstagramVideoBlogContent />
         <div className="container-blog">
-          <section className="home-blog-article">
-            <InstagramPhotoBlogContent variant="home" faqList={PHOTO_BLOG_FAQ_LIST} />
-          </section>
+          <HelpfulGuidesSection downloaderPath="/instagram-video-downloader" />
         </div>
         <RelatedToolsSection
-          heading="More Free Instagram Photo Downloaders"
-          tools={RELATED_PHOTO_TOOLS}
+          heading="More Free Instagram Video Downloaders"
+          tools={RELATED_VIDEO_TOOLS}
         />
         <NotAffiliatedNote />
       </main>

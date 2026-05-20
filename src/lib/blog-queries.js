@@ -72,14 +72,18 @@ export async function getPublishedBlogBySlug(slug) {
   if (!doc) return null;
   const normalized = await normalizeBlogDocument(doc);
 
+  const persist = {};
   if (
     normalized?.longDescription &&
     normalized.longDescription !== doc.longDescription
   ) {
-    await Blog.updateOne(
-      { _id: doc._id },
-      { $set: { longDescription: normalized.longDescription } }
-    );
+    persist.longDescription = normalized.longDescription;
+  }
+  if (normalized?.image && normalized.image !== doc.image) {
+    persist.image = normalized.image;
+  }
+  if (Object.keys(persist).length > 0) {
+    await Blog.updateOne({ _id: doc._id }, { $set: persist });
   }
 
   return normalized;

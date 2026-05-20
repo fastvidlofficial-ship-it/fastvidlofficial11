@@ -4,6 +4,8 @@ import Image from "next/image";
 import { getPublishedBlogBySlug } from "@/lib/blog-queries";
 import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
 import BlogArticleSchema from "@/components/BlogArticleSchema";
+import BlogBreadcrumbSchema from "@/components/blog/BlogBreadcrumbSchema";
+import BlogRelatedArticles from "@/components/blog/BlogRelatedArticles";
 import FaqSection from "@/components/faq/FaqSection";
 import { getSiteUrl, getMetadataBase, toAbsoluteUrl } from "@/lib/site-url";
 import "@/content/Blog.css";
@@ -226,6 +228,10 @@ export default async function BlogShowPage({ params }) {
         dateModified={modifiedIso}
         slug={blog.slug}
       />
+      <BlogBreadcrumbSchema
+        slug={blog.slug}
+        headline={blog.metaTitle || blog.title}
+      />
       <AuthorOrganizationSchema
         authorName="Raja Jahangir"
         authorUrl="https://fastvidl.com/author/raja-jahangir"
@@ -308,6 +314,10 @@ export default async function BlogShowPage({ params }) {
               <Link href={relatedTool.href}>{relatedTool.anchor}</Link>.
             </p>
           </section>
+        </div>
+
+        <div className="container-blog">
+          <BlogRelatedArticles slug={blog.slug} />
         </div>
 
         {cleanFaqs.length > 0 && (

@@ -52,6 +52,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="light" suppressHydrationWarning>
+      <head>
+        <link
+          rel="sitemap"
+          type="application/xml"
+          title="Sitemap"
+          href="https://fastvidl.com/sitemap.xml"
+        />
+      </head>
       <body>
         <EzoicHeadInjector />
         <WebSiteSchema />

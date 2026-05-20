@@ -8,6 +8,7 @@ import "@/content/Blog.css";
 import FAQSchema from "@/components/FAQSchema";
 import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
 import RelatedToolsSection from "@/components/RelatedToolsSection";
+import HelpfulGuidesSection from "@/components/downloader/HelpfulGuidesSection";
 import InstagramReelDownloaderBlogContent, {
   INSTAGRAM_BLOG_FAQ_LIST,
 } from "@/content/instagram-reel-downloader-free/InstagramReelDownloaderBlogContent";
@@ -75,6 +76,9 @@ export default function InstagramReelDownloaderService() {
           <section className="home-blog-article">
             <InstagramReelDownloaderBlogContent variant="home" faqList={INSTAGRAM_BLOG_FAQ_LIST} />
           </section>
+        </div>
+        <div className="container-blog">
+          <HelpfulGuidesSection downloaderPath="/instagram-reel-downloader-free" />
         </div>
         <RelatedToolsSection
           heading="More Free Instagram Reel Downloaders"

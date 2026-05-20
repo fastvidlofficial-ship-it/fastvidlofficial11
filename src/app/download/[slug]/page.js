@@ -10,6 +10,8 @@ import EzoicPlacements from "@/components/ads/EzoicPlacements";
 import { getEzoicToolPlacements } from "@/config/ezoicPlacements";
 import "@/content/Blog.css";
 import pseoAll from "../../../../pseo-data.json";
+import { getParentDownloaderPath } from "@/lib/downloader-routes";
+import { getPseoBlogGuide } from "@/data/blog-seo";
 
 export const dynamicParams = true;
 export const runtime = "nodejs";
@@ -149,6 +151,9 @@ export default async function DownloadSlugPage({ params }) {
     })
     .slice(0, 6);
 
+  const parentPath = getParentDownloaderPath(entry);
+  const blogGuide = getPseoBlogGuide(entry);
+
   const howToHeading =
     entry.platform && entry.content_type
       ? `How to Download ${entry.content_type}s from ${entry.platform}`
@@ -178,6 +183,11 @@ export default async function DownloadSlugPage({ params }) {
 
         <div className="container-blog">
           <section className="home-blog-article blog-content">
+            <p className={`home-blog-article-p ${saasStyles.intro}`}>
+              <Link href={parentPath} className={saasStyles.relatedLink}>
+                ← Back to main {entry.platform} {entry.content_type} downloader
+              </Link>
+            </p>
             <p className={`home-blog-article-p ${saasStyles.intro}`}>{entry.intro_text}</p>
 
             {steps.length > 0 ? (
@@ -241,6 +251,19 @@ export default async function DownloadSlugPage({ params }) {
 
                 <h2 className="home-blog-article-h2">{entry.richContent.comparisonTitle}</h2>
                 <p className="home-blog-article-p">{entry.richContent.comparisonBody}</p>
+              </section>
+            ) : null}
+
+            {blogGuide ? (
+              <section className={saasStyles.relatedSection} aria-labelledby="guide-heading">
+                <h2 id="guide-heading" className={saasStyles.relatedHeading}>
+                  Related Tutorial
+                </h2>
+                <p className="home-blog-article-p">
+                  <Link href={`/blogs/${blogGuide.slug}`} className={saasStyles.relatedLink}>
+                    {blogGuide.label}
+                  </Link>
+                </p>
               </section>
             ) : null}
 

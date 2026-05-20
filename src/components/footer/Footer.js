@@ -76,6 +76,10 @@ const Footer = () => {
         <li><a href="/cookie-policy">| Cookie Policy |</a></li>
         <li><a href="/terms-and-conditions">| Terms & Conditions |</a></li>
       </ul>
+      <p className={styles.adNotice}>
+        This site may display advertisements. See our{" "}
+        <a href="/privacy-policy">Privacy Policy</a>.
+      </p>
       <p className={styles.affiliationDisclaimer}>
         We are not affiliated with Instagram, Meta and Pinterest.
       </p>

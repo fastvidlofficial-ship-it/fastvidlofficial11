@@ -12,6 +12,46 @@ const BASE64_IMG_RE =
   /<img([^>]*?)\ssrc=["'](data:image\/(?:png|jpeg|jpg|gif|webp);base64,[^"']+)["']([^>]*)>/gi;
 
 const LOCALHOST_RE = /https?:\/\/(?:localhost|127\.0\.0\.1)(?::\d+)?/gi;
+const SITE_HOST_RE = /^(?:https?:\/\/)?(?:www\.)?fastvidl\.com/i;
+
+/** Add rel/target to external anchors in stored blog HTML. */
+export function normalizeExternalLinksInHtml(html) {
+  if (!html || typeof html !== "string") return html || "";
+
+  return html.replace(/<a\s+([^>]+)>/gi, (full, attrs) => {
+    const hrefMatch = attrs.match(/href\s*=\s*["']([^"']+)["']/i);
+    if (!hrefMatch) return full;
+
+    const href = hrefMatch[1].trim();
+    if (
+      !href ||
+      href.startsWith("#") ||
+      href.startsWith("mailto:") ||
+      href.startsWith("tel:") ||
+      href.startsWith("/")
+    ) {
+      return full;
+    }
+
+    const isExternal = /^https?:\/\//i.test(href) && !SITE_HOST_RE.test(href);
+    if (!isExternal) return full;
+
+    let nextAttrs = attrs;
+    if (!/\btarget\s*=/i.test(nextAttrs)) {
+      nextAttrs += ' target="_blank"';
+    }
+    if (!/\brel\s*=/i.test(nextAttrs)) {
+      nextAttrs += ' rel="noopener noreferrer"';
+    } else if (!/noopener/i.test(nextAttrs)) {
+      nextAttrs = nextAttrs.replace(
+        /\brel\s*=\s*["']([^"']*)["']/i,
+        (_, rel) => `rel="${rel} noopener noreferrer"`
+      );
+    }
+
+    return `<a ${nextAttrs}>`;
+  });
+}
 
 function shouldUseBlobStorage() {
   return !!process.env.BLOB_READ_WRITE_TOKEN;
@@ -139,7 +179,8 @@ export function normalizeBlogImageUrl(url) {
  */
 export async function prepareBlogHtml(html, slug) {
   const step1 = await extractBase64ImagesFromHtml(html, slug);
-  return normalizeBlogHtml(step1);
+  const step2 = normalizeBlogHtml(step1);
+  return normalizeExternalLinksInHtml(step2);
 }
 
 /**

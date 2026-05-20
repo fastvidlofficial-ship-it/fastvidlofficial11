@@ -55,6 +55,9 @@ const nextConfig = {
       // PascalCase `/Blogs` URL is naturally handled by Next.js routing.
       // Common typo from spec
       { source: '/admin-dashboard/blogs-managemengt', destination: '/admin-dashboard/blogs-management', permanent: false },
+      // Canonical downloader URLs (retired paths)
+      { source: '/instagram-photo-downloader', destination: '/instagram-photo-downloader-free', permanent: true },
+      { source: '/instagram-video-downloader-free', destination: '/instagram-video-downloader', permanent: true },
     ]
   },
 }

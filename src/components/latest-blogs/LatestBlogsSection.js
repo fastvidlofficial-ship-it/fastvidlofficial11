@@ -77,7 +77,7 @@ export default async function LatestBlogsSection() {
 
         <div className={styles.actions}>
           <Link href="/blogs" className={styles.showMore}>
-            Show more blogs
+            View all blog articles
           </Link>
         </div>
       </div>

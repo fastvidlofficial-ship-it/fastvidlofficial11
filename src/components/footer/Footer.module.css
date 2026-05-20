@@ -87,6 +87,18 @@
   opacity: 1;
 }
 
+.adNotice {
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  opacity: 0.92;
+}
+
+.adNotice a {
+  color: #fff;
+  text-decoration: underline;
+}
+
 .affiliationDisclaimer {
   margin: 16px auto 0;
   max-width: 42rem;

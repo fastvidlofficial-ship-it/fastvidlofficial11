@@ -36,8 +36,8 @@ export default function WebSiteSchema() {
         name: "FastVidl",
         description:
           "Free browser-based downloader for Instagram Reels, Instagram Stories, Instagram Photos, Facebook videos, and Pinterest videos. No login, no app install, no watermark added by FastVidl.",
-        applicationCategory: "MultimediaApplication",
-        operatingSystem: "Any",
+        applicationCategory: "UtilitiesApplication",
+        operatingSystem: "Web",
         url: "https://fastvidl.com",
         offers: {
           "@type": "Offer",
