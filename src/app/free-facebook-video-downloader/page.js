@@ -8,9 +8,6 @@ import HelpfulGuidesSection from "@/components/downloader/HelpfulGuidesSection";
 import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
 import FAQSchema from "@/components/FAQSchema";
 import FacebookBlogContent, { FACEBOOK_FAQ_LIST } from "@/content/free-facebook-video-downloader/FacebookBlogContent";
-import EzoicPlacements from "@/components/ads/EzoicPlacements";
-import { getEzoicToolPlacements } from "@/config/ezoicPlacements";
-
 export default function FacebookReelDownloaderService() {
   return (
     <div className={styles.page}>
@@ -63,7 +60,6 @@ export default function FacebookReelDownloaderService() {
           </p>
         </div>
         <DownloaderToolSection />
-        <EzoicPlacements placementIds={getEzoicToolPlacements()} />
         <FacebookBlogContent />
         <div className="container-blog">
           <HelpfulGuidesSection downloaderPath="/free-facebook-video-downloader" />

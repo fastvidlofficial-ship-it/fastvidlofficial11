@@ -5,6 +5,13 @@
  * Rendered in the component tree so it is present in initial HTML (SSR-friendly).
  * @param {Array<{ question: string, answer: string }>} faqList - List of FAQ items
  */
+function plainTextAnswer(html) {
+  return String(html || "")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 export default function FAQSchema({ faqList }) {
   if (!faqList || !Array.isArray(faqList) || faqList.length === 0) return null;
 
@@ -16,7 +23,7 @@ export default function FAQSchema({ faqList }) {
       name: question,
       acceptedAnswer: {
         "@type": "Answer",
-        text: answer,
+        text: plainTextAnswer(answer),
       },
     })),
   };

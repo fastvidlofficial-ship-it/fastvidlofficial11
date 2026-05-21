@@ -1,6 +1,3 @@
 # ads.txt for https://fastvidl.com
-# After Ezoic approval: paste the full ads.txt from Ezoic dashboard (Site Settings > ads.txt).
-# After AdSense approval: include your google.com, pub-XXXXXXXXXXXXXXXX line from AdSense.
+# After Google AdSense approval: paste your google.com, pub-XXXXXXXXXXXXXXXX line from AdSense.
 # See https://iabtechlab.com/ads-txt/
-# Placeholder (replace when Ezoic provides your file):
-# ezoic.com, PLACEHOLDER, DIRECT

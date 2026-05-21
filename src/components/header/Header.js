@@ -149,13 +149,13 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link href="/faqs" onClick={closeMenu}>
-              FAQs
-            </Link>
-          </li>
-          <li className={styles.navMobileOnly}>
             <Link href="/blogs" onClick={closeMenu}>
               Blogs
+            </Link>
+          </li>
+          <li>
+            <Link href="/faqs" onClick={closeMenu}>
+              FAQs
             </Link>
           </li>
         </ul>

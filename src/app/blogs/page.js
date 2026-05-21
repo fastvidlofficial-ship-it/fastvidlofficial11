@@ -10,23 +10,58 @@ const BLOG_LIST_TITLE = "FastVidl Blog: Tutorials for Instagram, Facebook & Pint
 const BLOG_LIST_DESCRIPTION =
   "Step-by-step tutorials, tips, and guides for downloading videos, reels, stories, and photos from Instagram, Facebook, and Pinterest.";
 
-export const metadata = {
-  metadataBase: getMetadataBase(),
-  title: "Blog · FastVidl",
-  description: BLOG_LIST_DESCRIPTION,
-  alternates: { canonical: `${getSiteUrl()}/blogs` },
-  openGraph: {
-    title: BLOG_LIST_TITLE,
+export async function generateMetadata({ searchParams }) {
+  const params = await searchParams;
+  const page = Math.max(1, parseInt(params?.page || "1", 10) || 1);
+  const siteUrl = getSiteUrl();
+
+  if (page > 1) {
+    const canonical = `${siteUrl}/blogs?page=${page}`;
+    const title = `FastVidl Blog — Page ${page} | Instagram, Facebook & Pinterest Download Guides`;
+    const description = `More step-by-step tutorials and guides for downloading Instagram, Facebook, and Pinterest content. Page ${page} of the FastVidl blog.`;
+
+    return {
+      metadataBase: getMetadataBase(),
+      title: { absolute: title },
+      description,
+      alternates: { canonical },
+      robots: { index: true, follow: true },
+      openGraph: {
+        title: `FastVidl Blog — Page ${page}`,
+        description,
+        url: canonical,
+        type: "website",
+      },
+      twitter: {
+        card: "summary_large_image",
+        title,
+        description,
+      },
+    };
+  }
+
+  return {
+    metadataBase: getMetadataBase(),
+    title: {
+      absolute:
+        "FastVidl Blog — Instagram, Facebook & Pinterest Download Guides",
+    },
     description: BLOG_LIST_DESCRIPTION,
-    url: `${getSiteUrl()}/blogs`,
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: BLOG_LIST_TITLE,
-    description: BLOG_LIST_DESCRIPTION,
-  },
-};
+    alternates: { canonical: `${siteUrl}/blogs` },
+    robots: { index: true, follow: true },
+    openGraph: {
+      title: BLOG_LIST_TITLE,
+      description: BLOG_LIST_DESCRIPTION,
+      url: `${siteUrl}/blogs`,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: BLOG_LIST_TITLE,
+      description: BLOG_LIST_DESCRIPTION,
+    },
+  };
+}
 
 const PER_PAGE = 10;
 

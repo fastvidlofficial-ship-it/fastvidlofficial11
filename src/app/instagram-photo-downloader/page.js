@@ -10,9 +10,6 @@ import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
 import RelatedToolsSection from "@/components/RelatedToolsSection";
 import HelpfulGuidesSection from "@/components/downloader/HelpfulGuidesSection";
 import InstagramPhotoBlogContent, { PHOTO_BLOG_FAQ_LIST } from "@/content/instagram-photo-downloader/InstagramPhotoBlogContent";
-import EzoicPlacements from "@/components/ads/EzoicPlacements";
-import { getEzoicToolPlacements } from "@/config/ezoicPlacements";
-
 const RELATED_PHOTO_TOOLS = [
   { href: "/download/ig-photo-download-free", label: "IG Photo Download Free" },
   { href: "/download/ig-post-download-hd", label: "HD IG Post Downloader" },
@@ -68,7 +65,6 @@ export default function InstagramPhotoDownloaderService() {
           </h1>
         </div>
         <DownloaderToolSection />
-        <EzoicPlacements placementIds={getEzoicToolPlacements()} />
         <div className="container-blog">
           <section className="home-blog-article">
             <InstagramPhotoBlogContent variant="home" faqList={PHOTO_BLOG_FAQ_LIST} />

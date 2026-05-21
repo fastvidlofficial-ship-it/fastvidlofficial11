@@ -6,11 +6,9 @@ import {
   hasCookieConsent,
 } from "@/lib/cookie-consent";
 import ThirdPartyScripts from "./ThirdPartyScripts";
-import EzoicConsentLoader from "./EzoicConsentLoader";
 
 /**
- * Loads ads/analytics partners only after the user accepts cookies.
- * Required for AdSense / GDPR-style consent before gtag or Ezoic ads.
+ * Loads optional analytics and sharing scripts only after the user accepts cookies.
  */
 export default function ConsentGatedScripts() {
   const [allowed, setAllowed] = useState(false);
@@ -24,10 +22,5 @@ export default function ConsentGatedScripts() {
 
   if (!allowed) return null;
 
-  return (
-    <>
-      <EzoicConsentLoader />
-      <ThirdPartyScripts />
-    </>
-  );
+  return <ThirdPartyScripts />;
 }

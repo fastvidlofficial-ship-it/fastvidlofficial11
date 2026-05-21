@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { rajaJahangirProfile } from "@/data/raja-jahangir-profile";
+import { getPublishedBlogs } from "@/lib/blog-queries";
 import "@/content/Blog.css";
 import "./AuthorPage.css";
+
+export const dynamic = "force-dynamic";
 
 const SITE_URL = "https://fastvidl.com";
 const PAGE_URL = `${SITE_URL}/author/raja-jahangir`;
@@ -151,6 +154,49 @@ export default function RajaJahangirAuthorPage() {
               </Link>
             </div>
           ))}
+
+          <h2 className="home-blog-article-h2" id="articles-heading">
+            Published Articles
+          </h2>
+          {publishedArticles.length > 0 ? (
+            <ul className="author-articles-list">
+              {publishedArticles.map((post) => (
+                <li key={post.slug} className="author-articles-item">
+                  <Link
+                    href={`/blogs/${post.slug}`}
+                    className="home-blog-article-link author-article-title"
+                  >
+                    {post.metaTitle || post.title}
+                  </Link>
+                  {post.createdAt ? (
+                    <time
+                      className="author-article-date"
+                      dateTime={new Date(post.createdAt).toISOString()}
+                    >
+                      {new Date(post.createdAt).toLocaleDateString(undefined, {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </time>
+                  ) : null}
+                  {post.metaDescription ? (
+                    <p className="home-blog-article-p author-article-excerpt">
+                      {post.metaDescription}
+                    </p>
+                  ) : null}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="home-blog-article-p">
+              Browse the{" "}
+              <Link href="/blogs" className="home-blog-article-link">
+                FastVidl blog
+              </Link>{" "}
+              for download guides and troubleshooting tutorials.
+            </p>
+          )}
 
           <h2 className="home-blog-article-h2" id="connect-heading">
             Connect

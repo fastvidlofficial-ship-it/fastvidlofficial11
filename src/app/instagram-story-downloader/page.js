@@ -10,9 +10,6 @@ import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
 import RelatedToolsSection from "@/components/RelatedToolsSection";
 import HelpfulGuidesSection from "@/components/downloader/HelpfulGuidesSection";
 import InstagramStoryBlogContent, { STORY_BLOG_FAQ_LIST } from "@/content/instagram-story-downloader/InstagramStoryBlogContent";
-import EzoicPlacements from "@/components/ads/EzoicPlacements";
-import { getEzoicToolPlacements } from "@/config/ezoicPlacements";
-
 const RELATED_STORY_TOOLS = [
   { href: "/download/instagram-story-saver-hd", label: "Instagram Story Saver HD" },
   {
@@ -66,7 +63,6 @@ export default function InstagramStoryDownloaderService() {
           </h1>
         </div>
         <DownloaderToolSection />
-        <EzoicPlacements placementIds={getEzoicToolPlacements()} />
         <div className="container-blog">
           <section className="home-blog-article">
             <InstagramStoryBlogContent variant="home" faqList={STORY_BLOG_FAQ_LIST} />

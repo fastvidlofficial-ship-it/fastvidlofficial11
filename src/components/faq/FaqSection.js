@@ -26,7 +26,14 @@ export default function FaqSection({
         {list.map((faq, index) => (
           <details key={`faq-${index}`} className={styles.faqItem} open={index === firstOpenIndex}>
             <summary className={styles.faqSummary}>{faq.question}</summary>
-            <p className={styles.faqAnswer}>{faq.answer}</p>
+            {/<a\s+href=/i.test(faq.answer) ? (
+              <div
+                className={styles.faqAnswer}
+                dangerouslySetInnerHTML={{ __html: faq.answer }}
+              />
+            ) : (
+              <p className={styles.faqAnswer}>{faq.answer}</p>
+            )}
           </details>
         ))}
       </div>

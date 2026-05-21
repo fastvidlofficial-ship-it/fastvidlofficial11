@@ -25,7 +25,7 @@ const CookiePolicy = () => {
           <p className="home-blog-article-meta">Last Updated: 19th February 2026</p>
 
           <p className="home-blog-article-p">
-            Welcome to fastvidl.com. We use cookies and similar technologies to run the downloader, remember basic preferences, measure traffic and conversions, and support advertising that keeps the service free. Partners such as <strong>Ezoic</strong> (including consent management), <strong>Google</strong> (tags used with Google Ads), and <strong>ShareThis</strong> (optional sharing) may set their own cookies or read storage as described in our{" "}
+            Welcome to fastvidl.com. We use cookies and similar technologies to run the downloader, remember basic preferences, measure traffic and conversions, and support advertising that keeps the service free. Partners such as <strong>Google</strong> (tags used with Google Ads and AdSense where applicable) and <strong>ShareThis</strong> (optional sharing) may set their own cookies or read storage as described in our{" "}
             <Link href="/privacy-policy" className="home-blog-article-link">
               Privacy Policy
             </Link>
@@ -67,14 +67,14 @@ const CookiePolicy = () => {
                 <tr>
                   <td>Advertising</td>
                   <td>Ads, frequency capping, personalization where permitted</td>
-                  <td>Ezoic and partner ad cookies (examples vary by region)</td>
+                  <td>Google AdSense and partner ad cookies (examples vary by region)</td>
                   <td>Varies</td>
                   <td>Consent tools + partner opt-outs</td>
                 </tr>
                 <tr>
                   <td>Consent (CMP)</td>
                   <td>Store advertising / analytics consent choices</td>
-                  <td>Gatekeeper / Ezoic-related CMP storage</td>
+                  <td>fastvidl_cookie_ack (local storage for banner choice)</td>
                   <td>Varies</td>
                   <td>Re-open consent in partner UI; clear cookies</td>
                 </tr>
@@ -99,7 +99,7 @@ const CookiePolicy = () => {
           <h2 className="home-blog-article-h2">Your Full Control Options</h2>
           <h3 className="home-blog-article-h3">1. Consent and preference tools</h3>
           <p className="home-blog-article-p">
-            Our advertising stack may present consent or preference controls (for example through Ezoic / CMP). You can also manage cookies in your browser. Blocking some third-party cookies may affect ads or measurement but should not block core pasting of a public URL in the downloader.
+            Our site cookie banner lets you accept or decline optional cookies before Google measurement or sharing scripts load. You can also manage cookies in your browser. Blocking some third-party cookies may affect ads or measurement but should not block core pasting of a public URL in the downloader.
           </p>
           <h3 className="home-blog-article-h3">2. Global Privacy Control (GPC)</h3>
           <p className="home-blog-article-p">
@@ -115,14 +115,14 @@ const CookiePolicy = () => {
           <h3 className="home-blog-article-h3">4. Third-Party Opt-Outs</h3>
           <ul className="disclaimer-list-simple">
             <li><a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="home-blog-article-link">Google Ads Settings</a></li>
-            <li><a href="https://www.ezoic.com/privacy-policy/" target="_blank" rel="noopener noreferrer" className="home-blog-article-link">Ezoic Privacy Policy</a></li>
+            <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="home-blog-article-link">Google Privacy Policy</a></li>
             <li><a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" className="home-blog-article-link">AboutAds.info (US)</a></li>
             <li><a href="https://www.youronlinechoices.com" target="_blank" rel="noopener noreferrer" className="home-blog-article-link">YourOnlineChoices (EU)</a></li>
           </ul>
 
           <h2 className="home-blog-article-h2">Advertising and measurement</h2>
           <p className="home-blog-article-p">
-            We use <strong>Ezoic</strong> and related partners to show ads, manage consent, and operate analytics. When you accept optional cookies, we may also load the <strong>Google tag (gtag.js)</strong> for measurement tied to Google Ads. <strong>Google AdSense</strong> or similar ad inventory may be served through Ezoic&apos;s platform; we do not load ad scripts until you accept optional cookies via our banner or partner CMP.
+            We may use <strong>Google AdSense</strong> and related Google services to show ads and measure performance. When you accept optional cookies, we load the <strong>Google tag (gtag.js)</strong> for measurement tied to Google Ads. We do not load optional ad or analytics scripts until you accept cookies via our site banner.
           </p>
           <ul className="disclaimer-list-simple">
             <li>Partners may use cookies or similar storage for ad delivery, personalization where allowed, fraud prevention, and reporting.</li>
@@ -130,7 +130,7 @@ const CookiePolicy = () => {
               Manage Google-related ad settings at{" "}
               <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="home-blog-article-link">Google Ads Settings</a>{" "}
               and read{" "}
-              <a href="https://www.ezoic.com/privacy-policy/" target="_blank" rel="noopener noreferrer" className="home-blog-article-link">Ezoic&apos;s privacy policy</a>.
+              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="home-blog-article-link">Google&apos;s privacy policy</a>.
             </li>
             <li>
               Industry opt-outs:{" "}
@@ -207,7 +207,7 @@ const CookiePolicy = () => {
             <strong>Google:</strong> Optional Translate cookies when you use the header translator; Google tag cookies/storage for measurement as described in the Privacy Policy.
           </p>
           <p className="home-blog-article-p">
-            <strong>Ezoic:</strong> Advertising, analytics, and consent-related cookies as described in Ezoic&apos;s documentation.
+            <strong>Google AdSense:</strong> Advertising and measurement cookies as described in Google&apos;s documentation when ads are enabled.
           </p>
           <p className="home-blog-article-p">
             <strong>ShareThis:</strong> Cookies for optional sharing UI when that feature loads.

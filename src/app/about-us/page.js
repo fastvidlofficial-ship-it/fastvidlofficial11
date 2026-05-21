@@ -140,7 +140,7 @@ const AboutUs = () => {
 
           <h2 className="home-blog-article-h2">Advertising on FastVidl</h2>
           <p className="home-blog-article-p">
-            FastVidl is supported by advertising so we can keep the core downloader free. We may use <strong>Ezoic</strong> and related partners (including Google advertising inventory where applicable) to display ads, measure performance, and manage consent. We do not sell your personal data. You can learn how cookies and ad partners work in our{" "}
+            FastVidl is supported by advertising so we can keep the core downloader free. We may use partners such as <strong>Google</strong> (including Google AdSense where applicable) to display ads and measure performance. We do not sell your personal data. You can learn how cookies and ad partners work in our{" "}
             <Link href="/privacy-policy" className="home-blog-article-link">Privacy Policy</Link>{" "}
             and <Link href="/cookie-policy" className="home-blog-article-link">Cookie Policy</Link>. Questions about ads or partnerships? Email{" "}
             <a href="mailto:fastvidlofficial@gmail.com" className="home-blog-article-link">fastvidlofficial@gmail.com</a>.

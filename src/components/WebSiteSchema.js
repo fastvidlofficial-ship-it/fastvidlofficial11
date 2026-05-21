@@ -14,6 +14,14 @@ export default function WebSiteSchema() {
           "FastVidl is a free online downloader for public media from Instagram, Facebook, and Pinterest. The platform supports reels, stories, photos, and videos in a browser-based workflow with no app install required.",
         url: "https://fastvidl.com",
         publisher: { "@id": "https://fastvidl.com/#organization" },
+        potentialAction: {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: "https://fastvidl.com/blogs?q={search_term_string}",
+          },
+          "query-input": "required name=search_term_string",
+        },
       },
       {
         "@type": "Organization",
@@ -30,6 +38,12 @@ export default function WebSiteSchema() {
           "https://www.pinterest.com/fastvidl/",
           "https://x.com/FastVidl",
         ],
+        contactPoint: {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          email: "support@fastvidl.com",
+          url: "https://fastvidl.com/contact-us",
+        },
       },
       {
         "@type": "WebApplication",

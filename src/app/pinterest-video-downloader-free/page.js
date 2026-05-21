@@ -8,9 +8,6 @@ import HelpfulGuidesSection from "@/components/downloader/HelpfulGuidesSection";
 import AuthorOrganizationSchema from "@/components/AuthorOrganizationSchema";
 import FAQSchema from "@/components/FAQSchema";
 import PinterestBlogContent, { PINTEREST_FAQ_LIST } from "@/content/pinterest-video-downloader-free/PinterestBlogContent";
-import EzoicPlacements from "@/components/ads/EzoicPlacements";
-import { getEzoicToolPlacements } from "@/config/ezoicPlacements";
-
 export default function PinterestReelDownloaderService() {
   return (
     <div className={styles.page}>
@@ -53,7 +50,6 @@ export default function PinterestReelDownloaderService() {
           </h1>
         </div>
         <DownloaderToolSection />
-        <EzoicPlacements placementIds={getEzoicToolPlacements()} />
         <PinterestBlogContent />
         <div className="container-blog">
           <HelpfulGuidesSection downloaderPath="/pinterest-video-downloader-free" />

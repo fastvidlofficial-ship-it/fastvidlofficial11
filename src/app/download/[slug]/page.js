@@ -6,8 +6,6 @@ import saasStyles from "./downloadSlugSaas.module.css";
 import DownloaderToolSection from "@/components/DownloaderToolSection";
 import NotAffiliatedNote from "@/components/NotAffiliatedNote";
 import FaqSection from "@/components/faq/FaqSection";
-import EzoicPlacements from "@/components/ads/EzoicPlacements";
-import { getEzoicToolPlacements } from "@/config/ezoicPlacements";
 import "@/content/Blog.css";
 import pseoAll from "../../../../pseo-data.json";
 import { getParentDownloaderPath } from "@/lib/downloader-routes";
@@ -179,8 +177,6 @@ export default async function DownloadSlugPage({ params }) {
         </div>
 
         <DownloaderToolSection />
-        <EzoicPlacements placementIds={getEzoicToolPlacements()} />
-
         <div className="container-blog">
           <section className="home-blog-article blog-content">
             <p className={`home-blog-article-p ${saasStyles.intro}`}>

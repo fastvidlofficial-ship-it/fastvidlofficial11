@@ -56,7 +56,7 @@ export default function CookieConsentBar() {
     >
       <p className={styles.text}>
         We use cookies for essential site features, and, if you allow, advertising
-        and analytics through partners such as Ezoic and Google. You can accept or
+        and analytics through partners such as Google. You can accept or
         decline optional cookies. See our{" "}
         <Link href="/cookie-policy" className={styles.link}>
           Cookie Policy

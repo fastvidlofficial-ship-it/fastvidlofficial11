@@ -9,6 +9,7 @@ import BlogRelatedArticles from "@/components/blog/BlogRelatedArticles";
 import FaqSection from "@/components/faq/FaqSection";
 import { getSiteUrl, getMetadataBase } from "@/lib/site-url";
 import { getBlogOgImageAbsolute, getBlogOgImagePath } from "@/lib/blog-assets";
+import { buildBlogPageMetadata } from "@/lib/blog-metadata-fallbacks";
 import "@/content/Blog.css";
 import styles from "./BlogShow.module.css";
 
@@ -122,51 +123,23 @@ function toSchemaDate(value) {
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
+  const normalizedSlug = String(slug || "").toLowerCase();
+
   let blog = null;
   try {
-    blog = await getPublishedBlogBySlug(slug);
+    blog = await getPublishedBlogBySlug(normalizedSlug);
   } catch {
-    /* swallow */
+    /* use static fallbacks when DB is unavailable */
   }
 
-  if (!blog) {
-    return { title: "Blog not found · FastVidl", robots: { index: false } };
+  if (!blog && !normalizedSlug) {
+    return { title: "Blog not found", robots: { index: false } };
   }
-
-  const title = blog.metaTitle || blog.title;
-  const description =
-    blog.metaDescription ||
-    `${blog.title}. Read the full guide on FastVidl.`;
-  const url = `${getSiteUrl()}/blogs/${blog.slug}`;
-  const siteUrl = getSiteUrl();
-  const ogUrl = getBlogOgImageAbsolute(blog.slug, siteUrl);
 
   return {
+    ...buildBlogPageMetadata(normalizedSlug, blog),
     metadataBase: getMetadataBase(),
-    title,
-    description,
-    keywords: blog.metaKeywords || undefined,
-    alternates: { canonical: url },
-    openGraph: {
-      title,
-      description,
-      url,
-      type: "article",
-      images: [
-        {
-          url: ogUrl,
-          width: 1200,
-          height: 630,
-          alt: blog.imageAlt || blog.title,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [ogUrl],
-    },
+    keywords: blog?.metaKeywords || undefined,
   };
 }
 

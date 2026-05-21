@@ -12,9 +12,6 @@ import HelpfulGuidesSection from "@/components/downloader/HelpfulGuidesSection";
 import InstagramReelDownloaderBlogContent, {
   INSTAGRAM_BLOG_FAQ_LIST,
 } from "@/content/instagram-reel-downloader-free/InstagramReelDownloaderBlogContent";
-import EzoicPlacements from "@/components/ads/EzoicPlacements";
-import { getEzoicToolPlacements } from "@/config/ezoicPlacements";
-
 const RELATED_REEL_TOOLS = [
   { href: "/download/ig-reel-downloader-hd", label: "Free IG Reel Downloader HD" },
   {
@@ -71,7 +68,6 @@ export default function InstagramReelDownloaderService() {
           </h1>
         </div>
         <DownloaderToolSection />
-        <EzoicPlacements placementIds={getEzoicToolPlacements()} />
         <div className="container-blog">
           <section className="home-blog-article">
             <InstagramReelDownloaderBlogContent variant="home" faqList={INSTAGRAM_BLOG_FAQ_LIST} />

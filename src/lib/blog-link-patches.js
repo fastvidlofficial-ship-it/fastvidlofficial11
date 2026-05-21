@@ -2,10 +2,10 @@
  * Blog HTML link fixes: author internal links, homepage → tool pages, cluster injections.
  */
 
-const AUTHOR_LINKEDIN_RE =
-  /href=["']https?:\/\/(?:www\.)?linkedin\.com\/in\/raja-jahangir\/?["']/gi;
-
 const HOMEPAGE_HREF_RE = /href=["']https?:\/\/(?:www\.)?fastvidl\.com\/?["']/gi;
+const LINKEDIN_PROFILE =
+  "https://www.linkedin.com/in/raja-jahangir";
+const MEET_TEAM_HEADING_RE = /<h2[^>]*>\s*Meet the Team/i;
 
 const PROFILE_VIEWER_BLOCK_RE =
   /<a[^>]*href=["']https?:\/\/(?:www\.)?fastvidl\.com\/?["'][^>]*>\s*FastVidl Profile Picture Viewer\s*<\/a>/gi;
@@ -41,6 +41,27 @@ const CLUSTER_INJECTIONS = {
   "pinterest-gif-not-saving-as-video-fix": `<p data-fastvidl-cluster="1">For regular Pinterest images and wallpapers, see <a href="/blogs/download-hd-wallpapers-pinterest-iphone">how to download HD wallpapers from Pinterest on iPhone</a>.</p><p data-fastvidl-cluster="2">If you are having trouble saving any Pinterest content at all, read <a href="/blogs/pinterest-not-saving-pictures-fix">why Pinterest is not letting you save pictures</a>.</p>`,
 };
 
+/** Meet the Team blocks should link to the real LinkedIn profile (E-E-A-T). */
+export function patchMeetTeamLinkedIn(html) {
+  if (!html) return html || "";
+  const match = html.match(MEET_TEAM_HEADING_RE);
+  if (!match || match.index === undefined) return html;
+
+  const start = match.index;
+  const rest = html.slice(start + match[0].length);
+  const nextH2Idx = rest.search(/<h2[^>]*>/i);
+  const sectionEnd =
+    nextH2Idx === -1 ? html.length : start + match[0].length + nextH2Idx;
+  const section = html.slice(start, sectionEnd);
+
+  const fixed = section.replace(
+    /<a([^>]*?)href=["'](?:https?:\/\/(?:www\.)?fastvidl\.com)?\/author\/raja-jahangir\/?["']([^>]*?)>\s*(Connect(?:ed)? on LinkedIn)\s*<\/a>/gi,
+    `<a$1href="${LINKEDIN_PROFILE}"$2 target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>`
+  );
+
+  return html.slice(0, start) + fixed + html.slice(sectionEnd);
+}
+
 /**
  * @param {string} html
  * @param {string} slug
@@ -72,11 +93,16 @@ export function patchBlogLinks(html, slug) {
   const toolHref = defaultToolHrefForSlug(slug);
   out = out.replace(HOMEPAGE_HREF_RE, `href="${toolHref}"`);
 
-  out = out.replace(AUTHOR_LINKEDIN_RE, 'href="/author/raja-jahangir"');
   out = out.replace(
-    />\s*Connect on LinkedIn\s*</gi,
-    ">View Author Profile<"
+    /href=["']\/instagram-photo-downloader-free["']/gi,
+    'href="/instagram-photo-downloader"'
   );
+  out = out.replace(
+    /href=["']https?:\/\/(?:www\.)?fastvidl\.com\/instagram-photo-downloader-free["']/gi,
+    'href="/instagram-photo-downloader"'
+  );
+
+  out = patchMeetTeamLinkedIn(out);
 
   const injection = CLUSTER_INJECTIONS[slug];
   if (injection && !out.includes("data-fastvidl-cluster")) {

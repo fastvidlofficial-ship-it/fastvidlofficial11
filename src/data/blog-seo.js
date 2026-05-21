@@ -34,8 +34,8 @@ export const BLOG_RELATED_SLUGS = {
     "clear-instagram-cache",
   ],
   "save-instagram-stories-with-music-not-muted": [
+    "instagram-action-block-fix",
     "download-instagram-carousel-photos-phone",
-    "download-hd-wallpapers-pinterest-iphone",
     "clear-instagram-cache",
   ],
   "download-facebook-live-videos-after-end": [

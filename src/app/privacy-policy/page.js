@@ -115,13 +115,13 @@ const PrivacyPolicy = () => {
             (EU).
           </p>
 
-          <h3 className="home-blog-article-h3">Advertising &amp; consent (Ezoic)</h3>
+          <h3 className="home-blog-article-h3">Advertising &amp; consent (Google)</h3>
           <p className="home-blog-article-p">
-            We use <strong>Ezoic</strong> to help deliver and optimize advertising, analytics, and consent management on fastvidl.com. Ezoic and its partners may set cookies or use similar technologies. Ezoic&apos;s privacy policy is here:{" "}
-            <a href="https://www.ezoic.com/privacy-policy/" target="_blank" rel="noopener noreferrer" className="home-blog-article-link">
-              https://www.ezoic.com/privacy-policy/
+            We may use <strong>Google AdSense</strong> and related Google services to deliver and optimize advertising on fastvidl.com. Google and its partners may set cookies or use similar technologies. Google&apos;s privacy policy is here:{" "}
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="home-blog-article-link">
+              https://policies.google.com/privacy
             </a>
-            . Consent-related scripts (for example Gatekeeper CMP) may load as part of that stack.
+            . Optional measurement scripts load only after you accept cookies in our site banner.
           </p>
 
           <h3 className="home-blog-article-h3">Social sharing (ShareThis)</h3>
@@ -133,7 +133,7 @@ const PrivacyPolicy = () => {
 
           <h3 className="home-blog-article-h3">How this fits together</h3>
           <p className="home-blog-article-p">
-            FastVidl is supported by advertising. We use <strong>Ezoic</strong> to serve and optimize ads. Ezoic may deliver advertising through <strong>Google&apos;s advertising network</strong> (including AdSense inventory) as part of its platform. Optional scripts such as the <strong>Google tag</strong>, <strong>ShareThis</strong>, and Ezoic ad/analytics tags load only after you accept optional cookies in our consent banner. See our <strong>Cookie Policy</strong> for consent and opt-out options.
+            FastVidl is supported by advertising. We may use <strong>Google AdSense</strong> and <strong>Google&apos;s advertising network</strong> to serve and optimize ads. Optional scripts such as the <strong>Google tag</strong> and <strong>ShareThis</strong> load only after you accept optional cookies in our consent banner. See our <strong>Cookie Policy</strong> for consent and opt-out options.
           </p>
 
           <h3 className="home-blog-article-h3">Personalized vs. non-personalized ads</h3>
@@ -153,7 +153,7 @@ const PrivacyPolicy = () => {
 
           <h3 className="home-blog-article-h3">Your advertising choices</h3>
           <p className="home-blog-article-p">
-            Use the consent tools shown on the site where available, adjust browser cookie settings, and review partner opt-outs (Google, Ezoic, ShareThis, and industry programs linked above). Blocking all cookies can break parts of the downloader experience.
+            Use the cookie banner on the site, adjust browser cookie settings, and review partner opt-outs (Google, ShareThis, and industry programs linked above). Blocking all cookies can break parts of the downloader experience.
           </p>
 
           <h3 className="home-blog-article-h3">Learn more</h3>
@@ -161,11 +161,6 @@ const PrivacyPolicy = () => {
             <li>
               <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="home-blog-article-link">
                 Google Privacy Policy
-              </a>
-            </li>
-            <li>
-              <a href="https://www.ezoic.com/privacy-policy/" target="_blank" rel="noopener noreferrer" className="home-blog-article-link">
-                Ezoic Privacy Policy
               </a>
             </li>
           </ul>
@@ -225,14 +220,13 @@ const PrivacyPolicy = () => {
 
           <h2 className="home-blog-article-h2">Data Sharing and Disclosure</h2>
           <p className="home-blog-article-p">
-            We aim to follow major privacy principles (such as GDPR and CCPA) where applicable, and will update this policy as laws evolve. We share limited technical information with Ezoic for the purposes of advertising management, site optimization, and traffic analytics.
+            We aim to follow major privacy principles (such as GDPR and CCPA) where applicable, and will update this policy as laws evolve. We share limited technical information with advertising and analytics partners (such as Google) for advertising delivery, site optimization, and traffic measurement where you have consented.
           </p>
           <p className="home-blog-article-p">We share limited information only with:</p>
 
           <h3 className="home-blog-article-h3">Service Providers We Trust</h3>
           <ul className="privacy-list">
-            <li><strong>Google (tags):</strong> Measurement and advertising-related signals as described above</li>
-            <li><strong>Ezoic:</strong> Advertising, consent, personalization, and analytics as described above and in Ezoic&apos;s privacy policy</li>
+            <li><strong>Google (AdSense / tags):</strong> Advertising, measurement, and analytics as described above and in Google&apos;s privacy policy</li>
             <li><strong>ShareThis:</strong> Optional sharing features and related cookies</li>
             <li><strong>Hosting Providers:</strong> To keep our website online and fast</li>
             <li><strong>CDN Services:</strong> To deliver content quickly worldwide</li>
@@ -392,7 +386,7 @@ const PrivacyPolicy = () => {
                   <td>Yes (browser / partner controls)</td>
                 </tr>
                 <tr>
-                  <td>Advertising (Ezoic and partners)</td>
+                  <td>Advertising (Google AdSense and partners)</td>
                   <td>Ad serving &amp; personalization</td>
                   <td>Varies</td>
                   <td>Yes (consent / browser / partner tools)</td>

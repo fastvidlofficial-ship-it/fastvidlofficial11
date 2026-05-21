@@ -11,9 +11,6 @@ import HelpfulGuidesSection from "@/components/downloader/HelpfulGuidesSection";
 import InstagramVideoBlogContent, {
   INSTAGRAM_VIDEO_FAQ_LIST,
 } from "@/content/instagram-video-downloader/InstagramVideoBlogContent";
-import EzoicPlacements from "@/components/ads/EzoicPlacements";
-import { getEzoicToolPlacements } from "@/config/ezoicPlacements";
-
 const RELATED_VIDEO_TOOLS = [
   {
     href: "/download/instagram-video-download-without-watermark",
@@ -70,7 +67,6 @@ export default function InstagramVideoDownloaderPage() {
           </h1>
         </div>
         <DownloaderToolSection />
-        <EzoicPlacements placementIds={getEzoicToolPlacements()} />
         <InstagramVideoBlogContent />
         <div className="container-blog">
           <HelpfulGuidesSection downloaderPath="/instagram-video-downloader" />

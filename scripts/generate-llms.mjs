@@ -136,7 +136,7 @@ const lines = [
   "- Works on iPhone, Android, Windows, and Mac",
   "- Does not store user URLs or downloaded files on servers",
   "- HTTPS for all connections",
-  "- Cookie consent before optional ads/analytics (Ezoic, Google tag)",
+  "- Cookie consent before optional ads/analytics (Google tag, ShareThis)",
   "",
   "**Organization:** Auroxa Tech, Rawalpindi, Pakistan (launched August 2025).",
   "**Author:** Raja Jahangir, https://fastvidl.com/author/raja-jahangir",
